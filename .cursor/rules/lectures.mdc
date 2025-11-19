@@ -1,0 +1,271 @@
+---
+alwaysApply: true
+---
+
+1. Tone and Voice
+
+All writing in this course must feel like an experienced differential geometer guiding a motivated student through the landscape of curves, surfaces, and manifolds. The tone should be calm, patient, and explanatory, with a narrative style that slowly unfolds ideas from geometric intuition toward formal mathematical structure.
+
+Every paragraph should feel crafted, never rushed; sentences may be long and flowing, provided they help carry the reader from visual insight to rigorous detail. Avoid bullet points unless absolutely necessary. The voice should recall authors such as Manfredo do Carmo, Pressley, Struik, Spivak, and the geometric clarity of Hilbert & Cohn-Vossen.
+
+The instructor writes as someone who understands how beginners think when approaching curvature, tangent vectors, geodesics, and surfaces for the first time, and gently leads them toward formalism.
+
+2. Lecture Structure
+
+Every lecture must follow this structure:
+
+2.1 Title and Overview
+
+Begin with a clear and meaningful title, such as:
+
+Lecture 5: Curvature of Plane Curves — From Intuition to the Frenet Frame
+
+The overview should:
+
+Motivate the geometric concept (curves, surfaces, tangent vectors, curvature, torsion, geodesics, shape operator).
+
+Connect the idea to previous lectures.
+
+Explain why the concept matters across physics, geometry, computer graphics, and engineering.
+
+Use long-form explanatory prose (not bullets).
+
+Inspirations include:
+
+Differential Geometry of Curves and Surfaces — do Carmo
+
+Elementary Differential Geometry — Pressley
+
+Geometry and the Imagination — Hilbert & Cohn-Vossen
+
+Vector Calculus — Marsden & Tromba (geometric motivation)
+
+2.2 Intuitive Explanation
+
+Each lecture begins with geometric and physical analogies:
+
+A curve as a “path traced by a moving particle.”
+
+Curvature as “how tightly a curve bends.”
+
+The normal vector as “the direction in which the curve tries to turn.”
+
+A surface as “a stretched sheet” like paper, cloth, or the Earth’s crust.
+
+Geodesics as “the paths that feel straight when you walk them.”
+
+Develop ideas through stories or visual imagination before introducing definitions. Prefer narrative text to lists. Build intuition as if teaching a motivated, visually minded student seeing these shapes for the first time.
+
+Inspired by:
+
+Bennett, Differential Geometry: A Geometric Introduction
+
+Stewart, visual introductions to curvature
+
+Intuition-first style of Khan Academy (adapted to higher mathematics)
+
+2.3 Formal Definitions and Notation
+
+After intuition, introduce formal definitions using LaTeX:
+
+Definition:
+A smooth curve in 
+𝑅
+3
+R
+3
+ is a differentiable map
+
+𝛾
+:
+𝐼
+→
+𝑅
+3
+,
+𝑡
+↦
+𝛾
+(
+𝑡
+)
+,
+γ:I→R
+3
+,t↦γ(t),
+
+whose derivative 
+𝛾
+′
+(
+𝑡
+)
+≠
+0
+γ
+′
+(t)
+
+=0 on its domain.
+
+Intuition:
+Think of 
+𝛾
+(
+𝑡
+)
+γ(t) as the position of a particle moving through space; the tangent vector
+
+𝑇
+(
+𝑡
+)
+=
+𝛾
+′
+(
+𝑡
+)
+∥
+𝛾
+′
+(
+𝑡
+)
+∥
+T(t)=
+∥γ
+′
+(t)∥
+γ
+′
+(t)
+	​
+
+
+indicates its instantaneous direction of motion.
+
+Follow standard conventions from:
+
+do Carmo (notation for curvature, torsion, fundamental forms)
+
+Struik, classic terminology for local surface theory
+
+Spivak, advanced geometric notation
+
+Thomas & Finney, when vector intuition is needed
+
+2.4 Visual Illustrations (Images Rule)
+
+For every major section:
+
+The agent must automatically search the web
+
+for 1–3 open-license images (Wikimedia, Wikipedia, university pages, open educational resources).
+
+Each image must include:
+
+Direct URL
+
+Caption
+
+Attribution
+
+Diagrams should prioritize:
+
+Curves in 2D and 3D
+
+Tangent, normal, and binormal vectors
+
+Osculating circle
+
+Surfaces: sphere, torus, hyperbolic paraboloid
+
+Local patches and coordinate grids
+
+Geodesics on surfaces
+
+Curvature lines and principal directions
+
+If no suitable image appears:
+
+[Image placeholder: “Diagram of curvature and osculating circle”]
+
+
+Visual inspiration sources:
+
+Wikimedia math illustration galleries
+
+Hilbert & Cohn-Vossen
+
+3Blue1Brown style intuition (not actual images)
+
+2.5 Fundamental Papers & References
+
+At the end of every lecture, include:
+
+🧠 Fundamental Papers & References
+
+List 3–6 foundational sources relevant to that lecture, such as:
+
+Gauss, Disquisitiones Generales Circa Superficies Curvas
+
+Euler, early works on curvature
+
+do Carmo, Differential Geometry of Curves and Surfaces
+
+Pressley, Elementary Differential Geometry
+
+Struik, Lectures on Classical Differential Geometry
+
+Spivak, A Comprehensive Introduction to Differential Geometry
+
+Use classical sources when relevant, especially for curvature, geodesics, and fundamental forms.
+
+2.6 Applications and Cross-Disciplinary Connections
+
+Each lecture must include:
+
+🔗 Applications and Connections
+
+Explain how the concept connects to:
+
+Physics: motion of particles, curvature of trajectories, general relativity (at basic level)
+
+Computer graphics: surface normals, shading models, curvature estimation
+
+Robotics: orientation frames, curvature-constrained motion planning
+
+3D modeling: surface smoothing, mesh curvature
+
+Engineering: shell theory, stress analysis, geometric optics
+
+Data science: manifold learning, geodesic distances
+
+Include one concrete real-world example:
+
+“A robot arm relies on Frenet frames to understand how its joints turn along a spatial path.”
+
+2.7 Exercises and Reflections
+
+Each lecture ends with:
+
+🧩 Exercises
+
+Focus on conceptual, geometric, and diagram-based exercises (no programming). Examples:
+
+Sketch a plane curve and annotate its tangent and normal vectors.
+
+Show with diagrams how the osculating circle approximates a curve locally.
+
+Describe in words how a geodesic differs from a straight line, using the sphere as an example.
+
+Sketch principal curvature directions on a simple surface like a cylinder.
+
+Inspired by:
+
+do Carmo, basic curve and surface exercises
+
+Pressley, diagrammatic problems
+
+Viro, intuitive elementary geometry tasks

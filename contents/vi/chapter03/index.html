@@ -1,0 +1,50 @@
+---
+layout: chapter_index
+title: "Curvature and Fundamental Forms"
+lang: vi
+lang-ref: differential-geometry-chapter03
+chapter: '03'
+permalink: /contents/vi/chapter03/
+---
+
+# Chapter 03: Đo đạc sự Cong vênh
+
+<div class="chapter-intro"
+    style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Làm thế nào để chúng ta biết một bề mặt cong đến mức nào?
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Trong chương này, chúng ta trang bị cho mình hai công cụ đo đạc mạnh mẽ nhất:
+    </p>
+    <ul style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em; padding-left: 1.5em;">
+        <li><strong>Dạng Cơ bản Thứ nhất (The First Fundamental Form):</strong> Nó cho phép chúng ta đo độ dài, góc, và
+            diện tích ngay trên bề mặt cong. Đây chính là "Metric" của bề mặt.</li>
+        <li><strong>Dạng Cơ bản Thứ hai (The Second Fundamental Form):</strong> Nó đo xem bề mặt uốn lượn ra sao trong
+            không gian bao quanh.</li>
+    </ul>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+        Chúng ta sẽ gặp gỡ hai nhân vật chính: <strong>Độ cong Gauss</strong> (tích của hai độ cong chính) và <strong>Độ
+            cong Trung bình</strong> (trung bình cộng của chúng). Một cái là nội tại, một cái là ngoại lai. Sự phân biệt
+        này sẽ dẫn đến định lý đẹp nhất của hình học vi phân.
+    </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter03 | sort: "order" %}
+<div class="lecture-list-simple">
+    {% for lecture in lectures %}
+    <div class="lecture-item">
+        <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+        <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem
+            chi tiết →</a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/contents/vi/chapter04/" style="font-weight: bold;">Tiếp theo: Chapter 04 →</a>
+</div>

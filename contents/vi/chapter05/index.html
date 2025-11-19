@@ -1,0 +1,50 @@
+---
+layout: chapter_index
+title: "Differential Forms"
+lang: vi
+lang-ref: differential-geometry-chapter05
+chapter: '05'
+permalink: /contents/vi/chapter05/
+---
+
+# Chapter 05: Ngôn ngữ của Dạng Vi phân
+
+<div class="chapter-intro"
+    style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Đã đến lúc nâng cấp công cụ toán học của chúng ta. Vector là tốt, nhưng để tích phân trên các đa tạp cong, chúng
+        ta cần một thứ mạnh mẽ hơn: <strong>Dạng Vi phân (Differential Forms)</strong>.
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Dạng vi phân là những cỗ máy ăn vector và nhả ra số thực. Chúng tự động xử lý các vấn đề rắc rối về đổi biến số
+        trong tích phân bội mà bạn từng gặp phải (như định thức Jacobian).
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Chương này sẽ dẫn dắt bạn từ những khái niệm cơ bản như 1-form, k-form, đến phép tính <strong>Wedge
+            Product</strong> và <strong>Exterior Derivative</strong>. Đỉnh cao của chương là <strong>Định lý Stokes Tổng
+            quát</strong>—một công thức đơn giản đến mức kinh ngạc nhưng bao trùm cả định lý Green, Gauss và Stokes cổ
+        điển:
+    </p>
+    <p style="font-size: 1.2em; text-align: center; margin-top: 1em;">
+        $$ \int_{\partial \Omega} \omega = \int_{\Omega} d\omega $$
+    </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter05 | sort: "order" %}
+<div class="lecture-list-simple">
+    {% for lecture in lectures %}
+    <div class="lecture-item">
+        <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+        <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem
+            chi tiết →</a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/contents/vi/chapter06/" style="font-weight: bold;">Tiếp theo: Chapter 06 →</a>
+</div>

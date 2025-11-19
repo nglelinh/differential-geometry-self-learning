@@ -1,0 +1,46 @@
+---
+layout: chapter_index
+title: "Lie Groups and Physics"
+lang: vi
+lang-ref: differential-geometry-chapter08
+chapter: '08'
+permalink: /contents/vi/chapter08/
+---
+
+# Chapter 08: Nhóm Lie và Vật lý
+
+<div class="chapter-intro"
+    style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Khi Hình học gặp Đại số, chúng ta có <strong>Nhóm Lie</strong>. Đây là những đa tạp trơn có cấu trúc nhóm, cho
+        phép chúng ta mô tả các phép đối xứng liên tục—như phép quay trong không gian.
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Chương này khám phá mối quan hệ mật thiết giữa Nhóm Lie và không gian tiếp tuyến của nó tại đơn vị (Đại số Lie).
+        Chúng ta sẽ thấy cách <strong>Exponential Map</strong> chuyển các bài toán phi tuyến phức tạp trên nhóm về các
+        bài toán tuyến tính dễ giải trên đại số.
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+        Cuối cùng, chúng ta sẽ áp dụng mọi thứ vào Vật lý: từ các định luật bảo toàn (Định lý Noether) đến cấu trúc của
+        không-thời gian trong Thuyết Tương đối.
+    </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter08 | sort: "order" %}
+<div class="lecture-list-simple">
+    {% for lecture in lectures %}
+    <div class="lecture-item">
+        <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+        <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem
+            chi tiết →</a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/contents/vi/chapter09/" style="font-weight: bold;">Tiếp theo: Chapter 09 →</a>
+</div>

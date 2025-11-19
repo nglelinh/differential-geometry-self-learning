@@ -1,0 +1,45 @@
+---
+layout: chapter_index
+title: "Riemannian Geometry"
+lang: vi
+lang-ref: differential-geometry-chapter07
+chapter: '07'
+permalink: /contents/vi/chapter07/
+---
+
+# Chapter 07: Hình học Riemann
+
+<div class="chapter-intro"
+    style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Đây là trái tim của khóa học. <strong>Hình học Riemann</strong> là sự tổng hợp của tất cả những gì chúng ta đã
+        học: Đa tạp, Metric, Kết nối, và Độ cong.
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Trong chương này, chúng ta sẽ nghiên cứu <strong>Riemann Curvature Tensor</strong>—một con quái vật toán học
+        chứa đựng mọi thông tin về độ cong của không gian n-chiều. Chúng ta sẽ thấy nó quyết định số phận của các đường
+        trắc địa như thế nào: liệu hai đường thẳng song song sẽ hội tụ, phân kỳ hay giữ nguyên khoảng cách?
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+        Đây chính là toán học đằng sau Thuyết Tương đối rộng của Einstein.
+    </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter07 | sort: "order" %}
+<div class="lecture-list-simple">
+    {% for lecture in lectures %}
+    <div class="lecture-item">
+        <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+        <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem
+            chi tiết →</a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/contents/vi/chapter08/" style="font-weight: bold;">Tiếp theo: Chapter 08 →</a>
+</div>

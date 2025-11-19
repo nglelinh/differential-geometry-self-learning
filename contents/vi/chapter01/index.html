@@ -1,0 +1,46 @@
+---
+layout: chapter_index
+title: "Geometry as Smooth Change"
+lang: vi
+lang-ref: differential-geometry-chapter01
+chapter: '01'
+permalink: /contents/vi/chapter01/
+---
+
+# Chapter 01: Hình học là sự Biến đổi Trơn
+
+<div class="chapter-intro"
+  style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+    Nếu bạn phóng to đủ gần vào một đường cong trơn, nó trông giống như một đường thẳng. Đây là ý tưởng cốt lõi của
+    <strong>Giải tích Vi phân</strong>: tuyến tính hóa cái phức tạp.
+  </p>
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+    Trong chương này, chúng ta sẽ bắt đầu hành trình với đối tượng hình học đơn giản nhất: <strong>Đường cong</strong>.
+    Nhưng đừng để sự đơn giản đó đánh lừa bạn. Để hiểu cách một con kiến di chuyển trên một sợi dây cong queo trong
+    không gian, chúng ta cần phát triển một hệ thống định vị động—<strong>Hệ khung Frenet-Serret</strong>.
+  </p>
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+    Chúng ta sẽ học cách định lượng sự "cong" và sự "xoắn", và nhận ra rằng hình học không chỉ là về hình dáng tĩnh, mà
+    là về cách các vector thay đổi khi chúng ta di chuyển.
+  </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter01 | sort: "order" %}
+<div class="lecture-list-simple">
+  {% for lecture in lectures %}
+  <div class="lecture-item">
+    <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+    <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+    <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem chi
+      tiết →</a>
+  </div>
+  {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+  <a href="/contents/vi/chapter02/" style="font-weight: bold;">Tiếp theo: Chapter 02 →</a>
+</div>

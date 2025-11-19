@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <style>
+    .MathJax {
+      padding: 2em 0.3em;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  </style>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <title>
+    
+      Bài 12: Liên kết và Đạo hàm Hiệp biến — Dẫn đường trên Đa tạp Cong &middot; differential-geometry Self-Learning
+    
+  </title>
+
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/poole.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/syntax.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/lanyon.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/github-markdown.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/multilang.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/search.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/content-boxes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  
+  <!-- Lunr.js for search functionality -->
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+
+  <link rel="apple-touch-icon-precomposed" sizes="122x144" href="http://localhost:4000/differential-geometry-self-learning/public/logo.png">
+  <link rel="shortcut icon" href="http://localhost:4000/differential-geometry-self-learning/public/convex-logo-144x144.png">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/differential-geometry-self-learning/atom.xml">
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogledifferentialsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-differentials.com/differentials.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Khóa học differential-geometry toàn diện cho sinh viên toán</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/">Trang chủ</a>
+
+    
+
+    
+    
+
+    <!-- Hiển thị các chương có sẵn cho ngôn ngữ hiện tại -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter00/">
+      00. Foundations and Set-Theoretic Differential Geometry
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter01/">
+      01. Geometry as Smooth Change
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter02/">
+      02. Curves and Surfaces
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter03/">
+      03. Curvature and Fundamental Forms
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter04/">
+      04. Intrinsic Geometry
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter05/">
+      05. Differential Forms
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter06/">
+      06. Tensors and Connections
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter07/">
+      07. Riemannian Geometry
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter08/">
+      08. Lie Groups and Physics
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter09/">
+      09. Advanced Topics
+      
+    </a>
+    
+    
+    
+    
+
+    <!-- Nếu không có nội dung cho ngôn ngữ hiện tại, hiển thị thông báo -->
+    
+
+    <span class="sidebar-nav-item">Currently v0.0.1</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap github-md-body">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/differential-geometry-self-learning/" title="Trang chủ">Tự học Hình học vi phân</a>
+            <small></small>
+          </h3>
+          <!-- Header Actions: Language Toggle and GitHub Link -->
+          <div class="header-actions">
+            <div class="language-toggle">
+              <a href="/differential-geometry-self-learning/contents/en/chapter00/" class="language-switch" title="Chuyển sang tiếng Anh">Chuyển sang tiếng Anh</a>
+            </div>
+            <a class="github-logo__wrapper" target="_blank" href="https://github.com/nglelinh/differential-geometry-self-learning" title="Github">
+             <svg class="github-logo" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><linearGradient id="rL2wppHyxHVbobwndsT6Ca" x1="4" x2="44" y1="23.508" y2="23.508" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4c4c4c"/><stop offset="1" stop-color="#343434"/></linearGradient><path fill="url(#rL2wppHyxHVbobwndsT6Ca)" d="M24,4C12.954,4,4,12.954,4,24c0,8.887,5.801,16.411,13.82,19.016h12.36	C38.199,40.411,44,32.887,44,24C44,12.954,35.046,4,24,4z"/><path d="M30.01,41.996L30,36.198c0-0.939-0.22-1.856-0.642-2.687c5.641-1.133,8.386-4.468,8.386-10.177	c0-2.255-0.665-4.246-1.976-5.92c0.1-0.317,0.174-0.645,0.22-0.981c0.188-1.369-0.023-2.264-0.193-2.984l-0.027-0.116	c-0.186-0.796-0.409-1.364-0.418-1.388l-0.111-0.282l-0.111-0.282l-0.302-0.032l-0.303-0.032c0,0-0.199-0.021-0.501-0.021	c-0.419,0-1.04,0.042-1.627,0.241l-0.196,0.066c-0.74,0.249-1.439,0.485-2.417,1.069c-0.286,0.171-0.599,0.366-0.934,0.584	C27.334,12.881,25.705,12.69,24,12.69c-1.722,0-3.365,0.192-4.889,0.571c-0.339-0.22-0.654-0.417-0.942-0.589	c-0.978-0.584-1.677-0.819-2.417-1.069l-0.196-0.066c-0.585-0.199-1.207-0.241-1.626-0.241c-0.302,0-0.501,0.021-0.501,0.021	l-0.302,0.032l-0.3,0.031l-0.112,0.281l-0.113,0.283c-0.01,0.026-0.233,0.594-0.419,1.391l-0.027,0.115	c-0.17,0.719-0.381,1.615-0.193,2.983c0.048,0.346,0.125,0.685,0.23,1.011c-1.285,1.666-1.936,3.646-1.936,5.89	c0,5.695,2.748,9.028,8.397,10.17c-0.194,0.388-0.345,0.798-0.452,1.224c-0.197,0.067-0.378,0.112-0.538,0.137	c-0.238,0.036-0.487,0.054-0.739,0.054c-0.686,0-1.225-0.134-1.435-0.259c-0.313-0.186-0.872-0.727-1.414-1.518	c-0.463-0.675-1.185-1.558-1.992-1.927c-0.698-0.319-1.437-0.502-2.029-0.502c-0.138,0-0.265,0.01-0.376,0.028	c-0.517,0.082-0.949,0.366-1.184,0.78c-0.203,0.357-0.235,0.773-0.088,1.141c0.219,0.548,0.851,0.985,1.343,1.255	c0.242,0.133,0.765,0.619,1.07,1.109c0.229,0.368,0.335,0.63,0.482,0.992c0.087,0.215,0.183,0.449,0.313,0.732	c0.47,1.022,1.937,1.924,2.103,2.023c0.806,0.483,2.161,0.638,3.157,0.683l0.123,0.003c0,0,0.001,0,0.001,0	c0.24,0,0.57-0.023,1.004-0.071v2.613c0.002,0.529-0.537,0.649-1.25,0.638l0.547,0.184C19.395,43.572,21.645,44,24,44	c2.355,0,4.605-0.428,6.703-1.176l0.703-0.262C30.695,42.538,30.016,42.422,30.01,41.996z" opacity=".05"/><path d="M30.781,42.797c-0.406,0.047-1.281-0.109-1.281-0.795v-5.804c0-1.094-0.328-2.151-0.936-3.052	c5.915-0.957,8.679-4.093,8.679-9.812c0-2.237-0.686-4.194-2.039-5.822c0.137-0.365,0.233-0.75,0.288-1.147	c0.175-1.276-0.016-2.086-0.184-2.801l-0.027-0.116c-0.178-0.761-0.388-1.297-0.397-1.319l-0.111-0.282l-0.303-0.032	c0,0-0.178-0.019-0.449-0.019c-0.381,0-0.944,0.037-1.466,0.215l-0.196,0.066c-0.714,0.241-1.389,0.468-2.321,1.024	c-0.332,0.198-0.702,0.431-1.101,0.694C27.404,13.394,25.745,13.19,24,13.19c-1.762,0-3.435,0.205-4.979,0.61	c-0.403-0.265-0.775-0.499-1.109-0.699c-0.932-0.556-1.607-0.784-2.321-1.024l-0.196-0.066c-0.521-0.177-1.085-0.215-1.466-0.215	c-0.271,0-0.449,0.019-0.449,0.019l-0.302,0.032l-0.113,0.283c-0.009,0.022-0.219,0.558-0.397,1.319l-0.027,0.116	c-0.169,0.715-0.36,1.524-0.184,2.8c0.056,0.407,0.156,0.801,0.298,1.174c-1.327,1.62-1.999,3.567-1.999,5.795	c0,5.703,2.766,8.838,8.686,9.806c-0.395,0.59-0.671,1.255-0.813,1.964c-0.33,0.13-0.629,0.216-0.891,0.256	c-0.263,0.04-0.537,0.06-0.814,0.06c-0.69,0-1.353-0.129-1.69-0.329c-0.44-0.261-1.057-0.914-1.572-1.665	c-0.35-0.51-1.047-1.417-1.788-1.755c-0.635-0.29-1.298-0.457-1.821-0.457c-0.11,0-0.21,0.008-0.298,0.022	c-0.366,0.058-0.668,0.252-0.828,0.534c-0.128,0.224-0.149,0.483-0.059,0.708c0.179,0.448,0.842,0.85,1.119,1.002	c0.335,0.184,0.919,0.744,1.254,1.284c0.251,0.404,0.37,0.697,0.521,1.067c0.085,0.209,0.178,0.437,0.304,0.712	c0.331,0.719,1.353,1.472,1.905,1.803c0.754,0.452,2.154,0.578,2.922,0.612l0.111,0.002c0.299,0,0.8-0.045,1.495-0.135v3.177	c0,0.779-0.991,0.81-1.234,0.81c-0.031,0,0.503,0.184,0.503,0.184C19.731,43.64,21.822,44,24,44c2.178,0,4.269-0.36,6.231-1.003	C30.231,42.997,30.812,42.793,30.781,42.797z" opacity=".07"/><path fill="#fff" d="M36.744,23.334c0-2.31-0.782-4.226-2.117-5.728c0.145-0.325,0.296-0.761,0.371-1.309	c0.172-1.25-0.031-2-0.203-2.734s-0.375-1.25-0.375-1.25s-0.922-0.094-1.703,0.172s-1.453,0.469-2.422,1.047	c-0.453,0.27-0.909,0.566-1.27,0.806C27.482,13.91,25.785,13.69,24,13.69c-1.801,0-3.513,0.221-5.067,0.652	c-0.362-0.241-0.821-0.539-1.277-0.811c-0.969-0.578-1.641-0.781-2.422-1.047s-1.703-0.172-1.703-0.172s-0.203,0.516-0.375,1.25	s-0.375,1.484-0.203,2.734c0.077,0.562,0.233,1.006,0.382,1.333c-1.31,1.493-2.078,3.397-2.078,5.704	c0,5.983,3.232,8.714,9.121,9.435c-0.687,0.726-1.148,1.656-1.303,2.691c-0.387,0.17-0.833,0.33-1.262,0.394	c-1.104,0.167-2.271,0-2.833-0.333s-1.229-1.083-1.729-1.813c-0.422-0.616-1.031-1.331-1.583-1.583	c-0.729-0.333-1.438-0.458-1.833-0.396c-0.396,0.063-0.583,0.354-0.5,0.563c0.083,0.208,0.479,0.521,0.896,0.75	c0.417,0.229,1.063,0.854,1.438,1.458c0.418,0.674,0.5,1.063,0.854,1.833c0.249,0.542,1.101,1.219,1.708,1.583	c0.521,0.313,1.562,0.491,2.688,0.542c0.389,0.018,1.308-0.096,2.083-0.206v3.75c0,0.639-0.585,1.125-1.191,1.013	C19.756,43.668,21.833,44,24,44c2.166,0,4.243-0.332,6.19-0.984C29.585,43.127,29,42.641,29,42.002v-5.804	c0-1.329-0.527-2.53-1.373-3.425C33.473,32.071,36.744,29.405,36.744,23.334z M11.239,32.727c-0.154-0.079-0.237-0.225-0.185-0.328	c0.052-0.103,0.22-0.122,0.374-0.043c0.154,0.079,0.237,0.225,0.185,0.328S11.393,32.806,11.239,32.727z M12.451,33.482	c-0.081,0.088-0.255,0.06-0.389-0.062s-0.177-0.293-0.096-0.381c0.081-0.088,0.255-0.06,0.389,0.062S12.532,33.394,12.451,33.482z M13.205,34.732c-0.102,0.072-0.275,0.005-0.386-0.15s-0.118-0.34-0.016-0.412s0.275-0.005,0.386,0.15	C13.299,34.475,13.307,34.66,13.205,34.732z M14.288,35.673c-0.069,0.112-0.265,0.117-0.437,0.012s-0.256-0.281-0.187-0.393	c0.069-0.112,0.265-0.117,0.437-0.012S14.357,35.561,14.288,35.673z M15.312,36.594c-0.213-0.026-0.371-0.159-0.353-0.297	c0.017-0.138,0.204-0.228,0.416-0.202c0.213,0.026,0.371,0.159,0.353,0.297C15.711,36.529,15.525,36.62,15.312,36.594z M16.963,36.833c-0.227-0.013-0.404-0.143-0.395-0.289c0.009-0.146,0.2-0.255,0.427-0.242c0.227,0.013,0.404,0.143,0.395,0.289	C17.381,36.738,17.19,36.846,16.963,36.833z M18.521,36.677c-0.242,0-0.438-0.126-0.438-0.281s0.196-0.281,0.438-0.281	c0.242,0,0.438,0.126,0.438,0.281S18.762,36.677,18.521,36.677z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">
+    Bài 12: Liên kết và Đạo hàm Hiệp biến — Dẫn đường trên Đa tạp Cong
+    
+  </h1>
+  <h2 id="1-tổng-quan">1. Tổng quan</h2>
+
+<p>Trong giải tích phẳng (trên \(\mathbb{R}^n\)), việc so sánh hai vector tại hai điểm khác nhau rất dễ dàng: chúng ta chỉ cần tịnh tiến (di chuyển song song) vector này đến vị trí của vector kia và so sánh các thành phần của chúng. Vì không gian là phẳng, việc tịnh tiến không phụ thuộc vào đường đi. Đạo hàm của một trường vector chỉ đơn giản là lấy đạo hàm từng thành phần.</p>
+
+<p>Tuy nhiên, trên một đa tạp cong (như mặt cầu), khái niệm “song song” trở nên rắc rối. Nếu bạn di chuyển một vector “song song” với chính nó dọc theo một đường kín trên mặt cầu (ví dụ: từ Bắc Cực xuống Xích đạo, đi dọc Xích đạo rồi quay về Bắc Cực), vector đó khi quay về sẽ bị xoay đi một góc so với vector ban đầu! Điều này có nghĩa là không gian cong không có tính chất “song song toàn cục”.</p>
+
+<p>Để làm giải tích trên đa tạp cong, chúng ta cần một quy tắc để kết nối các không gian tiếp tuyến tại các điểm lân cận nhau. Quy tắc này được gọi là <em>Liên kết</em> (Connection) hay <em>Liên kết Affine</em>. Nó cho phép chúng ta định nghĩa <em>Đạo hàm hiệp biến</em> (Covariant Derivative) — sự tổng quát hóa của đạo hàm định hướng cho các trường vector trên đa tạp.</p>
+
+<p>Bài giảng này sẽ giới thiệu khái niệm đạo hàm hiệp biến, các ký hiệu Christoffel (tái xuất hiện từ góc nhìn hiện đại), và định nghĩa lại đường trắc địa (geodesic) một cách thanh lịch hơn: đường cong có vector vận tốc song song với chính nó.</p>
+
+<h2 id="2-giải-thích-trực-quan">2. Giải thích Trực quan</h2>
+
+<h2 id="2-giải-thích-trực-quan-1">2. Giải thích Trực quan</h2>
+
+<h3 id="21-vấn-đề-của-đạo-hàm-trên-mặt-cong">2.1. Vấn đề của Đạo hàm trên Mặt cong</h3>
+
+<p>Đạo hàm là phép so sánh giá trị của hàm (hoặc vector) tại hai điểm rất gần nhau.
+\(\lim_{h \to 0} \frac{V(p+h) - V(p)}{h}\)
+Phép trừ \(V(p+h) - V(p)\) chỉ thực hiện được nếu hai vector này nằm trong cùng một không gian vector. Nhưng trên đa tạp cong, \(V(p)\) nằm trong không gian tiếp tuyến \(T_pM\), còn \(V(p+h)\) nằm trong \(T_{p+h}M\). Hai không gian này là hai mặt phẳng khác nhau! Chúng ta không thể trừ chúng trực tiếp.</p>
+
+<blockquote>
+  <p>[!TIP]
+<strong>Hình dung “So sánh Táo và Cam”:</strong>
+Bạn không thể trừ trực tiếp một vector ở Hà Nội cho một vector ở New York vì “hệ quy chiếu” (mặt phẳng tiếp tuyến) của chúng khác nhau.
+Để so sánh, bạn phải “vận chuyển” vector từ New York về Hà Nội (hoặc ngược lại) theo một quy tắc nhất định. Quy tắc đó gọi là <strong>Liên kết (Connection)</strong>.</p>
+</blockquote>
+
+<p>Chúng ta cần một cách để “vận chuyển” vector từ \(p+h\) về \(p\) để so sánh. Cách vận chuyển này không phải là duy nhất mà phụ thuộc vào cấu trúc hình học của đa tạp. Quy tắc vận chuyển này chính là <em>Liên kết</em>.</p>
+
+<h3 id="22-vận-chuyển-song-song-parallel-transport">2.2. Vận chuyển Song song (Parallel Transport)</h3>
+
+<p>Hãy tưởng tượng bạn đang đi bộ trên mặt đất (đa tạp) và cầm theo một cây gậy (vector). Bạn cố gắng giữ cây gậy luôn chỉ theo cùng một hướng so với la bàn (song song).</p>
+<ul>
+  <li>Trên mặt phẳng: Sau khi đi một vòng, cây gậy vẫn chỉ hướng cũ.</li>
+  <li>Trên mặt cầu: Sau một vòng tam giác (Cực Bắc -&gt; Xích đạo -&gt; Xích đạo -&gt; Cực Bắc), cây gậy sẽ bị xoay đi!</li>
+</ul>
+
+<blockquote>
+  <p>[!NOTE]
+<strong>Hình dung “Đi bộ cầm Cờ”:</strong>
+Tưởng tượng bạn cầm một lá cờ và đi bộ trên bề mặt trái đất.</p>
+  <ul>
+    <li>Nhiệm vụ của bạn là giữ cho cán cờ luôn song song với chính nó tại mọi bước đi (không xoay cổ tay).</li>
+    <li>Nếu bạn đi trên đường thẳng, lá cờ luôn chỉ về một hướng.</li>
+    <li>Nếu bạn đi trên đường cong, bạn cảm thấy mình phải liên tục điều chỉnh để lá cờ “thẳng”.</li>
+    <li>Sự khác biệt giữa hướng lá cờ khi bạn quay về điểm xuất phát so với lúc bắt đầu chính là bằng chứng của độ cong.</li>
+  </ul>
+</blockquote>
+
+<p>Hiện tượng vector bị xoay khi vận chuyển song song quanh một vòng kín chính là bản chất của <em>Độ cong</em>. Đạo hàm hiệp biến đo lường sự thay đổi của vector so với sự vận chuyển song song này. Nếu vector thay đổi đúng bằng lượng mà sự vận chuyển song song quy định, ta nói đạo hàm hiệp biến của nó bằng 0.</p>
+
+<h3 id="23-ký-hiệu-christoffel-những-kẻ-điều-chỉnh">2.3. Ký hiệu Christoffel: Những kẻ điều chỉnh</h3>
+
+<p>Trong hệ tọa độ, đạo hàm thường của một vector \(V = V^i \partial_i\) sẽ là \(\partial_j V^i\). Tuy nhiên, đạo hàm này không phải là một tensor vì nó phụ thuộc vào hệ tọa độ.
+Đạo hàm hiệp biến thêm vào một số hạng “điều chỉnh” để bù trừ cho sự cong của hệ tọa độ và đa tạp:
+\(\nabla_j V^i = \partial_j V^i + \Gamma^i_{jk} V^k\)
+Các hệ số \(\Gamma^i_{jk}\) chính là ký hiệu Christoffel. Chúng không phải là tensor, mà đóng vai trò như “lực giả” (giống lực Coriolis) xuất hiện do hệ tọa độ cong.</p>
+
+<blockquote>
+  <p>[!IMPORTANT]
+<strong>Công thức Đạo hàm Hiệp biến:</strong>
+\(\text{Thay đổi Nội tại} = \text{Thay đổi Tổng cộng} - \text{Thay đổi do Lưới Tọa độ}\)</p>
+  <ul>
+    <li>\(\nabla_j V^i\): Thay đổi nội tại (Intrinsic change) - cái chúng ta quan tâm.</li>
+    <li>\(\partial_j V^i\): Thay đổi tổng cộng (Total change) - cái chúng ta tính được từ đạo hàm thường.</li>
+    <li>\(\Gamma^i_{jk} V^k\): Thay đổi do lưới tọa độ (Coordinate grid change) - phần “ảo” do hệ tọa độ bị cong.
+Chúng ta trừ đi phần thay đổi do lưới tọa độ để có được sự thay đổi thực sự về mặt hình học.</li>
+  </ul>
+</blockquote>
+
+<h2 id="3-định-nghĩa-hình-thức-và-ký-hiệu">3. Định nghĩa Hình thức và Ký hiệu</h2>
+
+<h3 id="31-liên-kết-affine-affine-connection">3.1. Liên kết Affine (Affine Connection)</h3>
+
+<p><strong>Định nghĩa:</strong>
+Một <em>liên kết affine</em> \(\nabla\) trên đa tạp trơn \(M\) là một quy tắc gán cho mỗi cặp trường vector \(X, Y\) một trường vector thứ ba \(\nabla_X Y\), gọi là đạo hàm hiệp biến của \(Y\) theo hướng \(X\), thỏa mãn các tính chất:</p>
+
+<ol>
+  <li><strong>Tuyến tính theo \(X\) trên \(C^\infty(M)\):</strong>
+\(\nabla_{fX_1 + gX_2} Y = f \nabla_{X_1} Y + g \nabla_{X_2} Y\)</li>
+  <li><strong>Tuyến tính theo \(Y\) trên \(\mathbb{R}\):</strong>
+\(\nabla_X (aY_1 + bY_2) = a \nabla_X Y_1 + b \nabla_X Y_2\)</li>
+  <li><strong>Quy tắc Leibniz (Product Rule):</strong>
+\(\nabla_X (fY) = f \nabla_X Y + (Xf)Y\)
+(Trong đó \(Xf\) là đạo hàm hướng của hàm \(f\) theo vector \(X\)).</li>
+</ol>
+
+<h3 id="32-thành-phần-và-ký-hiệu-christoffel">3.2. Thành phần và Ký hiệu Christoffel</h3>
+
+<p>Trong một hệ tọa độ địa phương \((x^i)\) với cơ sở \(\partial_i = \frac{\partial}{\partial x^i}\), chúng ta định nghĩa các <em>ký hiệu Christoffel</em> \(\Gamma^k_{ij}\) của liên kết \(\nabla\) bởi:
+\(\nabla_{\partial_i} \partial_j = \Gamma^k_{ij} \partial_k\)
+(Quy ước tổng Einstein được sử dụng).</p>
+
+<p>Đạo hàm hiệp biến của một trường vector \(Y = Y^j \partial_j\) theo hướng \(X = X^i \partial_i\) được tính bằng công thức:
+\(\nabla_X Y = \left( X(Y^k) + X^i Y^j \Gamma^k_{ij} \right) \partial_k\)
+Thành phần thứ \(k\) của \(\nabla Y\) thường được ký hiệu là \(Y^k_{;i}\) hoặc \(\nabla_i Y^k\):
+\(\nabla_i Y^k = \frac{\partial Y^k}{\partial x^i} + \Gamma^k_{ij} Y^j\)</p>
+
+<h3 id="33-liên-kết-levi-civita">3.3. Liên kết Levi-Civita</h3>
+
+<p>Trên một đa tạp Riemann có metric \(g\), có vô số liên kết possible. Tuy nhiên, có một liên kết duy nhất thỏa mãn hai điều kiện tự nhiên:</p>
+<ol>
+  <li><strong>Không xoắn (Torsion-free):</strong> \(\Gamma^k_{ij} = \Gamma^k_{ji}\) (đối xứng dưới).</li>
+  <li><strong>Bảo toàn metric (Metric-compatible):</strong> \(\nabla g = 0\). Nghĩa là tích vô hướng của hai vector không đổi khi cả hai được vận chuyển song song.</li>
+</ol>
+
+<p>Liên kết này gọi là <em>Liên kết Levi-Civita</em>. Các ký hiệu Christoffel của nó được tính hoàn toàn từ metric \(g\) (như chúng ta đã thấy ở Bài 9):
+\(\Gamma^k_{ij} = \frac{1}{2} g^{kl} (\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij})\)</p>
+
+<h3 id="34-đường-trắc-địa-geodesic-tái-định-nghĩa">3.4. Đường Trắc địa (Geodesic) Tái định nghĩa</h3>
+
+<p>Sử dụng liên kết, ta có định nghĩa thanh lịch nhất về đường trắc địa:
+Một đường cong \(\gamma(t)\) là <em>trắc địa</em> nếu vector vận tốc \(\dot{\gamma}(t)\) của nó <em>song song</em> dọc theo chính nó.
+\(\nabla_{\dot{\gamma}} \dot{\gamma} = 0\)
+Trong tọa độ địa phương, phương trình này khai triển thành hệ phương trình vi phân quen thuộc:
+\(\ddot{x}^k + \Gamma^k_{ij} \dot{x}^i \dot{x}^j = 0\)
+Điều này thống nhất khái niệm “ngắn nhất” (từ biến phân) và “thẳng nhất” (gia tốc bằng 0).</p>
+
+<h2 id="4-hình-ảnh-minh-họa">4. Hình ảnh minh họa</h2>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Parallel_Transport.svg" alt="Vận chuyển song song trên mặt cầu" />
+<em>Hình 1: Vận chuyển song song một vector dọc theo một đường kín trên mặt cầu. Vector bắt đầu tại cực Bắc, di chuyển xuống xích đạo, đi dọc xích đạo, rồi quay về cực Bắc. Khi quay về, vector đã bị xoay một góc \(\alpha\), tỉ lệ với diện tích vùng bị bao quanh. Đây là minh họa trực quan của độ cong.</em></p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Tangent_bundle_manifold.svg/640px-Tangent_bundle_manifold.svg.png" alt="Tiếp tuyến và Liên kết" />
+<em>Hình 2: Minh họa không gian tiếp tuyến (Tangent Bundle). Liên kết (Connection) cung cấp một cách để “kết nối” các không gian tiếp tuyến tại các điểm khác nhau, cho phép so sánh vector.</em></p>
+
+<h2 id="5-các-công-trình-nền-tảng--tài-liệu-tham-khảo">5. Các Công trình Nền tảng &amp; Tài liệu Tham khảo</h2>
+
+<p>🧠 <strong>Các Công trình Nền tảng &amp; Tài liệu Tham khảo</strong></p>
+
+<ol>
+  <li>
+    <p><strong>Levi-Civita, Tullio (1917).</strong> <em>Nozione di parallelismo in una varietà qualunque</em>.
+Bài báo giới thiệu khái niệm vận chuyển song song và liên kết, giải quyết vấn đề so sánh vector trên đa tạp cong một cách hình học.</p>
+  </li>
+  <li>
+    <p><strong>Koszul, Jean-Louis (1950).</strong>
+Người đã đưa ra định nghĩa đại số hiện đại (tiên đề hóa) cho liên kết mà chúng ta dùng ngày nay (\(\nabla_X Y\)), giúp giải phóng lý thuyết khỏi sự phụ thuộc vào hệ tọa độ.</p>
+  </li>
+  <li>
+    <p><strong>Do Carmo, Manfredo P. (1992).</strong> <em>Riemannian Geometry</em>.
+Chương 2 về Liên kết Levi-Civita là tài liệu chuẩn mực cho sinh viên toán.</p>
+  </li>
+  <li>
+    <p><strong>Carroll, Sean (2004).</strong> <em>Spacetime and Geometry</em>.
+Sách vật lý giải thích rất hay về ý nghĩa vật lý của đạo hàm hiệp biến và tại sao chúng ta cần nó trong Thuyết tương đối rộng.</p>
+  </li>
+</ol>
+
+<h2 id="6-ứng-dụng-và-kết-nối-liên-ngành">6. Ứng dụng và Kết nối Liên ngành</h2>
+
+<p>🔗 <strong>Ứng dụng và Kết nối Liên ngành</strong></p>
+
+<h3 id="61-vật-lý-lực-quán-tính-và-lực-hấp-dẫn">6.1. Vật lý: Lực quán tính và Lực hấp dẫn</h3>
+<p>Trong cơ học cổ điển, nếu bạn viết định luật Newton \(F=ma\) trong hệ tọa độ cong (ví dụ tọa độ cực), các số hạng chứa \(\Gamma\) sẽ xuất hiện ở vế gia tốc. Chúng tương ứng với lực ly tâm và lực Coriolis.
+Trong Thuyết tương đối rộng, lực hấp dẫn không phải là một lực thực sự mà chính là biểu hiện của các ký hiệu \(\Gamma\) do không thời gian bị cong. Vật thể rơi tự do tuân theo phương trình geodesic \(\nabla_{\dot{\gamma}} \dot{\gamma} = 0\).</p>
+
+<h3 id="62-lý-thuyết-trường-gauge-gauge-theory">6.2. Lý thuyết Trường Gauge (Gauge Theory)</h3>
+<p>Trong vật lý hạt cơ bản, các lực cơ bản (điện từ, yếu, mạnh) được mô tả bởi các “trường gauge”. Về mặt toán học, trường gauge chính là một <em>liên kết</em> trên một phân thớ vector (vector bundle). Thế vector điện từ \(A_\mu\) chính là thành phần của một liên kết, và trường điện từ \(F_{\mu\nu}\) là độ cong của liên kết đó.</p>
+
+<h3 id="63-robot-và-điều-khiển">6.3. Robot và Điều khiển</h3>
+<p>Khi điều khiển cánh tay robot nhiều khớp, không gian cấu hình (configuration space) là một đa tạp cong. Để tính toán động lực học (lực cần thiết để di chuyển robot theo quỹ đạo), kỹ sư phải tính đạo hàm hiệp biến của vận tốc và gia tốc trong không gian cấu hình này.</p>
+
+<h2 id="7-bài-tập-và-suy-ngẫm">7. Bài tập và Suy ngẫm</h2>
+
+<p>🧩 <strong>Bài tập và Suy ngẫm</strong></p>
+
+<p><strong>Bài tập 1: Đạo hàm thường vs Hiệp biến</strong>
+Trong không gian phẳng \(\mathbb{R}^2\) với tọa độ cực \((r, \theta)\).
+Vector cơ sở là \(e_r = \frac{\partial}{\partial r}, e_\theta = \frac{\partial}{\partial \theta}\).
+Hãy tính \(\nabla_{e_\theta} e_r\). (Gợi ý: Vector \(e_r\) thay đổi hướng như thế nào khi bạn quay một góc nhỏ \(\theta\)?). Kết quả sẽ cho bạn các ký hiệu Christoffel khác 0 của tọa độ cực.</p>
+
+<p><strong>Bài tập 2: Tính chất của Liên kết</strong>
+Chứng minh tính chất: \(\nabla_X (fY) = (Xf)Y + f\nabla_X Y\) bằng cách sử dụng biểu thức trong tọa độ địa phương.</p>
+
+<p><strong>Bài tập 3: Vận chuyển song song</strong>
+Trên mặt phẳng \(\mathbb{R}^2\), xét đường tròn đơn vị. Một vector luôn hướng ra ngoài (pháp tuyến) tại mọi điểm trên đường tròn có phải là trường vector song song dọc theo đường tròn đó không? Tại sao?</p>
+
+<p><strong>Bài tập 4: Suy ngẫm</strong>
+Nếu \(\Gamma^k_{ij} = 0\) tại mọi điểm trong một hệ tọa độ nào đó, điều này nói gì về không gian đó? (Gợi ý: Không gian phẳng). Liệu có thể làm cho \(\Gamma\) bằng 0 tại <em>một điểm</em> trên đa tạp cong không? (Có, dùng tọa độ trắc địa/tọa độ chuẩn). Nhưng có thể làm \(\Gamma\) bằng 0 tại <em>mọi điểm</em> trên đa tạp cong không?</p>
+
+<hr />
+
+<p>Trong bài giảng tiếp theo, chúng ta sẽ quay lại với khái niệm <strong>Độ cong</strong> nhưng ở mức độ tổng quát và sâu sắc hơn: <em>Tensor độ cong Riemann</em>. Chúng ta sẽ thấy độ cong chính là thước đo sự “thất bại” của các đạo hàm hiệp biến trong việc giao hoán với nhau.</p>
+
+</div>
+
+<!-- Back to Chapter Home Link -->
+
+  
+  
+  <div style="margin-top: 20px; padding: 10px; background-color: #f8f9fa; border-left: 4px solid #007bff;">
+    <a href="/differential-geometry-self-learning/contents/vi/chapter06/" style="text-decoration: none; color: #007bff; font-weight: bold;">
+      ← Quay lại đầu chương
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="related">
+  <ul class="related-posts">
+    
+      
+        <li>
+          <h2>Previous Post</h2>
+          <h3>
+            <a href="/differential-geometry-self-learning/contents/vi/chapter06/lecture-11-tensors-and-fields/">
+              Bài 11: Tensor và Trường Tensor trên Đa tạp
+            </a>
+          </h3>
+        </li>
+      
+    
+      
+    
+    
+    
+  
+    
+  
+  </ul>
+</div>
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="convex-differential-geometry-for-all/convex-differential-geometry-for-all.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/differential-geometry-self-learning/public/js/script.js'></script>
+    <script src='/differential-geometry-self-learning/public/js/multilang.js'></script>
+    <script src='/differential-geometry-self-learning/public/js/search.js'></script>
+  </body>
+</html>

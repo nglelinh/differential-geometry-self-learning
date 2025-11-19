@@ -1,0 +1,49 @@
+---
+layout: chapter_index
+title: "Advanced Topics"
+lang: vi
+lang-ref: differential-geometry-chapter09
+chapter: '09'
+permalink: /contents/vi/chapter09/
+---
+
+# Chapter 09: Những Chân trời Mới
+
+<div class="chapter-intro"
+    style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Hành trình của chúng ta chưa kết thúc ở đây. Hình học Vi phân là một lĩnh vực rộng lớn và đang phát triển mạnh
+        mẽ.
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Chương cuối cùng này mở ra những cánh cửa đến các chủ đề nâng cao hơn:
+    </p>
+    <ul style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em; padding-left: 1.5em;">
+        <li><strong>Cohomology de Rham:</strong> Mối liên hệ sâu sắc giữa giải tích (dạng vi phân) và tô-pô (lỗ hổng của
+            không gian).</li>
+        <li><strong>Lý thuyết Hodge:</strong> Sự hài hòa của các dạng vi phân trên đa tạp Riemann.</li>
+        <li><strong>Bó (Bundles):</strong> Cách nhìn hiện đại về trường vector và các cấu trúc hình học khác.</li>
+    </ul>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+        Đây là những gợi ý để bạn tiếp tục tự nghiên cứu và khám phá vẻ đẹp vô tận của toán học.
+    </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter09 | sort: "order" %}
+<div class="lecture-list-simple">
+    {% for lecture in lectures %}
+    <div class="lecture-item">
+        <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+        <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem
+            chi tiết →</a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/contents/vi/" style="font-weight: bold;">Quay về Trang chủ →</a>
+</div>

@@ -1,0 +1,159 @@
+---
+layout: default
+title: Trang chủ
+lang: vi
+---
+
+<div style="text-align: center; padding: 3em 0 2em 0;">
+    <h1 style="font-size: 2.5em; margin-bottom: 0.5em; color: #268bd2;">Tự học Hình học Vi phân</h1>
+    <p style="font-size: 1.3em; color: #666; max-width: 800px; margin: 0 auto;">
+        Hành trình từ Đường cong phẳng đến Độ cong của Vũ trụ
+    </p>
+</div>
+
+<div style="max-width: 900px; margin: 0 auto; padding: 2em 1em;">
+
+    ## 🎯 Giới thiệu Khóa học
+
+    **Hình học Vi phân** là một trong những lĩnh vực đẹp nhất và sâu sắc nhất của toán học hiện đại. Nó là ngôn ngữ của
+    **Thuyết Tương đối Rộng**, là công cụ thiết yếu trong **Vật lý Lý thuyết**, **Đồ họa Máy tính**, **Robotics**, và
+    **Học Máy**.
+
+    Khóa học này được thiết kế để đưa bạn từ những khái niệm cơ bản nhất (đường cong, bề mặt) đến những ý tưởng sâu sắc
+    nhất (tensor độ cong Riemann, nhóm Lie, không-thời gian). Mỗi bài giảng đều được viết với triết lý:
+
+    > **"Trực giác trước, Công thức sau. Hình học trước, Đại số sau."**
+
+    Chúng tôi tin rằng toán học không chỉ là tính toán, mà là **cách tư duy** về thế giới.
+
+    ---
+
+    ## 📚 Cấu trúc Khóa học
+
+    Khóa học gồm **10 chương**, từ nền tảng đến nâng cao, với **hơn 20 bài giảng** chi tiết.
+
+    ### **Chapter 00: Nền tảng**
+    *Công cụ toán học cần thiết trước khi bắt đầu*
+
+    Trước khi nghiên cứu không gian cong, bạn cần nắm vững ngôn ngữ của không gian phẳng. Chương này ôn tập và mở rộng:
+    - **Đại số Tuyến tính:** Vector, Covector, Tensor, Không gian Đối ngẫu
+    - **Giải tích Đa biến:** Đạo hàm riêng, Ma trận Jacobian, Định lý Hàm Ngược
+    - **Tô-pô:** Tập mở, Liên tục, Đa tạp, Bản đồ (Charts)
+    - **Phương trình Vi phân:** Trường Vector, Dòng chảy (Flows)
+
+    [Bắt đầu Chapter 00 →](/differential-geometry-self-learning/contents/vi/chapter00/)
+
+    ---
+
+    ### **Chapter 01: Hình học như Nghiên cứu về Biến đổi Trơn**
+    *Từ Euclid đến Riemann*
+
+    Chúng ta bắt đầu hành trình với những đối tượng đơn giản nhất: **Đường cong trong không gian**.
+    - Tham số hóa đường cong
+    - Độ dài cung và Tái tham số hóa
+    - Độ cong và Hệ Frenet (Tangent, Normal, Binormal)
+    - Xoắn (Torsion) - Đo sự "vặn" của đường cong trong không gian 3D
+
+    **Ý tưởng chính:** Hình học của một đường cong được mã hóa hoàn toàn bởi hai hàm số: Độ cong $$\kappa(s)$$ và Xoắn
+    $$\tau(s)$$.
+
+    [Khám phá Chapter 01 →](/differential-geometry-self-learning/contents/vi/chapter01/)
+
+    ---
+
+    ### **Chapter 02: Từ Đường cong đến Bề mặt**
+    *Bước vào thế giới 2 chiều*
+
+    Từ đường cong 1 chiều, chúng ta bước sang **Bề mặt** - thế giới 2 chiều nhúng trong không gian 3 chiều.
+    - Bề mặt Chính quy (Regular Surfaces)
+    - Mặt phẳng Tiếp tuyến (Tangent Plane)
+    - Vector Pháp tuyến (Normal Vector)
+    - Ví dụ kinh điển: Mặt cầu, Mặt xuyến (Torus), Mặt yên ngựa
+
+    **Câu hỏi trung tâm:** Làm thế nào để mô tả một bề mặt mà không cần nhìn nó từ bên ngoài?
+
+    [Tiếp tục Chapter 02 →](/differential-geometry-self-learning/contents/vi/chapter02/)
+
+    ---
+
+    ### **Chapter 03: Đo đạc sự Cong vênh**
+    *Hai Dạng Cơ bản (Fundamental Forms)*
+
+    Đây là trái tim của hình học bề mặt cổ điển.
+    - **Dạng Cơ bản Thứ nhất (First Fundamental Form):** Metric - Đo độ dài, góc, diện tích
+    - **Dạng Cơ bản Thứ hai (Second Fundamental Form):** Đo sự uốn cong trong không gian bao quanh
+    - **Độ cong Gauss** $$K$$ và **Độ cong Trung bình** $$H$$
+    - Phân loại bề mặt: Elliptic ($$K > 0$$), Parabolic ($$K = 0$$), Hyperbolic ($$K < 0$$) **Định lý quan trọng:** Độ
+        cong Gauss $$K$$ là bất biến đẳng cự (không đổi khi uốn mà không giãn). [Đo đạc Chapter 03
+        →](/differential-geometry-self-learning/contents/vi/chapter03/) --- ### **Chapter 04: Hình học Nội tại**
+        *Theorema Egregium của Gauss* Bước ngoặt lịch sử: Chúng ta không còn cần nhìn bề mặt từ bên ngoài nữa! - **Định
+        lý Egregium (Định lý Tuyệt vời):** Độ cong Gauss có thể tính được chỉ bằng các phép đo trên bề mặt - **Đường
+        trắc địa (Geodesics):** Đường "thẳng nhất" trên bề mặt cong - Phương trình trắc địa - Vận chuyển song song
+        (Parallel Transport) **Ý nghĩa:** Một con kiến sống trên bề mặt có thể phát hiện ra độ cong mà không cần bay lên
+        không trung! [Khám phá Chapter 04 →](/differential-geometry-self-learning/contents/vi/chapter04/) --- ###
+        **Chapter 05: Ngôn ngữ của Dạng Vi phân** *Công cụ hiện đại cho Tích phân trên Đa tạp* Để tích phân trên các
+        không gian cong, chúng ta cần công cụ mạnh hơn vector. - **Dạng Vi phân (Differential Forms):** 1-form, 2-form,
+        k-form - **Tích Nêm (Wedge Product):** Nhân các dạng vi phân - **Đạo hàm Ngoài (Exterior Derivative):** Toán tử
+        $$d$$ - **Định lý Stokes Tổng quát:** $$\int_{\partial \Omega} \omega=\int_{\Omega} d\omega$$ **Sức mạnh:** Một
+        công thức duy nhất thay thế tất cả các định lý tích phân cổ điển (Green, Gauss, Stokes). [Nâng cấp Chapter 05
+        →](/differential-geometry-self-learning/contents/vi/chapter05/) --- ### **Chapter 06: Tensor và Kết nối** *Ngôn
+        ngữ của Vật lý Hiện đại* Vật lý nói bằng ngôn ngữ Tensor. Đây là lý do tại sao. - **Tensor:** Đối tượng hình học
+        bất biến với thay đổi tọa độ - **Trường Tensor (Tensor Fields):** Gán một tensor cho mỗi điểm - **Kết nối Affine
+        (Affine Connection):** Cách "kết nối" các không gian tiếp tuyến - **Đạo hàm Hiệp biến (Covariant Derivative):**
+        Đạo hàm trên đa tạp cong **Vấn đề:** Làm sao so sánh hai vector ở hai điểm khác nhau trên bề mặt cong? → Cần Kết
+        nối! [Kết nối Chapter 06 →](/differential-geometry-self-learning/contents/vi/chapter06/) --- ### **Chapter 07:
+        Hình học Riemann** *Trái tim của Khóa học* Đây là tổng hợp của mọi thứ chúng ta đã học. - **Đa tạp Riemann
+        (Riemannian Manifold):** Không gian cong với Metric - **Tensor Độ cong Riemann:** Đo độ cong của không gian
+        n-chiều - **Tensor Ricci** và **Độ cong Vô hướng (Scalar Curvature)** - Phương trình trắc địa và Lệch trắc địa
+        (Geodesic Deviation) **Ứng dụng:** Đây chính là toán học đằng sau **Thuyết Tương đối Rộng** của Einstein. [Chinh
+        phục Chapter 07 →](/differential-geometry-self-learning/contents/vi/chapter07/) --- ### **Chapter 08: Nhóm Lie
+        và Vật lý** *Khi Hình học gặp Đại số* Nhóm Lie là những đa tạp có cấu trúc nhóm - mô tả các phép đối xứng liên
+        tục. - **Nhóm Lie:** SO(3), SU(2), Nhóm Lorentz - **Đại số Lie:** Không gian tiếp tuyến tại đơn vị -
+        **Exponential Map:** Từ đại số lên nhóm - **Định lý Noether:** Đối xứng → Định luật Bảo toàn - **Không-thời gian
+        trong Tương đối:** Metric Minkowski, Nón Ánh sáng **Ý tưởng:** Mọi đối xứng liên tục đều dẫn đến một định luật
+        bảo toàn trong vật lý. [Đối xứng Chapter 08 →](/differential-geometry-self-learning/contents/vi/chapter08/) ---
+        ### **Chapter 09: Những Chân trời Mới** *Chủ đề Nâng cao và Ứng dụng Thực tế* Chương cuối mở ra những hướng
+        nghiên cứu sâu hơn và ứng dụng thực tế: - **Định lý Pizza (Gauss Curvature):** Tại sao miếng pizza cong lên khi
+        bạn cầm? - **Đường bay Quốc tế (Great Circles):** Tại sao máy bay bay theo cung tròn? - **Bong bóng Xà phòng
+        (Minimal Surfaces):** Bề mặt có diện tích nhỏ nhất - **Lỗ Đen và Tương đối:** Hình học của không-thời gian cong
+        - **Định lý Quả bóng Lông (Hairy Ball Theorem):** Tại sao luôn có bão trên Trái Đất? - **Hình học Hyperbolic và
+        Escher:** Nghệ thuật gặp Toán học **Mục tiêu:** Thấy được Hình học Vi phân ở khắp mọi nơi trong đời sống và khoa
+        học. [Khám phá Chapter 09 →](/differential-geometry-self-learning/contents/vi/chapter09/) --- ## 🎓 Đối tượng
+        Học viên Khóa học này phù hợp với: - **Sinh viên Toán/Vật lý** muốn hiểu sâu về hình học hiện đại - **Kỹ sư/Lập
+        trình viên** làm việc với đồ họa 3D, robotics, hoặc machine learning - **Người tự học** đam mê toán học và muốn
+        hiểu Thuyết Tương đối - **Nhà nghiên cứu** cần công cụ hình học cho lĩnh vực của mình **Yêu cầu tiên quyết:** -
+        Giải tích Đa biến (Calculus III) - Đại số Tuyến tính cơ bản - Khả năng đọc hiểu ký hiệu toán học --- ## 🛠️
+        Phương pháp Học Mỗi bài giảng được cấu trúc theo nguyên tắc: 1. **Trực giác và Ví dụ Thực tế** - Bắt đầu với
+        hình ảnh cụ thể 2. **Định nghĩa Chính xác** - Ngôn ngữ toán học chặt chẽ 3. **Ví dụ Tính toán** - Làm quen với
+        công thức 4. **Định lý Quan trọng** - Kết quả lý thuyết sâu sắc 5. **Ứng dụng** - Liên hệ với vật lý, kỹ thuật,
+        đời sống 6. **Bài tập Tư duy** - Củng cố hiểu biết> **Lưu ý:** Hình học Vi phân không phải là môn học "dễ".
+        Nhưng nếu bạn kiên nhẫn và tư duy cẩn thận, bạn sẽ được thưởng bằng một cái nhìn hoàn toàn mới về thế giới.
+
+        ---
+
+        ## 📖 Tài liệu Tham khảo
+
+        Khóa học này được xây dựng dựa trên các giáo trình kinh điển:
+        - **do Carmo, M.** - *Differential Geometry of Curves and Surfaces* (Sách giáo khoa chính)
+        - **Lee, J.M.** - *Introduction to Smooth Manifolds* (Tiếp cận hiện đại)
+        - **Spivak, M.** - *A Comprehensive Introduction to Differential Geometry* (5 tập, chi tiết nhất)
+        - **O'Neill, B.** - *Elementary Differential Geometry* (Dễ tiếp cận)
+        - **Kobayashi & Nomizu** - *Foundations of Differential Geometry* (Nâng cao)
+
+        ---
+
+        ## 🚀 Bắt đầu Ngay
+
+        <div style="text-align: center; margin: 3em 0;">
+            <a href="/differential-geometry-self-learning/contents/vi/chapter00/"
+                style="display: inline-block; padding: 1em 2em; background-color: #268bd2; color: white; text-decoration: none; border-radius: 5px; font-size: 1.2em; font-weight: bold;">
+                Bắt đầu từ Chapter 00 →
+            </a>
+        </div>
+
+        <div style="text-align: center; color: #888; font-style: italic; margin-top: 2em;">
+            "Hình học là nghệ thuật suy luận đúng đắn từ những hình vẽ sai." <br>
+            — George Pólya
+        </div>
+
+</div>

@@ -1,0 +1,45 @@
+---
+layout: chapter_index
+title: "Curves and Surfaces"
+lang: vi
+lang-ref: differential-geometry-chapter02
+chapter: '02'
+permalink: /contents/vi/chapter02/
+---
+
+# Chapter 02: Từ Đường cong đến Bề mặt
+
+<div class="chapter-intro"
+    style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Chúng ta đã làm chủ đường cong 1 chiều. Giờ là lúc bước sang thế giới 2 chiều của các <strong>Bề mặt</strong>.
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+        Một tờ giấy phẳng, một quả bóng tròn, hay một chiếc yên ngựa—tất cả đều là bề mặt. Nhưng làm thế nào để mô tả
+        chúng bằng toán học mà không phụ thuộc vào cách chúng ta nhìn chúng từ bên ngoài?
+    </p>
+    <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+        Chương này giới thiệu khái niệm <strong>Bề mặt Chính quy</strong> và công cụ quan trọng nhất để nghiên cứu
+        chúng: <strong>Mặt phẳng Tiếp tuyến</strong>. Hãy tưởng tượng tại mỗi điểm trên quả địa cầu, bạn đặt một tấm bìa
+        cứng phẳng lì lên đó. Tấm bìa đó chính là bản đồ tuyến tính tốt nhất mà chúng ta có về thế giới tại điểm đó.
+    </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter02 | sort: "order" %}
+<div class="lecture-list-simple">
+    {% for lecture in lectures %}
+    <div class="lecture-item">
+        <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+        <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem
+            chi tiết →</a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/contents/vi/chapter03/" style="font-weight: bold;">Tiếp theo: Chapter 03 →</a>
+</div>

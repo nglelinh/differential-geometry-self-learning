@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <style>
+    .MathJax {
+      padding: 2em 0.3em;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  </style>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <title>
+    
+      Bài 5: Thế giới 2 Chiều — Bề mặt và Bản đồ &middot; differential-geometry Self-Learning
+    
+  </title>
+
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/poole.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/syntax.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/lanyon.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/github-markdown.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/multilang.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/search.css">
+  <link rel="stylesheet" href="/differential-geometry-self-learning/public/css/content-boxes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  
+  <!-- Lunr.js for search functionality -->
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+
+  <link rel="apple-touch-icon-precomposed" sizes="122x144" href="http://localhost:4000/differential-geometry-self-learning/public/logo.png">
+  <link rel="shortcut icon" href="http://localhost:4000/differential-geometry-self-learning/public/convex-logo-144x144.png">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/differential-geometry-self-learning/atom.xml">
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogledifferentialsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-differentials.com/differentials.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Khóa học differential-geometry toàn diện cho sinh viên toán</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/">Trang chủ</a>
+
+    
+
+    
+    
+
+    <!-- Hiển thị các chương có sẵn cho ngôn ngữ hiện tại -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter00/">
+      00. Foundations and Set-Theoretic Differential Geometry
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter01/">
+      01. Geometry as Smooth Change
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter02/">
+      02. Curves and Surfaces
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter03/">
+      03. Curvature and Fundamental Forms
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter04/">
+      04. Intrinsic Geometry
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter05/">
+      05. Differential Forms
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter06/">
+      06. Tensors and Connections
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter07/">
+      07. Riemannian Geometry
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter08/">
+      08. Lie Groups and Physics
+      
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="sidebar-nav-item" href="http://localhost:4000/differential-geometry-self-learning/contents/vi/chapter09/">
+      09. Advanced Topics
+      
+    </a>
+    
+    
+    
+    
+
+    <!-- Nếu không có nội dung cho ngôn ngữ hiện tại, hiển thị thông báo -->
+    
+
+    <span class="sidebar-nav-item">Currently v0.0.1</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap github-md-body">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/differential-geometry-self-learning/" title="Trang chủ">Tự học Hình học vi phân</a>
+            <small></small>
+          </h3>
+          <!-- Header Actions: Language Toggle and GitHub Link -->
+          <div class="header-actions">
+            <div class="language-toggle">
+              <a href="/differential-geometry-self-learning/contents/en/chapter00/" class="language-switch" title="Chuyển sang tiếng Anh">Chuyển sang tiếng Anh</a>
+            </div>
+            <a class="github-logo__wrapper" target="_blank" href="https://github.com/nglelinh/differential-geometry-self-learning" title="Github">
+             <svg class="github-logo" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><linearGradient id="rL2wppHyxHVbobwndsT6Ca" x1="4" x2="44" y1="23.508" y2="23.508" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4c4c4c"/><stop offset="1" stop-color="#343434"/></linearGradient><path fill="url(#rL2wppHyxHVbobwndsT6Ca)" d="M24,4C12.954,4,4,12.954,4,24c0,8.887,5.801,16.411,13.82,19.016h12.36	C38.199,40.411,44,32.887,44,24C44,12.954,35.046,4,24,4z"/><path d="M30.01,41.996L30,36.198c0-0.939-0.22-1.856-0.642-2.687c5.641-1.133,8.386-4.468,8.386-10.177	c0-2.255-0.665-4.246-1.976-5.92c0.1-0.317,0.174-0.645,0.22-0.981c0.188-1.369-0.023-2.264-0.193-2.984l-0.027-0.116	c-0.186-0.796-0.409-1.364-0.418-1.388l-0.111-0.282l-0.111-0.282l-0.302-0.032l-0.303-0.032c0,0-0.199-0.021-0.501-0.021	c-0.419,0-1.04,0.042-1.627,0.241l-0.196,0.066c-0.74,0.249-1.439,0.485-2.417,1.069c-0.286,0.171-0.599,0.366-0.934,0.584	C27.334,12.881,25.705,12.69,24,12.69c-1.722,0-3.365,0.192-4.889,0.571c-0.339-0.22-0.654-0.417-0.942-0.589	c-0.978-0.584-1.677-0.819-2.417-1.069l-0.196-0.066c-0.585-0.199-1.207-0.241-1.626-0.241c-0.302,0-0.501,0.021-0.501,0.021	l-0.302,0.032l-0.3,0.031l-0.112,0.281l-0.113,0.283c-0.01,0.026-0.233,0.594-0.419,1.391l-0.027,0.115	c-0.17,0.719-0.381,1.615-0.193,2.983c0.048,0.346,0.125,0.685,0.23,1.011c-1.285,1.666-1.936,3.646-1.936,5.89	c0,5.695,2.748,9.028,8.397,10.17c-0.194,0.388-0.345,0.798-0.452,1.224c-0.197,0.067-0.378,0.112-0.538,0.137	c-0.238,0.036-0.487,0.054-0.739,0.054c-0.686,0-1.225-0.134-1.435-0.259c-0.313-0.186-0.872-0.727-1.414-1.518	c-0.463-0.675-1.185-1.558-1.992-1.927c-0.698-0.319-1.437-0.502-2.029-0.502c-0.138,0-0.265,0.01-0.376,0.028	c-0.517,0.082-0.949,0.366-1.184,0.78c-0.203,0.357-0.235,0.773-0.088,1.141c0.219,0.548,0.851,0.985,1.343,1.255	c0.242,0.133,0.765,0.619,1.07,1.109c0.229,0.368,0.335,0.63,0.482,0.992c0.087,0.215,0.183,0.449,0.313,0.732	c0.47,1.022,1.937,1.924,2.103,2.023c0.806,0.483,2.161,0.638,3.157,0.683l0.123,0.003c0,0,0.001,0,0.001,0	c0.24,0,0.57-0.023,1.004-0.071v2.613c0.002,0.529-0.537,0.649-1.25,0.638l0.547,0.184C19.395,43.572,21.645,44,24,44	c2.355,0,4.605-0.428,6.703-1.176l0.703-0.262C30.695,42.538,30.016,42.422,30.01,41.996z" opacity=".05"/><path d="M30.781,42.797c-0.406,0.047-1.281-0.109-1.281-0.795v-5.804c0-1.094-0.328-2.151-0.936-3.052	c5.915-0.957,8.679-4.093,8.679-9.812c0-2.237-0.686-4.194-2.039-5.822c0.137-0.365,0.233-0.75,0.288-1.147	c0.175-1.276-0.016-2.086-0.184-2.801l-0.027-0.116c-0.178-0.761-0.388-1.297-0.397-1.319l-0.111-0.282l-0.303-0.032	c0,0-0.178-0.019-0.449-0.019c-0.381,0-0.944,0.037-1.466,0.215l-0.196,0.066c-0.714,0.241-1.389,0.468-2.321,1.024	c-0.332,0.198-0.702,0.431-1.101,0.694C27.404,13.394,25.745,13.19,24,13.19c-1.762,0-3.435,0.205-4.979,0.61	c-0.403-0.265-0.775-0.499-1.109-0.699c-0.932-0.556-1.607-0.784-2.321-1.024l-0.196-0.066c-0.521-0.177-1.085-0.215-1.466-0.215	c-0.271,0-0.449,0.019-0.449,0.019l-0.302,0.032l-0.113,0.283c-0.009,0.022-0.219,0.558-0.397,1.319l-0.027,0.116	c-0.169,0.715-0.36,1.524-0.184,2.8c0.056,0.407,0.156,0.801,0.298,1.174c-1.327,1.62-1.999,3.567-1.999,5.795	c0,5.703,2.766,8.838,8.686,9.806c-0.395,0.59-0.671,1.255-0.813,1.964c-0.33,0.13-0.629,0.216-0.891,0.256	c-0.263,0.04-0.537,0.06-0.814,0.06c-0.69,0-1.353-0.129-1.69-0.329c-0.44-0.261-1.057-0.914-1.572-1.665	c-0.35-0.51-1.047-1.417-1.788-1.755c-0.635-0.29-1.298-0.457-1.821-0.457c-0.11,0-0.21,0.008-0.298,0.022	c-0.366,0.058-0.668,0.252-0.828,0.534c-0.128,0.224-0.149,0.483-0.059,0.708c0.179,0.448,0.842,0.85,1.119,1.002	c0.335,0.184,0.919,0.744,1.254,1.284c0.251,0.404,0.37,0.697,0.521,1.067c0.085,0.209,0.178,0.437,0.304,0.712	c0.331,0.719,1.353,1.472,1.905,1.803c0.754,0.452,2.154,0.578,2.922,0.612l0.111,0.002c0.299,0,0.8-0.045,1.495-0.135v3.177	c0,0.779-0.991,0.81-1.234,0.81c-0.031,0,0.503,0.184,0.503,0.184C19.731,43.64,21.822,44,24,44c2.178,0,4.269-0.36,6.231-1.003	C30.231,42.997,30.812,42.793,30.781,42.797z" opacity=".07"/><path fill="#fff" d="M36.744,23.334c0-2.31-0.782-4.226-2.117-5.728c0.145-0.325,0.296-0.761,0.371-1.309	c0.172-1.25-0.031-2-0.203-2.734s-0.375-1.25-0.375-1.25s-0.922-0.094-1.703,0.172s-1.453,0.469-2.422,1.047	c-0.453,0.27-0.909,0.566-1.27,0.806C27.482,13.91,25.785,13.69,24,13.69c-1.801,0-3.513,0.221-5.067,0.652	c-0.362-0.241-0.821-0.539-1.277-0.811c-0.969-0.578-1.641-0.781-2.422-1.047s-1.703-0.172-1.703-0.172s-0.203,0.516-0.375,1.25	s-0.375,1.484-0.203,2.734c0.077,0.562,0.233,1.006,0.382,1.333c-1.31,1.493-2.078,3.397-2.078,5.704	c0,5.983,3.232,8.714,9.121,9.435c-0.687,0.726-1.148,1.656-1.303,2.691c-0.387,0.17-0.833,0.33-1.262,0.394	c-1.104,0.167-2.271,0-2.833-0.333s-1.229-1.083-1.729-1.813c-0.422-0.616-1.031-1.331-1.583-1.583	c-0.729-0.333-1.438-0.458-1.833-0.396c-0.396,0.063-0.583,0.354-0.5,0.563c0.083,0.208,0.479,0.521,0.896,0.75	c0.417,0.229,1.063,0.854,1.438,1.458c0.418,0.674,0.5,1.063,0.854,1.833c0.249,0.542,1.101,1.219,1.708,1.583	c0.521,0.313,1.562,0.491,2.688,0.542c0.389,0.018,1.308-0.096,2.083-0.206v3.75c0,0.639-0.585,1.125-1.191,1.013	C19.756,43.668,21.833,44,24,44c2.166,0,4.243-0.332,6.19-0.984C29.585,43.127,29,42.641,29,42.002v-5.804	c0-1.329-0.527-2.53-1.373-3.425C33.473,32.071,36.744,29.405,36.744,23.334z M11.239,32.727c-0.154-0.079-0.237-0.225-0.185-0.328	c0.052-0.103,0.22-0.122,0.374-0.043c0.154,0.079,0.237,0.225,0.185,0.328S11.393,32.806,11.239,32.727z M12.451,33.482	c-0.081,0.088-0.255,0.06-0.389-0.062s-0.177-0.293-0.096-0.381c0.081-0.088,0.255-0.06,0.389,0.062S12.532,33.394,12.451,33.482z M13.205,34.732c-0.102,0.072-0.275,0.005-0.386-0.15s-0.118-0.34-0.016-0.412s0.275-0.005,0.386,0.15	C13.299,34.475,13.307,34.66,13.205,34.732z M14.288,35.673c-0.069,0.112-0.265,0.117-0.437,0.012s-0.256-0.281-0.187-0.393	c0.069-0.112,0.265-0.117,0.437-0.012S14.357,35.561,14.288,35.673z M15.312,36.594c-0.213-0.026-0.371-0.159-0.353-0.297	c0.017-0.138,0.204-0.228,0.416-0.202c0.213,0.026,0.371,0.159,0.353,0.297C15.711,36.529,15.525,36.62,15.312,36.594z M16.963,36.833c-0.227-0.013-0.404-0.143-0.395-0.289c0.009-0.146,0.2-0.255,0.427-0.242c0.227,0.013,0.404,0.143,0.395,0.289	C17.381,36.738,17.19,36.846,16.963,36.833z M18.521,36.677c-0.242,0-0.438-0.126-0.438-0.281s0.196-0.281,0.438-0.281	c0.242,0,0.438,0.126,0.438,0.281S18.762,36.677,18.521,36.677z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">
+    Bài 5: Thế giới 2 Chiều — Bề mặt và Bản đồ
+    
+  </h1>
+  <h2 id="1-lời-mở-đầu-con-kiến-và-tấm-bản-đồ">1. Lời mở đầu: Con kiến và Tấm bản đồ</h2>
+
+<p>Hãy quay lại với người bạn nhỏ của chúng ta: Con kiến.
+Lần này, nó không bò trên một sợi dây mảnh mai nữa. Nó đang đứng giữa sa mạc Sahara mênh mông, hoặc trên bề mặt của một quả cam khổng lồ.</p>
+
+<p>Đối với con kiến:</p>
+<ul>
+  <li>Nó có thể đi sang trái, sang phải, đi lên, đi xuống. Nó có <strong>2 bậc tự do</strong>.</li>
+  <li>Thế giới xung quanh nó trông phẳng lì (nếu nó không đi quá xa).</li>
+</ul>
+
+<p>Đây chính là định nghĩa trực giác của một <strong>Bề mặt (Surface)</strong> hay <strong>Đa tạp 2 chiều (2-Manifold)</strong>: Một không gian mà <em>cục bộ</em> trông giống như mặt phẳng Euclid \(\mathbb{R}^2\).</p>
+
+<p>Nhưng làm sao để mô tả toàn bộ quả cam (vốn cong queo) bằng ngôn ngữ phẳng của toán học?
+Chúng ta dùng <strong>Bản đồ (Maps/Charts)</strong>.
+Giống như Google Maps trải phẳng bề mặt Trái Đất lên màn hình điện thoại, chúng ta dùng các hàm số để “trải” các vùng của bề mặt lên mặt phẳng tọa độ \((u, v)\).</p>
+
+<h2 id="2-tham-số-hóa-nghệ-thuật-dán-nhãn">2. Tham số hóa: Nghệ thuật dán nhãn</h2>
+
+<p>Một bề mặt trong không gian \(\mathbb{R}^3\) được định nghĩa bởi một ánh xạ:
+\(\mathbf{r}: U \subset \mathbb{R}^2 \to \mathbb{R}^3\)
+\((u, v) \mapsto \mathbf{r}(u, v) = (x(u,v), y(u,v), z(u,v))\)</p>
+
+<p><strong>Ý nghĩa:</strong></p>
+<ul>
+  <li>\((u, v)\) là tọa độ trên bản đồ phẳng (ví dụ: Kinh độ và Vĩ độ).</li>
+  <li>\(\mathbf{r}(u, v)\) là vị trí thực tế trong không gian 3 chiều.</li>
+  <li>Ánh xạ \(\mathbf{r}\) giống như việc bạn lấy một tấm cao su phẳng và uốn nắn nó thành hình dạng mong muốn.</li>
+</ul>
+
+<h3 id="ví-dụ-1-quả-địa-cầu-mặt-cầu">Ví dụ 1: Quả Địa Cầu (Mặt cầu)</h3>
+<p>Cách phổ biến nhất để dán nhãn Trái Đất là dùng Kinh độ (\(\theta\)) và Vĩ độ (\(\varphi\)).
+\(\mathbf{r}(\theta, \varphi) = (R\sin\varphi\cos\theta, R\sin\varphi\sin\theta, R\cos\varphi)\)
+Ở đây, lưới kinh vĩ tuyến hình chữ nhật trên bản đồ giấy được “cuộn” lại thành hình cầu.</p>
+
+<h3 id="ví-dụ-2-cái-bánh-donut-mặt-xuyến---torus">Ví dụ 2: Cái Bánh Donut (Mặt xuyến - Torus)</h3>
+<p>Làm sao để tạo ra một cái bánh Donut toán học?</p>
+<ol>
+  <li>Lấy một hình chữ nhật phẳng.</li>
+  <li>Cuộn nó lại thành một cái ống (hình trụ).</li>
+  <li>Uốn cong cái ống đó để nối hai đầu lại với nhau.
+Tham số hóa \((u, v)\) chính là hai góc quay: một góc quay quanh ống, một góc quay quanh tâm bánh.</li>
+</ol>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Torus_cycles.svg" alt="Mặt xuyến Torus" />
+<em>Hình 1: Mặt xuyến được tạo ra từ hai vòng tròn. Tọa độ \((u, v)\) tương ứng với vị trí trên hai vòng tròn này.</em></p>
+
+<h2 id="3-điều-kiện-chính-quy-đừng-làm-rách-bản-đồ">3. Điều kiện Chính quy: Đừng làm rách bản đồ</h2>
+
+<p>Không phải ánh xạ nào cũng tạo ra một bề mặt đẹp.
+Nếu bạn bóp nát tấm bản đồ lại thành một điểm, hoặc gấp nếp nó lại, nó không còn là bề mặt trơn nữa.</p>
+
+<p>Để đảm bảo bề mặt trơn tru, chúng ta cần hai vector vận tốc riêng phần:
+\(\mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u} \quad \text{và} \quad \mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v}\)
+phải <strong>độc lập tuyến tính</strong>.</p>
+
+<p>Nghĩa là tích có hướng của chúng phải khác 0:
+\(\mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}\)</p>
+
+<p><strong>Tại sao?</strong></p>
+<ul>
+  <li>\(\mathbf{r}_v\) là vector tiếp tuyến khi bạn đi dọc theo lưới \(v\).</li>
+  <li>Nếu chúng cùng phương (hoặc bằng 0), lưới tọa độ bị “xẹp” lại thành một đường thẳng hoặc một điểm. Bề mặt mất đi tính chất 2 chiều của nó.</li>
+</ul>
+
+<blockquote>
+  <p>[!NOTE]
+<strong>Chính quy = Không có nếp gấp nhọn:</strong>
+Điều kiện \(\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}\) đảm bảo rằng tại mọi điểm, bề mặt luôn trải ra thành một mặt phẳng nhỏ (có vector pháp tuyến xác định).
+Hãy tưởng tượng một tờ giấy bị gấp nếp. Tại đường nếp gấp, bạn không thể đặt một cây bút chì vuông góc với tờ giấy một cách duy nhất (nó có thể nghiêng sang trái hoặc phải). Đó là điểm kỳ dị (singular point). Hình học vi phân chỉ chơi với những bề mặt trơn tru, không có nếp gấp như vậy.</p>
+</blockquote>
+
+<h2 id="4-mặt-phẳng-tiếp-tuyến-sàn-nhà-của-con-kiến">4. Mặt phẳng Tiếp tuyến: Sàn nhà của con kiến</h2>
+
+<p>Tại mỗi điểm \(P\) trên bề mặt, hai vector \(\mathbf{r}_u\) và \(\mathbf{r}_v\) tạo thành một mặt phẳng. Đó là <strong>Mặt phẳng Tiếp tuyến (Tangent Plane - \(T_P S\))</strong>.</p>
+
+<p>Đây là khái niệm cực kỳ quan trọng.</p>
+<ul>
+  <li>Đối với con kiến, mặt phẳng tiếp tuyến chính là “thế giới phẳng” mà nó cảm nhận được ngay dưới chân.</li>
+  <li>Trong giải tích, đây là <strong>xấp xỉ tuyến tính tốt nhất</strong> của bề mặt tại điểm đó.</li>
+</ul>
+
+<blockquote>
+  <p>[!TIP]
+<strong>Thế giới Tuyến tính hóa (Linearized World):</strong>
+Hình học vi phân là nghệ thuật biến cái cong thành cái phẳng.</p>
+  <ul>
+    <li>Bề mặt cong rất khó làm việc.</li>
+    <li>Mặt phẳng tiếp tuyến là một không gian vector (đại số tuyến tính). Chúng ta có thể cộng vector, nhân với số, tính tích vô hướng…
+Hầu hết các phép tính vi phân thực chất là làm việc trên mặt phẳng tiếp tuyến này, sau đó “chiếu” kết quả trở lại bề mặt cong.</li>
+  </ul>
+</blockquote>
+
+<p><strong>Vector Pháp tuyến (Normal Vector - \(\mathbf{n}\)):</strong>
+Vector \(\mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v\) vuông góc với mặt phẳng tiếp tuyến. Nó chỉ hướng “lên trời”.
+Vector pháp tuyến đơn vị \(\mathbf{n} = \mathbf{N} / \|\mathbf{N}\|\) đóng vai trò quan trọng trong việc định hướng bề mặt và tính toán ánh sáng trong đồ họa máy tính.</p>
+
+<h2 id="5-ẩn-hay-hiện-implicit-vs-parametric">5. Ẩn hay Hiện? (Implicit vs Parametric)</h2>
+
+<p>Có hai cách để mô tả bề mặt:</p>
+<ol>
+  <li><strong>Tham số (Parametric):</strong> \(\mathbf{r}(u, v)\). Giống như vẽ bản đồ. Dễ dàng để sinh ra các điểm trên bề mặt (dùng trong game, vẽ lưới).</li>
+  <li><strong>Ẩn (Implicit):</strong> \(F(x, y, z) = 0\). Ví dụ: \(x^2 + y^2 + z^2 - 1 = 0\). Giống như điêu khắc (cắt bỏ phần thừa). Dễ dàng để kiểm tra một điểm có nằm trên bề mặt hay không (dùng trong va chạm vật lý, Ray tracing).</li>
+</ol>
+
+<p>Trong khóa học này, chúng ta chủ yếu dùng dạng <strong>Tham số</strong> vì nó cho phép chúng ta làm giải tích (đạo hàm, tích phân) trên bề mặt dễ dàng hơn.</p>
+
+<h2 id="6-bài-tập-và-suy-ngẫm">6. Bài tập và Suy ngẫm</h2>
+
+<p>🧩 <strong>Bài tập Thực hành</strong></p>
+
+<ol>
+  <li><strong>Mặt cầu:</strong> Tính \(\mathbf{r}_\theta\) và \(\mathbf{r}_\varphi\) cho mặt cầu. Tính tích có hướng của chúng. Bạn sẽ thấy độ lớn của nó là \(R^2\sin\varphi\). Tại sao nó lại bằng 0 tại cực Bắc và cực Nam (\(\varphi = 0, \pi\))? Điều này có nghĩa là gì về tấm bản đồ của chúng ta tại các cực? (Gợi ý: Các đường kinh tuyến hội tụ lại một điểm).</li>
+  <li><strong>Mặt trụ:</strong> Viết tham số hóa cho một hình trụ đứng. Tính vector pháp tuyến của nó. Nó luôn chỉ theo hướng nào? (Gợi ý: Vuông góc với trục z).</li>
+  <li><strong>Suy ngẫm:</strong> Tại sao chúng ta cần ít nhất 2 tấm bản đồ để phủ kín mặt cầu mà không có điểm kỳ dị? (Gợi ý: Bạn không thể chải mượt quả bóng lông - Định lý Hairy Ball liên quan đến việc không thể có hệ tọa độ toàn cục trơn tru trên mặt cầu).</li>
+</ol>
+
+<hr />
+<p><em>Chúng ta đã có bề mặt. Chúng ta đã có bản đồ. Nhưng làm sao để đo khoảng cách trên bản đồ đó? 1 cm trên bản đồ bằng bao nhiêu km ngoài thực tế? Bài tiếp theo sẽ trả lời câu hỏi đó với khái niệm: Dạng Cơ bản Thứ nhất (First Fundamental Form).</em></p>
+
+</div>
+
+<!-- Back to Chapter Home Link -->
+
+  
+  
+  <div style="margin-top: 20px; padding: 10px; background-color: #f8f9fa; border-left: 4px solid #007bff;">
+    <a href="/differential-geometry-self-learning/contents/vi/chapter02/" style="text-decoration: none; color: #007bff; font-weight: bold;">
+      ← Quay lại đầu chương
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="related">
+  <ul class="related-posts">
+    
+      
+        <li>
+          <h2>Previous Post</h2>
+          <h3>
+            <a href="/differential-geometry-self-learning/contents/vi/chapter02/lecture-04-space-curves/">
+              Bài 4: Vũ điệu trong Không gian — Từ Lò xo đến DNA
+            </a>
+          </h3>
+        </li>
+      
+    
+      
+    
+    
+    
+  
+    
+  
+  </ul>
+</div>
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="convex-differential-geometry-for-all/convex-differential-geometry-for-all.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/differential-geometry-self-learning/public/js/script.js'></script>
+    <script src='/differential-geometry-self-learning/public/js/multilang.js'></script>
+    <script src='/differential-geometry-self-learning/public/js/search.js'></script>
+  </body>
+</html>

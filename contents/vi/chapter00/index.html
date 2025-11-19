@@ -1,0 +1,46 @@
+---
+layout: chapter_index
+title: "Foundations and Set-Theoretic Differential Geometry"
+lang: vi
+lang-ref: differential-geometry-chapter00
+chapter: '00'
+permalink: /contents/vi/chapter00/
+---
+
+# Chapter 00: Nền tảng
+
+<div class="chapter-intro"
+  style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+    Trước khi chúng ta có thể nói về độ cong của không gian hay hình dáng của vũ trụ, chúng ta cần một ngôn ngữ chung.
+    Toán học hiện đại không xây dựng trên cát; nó được xây dựng trên nền tảng vững chắc của <strong>Lý thuyết Tập
+      hợp</strong> và <strong>Hình học giải tích</strong>.
+  </p>
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+    Trong chương mở đầu này, chúng ta sẽ không vẽ hình ngay. Thay vào đó, chúng ta sẽ mài giũa công cụ tư duy của mình.
+    Chúng ta sẽ học cách định nghĩa chính xác một "không gian" là gì, làm thế nào để đo đạc khoảng cách mà không cần
+    thước kẻ, và tại sao việc hiểu rõ về "tập mở" lại quan trọng hơn là biết công thức tính đạo hàm.
+  </p>
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+    Đây là bước chuẩn bị cần thiết để bạn không bị lạc lối khi chúng ta bước vào thế giới đa chiều của các đa tạp.
+  </p>
+</div>
+
+## Danh sách Bài giảng
+
+{% assign lectures = site.categories.chapter00 | sort: "order" %}
+<div class="lecture-list-simple">
+  {% for lecture in lectures %}
+  <div class="lecture-item">
+    <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+    <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+    <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Xem chi
+      tiết →</a>
+  </div>
+  {% endfor %}
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+  <a href="/contents/vi/chapter01/" style="font-weight: bold;">Tiếp theo: Chapter 01 →</a>
+</div>
