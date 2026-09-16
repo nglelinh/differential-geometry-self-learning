@@ -1,0 +1,44 @@
+---
+layout: chapter_index
+title: "Advanced Topics"
+lang: en
+lang-ref: differential-geometry-chapter09
+chapter: '09'
+permalink: /contents/en/chapter09/
+---
+
+# Chapter 09: Advanced Topics
+
+<div class="chapter-intro"
+  style="background-color: #f9f9f9; padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 5px solid #268bd2;">
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 1em;">
+    The last chapter opens windows: pizza and curvature, great-circle flights, soap films, black holes, the hairy ball, and Escher’s hyperbolic plane.
+  </p>
+  <p style="font-size: 1.1em; line-height: 1.6; color: #444;">
+    The required theory lectures for this chapter are currently written in Vietnamese.
+    This English landing page hosts the optional recent-advances companion (2022–2026)
+    and points back to the existing theory track. The textbook is not rewritten.
+  </p>
+</div>
+
+## Lectures
+
+{% assign lectures = site.categories.chapter09 | where: "lang", page.lang | sort: "order" %}
+<div class="lecture-list-simple">
+  {% for lecture in lectures %}
+  <div class="lecture-item">
+    <h3><a href="{{ lecture.url }}">{{ lecture.title }}</a></h3>
+    <p>{{ lecture.excerpt | strip_html | truncatewords: 40 }}</p>
+    <a href="{{ lecture.url | relative_url }}" style="display: inline-block; margin-top: 0.5em; color: #268bd2;">Read more →</a>
+  </div>
+  {% endfor %}
+</div>
+
+{% include optional_advances_pointer.html %}
+
+<hr>
+<div style="text-align: center; margin-top: 2em;">
+    <a href="/" style="font-weight: bold;">Back to Home →</a>
+    ·
+    <a href="/contents/vi/chapter09/" style="font-weight: bold;">Vietnamese theory track →</a>
+</div>

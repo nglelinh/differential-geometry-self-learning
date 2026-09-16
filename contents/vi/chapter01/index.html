@@ -28,7 +28,7 @@ permalink: /contents/vi/chapter01/
 
 ## Danh sách Bài giảng
 
-{% assign lectures = site.categories.chapter01 | sort: "order" %}
+{% assign lectures = site.categories.chapter01 | where: "lang", page.lang | sort: "order" %}
 <div class="lecture-list-simple">
   {% for lecture in lectures %}
   <div class="lecture-item">
@@ -39,6 +39,8 @@ permalink: /contents/vi/chapter01/
   </div>
   {% endfor %}
 </div>
+
+{% include optional_advances_pointer.html %}
 
 <hr>
 <div style="text-align: center; margin-top: 2em;">
