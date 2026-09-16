@@ -1,0 +1,30 @@
+{% assign ch = page.chapter %}
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign vi_url = site.baseurl | append: "/contents/vi/chapter" | append: ch | append: "/lecture-optional-recent-advances/" %}
+{% assign en_url = site.baseurl | append: "/contents/en/chapter" | append: ch | append: "/lecture-optional-recent-advances/" %}
+<div class="optional-advances-pointer"
+  style="background-color: #fff8e7; padding: 1.4em 1.6em; border-radius: 8px; margin: 2em 0 1em 0; border-left: 5px solid #cb4b16;">
+  {% if lang == 'vi' %}
+  <p style="font-size: 1.05em; line-height: 1.65; color: #444; margin: 0 0 0.7em 0;">
+    <strong>Bài tùy chọn — Tiến bộ gần đây (2022–2026).</strong>
+    Lý thuyết của chương không đổi. Sau khi đọc các bài bắt buộc, bạn có thể xem
+    <a href="{{ vi_url }}">bài tùy chọn về các tiến bộ gần đây</a>
+    — toán học và ứng dụng CS/DS hiện đại gắn với chủ đề chương này, không thay thế giáo trình.
+  </p>
+  <p style="font-size: 0.95em; line-height: 1.55; color: #666; margin: 0;">
+    English companion:
+    <a href="{{ en_url }}">Optional recent advances (2022–2026)</a>.
+  </p>
+  {% else %}
+  <p style="font-size: 1.05em; line-height: 1.65; color: #444; margin: 0 0 0.7em 0;">
+    <strong>Optional — Recent advances (2022–2026).</strong>
+    The required theory is unchanged. After the core lectures, you may read the
+    <a href="{{ en_url }}">optional lesson on recent advances</a>
+    — contemporary mathematics and CS/DS applications tied to this chapter, not a rewrite of the textbook.
+  </p>
+  <p style="font-size: 0.95em; line-height: 1.55; color: #666; margin: 0;">
+    Vietnamese companion (and the existing theory track):
+    <a href="{{ vi_url }}">Bài tùy chọn tiến bộ gần đây (2022–2026)</a>.
+  </p>
+  {% endif %}
+</div>
