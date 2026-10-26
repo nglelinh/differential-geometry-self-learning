@@ -20,7 +20,7 @@ Các nhà toán học cảm thấy tiên đề này quá phức tạp, không "�
 
 Họ nghĩ rằng điều này sẽ dẫn đến mâu thuẫn và sụp đổ toán học. Nhưng không. Nó dẫn họ đến một thế giới mới, kỳ lạ nhưng hoàn toàn logic và nhất quán. Đó là **Hình học Hyperbolic** (Hình học Phi Euclid).
 
-*Để hiểu sâu hơn về metric và độ cong, hãy xem [Bài giảng 6: Dạng cơ bản thứ nhất](/contents/vi/chapter03/2024-01-06-lecture-06-first-fundamental-form/) và [Bài giảng 14: Đa tạp Riemann](/contents/vi/chapter07/2024-01-14-lecture-14-riemannian-manifolds/).*
+*Để hiểu sâu hơn về metric và độ cong, hãy xem [Bài giảng 6: Dạng cơ bản thứ nhất]({{ '/contents/vi/chapter03/lecture-06-first-fundamental-form/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
 
 ## 2. Thế giới trong cái Đĩa của Poincaré
 
@@ -84,3 +84,9 @@ Và dù là trong một bức tranh, một chiếc lá, hay một thiên hà xa 
 
 ---
 *Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+
+## Video tham khảo
+
+- [Ditching the Fifth Axiom - Numberphile](https://www.youtube.com/watch?v=PnW5IRvgvLY) — Numberphile, tiếng Anh. xem trước. việc bỏ tiên đề song song: qua một điểm có thể có vô số đường song song, đúng cuộc nổi loạn mở đầu bài.
+- [Playing Sports in Hyperbolic Space - Numberphile](https://www.youtube.com/watch?v=u6Got0X41pY) — Numberphile, tiếng Anh. Đĩa Poincaré hiện ra như mô hình: đường thẳng là cung vuông góc với biên, và diện tích tăng theo hàm mũ khi ra xa tâm, đúng cảm giác “càng ra rìa càng nhiều chỗ”.
+- [Non-euclidean virtual reality](https://www.youtube.com/watch?v=ztsi0CLxmjw) — Henry Segerman, tiếng Anh. Đi bộ trong một không gian hyperbolic được dựng thật, để mắt thấy cái vô tận mà tranh Circle Limit của Escher đang vẽ.

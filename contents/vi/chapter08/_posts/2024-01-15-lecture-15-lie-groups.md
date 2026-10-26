@@ -165,6 +165,11 @@ Trạng thái của một vật rắn trong không gian 3D được mô tả b�
 ### Thị giác Máy tính: SLAM
 Trong bài toán định vị và lập bản đồ (SLAM), camera di chuyển trong không gian. Việc tối ưu hóa quỹ đạo camera (bundle adjustment) thực chất là tối ưu hóa trên đa tạp nhóm Lie $$SE(3)$$. Việc hiểu sai cấu trúc hình học (ví dụ dùng góc Euler thay vì Lie algebra) có thể gây ra lỗi "Gimbal lock".
 
+## Video tham khảo
+
+- [What is Lie theory? Here is the big picture. \| Lie groups, algebras, brackets #3](https://www.youtube.com/watch?v=ZRca3Ggpy_g) — Mathemaniac, tiếng Anh. xem trước. bức tranh lớn: nhóm Lie là đa tạp mang phép nhân trơn, đại số Lie là không gian tiếp tuyến tại đơn vị, hàm mũ đi từ thẳng ra cong.
+- [how to understand all of lie algebras with one picture](https://www.youtube.com/watch?v=tY7jac-iPA4) — Michael Penn, tiếng Anh. Một hình cho ngoặc Lie và không gian tiếp tuyến tại phần tử đơn vị, đúng bước tuyến tính hóa từ nhóm xuống đại số.
+
 ## Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

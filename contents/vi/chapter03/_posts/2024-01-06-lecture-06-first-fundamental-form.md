@@ -86,6 +86,12 @@ Con kiến không cần biết bề mặt cong trong không gian 3 chiều như 
 Dạng cơ bản thứ nhất định nghĩa **Hình học Nội tại**. Nó phân biệt "Cong do metric" (như mặt cầu) và "Cong do uốn nắn" (như mặt trụ).
 Mặt trụ là phẳng về mặt nội tại (bạn có thể trải nó ra bàn). Mặt cầu thì không.
 
+## Video tham khảo
+
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. xem trước. tensor metric đo độ dài cung trên mặt cong, đúng $$ds^2 = E\,du^2 + 2F\,du\,dv + G\,dv^2$$ của con kiến.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Dạng cơ bản thứ nhất xuất hiện như dạng toàn phương của tham số hóa, cùng với pháp tuyến; đây là nguồn cổ điển của $$E,F,G$$.
+- [Change of Variables & The Jacobian \| Multi-variable Integration](https://www.youtube.com/watch?v=wUF-lyyWpUc) — Dr. Trefor Bazett, tiếng Anh. Nhân tử Jacobian khi đổi biến là họ hàng của $$\sqrt{EG-F^2}$$: cùng một ý “ô lưới trên bản đồ không giữ nguyên diện tích thật”.
+
 ## 5. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**

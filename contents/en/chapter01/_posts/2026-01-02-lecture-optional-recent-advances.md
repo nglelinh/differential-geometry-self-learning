@@ -56,6 +56,12 @@ In control one often works not with a path in $$\mathbb{R}^3$$ but on a configur
 
 A robot arm relies on an orientation frame along its path — a modern relative of the Frenet frame — to understand how joints turn as the tool traces a spatial curve. In kinodynamic planning, curvature and acceleration are bounded; that is the engineering version of “do not let $$\kappa$$ exceed $$1/R_{\min}$$”. In graphics, smoothing a camera path is again the control of $$\kappa(s)$$ and $$\tau(s)$$ so that the viewer is not made seasick.
 
+## Video tham khảo
+
+- [Calculus 3 Lecture 12.3:  Arc Length/Parameterization, TNB (Frenet-Serret) Intro](https://www.youtube.com/watch?v=Hu72QVWsMlg) — Professor Leonard, English. xem trước. Watch the Frenet frame along a space curve first: this is the $$\kappa$$ and $$\tau$$ language the lesson says a robot controller borrows.
+- [Lecture 10: Smooth Curves (Discrete Differential Geometry)](https://www.youtube.com/watch?v=seLcPBax3OI) — Keenan Crane, English. A curvature bound is a lower bound on turning radius; this lecture gives the theorem that kinodynamic constraint rests on.
+- [Frenet-Serret formulas (proof)](https://www.youtube.com/watch?v=A8_SlWsQfzA) — bprp calculus basics, English. The Frenet–Serret formulas proved explicitly, for the lesson’s talk of normal and binormal acceleration.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Sketch a plane curve with a spike of large $$\kappa$$ (a nearly sharp corner that has been rounded). Mark $$\mathbf{T}$$ and $$\mathbf{N}$$. Explain why a robot following that path will demand a large torque there.

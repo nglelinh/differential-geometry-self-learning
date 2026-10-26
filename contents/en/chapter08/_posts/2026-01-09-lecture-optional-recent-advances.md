@@ -58,6 +58,12 @@ and a “velocity” $$(\omega,v)\in\mathfrak{se}(3)$$ both spins and slides. Ro
 
 Robot learning: modern visual odometry and SLAM multiply elements of $$SE(3)$$, they do not add six-vectors naïvely. Computational chemistry: EquiformerV2 on OC20 reduces DFT calls by respecting $$E(3)$$. Astrophysics: null geodesics and GRMHD turn a Lorentzian metric into a horizon-scale image. Graphics: interpolating rotations uses $$\exp$$ and $$\log$$ on $$SO(3)$$ to avoid gimbal lock — the same exponential map.
 
+## Video tham khảo
+
+- [What is Lie theory? Here is the big picture. \| Lie groups, algebras, brackets #3](https://www.youtube.com/watch?v=ZRca3Ggpy_g) — Mathemaniac, English. xem trước. Watch Lie groups and the exponential map first: a robot joint rotation is a point of $$SO(3)$$, not three casual Euler angles.
+- [how to understand all of lie algebras with one picture](https://www.youtube.com/watch?v=tY7jac-iPA4) — Michael Penn, English. The Lie algebra as the space of infinitesimal velocities at the identity, which is what the lesson means by calling $$\mathfrak{so}(3)$$ angular velocity.
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, English. Geodesics in curved spacetime, the other half of the lesson, where a simulated black-hole photon rides a Lorentzian metric.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Explain in words why three Euler angles are *not* a good coordinate system on all of $$SO(3)$$. Relate this to the need for several charts in an atlas (Chapter 00).

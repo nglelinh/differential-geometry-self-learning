@@ -101,3 +101,8 @@ Hình học Vi phân xây dựng các cấu trúc đo đạc (metric, độ cong
 
 ---
 *Bài tiếp theo: Phương trình Vi phân — Quy luật của Chuyển động.*
+
+## Video tham khảo
+
+- [This open problem taught me what topology is](https://www.youtube.com/watch?v=IQqtsm-bBRU) — 3Blue1Brown, tiếng Anh. xem trước. để thấy vì sao biến dạng liên tục, không xé và không dán, là ngôn ngữ đúng của tô-pô; mặt xuyến xuất hiện như không gian mà bài so với cái ly.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. Bài giảng mở đầu của khóa hình học rời rạc tại Carnegie Mellon: một mặt là đối tượng vừa trông phẳng khi nhìn gần, vừa có hình dạng toàn cục, đúng hướng đi tới đa tạp.

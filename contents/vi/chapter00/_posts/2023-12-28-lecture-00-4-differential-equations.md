@@ -97,3 +97,8 @@ Bây giờ, hãy bắt đầu hành trình vào thế giới của Hình học V
 
 ---
 *Quay lại Bài 1: Hình học như Nghiên cứu về Biến đổi Trơn.*
+
+## Video tham khảo
+
+- [Differential equations, a tourist's guide \| DE1](https://www.youtube.com/watch?v=p_di4Zn4wz4) — 3Blue1Brown, tiếng Anh. xem trước. trường mũi tên và đường cong tích phân, đúng bài toán Cauchy “biết vận tốc tại chỗ thì đoán được quỹ đạo”.
+- [Tensor Calculus 15: Geodesics and Christoffel Symbols (extrinsic geometry)](https://www.youtube.com/watch?v=1CuTNveXJRc) — eigenchris, tiếng Anh. Phương trình trắc địa được viết như một hệ vi phân bậc hai; xem sau khi đã quen trường vector, như lời hứa ở lời mở đầu rằng đường trắc địa là nghiệm của một ODE.

@@ -254,6 +254,12 @@ $$
 
 là trường hợp đặc biệt của định lý Stokes tổng quát $$\int_M d\omega = \int_{\partial M} \omega$$ khi $$\omega$$ là dạng 1 tương ứng với trường vector $$\mathbf{F}$$.
 
+## Video tham khảo
+
+- [Differential Forms \| What is a 1-form?](https://www.youtube.com/watch?v=Pw1ejJzsCPA) — Michael Penn, tiếng Anh. xem trước. 1-form là máy tuyến tính ăn một vector tiếp tuyến và trả về một số, đúng hình “thước dây” và ví dụ công của một lực.
+- [Divergence and curl:  The language of Maxwell's equations, fluid flow, and more](https://www.youtube.com/watch?v=rB83DpBJQsE) — 3Blue1Brown, tiếng Anh. Gradient, curl và divergence được kể như cùng một ngôn ngữ hình học; định lý Stokes tổng quát trong bài chính là nơi chúng gặp nhau.
+- [The general Stoke's theorem via differential forms.](https://www.youtube.com/watch?v=jeImPnUeBBY) — Michael Penn, tiếng Anh. Định lý Stokes bằng dạng vi phân, $$\int_\Omega d\omega = \int_{\partial\Omega}\omega$$, đúng đỉnh của bài.
+
 ## 8. Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

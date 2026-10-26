@@ -78,6 +78,12 @@ In machine learning the manifold hypothesis is why a network can learn from fini
 
 A concrete example: while training a probabilistic model, two directions in parameter space may look equally long on paper, yet one barely changes the distribution and the other changes it violently. The Fisher metric detects that injustice, just as the Jacobian in multivariable calculus detects a change of variables that warps area.
 
+## Video tham khảo
+
+- [StatQuest: t-SNE, Clearly Explained](https://www.youtube.com/watch?v=NEaUSP4YerM) — StatQuest with Josh Starmer, English. xem trước. A high-dimensional cloud redrawn so that neighbors stay neighbors, the same Swiss-roll intuition as the manifold hypothesis.
+- [3DGV Seminar: Michael Bronstein -- Geometric Deep Learning for 3D Shape Analysis and Synthesis](https://www.youtube.com/watch?v=2Z4L2I59AKo) — 3DGV Seminar, English. Michael Bronstein presents geometric deep learning as network design on grids, groups, graphs, and surfaces — the map of G’s cited in the lesson.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, English. A reminder of what a surface looks like before the lesson treats the manifold hypothesis as a statistical claim about data.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Sketch a Swiss roll and mark two points that are close along the paper but far apart in $$\mathbb{R}^3$$. Explain why Euclidean distance on the raw data can mislead a clustering algorithm.

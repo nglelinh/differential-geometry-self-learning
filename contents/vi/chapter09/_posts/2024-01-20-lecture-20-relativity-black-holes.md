@@ -16,7 +16,7 @@ Bởi vì nó là chìa khóa để giải mã bí ẩn lớn nhất của vũ t
 
 Trong bài giảng này, chúng ta sẽ đi từ cú ngã tưởng tượng đó đến những hố đen quái vật nuốt chửng cả ánh sáng, và thấy rằng tất cả chỉ là những bài toán hình học trên một tấm vải cong vĩ đại.
 
-*Nếu bạn muốn hiểu sâu về toán học của vũ trụ, hãy đọc [Bài giảng 13: Độ cong Riemann](/contents/vi/chapter07/2024-01-13-lecture-13-riemann-curvature/) và [Bài giảng 16: Hình học Không-Thời gian](/contents/vi/chapter08/2024-01-16-lecture-16-spacetime-geometry/).*
+*Nếu bạn muốn hiểu sâu về toán học của vũ trụ, hãy đọc [Bài giảng 13: Độ cong Riemann]({{ '/contents/vi/chapter07/lecture-13-riemann-curvature/' | absolute_url }}) và [Bài giảng 16: Hình học Không-Thời gian]({{ '/contents/vi/chapter08/lecture-16-spacetime-geometry/' | absolute_url }}).*
 
 ## 2. Newton sai ở đâu?
 
@@ -92,3 +92,9 @@ Einstein đã cho chúng ta đôi mắt hình học để nhìn thấy vẻ đ�
 
 ---
 *Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+
+## Video tham khảo
+
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, tiếng Anh. xem trước. tấm vải không-thời gian và đường trắc địa, đúng thí nghiệm tư duy nệm lò xo ở đầu bài.
+- [Einstein's Field Equations of General Relativity Explained](https://www.youtube.com/watch?v=UfThVvBWZxM) — Physics Videos by Eugene Khutoryansky, tiếng Anh. Phương trình trường được kể bằng hình: vật chất bảo không-thời gian cong thế nào, đúng “phương trình đẹp nhất” của bài.
+- [Relativity 107c: General Relativity Basics - Curvature, Riemann Tensor, Ricci Tensor, Ricci Scalar](https://www.youtube.com/watch?v=0e3h9w9ldaA) — eigenchris, tiếng Anh. Độ cong Ricci đứng ở vế hình học của phương trình Einstein, để nối lỗ đen với tensor mà bài 13 đã gọi tên.

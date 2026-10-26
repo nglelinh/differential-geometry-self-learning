@@ -99,6 +99,12 @@ $$
 
 Điều này giống như việc nói rằng DNA của một sinh vật xác định hình dáng của nó. $$\kappa$$ và $$\tau$$ chính là DNA của đường cong.
 
+## Video tham khảo
+
+- [Calculus 3 Lecture 12.3:  Arc Length/Parameterization, TNB (Frenet-Serret) Intro](https://www.youtube.com/watch?v=Hu72QVWsMlg) — Professor Leonard, tiếng Anh. xem trước. tiếp tuyến, pháp tuyến và phụ pháp tuyến được dựng trên một đường cong không gian, đúng hệ Frenet của bài.
+- [Frenet-Serret formulas (proof)](https://www.youtube.com/watch?v=A8_SlWsQfzA) — bprp calculus basics, tiếng Anh. Chứng minh ngắn các hệ thức Frenet–Serret, để đối chiếu với bản giao hưởng $$\mathbf{T}',\mathbf{N}',\mathbf{B}'$$ trong bài.
+- [Lecture 10: Smooth Curves (Discrete Differential Geometry)](https://www.youtube.com/watch?v=seLcPBax3OI) — Keenan Crane, tiếng Anh. Độ cong và độ xoắn như dữ liệu đủ để dựng lại đường cong, đúng định lý cơ bản ở mục cuối.
+
 ## 7. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**

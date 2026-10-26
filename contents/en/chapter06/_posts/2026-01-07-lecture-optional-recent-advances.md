@@ -60,6 +60,12 @@ that commutes with $$\rho$$: rotate every input and the output rotates by the sa
 
 In quantum chemistry and catalysis (the OC20 suite), energy must be rotationally invariant and force equivariant: tensors of type (0) and type (1). In 3D vision, normals and stress tensors must not change their meaning when the camera turns. In physics, a gauge connection is the language of electromagnetism and the nuclear forces; the 2019–2024 networks borrow the idea at a discrete level, they do not replace field theory.
 
+## Video tham khảo
+
+- [Tensor Calculus 18: Covariant Derivative (extrinsic) and Parallel Transport](https://www.youtube.com/watch?v=Af9JUiQtV1k) — eigenchris, English. xem trước. Comparing vectors at two points needs a transport rule, which is what the lesson means by calling a gauge a connection.
+- [3DGV Seminar: Michael Bronstein -- Geometric Deep Learning for 3D Shape Analysis and Synthesis](https://www.youtube.com/watch?v=2Z4L2I59AKo) — 3DGV Seminar, English. Geometric deep learning as architectures that respect the symmetries of a surface or a group, the setting Equiformer sits in.
+- [A Swift Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8) — sudgylacmoe, English. Multivectors of different grade transform differently under rotation, which is why an equivariant layer must not mix them as scalar channels.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Take two tangent vectors at nearby points of a sphere. Sketch a *wrong* comparison (subtract $$\mathbb{R}^3$$ coordinates) and a *better* one (parallelise along a short geodesic). Which of the two is a message-passing network doing if it adds raw features?

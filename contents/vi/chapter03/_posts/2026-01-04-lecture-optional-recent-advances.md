@@ -60,6 +60,12 @@ với $$\theta_i$$ các góc phẳng gặp tại $$v$$ và $$A_v$$ diện tích 
 
 Trong phân tích hình dạng, đăng ký hai tư thế của cùng một người là tìm một ánh xạ gần đẳng cự: da không giãn, chỉ khớp gập. Trong đồ họa, UV parametrization — trải mặt 3D ra 2D — chính là tìm $$F$$ sao cho $$\mathrm{I}$$ bị méo ít nhất; Neural Jacobian Fields là một trong những hệ đầu tiên *học* việc ấy trên các lưới không cùng cấu trúc. Trong kỹ thuật, độ cong trung bình điều khiển ứng suất vỏ mỏng; ước lượng $$H$$ trên lưới quét 3D là bước đầu của phân tích vỏ.
 
+## Video tham khảo
+
+- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, tiếng Anh. xem trước. độ cong rời rạc trên lưới: góc thiếu cho độ cong Gauss và độ cong trung bình, đúng đoạn bài nói về $$K(v)$$ và phân tích hình dạng.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. Dạng thứ nhất như tensor metric trên mặt, tức sổ đo độ dài mà một ánh xạ gần đẳng cự phải tôn trọng.
+- [Change of Variables & The Jacobian \| Multi-variable Integration](https://www.youtube.com/watch?v=wUF-lyyWpUc) — Dr. Trefor Bazett, tiếng Anh. Jacobian của một phép đổi biến đo độ méo diện tích; trên mặt, $$dF$$ là phiên bản tiếp xúc của cùng câu chuyện ấy.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Phác một hình trụ và một mặt phẳng. Chỉ ra hướng nào $$K=0$$, và giải thích tại sao một ánh xạ “mở” hình trụ ra tờ giấy có thể bảo toàn $$\mathrm{I}$$ cục bộ nhưng không phải toàn cục.

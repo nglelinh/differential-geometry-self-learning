@@ -67,6 +67,12 @@ or, on a graph, a loop: measure $$\kappa$$, add edges where $$\kappa$$ is very n
 
 In machine learning, graph curvature becomes a diagnosis: a deep network may fail not for lack of layers but because of the geometry of relations. In numerical geometry, Ricci flow is a tool for evolving metrics; its discrete cousins on triangle surfaces (Gu–Yau and descendants) still parametrize brains and other medical surfaces. In robotics, a geodesic on a constraint surface is the “straight” path a planner should prefer — the same Christoffel equation, different software.
 
+## Video tham khảo
+
+- [Lecture 8: Curvature & Oversquashing in GNNs - Francesco Di Giovanni](https://www.youtube.com/watch?v=pJyFg9NF7LQ) — Michael Bronstein, English. xem trước. This is the lesson’s own topic: negative graph curvature creates over-squashing bottlenecks, and a discrete Ricci flow is proposed to loosen them.
+- [Tensor Calculus 22: Riemann Curvature Tensor Geometric Meaning (Holonomy + Geodesic Deviation)](https://www.youtube.com/watch?v=-Il2FrmJtcQ) — eigenchris, English. Smooth curvature seen through holonomy and geodesic deviation, so the graph-theoretic Ollivier–Ricci curvature has a classical object to imitate.
+- [Lecture 20: Geodesics (Discrete Differential Geometry)](https://www.youtube.com/watch?v=uojNGbVtlsQ) — Keenan Crane, English. Geodesics are the straight paths of someone who lives on the surface; the lesson uses that picture for intrinsic graph distance.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Sketch a sphere and two intersecting great circles. Describe in words why two “straight lines” converge, and relate that to over-smoothing: information mixing too quickly.

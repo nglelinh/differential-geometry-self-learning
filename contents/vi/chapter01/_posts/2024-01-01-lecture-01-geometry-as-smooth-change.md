@@ -125,6 +125,12 @@ Bạn có thể tự hỏi: "Tôi không phải là nhà toán học, tôi học
 3.  **Vật lý & Vũ trụ:** Thuyết Tương đối rộng mô tả trọng lực không phải là lực, mà là độ cong của không-thời gian. Bạn không thể hiểu lỗ đen nếu không hiểu hình học vi phân.
 4.  **Kiến trúc:** Các công trình mái vòm hiện đại (như sân vận động Olympic Munich) sử dụng các bề mặt tối thiểu (minimal surfaces) để chịu lực tốt nhất.
 
+## Video tham khảo
+
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. xem trước. vì sao hình học vi phân đo hình dạng bằng đạo hàm, và một mặt cong được xấp xỉ bằng những mảnh phẳng.
+- [The paradox of the derivative \| Chapter 2, Essence of calculus](https://www.youtube.com/watch?v=9vKqVkMQHKk) — 3Blue1Brown, tiếng Anh. Đạo hàm như tiếp tuyến khi phóng to, đúng mục “phép tính vi phân” và hình đường thẳng trượt trên đồ thị.
+- [Introduction to Differential Geometry: Curves](https://www.youtube.com/watch?v=4fB0VfKZRXM) — Faculty of Khan, tiếng Anh. Đường cong tham số $$\gamma(t)$$ như quỹ đạo của một hạt, đúng định nghĩa chính quy ở cuối bài.
+
 ## 7. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Tư duy**

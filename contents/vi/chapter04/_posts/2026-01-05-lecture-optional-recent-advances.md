@@ -67,6 +67,12 @@ hay, trên đồ thị, một vòng lặp: đo $$\kappa$$, thêm cạnh nơi $$\
 
 Trong học máy, độ cong đồ thị trở thành chẩn đoán: mạng sâu thất bại không chỉ vì thiếu lớp, mà vì hình học của quan hệ. Trong vật lý số, Ricci flow là công cụ nghiên cứu các metric; phiên bản rời rạc trên bề mặt tam giác (Gu–Yau và các hậu duệ) vẫn được dùng để parametrize não bộ và các mặt y khoa. Trong robot, đường trắc địa trên mặt ràng buộc là quỹ đạo “thẳng” mà bộ lập kế hoạch nên ưu tiên — cùng một phương trình Christoffel, khác phần mềm.
 
+## Video tham khảo
+
+- [Lecture 8: Curvature & Oversquashing in GNNs - Francesco Di Giovanni](https://www.youtube.com/watch?v=pJyFg9NF7LQ) — Michael Bronstein, tiếng Anh. xem trước. đúng chủ đề bài: độ cong đồ thị âm tạo nút thắt over-squashing, và Ricci flow rời rạc được đề xuất để nới cổ chai.
+- [Tensor Calculus 22: Riemann Curvature Tensor Geometric Meaning (Holonomy + Geodesic Deviation)](https://www.youtube.com/watch?v=-Il2FrmJtcQ) — eigenchris, tiếng Anh. Độ cong trơn nhìn bằng holonomy và độ lệch trắc địa, để thấy Ollivier–Ricci trên đồ thị đang bắt chước đại lượng nào.
+- [Lecture 20: Geodesics (Discrete Differential Geometry)](https://www.youtube.com/watch?v=uojNGbVtlsQ) — Keenan Crane, tiếng Anh. Đường trắc địa là đường thẳng của cư dân trên mặt; bài dùng hình ảnh ấy để nói khoảng cách trên đồ thị là thước đo nội tại.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Phác mặt cầu và hai vòng tròn lớn cắt nhau. Mô tả bằng lời vì sao hai “đường thẳng” hội tụ, và liên hệ với over-smoothing: thông tin hòa quá nhanh.

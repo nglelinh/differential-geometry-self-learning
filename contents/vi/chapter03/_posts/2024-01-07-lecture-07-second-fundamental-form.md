@@ -80,6 +80,12 @@ Dựa vào dấu của $$K$$, ta phân loại các điểm:
 3.  **Điểm Parabolic ($$K = 0$$, nhưng không phẳng):** Giống cái máng xối. (Ví dụ: Điểm trên mặt trụ).
 4.  **Điểm Planar ($$K = 0, H = 0$$):** Phẳng lì.
 
+## Video tham khảo
+
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. xem trước. Xem trước, khoảng vài phút: độ cong Gauss là tích hai độ cong chính, và một lát bánh phẳng không thể vừa cong ngang vừa gục dọc.
+- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, tiếng Anh. Dạng cơ bản thứ hai, độ cong Gauss, độ cong trung bình, và cách phân điểm elliptic, parabolic, hyperbolic trên một lưới.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Dạng thứ hai được gắn với đạo hàm của ánh xạ pháp tuyến, đúng định nghĩa toán tử hình dáng ở đầu bài.
+
 ## 7. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**

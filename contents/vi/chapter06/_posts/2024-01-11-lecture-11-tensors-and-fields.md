@@ -180,6 +180,12 @@ Khái niệm "Tensor" trong các thư viện như TensorFlow hay PyTorch thực 
 ### 7.4. Đồ họa Máy tính: Diffusion Tensor Imaging (DTI)
 Trong y học và đồ họa, DTI sử dụng tensor khuyếch tán (một tensor hạng 2 tại mỗi voxel) để mô tả sự di chuyển của phân tử nước trong não, giúp tái tạo hình ảnh các bó sợi thần kinh. Đây là ứng dụng trực tiếp của trường tensor trong xử lý ảnh 3D.
 
+## Video tham khảo
+
+- [Tensors for Beginners 4: What are Covectors?](https://www.youtube.com/watch?v=LNoQ_Q5JQMY) — eigenchris, tiếng Anh. xem trước. vector và covector, chỉ số trên và chỉ số dưới, đúng mục “mũi tên và chồng bánh kếp”.
+- [Change of basis \| Chapter 13, Essence of linear algebra](https://www.youtube.com/watch?v=P2LTAUO1TdA) — 3Blue1Brown, tiếng Anh. Đổi cơ sở làm tọa độ chạy ngược với cơ sở, hình ảnh tuyến tính của quy tắc biến đổi tensor trong bài.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. Tensor metric hạng $$(0,2)$$ đo độ dài, đúng ví dụ trung tâm sau định nghĩa đa tuyến tính.
+
 ## 8. Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**
