@@ -145,6 +145,12 @@ Năm 2015, con người lần đầu tiên phát hiện trực tiếp sóng hấ
 ### Vũ trụ học
 Mô hình Big Bang dựa trên nghiệm FLRW (Friedmann-Lemaître-Robertson-Walker) của phương trình Einstein, mô tả một vũ trụ đồng nhất và đẳng hướng đang giãn nở. Hình học vi phân giúp chúng ta tính toán tuổi của vũ trụ và số phận tương lai của nó.
 
+## Video tham khảo
+
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, tiếng Anh. xem trước. không-thời gian cong, thế giới tuyến và đường trắc địa của người quan sát quán tính, đúng lời kể “trọng lực là hình học”.
+- [Einstein's Field Equations of General Relativity Explained](https://www.youtube.com/watch?v=UfThVvBWZxM) — Physics Videos by Eugene Khutoryansky, tiếng Anh. Phương trình trường Einstein được dựng từ độ cong và từ nguồn vật chất, đúng phương trình bài nêu ở mục hình thức.
+- [Relativity 107c: General Relativity Basics - Curvature, Riemann Tensor, Ricci Tensor, Ricci Scalar](https://www.youtube.com/watch?v=0e3h9w9ldaA) — eigenchris, tiếng Anh. Tensor Riemann, Ricci và vô hướng trong ngôn ngữ tương đối rộng, để nối metric Lorentz với độ cong mà phương trình Einstein dùng.
+
 ## Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

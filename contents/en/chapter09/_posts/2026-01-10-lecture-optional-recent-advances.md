@@ -63,6 +63,12 @@ Computer vision: surface reconstruction, shape registration, UV parametrization.
 
 A concrete example: a robot holding a digital pizza (a mesh) must fold the surface so that $$K$$ is preserved piece by piece; if the algorithm only optimises vertex positions in $$\mathbb{R}^3$$ it will stretch the dough. That is the Theorema Egregium in overalls.
 
+## Video tham khảo
+
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, English. xem trước. This is the chapter’s Gaussian-curvature window: the same $$K$$ on a pizza slice and on a surface a computer is trying to learn.
+- [Playing Sports in Hyperbolic Space - Numberphile](https://www.youtube.com/watch?v=u6Got0X41pY) — Numberphile, English. The Poincaré disk and exponential area growth, which is why the lesson says a space with $$K<0$$ holds hierarchies better than Euclidean space.
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, English. Lightlike geodesics in curved spacetime, the relativity half of the lesson, where a bright ring around a black hole is a computed photon orbit.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Choose *one* required lesson of Chapter 09 (pizza, flight paths, soap films, black holes, the hairy ball, or Escher). Write a paragraph joining that lesson to exactly *one* 2022–2026 citation above. No new formula is needed.

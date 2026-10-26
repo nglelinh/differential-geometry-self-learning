@@ -63,6 +63,12 @@ Thị giác máy tính: tái tạo mặt, đăng ký hình dạng, parametrizati
 
 Một ví dụ cụ thể: một robot cầm một miếng pizza số (một lưới) phải gập mặt sao cho $$K$$ được bảo toàn từng mảnh; nếu thuật toán chỉ tối ưu vị trí đỉnh trong $$\mathbb{R}^3$$, nó sẽ kéo giãn bột. Đó là Theorema Egregium đội lốt kỹ thuật.
 
+## Video tham khảo
+
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. xem trước. cửa sổ độ cong Gauss của chương: cùng một $$K$$ của lát bánh và của một mặt mà máy tính đang học.
+- [Playing Sports in Hyperbolic Space - Numberphile](https://www.youtube.com/watch?v=u6Got0X41pY) — Numberphile, tiếng Anh. Đĩa Poincaré và sự tăng diện tích theo hàm mũ, đúng lý do bài nói không gian $$K<0$$ chứa các cây phân cấp tốt hơn Euclid.
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, tiếng Anh. Đường trắc địa loại ánh sáng trên không-thời gian cong, nửa tương đối của bài khi nhắc vòng sáng quanh một lỗ đen.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Chọn *một* bài bắt buộc của Chapter 09 (pizza, đường bay, xà phòng, hố đen, hairy ball, hoặc Escher). Viết một đoạn nối bài ấy với đúng *một* trích dẫn 2022–2026 ở trên. Không cần công thức mới.

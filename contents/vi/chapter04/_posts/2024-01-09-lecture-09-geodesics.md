@@ -216,6 +216,12 @@ $$
 
 chính là một nửa chu vi của đường cung lớn đi qua hai cực. Đây cũng chính là khoảng cách ngắn nhất trên bề mặt giữa hai điểm đó.
 
+## Video tham khảo
+
+- [Tensor Calculus 16: Geodesic Examples on Plane and Sphere](https://www.youtube.com/watch?v=8sVDceI70HM) — eigenchris, tiếng Anh. xem trước. các ví dụ trên mặt phẳng và mặt cầu: đường tròn lớn chính là đường bay “thẳng” mà bài mô tả giữa New York và London.
+- [Tensor Calculus 15: Geodesics and Christoffel Symbols (extrinsic geometry)](https://www.youtube.com/watch?v=1CuTNveXJRc) — eigenchris, tiếng Anh. Phương trình trắc địa và ký hiệu Christoffel, đúng mục hình thức của bài.
+- [Lecture 20: Geodesics (Discrete Differential Geometry)](https://www.youtube.com/watch?v=uojNGbVtlsQ) — Keenan Crane, tiếng Anh. Hai định nghĩa — ngắn nhất cục bộ và thẳng nhất — được tách bạch, cùng vận chuyển song song; bài giảng dài, xem như buổi học tương ứng của cả bài.
+
 ## 8. Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

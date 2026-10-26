@@ -175,6 +175,12 @@ Tích phân của độ cong (cụ thể là một dạng gọi là lớp Euler 
 ### Phân tích Dữ liệu: Manifold Learning
 Trong học máy, khái niệm độ cong được dùng để hiểu cấu trúc của dữ liệu. Nếu dữ liệu nằm trên một đa tạp có độ cong lớn, các thuật toán tuyến tính (như PCA) sẽ hoạt động kém. Các metric độ cong giúp đánh giá độ phức tạp của mô hình dữ liệu.
 
+## Video tham khảo
+
+- [Tensor Calculus 22: Riemann Curvature Tensor Geometric Meaning (Holonomy + Geodesic Deviation)](https://www.youtube.com/watch?v=-Il2FrmJtcQ) — eigenchris, tiếng Anh. xem trước. độ cong Riemann được đọc bằng holonomy quanh một vòng nhỏ và bằng độ lệch của hai đường trắc địa.
+- [Tensor Calculus 18: Covariant Derivative (extrinsic) and Parallel Transport](https://www.youtube.com/watch?v=Af9JUiQtV1k) — eigenchris, tiếng Anh. Vận chuyển song song trên mặt cầu cho hình ảnh vector không trở lại hướng cũ, đúng mục mở đầu của bài.
+- [Relativity 107c: General Relativity Basics - Curvature, Riemann Tensor, Ricci Tensor, Ricci Scalar](https://www.youtube.com/watch?v=0e3h9w9ldaA) — eigenchris, tiếng Anh. Từ tensor Riemann sang Ricci và độ cong vô hướng, đúng các phép co chỉ số ở nửa sau bài, trong ngôn ngữ của thuyết tương đối.
+
 ## Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

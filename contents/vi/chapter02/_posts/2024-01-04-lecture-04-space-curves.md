@@ -95,6 +95,12 @@ $$ \gamma(t) = R(1+\cos t, \sin t, 2\sin(t/2)) $$
 
 Đường cong này có ý nghĩa lịch sử quan trọng vì nó là một trong những ví dụ đầu tiên về việc tính diện tích bề mặt cong mà không cần dùng đến tích phân phức tạp (Viviani đã giải nó bằng hình học cổ điển vào thế kỷ 17).
 
+## Video tham khảo
+
+- [Lecture 10: Smooth Curves (Discrete Differential Geometry)](https://www.youtube.com/watch?v=seLcPBax3OI) — Keenan Crane, tiếng Anh. xem trước. đường cong không gian được mã hóa bởi độ cong và độ xoắn, đúng lý do helix là đường “đều” mà bài tính $$\kappa$$ và $$\tau$$ hằng số.
+- [Calculus 3 Lecture 12.3:  Arc Length/Parameterization, TNB (Frenet-Serret) Intro](https://www.youtube.com/watch?v=Hu72QVWsMlg) — Professor Leonard, tiếng Anh. Khung TNB trên một helix giúp nhìn bước xoắn như sự quay của phụ pháp tuyến, trước khi đọc định lý Fenchel và Fáry–Milnor.
+- [Frenet-Serret formulas (proof)](https://www.youtube.com/watch?v=A8_SlWsQfzA) — bprp calculus basics, tiếng Anh. Nguồn của các công thức dùng để tính $$\kappa = a/(a^2+b^2)$$ và $$\tau = b/(a^2+b^2)$$ trên helix.
+
 ## 6. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**

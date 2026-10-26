@@ -96,6 +96,12 @@ Có hai cách để mô tả bề mặt:
 
 Trong khóa học này, chúng ta chủ yếu dùng dạng **Tham số** vì nó cho phép chúng ta làm giải tích (đạo hàm, tích phân) trên bề mặt dễ dàng hơn.
 
+## Video tham khảo
+
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. xem trước. mặt được cho bởi tham số hóa, mặt phẳng tiếp tuyến và pháp tuyến đơn vị, đúng ba mục giữa bài; phần ánh xạ Gauss ở sau có thể để dành cho bài 8.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. Vì sao một mặt hai chiều, chứ không phải một đám tam giác, là đối tượng mà đồ họa và hình học cùng đo.
+- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, tiếng Anh. Sau khi đã có pháp tuyến, bài giảng này cho thấy mặt cong lệch khỏi mặt phẳng tiếp tuyến theo những cách khác nhau; xem như cầu nối sang dạng cơ bản thứ hai.
+
 ## 6. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**

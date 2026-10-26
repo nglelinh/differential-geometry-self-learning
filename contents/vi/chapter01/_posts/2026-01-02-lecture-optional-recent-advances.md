@@ -56,6 +56,12 @@ Trong điều khiển, người ta thường không làm việc trên đường 
 
 Một cánh tay robot dựa vào khung định hướng dọc theo đường đi — chính là họ hàng hiện đại của hệ Frenet — để hiểu khớp quay như thế nào khi khâu cuối vẽ một cung trong không gian. Trong quy hoạch chuyển động có ràng buộc động học (kinodynamic planning), độ cong và gia tốc bị chặn; đó là phiên bản kỹ thuật của việc “không cho $$\kappa$$ vượt quá $$1/R_{\min}$$”. Trong đồ họa, việc làm mượt đường đi của camera cũng là bài toán kiểm soát $$\kappa(s)$$ và $$\tau(s)$$ để người xem không bị say.
 
+## Video tham khảo
+
+- [Calculus 3 Lecture 12.3:  Arc Length/Parameterization, TNB (Frenet-Serret) Intro](https://www.youtube.com/watch?v=Hu72QVWsMlg) — Professor Leonard, tiếng Anh. xem trước. khung Frenet dọc theo một đường không gian: đây là ngôn ngữ $$\kappa$$ và $$\tau$$ mà bài nói robot đang mượn, trước khi đọc Geometric Fabrics.
+- [Lecture 10: Smooth Curves (Discrete Differential Geometry)](https://www.youtube.com/watch?v=seLcPBax3OI) — Keenan Crane, tiếng Anh. Độ cong bị chặn nghĩa là bán kính cua không được nhỏ hơn một ngưỡng; bài giảng này cho định lý mà ràng buộc động học ấy dựa vào.
+- [Frenet-Serret formulas (proof)](https://www.youtube.com/watch?v=A8_SlWsQfzA) — bprp calculus basics, tiếng Anh. Các công thức Frenet–Serret được chứng minh tường minh, để đối chiếu khi bài nhắc gia tốc pháp tuyến và gia tốc phụ pháp tuyến.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Phác một đường cong phẳng có một chỗ $$\kappa$$ rất lớn (góc gần nhọn đã được làm tròn). Đánh dấu $$\mathbf{T}$$ và $$\mathbf{N}$$. Giải thích tại sao một robot đi theo đường ấy sẽ cần mô-men lớn tại chỗ đó.

@@ -59,6 +59,12 @@ Phần bậc $$0$$ là vô hướng, bậc $$1$$ là vector, bậc $$2$$ chứa 
 
 Trong vật lý hạt, đẳng biến Lorentz bốn chiều xuất hiện như một thí nghiệm trong bài Clifford. Trong y sinh, ước lượng ứng suất trên lưới động mạch là tích phân một 2-form trên mặt — GATr làm việc ấy mà không phá đối xứng Euclid. Trong robot, điểm, trục quay và mặt phẳng kẹp phải sống chung một kiến trúc; đại số hình học xạ ảnh được sinh ra đúng cho việc ấy.
 
+## Video tham khảo
+
+- [A Swift Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8) — sudgylacmoe, tiếng Anh. xem trước. tích hình học: vô hướng, vector và diện tích có hướng sống trong cùng một đại số, đúng tinh thần Clifford mà bài kể về các mạng 2023.
+- [Differential Forms \| What is a 1-form?](https://www.youtube.com/watch?v=Pw1ejJzsCPA) — Michael Penn, tiếng Anh. 1-form và bậc của dạng, để nhớ vì sao bài nói các đối tượng khác bậc không nên bị ép thành cùng một danh sách số.
+- [Siggraph2019 Geometric Algebra](https://www.youtube.com/watch?v=tX4H_ctggYo) — Bivector, tiếng Anh. Khóa ngắn tại SIGGRAPH về đại số hình học trong đồ họa: cùng ngôn ngữ đa vector, nhìn từ phía người làm hình.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Viết bằng lời, không cần khai triển, sự khác nhau giữa một vector và một 2-form khi bạn đảo định hướng không gian (phép phản xạ). Mạng đẳng biến $$E(3)$$ phải làm gì với từng loại?

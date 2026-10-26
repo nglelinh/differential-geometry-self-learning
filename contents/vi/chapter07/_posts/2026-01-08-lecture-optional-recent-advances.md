@@ -64,6 +64,12 @@ Chi tiết số học nằm trong Geoopt; ý hình học nằm trong chương n�
 
 Học sâu hyperbolic nhúng phân cấp vào đĩa Poincaré: tham số sống trên $$M$$, không trên $$\mathbb{R}^n$$, nên tối ưu phải là Riemann. Thị giác: ma trận hiệp phương sai (SPD) và subspace (Grassmann) xuất hiện trong tracking. Robot: không gian tư thế là $$SO(3)$$ hoặc $$SE(3)$$ — Chapter 08 sẽ nói kỹ hơn, nhưng gradient đã phải là Riemann từ bây giờ. Hình học thông tin, chạm nhẹ: Fisher–Rao biến không gian mô hình thành $$(M,g)$$, và natural gradient chính là $$\operatorname{grad} L$$.
 
+## Video tham khảo
+
+- [Optimization on Manifolds](https://www.youtube.com/watch?v=UjaoZE0GBpg) — Simons Institute for the Theory of Computing, tiếng Anh. xem trước. đúng khung của bài: gradient Riemann, retraction thay cho hàm mũ, và bước đi của gradient descent trên đa tạp.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. Metric $$g$$ là địa hình chi phí mà gradient Euclid chưa biết; video này đo độ dài trước khi Boumal nói tới bước tối ưu.
+- [Tensor Calculus 16: Geodesic Examples on Plane and Sphere](https://www.youtube.com/watch?v=8sVDceI70HM) — eigenchris, tiếng Anh. Đường tròn lớn trên mặt cầu là quỹ đạo đắt mà retraction đang xấp xỉ khi tham số sống trên $$S^n$$.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Trên $$S^2\subset\mathbb{R}^3$$, lấy $$f(x)=x\cdot e_3$$. Mô tả $$\operatorname{grad} f$$ như hình chiếu của $$e_3$$ lên mặt phẳng tiếp tuyến. Một bước Euclid thô sẽ làm gì sai?

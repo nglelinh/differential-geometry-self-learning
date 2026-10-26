@@ -59,6 +59,12 @@ Degree 0 is scalars, degree 1 is vectors, degree 2 holds the 2-forms. The Cliffo
 
 In particle physics, four-dimensional Lorentz equivariance appears as one of the Clifford experiments. In biomedicine, estimating stress on an arterial mesh is the integral of a 2-form on a surface — GATr does that without breaking Euclidean symmetry. In robotics, points, rotation axes, and gripper planes must share one architecture; projective geometric algebra was born for exactly that.
 
+## Video tham khảo
+
+- [A Swift Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8) — sudgylacmoe, English. xem trước. Watch the geometric product first: scalars, vectors, and oriented areas live in one algebra, the Clifford idea behind the 2023 networks in the lesson.
+- [Differential Forms \| What is a 1-form?](https://www.youtube.com/watch?v=Pw1ejJzsCPA) — Michael Penn, English. 1-forms and degree, which is why the lesson says objects of different grade should not be crushed into one list of numbers.
+- [Siggraph2019 Geometric Algebra](https://www.youtube.com/watch?v=tX4H_ctggYo) — Bivector, English. A SIGGRAPH course on geometric algebra in graphics: the same multivector language, from the practitioner side.
+
 ## 🧩 Exercises
 
 **Exercise 1.** In words, without expanding components, distinguish a vector from a 2-form when you reverse the orientation of space (a reflection). What must an $$E(3)$$-equivariant network do with each?

@@ -127,3 +127,9 @@ Hãy nắm chắc các khái niệm này. Chúng là những viên gạch đầu
 
 ---
 *Bài tiếp theo: Giải tích Đa biến — Nghệ thuật xấp xỉ tuyến tính.*
+
+## Video tham khảo
+
+- [Vectors \| Chapter 1, Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs) — 3Blue1Brown, tiếng Anh. xem trước. khi đọc mục không gian vector: mũi tên gốc tại gốc tọa độ, phép cộng và phép nhân vô hướng, đúng hình ảnh “nối đuôi và co giãn” của bài.
+- [Tensors for Beginners 4: What are Covectors?](https://www.youtube.com/watch?v=LNoQ_Q5JQMY) — eigenchris, tiếng Anh. Covector được vẽ như những mặt mức mà một mũi tên xuyên qua, đúng phần không gian đối ngẫu, cơ sở đối ngẫu và quy tắc đổi cơ sở.
+- [Eigenvectors and eigenvalues \| Chapter 14, Essence of linear algebra](https://www.youtube.com/watch?v=PFDu9oVAE-g) — 3Blue1Brown, tiếng Anh. Hướng không bị xoay, chỉ bị co giãn: đây là hình ảnh sẽ quay lại khi độ cong chính được nhìn như vector riêng của toán tử hình dáng.

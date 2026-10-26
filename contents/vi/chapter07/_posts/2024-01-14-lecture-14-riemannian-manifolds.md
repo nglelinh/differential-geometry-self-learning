@@ -160,6 +160,12 @@ Không gian cấu hình của một robot (tập hợp tất cả các trạng t
 ### Thống kê: Hình học Thông tin (Information Geometry)
 Tập hợp các phân bố xác suất (ví dụ: họ phân bố Gauss với tham số $$\mu, \sigma$$) tạo thành một đa tạp Riemann. Metric trên đa tạp này gọi là *Metric Fisher-Information*. Khoảng cách giữa hai phân bố xác suất được đo bằng khoảng cách trắc địa trên đa tạp thống kê này, không phải là khoảng cách Euclid giữa các tham số.
 
+## Video tham khảo
+
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. xem trước. một metric Riemann là cách đo độ dài cung thay đổi từ điểm này sang điểm khác, đúng định nghĩa $$(M,g)$$.
+- [Tensor Calculus 16: Geodesic Examples on Plane and Sphere](https://www.youtube.com/watch?v=8sVDceI70HM) — eigenchris, tiếng Anh. Trên mặt cầu, đường trắc địa là đường tròn lớn và có thể đi mãi; đây là hình ảnh để nghĩ về tính đầy đủ trước khi đọc Hopf–Rinow.
+- [Optimization on Manifolds](https://www.youtube.com/watch?v=UjaoZE0GBpg) — Simons Institute for the Theory of Computing, tiếng Anh. Buổi giảng tại Simons Institute định nghĩa đa tạp nhúng, không gian tiếp tuyến và metric Riemann với mắt hướng tới thuật toán; phần retraction có thể xem lướt.
+
 ## Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

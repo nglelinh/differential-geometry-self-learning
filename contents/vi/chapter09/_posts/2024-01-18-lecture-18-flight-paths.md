@@ -23,7 +23,7 @@ Câu trả lời sẽ khiến bạn bất ngờ: **Đó chính là đường th�
 
 Trong bài giảng này, chúng ta sẽ khám phá khái niệm **Đường Trắc địa (Geodesics)** - những "đường thẳng" của thế giới cong, và hiểu tại sao trực giác của chúng ta lại hay bị đánh lừa đến vậy.
 
-*Để hiểu rõ cách tính toán các đường này, hãy xem [Bài giảng 9: Đường trắc địa](/contents/vi/chapter04/2024-01-09-lecture-09-geodesics/) và [Bài giảng 14: Đa tạp Riemann](/contents/vi/chapter07/2024-01-14-lecture-14-riemannian-manifolds/).*
+*Để hiểu rõ cách tính toán các đường này, hãy xem [Bài giảng 9: Đường trắc địa]({{ '/contents/vi/chapter04/lecture-09-geodesics/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
 
 ## 2. Định nghĩa lại "Thẳng"
 
@@ -96,3 +96,9 @@ Lần tới khi bạn ngồi trên máy bay, hãy nhìn ra cửa sổ và tưở
 
 ---
 *Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+
+## Video tham khảo
+
+- [Tensor Calculus 16: Geodesic Examples on Plane and Sphere](https://www.youtube.com/watch?v=8sVDceI70HM) — eigenchris, tiếng Anh. xem trước. đường trắc địa trên mặt cầu: cung tròn lớn là đường ngắn, dù trên bản đồ phẳng nó trông vòng lên phía bắc.
+- [Lecture 20: Geodesics (Discrete Differential Geometry)](https://www.youtube.com/watch?v=uojNGbVtlsQ) — Keenan Crane, tiếng Anh. Thẳng nhất và ngắn nhất cục bộ được phân biệt, đúng chỗ bài nói một cung lớn đi vòng ngược vẫn là trắc địa nhưng không còn là đường gần.
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, tiếng Anh. Khi ánh sáng cũng đi trên đường trắc địa của không-thời gian, đúng mục cuối của bài.

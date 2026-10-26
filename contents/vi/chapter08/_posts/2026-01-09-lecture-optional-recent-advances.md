@@ -58,6 +58,12 @@ và một “vận tốc” $$(\omega,v)\in\mathfrak{se}(3)$$ vừa xoay vừa t
 
 Robot học: odometry thị giác và SLAM hiện đại nhân các phần tử $$SE(3)$$, không cộng vector 6 chiều một cách ngây thơ. Hóa học tính toán: EquiformerV2 trên OC20 giảm số lần gọi DFT nhờ tôn trọng $$E(3)$$. Vật lý thiên văn: geodesics null và GRMHD biến metric Lorentz thành ảnh chân trời. Đồ họa: phép nội suy quay dùng $$\exp$$ và logarithm trên $$SO(3)$$ để tránh gimbal lock — cùng một hàm mũ.
 
+## Video tham khảo
+
+- [What is Lie theory? Here is the big picture. \| Lie groups, algebras, brackets #3](https://www.youtube.com/watch?v=ZRca3Ggpy_g) — Mathemaniac, tiếng Anh. xem trước. nhóm Lie và hàm mũ: quay một khâu robot là một điểm trên $$SO(3)$$, không phải ba góc Euler tùy tiện.
+- [how to understand all of lie algebras with one picture](https://www.youtube.com/watch?v=tY7jac-iPA4) — Michael Penn, tiếng Anh. Đại số Lie như không gian vận tốc vô hạn nhỏ tại đơn vị, đúng chỗ bài nói $$\mathfrak{so}(3)$$ là vận tốc góc.
+- [General Relativity & Curved Spacetime Explained! \| Space Time \| PBS Digital Studios](https://www.youtube.com/watch?v=AwhKZ3fd9JA) — PBS Space Time, tiếng Anh. Đường trắc địa trong không-thời gian cong, nửa còn lại của bài khi photon của một mô phỏng lỗ đen đi trên metric Lorentz.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Giải thích bằng lời vì sao ba góc Euler *không* phải một hệ tọa độ tốt trên cả $$SO(3)$$. Liên hệ với việc atlas cần nhiều chart (Chapter 00).

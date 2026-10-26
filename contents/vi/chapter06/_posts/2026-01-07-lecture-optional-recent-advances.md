@@ -60,6 +60,12 @@ giao hoán với $$\rho$$: quay mọi đầu vào thì đầu ra quay cùng lu�
 
 Trong hóa lượng tử và xúc tác (bộ dữ liệu OC20), năng lượng phải bất biến quay, lực phải đẳng biến: đó là tensor kiểu (0) và kiểu (1). Trong thị giác 3D, pháp tuyến và tensor ứng suất không được đổi nghĩa khi ta xoay camera. Trong vật lý, liên kết gauge là ngôn ngữ của điện từ và lực hạt nhân; các mạng 2019–2024 vay ý ấy ở mức rời rạc, không thay thế lý thuyết trường.
 
+## Video tham khảo
+
+- [Tensor Calculus 18: Covariant Derivative (extrinsic) and Parallel Transport](https://www.youtube.com/watch?v=Af9JUiQtV1k) — eigenchris, tiếng Anh. xem trước. so sánh vector ở hai điểm đòi hỏi một phép vận chuyển, đúng chỗ bài gọi gauge là liên kết của học sâu hình học.
+- [3DGV Seminar: Michael Bronstein -- Geometric Deep Learning for 3D Shape Analysis and Synthesis](https://www.youtube.com/watch?v=2Z4L2I59AKo) — 3DGV Seminar, tiếng Anh. Học sâu hình học như các kiến trúc tôn trọng đối xứng của mặt và của nhóm, bối cảnh mà Equiformer đứng vào.
+- [A Swift Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8) — sudgylacmoe, tiếng Anh. Đa vector bậc khác nhau biến đổi khác nhau khi không gian quay, đúng lý do một lớp đẳng biến không được trộn chúng như các kênh vô hướng.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Hai vector tiếp xúc tại hai điểm gần nhau trên mặt cầu. Phác một cách *sai* (trừ tọa độ $$\mathbb{R}^3$$) và một cách *đúng hơn* (song song hóa dọc geodesics ngắn). Mạng message-passing đang làm việc nào nếu nó cộng đặc trưng thô?

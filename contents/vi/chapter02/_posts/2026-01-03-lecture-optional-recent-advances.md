@@ -60,6 +60,12 @@ NeuS quan sát rằng kết xuất thể tích cổ điển, nếu gắn mật �
 
 Trong thị giác máy tính, tái tạo bề mặt từ nhiều ảnh là bài toán ước lượng một đa tạp 2 chiều nhúng trong $$\mathbb{R}^3$$. Trong đồ họa, pháp tuyến từ SDF hay từ lưới quyết định tô bóng. Trong kỹ thuật ngược (reverse engineering) và y khoa, một SDF mượt cho phép tính độ dày, khoảng cách tới bề mặt, và phẫu thuật ảo. Robot nắm đồ cần đúng pháp tuyến tại điểm tiếp xúc: tấm bìa cứng không còn là ẩn dụ, nó là vector lực.
 
+## Video tham khảo
+
+- [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://www.youtube.com/watch?v=T_kXY43VZnk) — Inria/GraphDeco GraphDeco Inria Research Group, tiếng Anh. xem trước. chính bài báo 3D Gaussian Splatting mà bài trích: mỗi Gaussian là một mảnh elip được tối ưu rồi rải lên ảnh.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Pháp tuyến và mặt phẳng tiếp tuyến cổ điển, để thấy vì sao một Gaussian bị ép dẹt phải nằm sát mặt mức chứ không lơ lửng trong thể tích.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. Bối cảnh xử lý hình học: mặt là tín hiệu ba chiều mà thị giác máy tính đang học lại bằng hàm ẩn hoặc bằng primitive tường minh.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Phác mặt cầu $$f(x,y,z)=x^2+y^2+z^2-1$$. Tại một điểm, vẽ $$\nabla f$$ và mặt phẳng tiếp tuyến. Giải thích tại sao $$\nabla f\neq 0$$ trên mặt cầu đơn vị.

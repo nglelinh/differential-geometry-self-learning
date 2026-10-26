@@ -64,6 +64,12 @@ The arithmetic lives in Geoopt; the geometry lives in this chapter.
 
 Hyperbolic deep learning embeds hierarchies in the Poincaré disc: parameters live on $$M$$, not in $$\mathbb{R}^n$$, so the optimiser must be Riemannian. Vision: covariance matrices (SPD) and subspaces (Grassmann) appear in tracking. Robotics: pose space is $$SO(3)$$ or $$SE(3)$$ — Chapter 08 will be more precise, but the gradient is already Riemannian. Information geometry, lightly: Fisher–Rao turns a model space into $$(M,g)$$, and the natural gradient is precisely $$\operatorname{grad} L$$.
 
+## Video tham khảo
+
+- [Optimization on Manifolds](https://www.youtube.com/watch?v=UjaoZE0GBpg) — Simons Institute for the Theory of Computing, English. xem trước. This talk is the lesson’s framework: the Riemannian gradient, a retraction in place of the exponential map, and gradient descent on a manifold.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, English. The metric $$g$$ is the cost landscape a Euclidean gradient does not know; this video measures length before Boumal turns to the optimization step.
+- [Tensor Calculus 16: Geodesic Examples on Plane and Sphere](https://www.youtube.com/watch?v=8sVDceI70HM) — eigenchris, English. Great circles are the expensive trajectories that a retraction approximates when the parameters live on $$S^n$$.
+
 ## 🧩 Exercises
 
 **Exercise 1.** On $$S^2\subset\mathbb{R}^3$$ let $$f(x)=x\cdot e_3$$. Describe $$\operatorname{grad} f$$ as the projection of $$e_3$$ onto the tangent plane. What does a raw Euclidean step do wrong?

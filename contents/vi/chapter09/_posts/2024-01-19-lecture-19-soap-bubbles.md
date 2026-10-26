@@ -18,7 +18,7 @@ Mỗi khi bạn thổi một bong bóng, thiên nhiên đang giải một bài t
 
 Trong bài giảng này, chúng ta sẽ khám phá cách thiên nhiên "lười biếng" để tạo ra cái đẹp, và cách con người học lỏm bí quyết này để xây dựng những công trình kiến trúc vĩ đại.
 
-*Để hiểu sâu hơn về toán học đằng sau các bề mặt này, hãy xem [Bài giảng 5: Bề mặt](/contents/vi/chapter02/2024-01-05-lecture-05-surfaces-first-contact/) và [Bài giảng 7: Dạng cơ bản thứ hai](/contents/vi/chapter03/2024-01-07-lecture-07-second-fundamental-form/).*
+*Để hiểu sâu hơn về toán học đằng sau các bề mặt này, hãy xem [Bài giảng 5: Bề mặt]({{ '/contents/vi/chapter02/lecture-05-surfaces-first-contact/' | absolute_url }}) và [Bài giảng 7: Dạng cơ bản thứ hai]({{ '/contents/vi/chapter03/lecture-07-second-fundamental-form/' | absolute_url }}).*
 
 ## 2. Nguyên lý "Lười biếng" của Vũ trụ
 
@@ -84,3 +84,9 @@ Lần tới khi bạn rửa tay và thấy một màng xà phòng căng giữa c
 
 ---
 *Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+
+## Video tham khảo
+
+- [Minimal Surfaces—The Shapes That Help Us Understand Black Holes](https://www.youtube.com/watch?v=_t-3lCZXlPM) — The Action Lab, tiếng Anh. xem trước. các màng xà phòng như mặt cực tiểu diện tích; đoạn nối sang lỗ đen ở cuối video chỉ là họa tiết, không phải trọng tâm bài này.
+- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, tiếng Anh. Độ cong trung bình $$H$$ và cách một mặt yên có hai độ cong chính trái dấu, đúng điều kiện $$H=0$$ của màng hở.
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. Một mặt phẳng có độ cong Gauss bằng không vẫn có thể bị uốn; đối chiếu với mặt yên, nơi tích hai độ cong chính âm và màng không chịu phẳng.

@@ -20,7 +20,7 @@ Bạn vừa thực hiện một phép tính vi phân phức tạp ngay trên bà
 
 Trong bài giảng này, chúng ta sẽ đi từ miếng pizza trên tay bạn đến những tấm bản đồ thế giới, và cuối cùng là hiểu về bản chất của không gian mà chúng ta đang sống.
 
-*Nếu bạn muốn tìm hiểu sâu về mặt toán học, hãy tham khảo [Bài giảng 7: Dạng cơ bản thứ hai và Độ cong Gauss](/contents/vi/chapter03/2024-01-07-lecture-07-second-fundamental-form/) và [Bài giảng 8: Theorema Egregium](/contents/vi/chapter04/2024-01-08-lecture-08-gauss-map-theorema-egregium/).*
+*Nếu bạn muốn tìm hiểu sâu về mặt toán học, hãy tham khảo [Bài giảng 7: Dạng cơ bản thứ hai và Độ cong Gauss]({{ '/contents/vi/chapter03/lecture-07-second-fundamental-form/' | absolute_url }}) và [Bài giảng 8: Theorema Egregium]({{ '/contents/vi/chapter04/lecture-08-gauss-map-theorema-egregium/' | absolute_url }}).*
 
 ## 2. Bí mật của Độ cong: Không chỉ là "Cong"
 
@@ -110,3 +110,9 @@ Lần tới khi bạn gập miếng pizza, hay nhìn vào sự méo mó của Gr
 
 ---
 *Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+
+## Video tham khảo
+
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. xem trước. chính thí nghiệm lát bánh: gập theo một hướng buộc hướng kia thẳng, vì độ cong Gauss của tờ bánh phẳng vẫn bằng không.
+- [La manera más matemática de comerse una pizza](https://www.youtube.com/watch?v=1mVTp-8Zmok) — Lemnismath, tiếng Tây Ban Nha. Cùng câu chuyện, rồi nối sang bản đồ: mặt cầu không trải phẳng được mà giữ cả góc lẫn diện tích.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Nguồn bài giảng của định lý mà giai thoại đo đạc Hanover dẫn tới; phần cuối nêu Theorema Egregium.

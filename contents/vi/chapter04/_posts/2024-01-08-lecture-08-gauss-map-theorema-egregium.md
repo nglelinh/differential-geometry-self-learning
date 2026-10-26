@@ -176,6 +176,12 @@ Khi thiết kế các cấu trúc vỏ, kỹ sư phải hiểu rằng không th�
 **Ví dụ cụ thể:**  
 Một nhà bản đồ muốn tạo bản đồ phẳng của Nam Cực (vùng xung quanh cực nam). Vì mặt cầu có $$K = 1/R^2 > 0$$ và mặt phẳng có $$K = 0$$, không thể có phép ánh xạ đẳng cự. Mọi bản đồ đều phải chấp nhận hoặc biến dạng góc, hoặc biến dạng khoảng cách, hoặc biến dạng diện tích.
 
+## Video tham khảo
+
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. xem trước. uốn mà không kéo giãn giữ độ cong Gauss, đúng định lý pizza và sự phân biệt bending với stretching.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Ánh xạ Gauss–Rodrigues gửi pháp tuyến lên mặt cầu đơn vị, và cuối bài nêu Theorema Egregium.
+- [La manera más matemática de comerse una pizza](https://www.youtube.com/watch?v=1mVTp-8Zmok) — Lemnismath, tiếng Tây Ban Nha. Cùng định lý, kể thêm vì sao không có bản đồ phẳng nào giữ đồng thời góc và diện tích của mặt cầu.
+
 ## 7. Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

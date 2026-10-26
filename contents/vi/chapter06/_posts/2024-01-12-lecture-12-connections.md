@@ -163,6 +163,12 @@ Trong vật lý hạt cơ bản, các lực cơ bản (điện từ, yếu, mạ
 ### 6.3. Robot và Điều khiển
 Khi điều khiển cánh tay robot nhiều khớp, không gian cấu hình (configuration space) là một đa tạp cong. Để tính toán động lực học (lực cần thiết để di chuyển robot theo quỹ đạo), kỹ sư phải tính đạo hàm hiệp biến của vận tốc và gia tốc trong không gian cấu hình này.
 
+## Video tham khảo
+
+- [Tensor Calculus 18: Covariant Derivative (extrinsic) and Parallel Transport](https://www.youtube.com/watch?v=Af9JUiQtV1k) — eigenchris, tiếng Anh. xem trước. vận chuyển song song và đạo hàm hiệp biến ngoại tại: hai mũi tên ở hai điểm không trừ được nếu chưa có liên kết.
+- [Tensor Calculus 17: The Covariant Derivative (flat space)](https://www.youtube.com/watch?v=U5iMpOn5IHw) — eigenchris, tiếng Anh. Đạo hàm hiệp biến trong không gian phẳng, để thấy ký hiệu Christoffel lúc đầu chỉ là hiệu chỉnh của tọa độ cong.
+- [Tensor Calculus 15: Geodesics and Christoffel Symbols (extrinsic geometry)](https://www.youtube.com/watch?v=1CuTNveXJRc) — eigenchris, tiếng Anh. Các hệ số Christoffel đứng trong phương trình trắc địa, đúng mục bài tái định nghĩa đường thẳng nhất bằng liên kết.
+
 ## 7. Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**

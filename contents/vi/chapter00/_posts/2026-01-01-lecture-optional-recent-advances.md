@@ -78,6 +78,12 @@ Trong học máy, giả thuyết đa tạp là lý do người ta tin rằng m�
 
 Một ví dụ cụ thể: khi huấn luyện một mô hình xác suất, hai hướng thay đổi tham số có thể trông “bằng nhau” trên giấy nhưng một hướng làm phân bố thay đổi rất ít, hướng kia làm phân bố thay đổi rất nhiều. Metric Fisher phát hiện sự bất công ấy, đúng như Jacobian trong bài giải tích đa biến phát hiện việc đổi biến làm méo diện tích.
 
+## Video tham khảo
+
+- [StatQuest: t-SNE, Clearly Explained](https://www.youtube.com/watch?v=NEaUSP4YerM) — StatQuest with Josh Starmer, tiếng Anh. xem trước. cách một đám mây điểm cao chiều được vẽ lại sao cho láng giềng còn gần nhau, đúng trực giác Swiss roll và giả thuyết đa tạp.
+- [3DGV Seminar: Michael Bronstein -- Geometric Deep Learning for 3D Shape Analysis and Synthesis](https://www.youtube.com/watch?v=2Z4L2I59AKo) — 3DGV Seminar, tiếng Anh. Michael Bronstein kể học sâu hình học như việc thiết kế mạng trên lưới, nhóm, đồ thị và mặt — bản đồ “các chữ G” mà bài trích.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. Để nhớ mặt và đa tạp trông như thế nào trước khi nghe chúng bị dùng như một giả thuyết thống kê về dữ liệu.
+
 ## 🧩 Bài tập và suy ngẫm
 
 **Bài 1.** Phác một cuộn Swiss roll và đánh dấu hai điểm gần nhau theo khoảng cách trên mặt giấy nhưng xa nhau trong $$\mathbb{R}^3$$. Giải thích tại sao khoảng cách Euclid trên dữ liệu thô có thể đánh lừa một thuật toán phân cụm.

@@ -60,6 +60,12 @@ NeuS observed that naïve volume rendering, if density is tied to an SDF careles
 
 In computer vision, reconstructing a surface from many photographs is the estimation of a two-dimensional manifold in $$\mathbb{R}^3$$. In graphics, normals from an SDF or a mesh decide shading. In reverse engineering and medicine, a smooth SDF yields thickness, distance-to-surface, and virtual surgery. A grasping robot needs the correct normal at the contact point: the stiff card is no longer a metaphor, it is a force vector.
 
+## Video tham khảo
+
+- [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://www.youtube.com/watch?v=T_kXY43VZnk) — Inria/GraphDeco GraphDeco Inria Research Group, English. xem trước. This is the 3D Gaussian Splatting talk the lesson cites: each Gaussian is an optimized elliptical splat.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, English. The classical normal and tangent plane, which is why a flattened Gaussian has to hug the level set rather than float in the volume.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, English. Geometry-processing context: a surface is the three-dimensional signal that vision now learns either as an implicit function or as explicit primitives.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Sketch the sphere $$f(x,y,z)=x^2+y^2+z^2-1$$. At a point, draw $$\nabla f$$ and the tangent plane. Explain why $$\nabla f\neq 0$$ on the unit sphere.

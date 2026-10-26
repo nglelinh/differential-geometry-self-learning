@@ -21,7 +21,7 @@ Bạn không thể chải mượt nó. Không phải vì bạn vụng về. Mà 
 
 Đây là nội dung của **Định lý Quả bóng Lông (Hairy Ball Theorem)**, một trong những kết quả nổi tiếng nhất của Tô-pô học đại số.
 
-*Để hiểu sâu hơn về trường vector và tô-pô, hãy xem [Bài giảng 10: Dạng vi phân](/contents/vi/chapter05/2024-01-10-lecture-10-differential-forms/) và [Bài giảng 11: Trường Tensor](/contents/vi/chapter06/2024-01-11-lecture-11-tensors-and-fields/).*
+*Để hiểu sâu hơn về trường vector và tô-pô, hãy xem [Bài giảng 10: Dạng vi phân]({{ '/contents/vi/chapter05/lecture-10-differential-forms/' | absolute_url }}) và [Bài giảng 11: Trường Tensor]({{ '/contents/vi/chapter06/lecture-11-tensors-and-fields/' | absolute_url }}).*
 
 ## 2. Tô-pô học: Hình học của cao su
 
@@ -84,3 +84,8 @@ Và cái xoáy đó cũng cùng chung bản chất toán học với mắt bão 
 
 ---
 *Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+
+## Video tham khảo
+
+- [Why you can't comb a hairy ball, and why we care](https://www.youtube.com/watch?v=BHdbsHFs2P0) — 3Blue1Brown, tiếng Anh. xem trước. định lý và vài hệ quả: gió trên Trái Đất phải có một chỗ đứng yên, và một trường tiếp xúc trên mặt cầu không thể chẳng nơi nào bằng không.
+- [A Hairy Problem (and a Feathery Solution) - Numberphile](https://www.youtube.com/watch?v=NdnByi_tK6Q) — Numberphile, tiếng Anh. Một kể ngắn hơn, bằng hình quả cầu tóc và một cách nhìn tô-pô, để đối chiếu với mục Poincaré–Hopf của bài.

@@ -101,6 +101,12 @@ Hãy xem đường cong $$\gamma(t) = (t^2, t^3)$$.
 
 Nếu vận tốc bằng 0, hạt có thể dừng lại và đổi hướng đột ngột, tạo ra các góc nhọn. Hình học vi phân "ghét" các góc nhọn vì tại đó không có đạo hàm. Chúng ta chỉ nghiên cứu các đường cong **Chính quy** (Regular) - nơi vector tiếp tuyến luôn tồn tại và biến đổi trơn tru.
 
+## Video tham khảo
+
+- [Arc Length and Reparameterization \| Differential Geometry 2](https://www.youtube.com/watch?v=am5MIduPkKQ) — Faculty of Khan, tiếng Anh. xem trước. độ dài cung và cách đổi tham số để tốc độ bằng 1, đúng toàn bộ câu chuyện cruise control của bài.
+- [Calculus 3 Lecture 12.3:  Arc Length/Parameterization, TNB (Frenet-Serret) Intro](https://www.youtube.com/watch?v=Hu72QVWsMlg) — Professor Leonard, tiếng Anh. Phần đầu của buổi học này tính độ dài và tham số hóa theo cung trước khi dựng khung TNB; dừng ở ý tốc độ đơn vị là đủ cho bài này.
+- [Lecture 10: Smooth Curves (Discrete Differential Geometry)](https://www.youtube.com/watch?v=seLcPBax3OI) — Keenan Crane, tiếng Anh. Định lý cơ bản: độ cong xác định đường cong phẳng sai khác một phép dời hình, nên tham số hóa theo cung không còn bị lẫn với thói quen đạp ga.
+
 ## 6. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**

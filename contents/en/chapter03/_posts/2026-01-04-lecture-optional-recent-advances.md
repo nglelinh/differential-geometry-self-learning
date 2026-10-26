@@ -60,6 +60,12 @@ with $$\theta_i$$ the corner angles at $$v$$ and $$A_v$$ a barycentric area. Thi
 
 In shape analysis, registering two poses of the same person is the search for a nearly isometric map: the skin does not stretch, the joints fold. In graphics, UV parametrization — flattening a 3D surface to 2D — is the search for an $$F$$ that warps $$\mathrm{I}$$ as little as possible; Neural Jacobian Fields were among the first systems to *learn* that task on meshes of varying connectivity. In engineering, mean curvature governs stresses in thin shells; estimating $$H$$ on a scanned mesh is the first step of a shell analysis.
 
+## Video tham khảo
+
+- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, English. xem trước. Watch discrete curvature on meshes first: angle defect for Gaussian curvature and mean curvature, as in the lesson’s formula for $$K(v)$$.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, English. The first fundamental form as a metric tensor: the length ledger a nearly isometric map has to respect.
+- [Change of Variables & The Jacobian \| Multi-variable Integration](https://www.youtube.com/watch?v=wUF-lyyWpUc) — Dr. Trefor Bazett, English. The Jacobian of a change of variables measures area distortion; on a surface, $$dF$$ is the tangential version of that story.
+
 ## 🧩 Exercises
 
 **Exercise 1.** Sketch a cylinder and a plane. Point out the directions in which $$K=0$$, and explain why “unrolling” the cylinder onto paper can preserve $$\mathrm{I}$$ locally without doing so globally.

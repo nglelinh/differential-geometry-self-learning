@@ -119,3 +119,9 @@ Giải tích Đa biến cung cấp cho chúng ta:
 
 Trong Hình học Vi phân, chúng ta sẽ áp dụng những công cụ này không phải trên không gian phẳng $$\mathbb{R}^n$$, mà trên các bề mặt cong. Nhưng nhờ tư tưởng "cục bộ là phẳng", mọi công thức trên vẫn giữ nguyên giá trị.
 
+
+## Video tham khảo
+
+- [The paradox of the derivative \| Chapter 2, Essence of calculus](https://www.youtube.com/watch?v=9vKqVkMQHKk) — 3Blue1Brown, tiếng Anh. xem trước. để giữ đúng câu “đạo hàm là xấp xỉ tuyến tính tốt nhất”: phóng to đồ thị thì cung cong trông như tiếp tuyến.
+- [The Jacobian matrix](https://www.youtube.com/watch?v=bohL918kXQk) — Khan Academy, tiếng Anh. Ma trận các đạo hàm riêng của một ánh xạ nhiều biến, đúng định nghĩa Jacobian ở mục đạo hàm trong không gian nhiều chiều.
+- [Change of Variables & The Jacobian \| Multi-variable Integration](https://www.youtube.com/watch?v=wUF-lyyWpUc) — Dr. Trefor Bazett, tiếng Anh. Định thức Jacobian như nhân tử đổi diện tích, kể cả lý do xuất hiện thừa số $$r$$ khi chuyển sang tọa độ cực.
