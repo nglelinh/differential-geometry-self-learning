@@ -654,6 +654,129 @@ a.pagination-item:hover {
   box-shadow: 0 1px 3px rgba(40, 167, 69, 0.3);
 }
 
+/*
+ * Chapter submenus
+ *
+ * Each chapter is a row: the name links to the chapter index, and the
+ * chevron opens that chapter's lessons. The checkbox is CSS-only so the
+ * list collapses on a phone without a hover menu.
+ */
+
+.sidebar-chapter {
+  position: relative;
+}
+
+.sidebar-chapter-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sidebar-chapter-head {
+  display: flex;
+  align-items: stretch;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.sidebar-chapter-head .sidebar-chapter-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-top: 0;
+  overflow-wrap: break-word;
+}
+
+.sidebar-chapter.is-current > .sidebar-chapter-head .sidebar-chapter-link {
+  box-shadow: inset 3px 0 0 #268bd2;
+}
+
+.sidebar-chapter-toggle {
+  flex: 0 0 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  cursor: pointer;
+  color: #fff;
+  border-left: 1px solid rgba(255,255,255,.1);
+}
+
+.sidebar-chapter-toggle:hover,
+.sidebar-chapter-checkbox:focus-visible ~ .sidebar-chapter-head .sidebar-chapter-toggle {
+  background-color: rgba(255,255,255,.1);
+}
+
+.sidebar-chevron {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid rgba(255,255,255,.75);
+  transition: transform .2s ease;
+}
+
+.sidebar-chapter-checkbox:checked ~ .sidebar-chapter-head .sidebar-chevron {
+  transform: rotate(90deg);
+}
+
+.sidebar-lessons {
+  display: none;
+  background-color: rgba(0,0,0,.18);
+}
+
+.sidebar-chapter-checkbox:checked ~ .sidebar-lessons {
+  display: block;
+}
+
+.sidebar-lesson {
+  font-size: .72rem;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.sidebar-lesson .lesson-badge {
+  display: inline-block;
+  margin-top: .2rem;
+  margin-left: 0;
+}
+
+.sidebar-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 48em) {
+  .sidebar-lesson.sidebar-nav-item {
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .sidebar-lesson.sidebar-nav-item {
+    padding-left: 1.35rem;
+    padding-right: .75rem;
+  }
+
+  .sidebar-chapter-toggle {
+    flex-basis: 2.75rem;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .lesson-badge {
