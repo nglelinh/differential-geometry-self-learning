@@ -7,86 +7,60 @@ order: 6
 owner: "Hình học Vi phân"
 ---
 
-## 1. Cuộc nổi loạn của Hình học
+## 1. Câu hỏi về tiên đề thứ năm của Euclid
 
-Trong hơn 2000 năm, cuốn sách "Cơ sở" (Elements) của Euclid là kinh thánh của toán học. Nó xây dựng toàn bộ hình học dựa trên 5 tiên đề đơn giản.
-Bốn tiên đề đầu tiên rất hiển nhiên (ví dụ: qua 2 điểm vẽ được 1 đường thẳng).
-Nhưng Tiên đề thứ 5 (Tiên đề về đường song song) lại rất rắc rối: *"Qua một điểm nằm ngoài một đường thẳng, chỉ có duy nhất một đường thẳng song song với đường thẳng đó."*
+Trong hơn hai nghìn năm, bộ *Cơ sở* (*Elements*) của Euclid là nền tảng của hình học, xây dựng từ năm tiên đề cơ bản. Bốn tiên đề đầu tiên rất trực quan (chẳng hạn qua hai điểm xác định một đường thẳng), nhưng tiên đề thứ năm — tiên đề về đường thẳng song song (*"qua một điểm nằm ngoài một đường thẳng, có duy nhất một đường thẳng song song với đường thẳng đó"*) — có phát biểu phức tạp hơn. Trong nhiều thế kỷ, các nhà toán học cố gắng chứng minh tiên đề này từ bốn tiên đề còn lại nhưng đều không thành công.
 
-Các nhà toán học cảm thấy tiên đề này quá phức tạp, không "đẹp". Họ cố gắng chứng minh nó dựa trên 4 tiên đề kia. Họ đã thử suốt 20 thế kỷ. Và họ đều thất bại.
+Đến thế kỷ 19, Gauss, Lobachevsky và Bolyai đặt câu hỏi ngược lại: điều gì xảy ra nếu thay tiên đề thứ năm bằng giả thiết rằng qua điểm đó có **vô số** đường thẳng song song? Thay vì dẫn đến mâu thuẫn, giả thiết này mở ra một hệ hình học hoàn toàn nhất quán về mặt logic gọi là **Hình học Hyperbolic** (một dạng hình học phi Euclid).
 
-Đến thế kỷ 19, một nhóm các nhà toán học "nổi loạn" (Gauss, Lobachevsky, Bolyai) đã đặt ra một câu hỏi táo bạo: **Điều gì xảy ra nếu Tiên đề 5 sai?**
-Điều gì xảy ra nếu có **vô số** đường thẳng song song đi qua điểm đó?
+*Để tìm hiểu nền tảng toán học về metric và đa tạp cong, hãy xem [Bài giảng 6: Dạng cơ bản thứ nhất]({{ '/contents/vi/chapter03/lecture-06-first-fundamental-form/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
 
-Họ nghĩ rằng điều này sẽ dẫn đến mâu thuẫn và sụp đổ toán học. Nhưng không. Nó dẫn họ đến một thế giới mới, kỳ lạ nhưng hoàn toàn logic và nhất quán. Đó là **Hình học Hyperbolic** (Hình học Phi Euclid).
+## 2. Mô hình Đĩa Poincaré
 
-*Để hiểu sâu hơn về metric và độ cong, hãy xem [Bài giảng 6: Dạng cơ bản thứ nhất]({{ '/contents/vi/chapter03/lecture-06-first-fundamental-form/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
-
-## 2. Thế giới trong cái Đĩa của Poincaré
-
-Hình học Hyperbolic rất khó hình dung vì não bộ chúng ta được lập trình cho không gian phẳng Euclid.
-Để giúp chúng ta nhìn thấy nó, Henri Poincaré đã tạo ra một mô hình: **Đĩa Poincaré**.
+Vì trực giác của chúng ta quen với không gian phẳng Euclid, Henri Poincaré đã xây dựng một mô hình phẳng giúp biểu diễn mặt phẳng hyperbolic bên trong một hình tròn đơn vị, gọi là **Đĩa Poincaré**.
 
 ![Đĩa Poincaré](https://upload.wikimedia.org/wikipedia/commons/4/4c/Poincare_disc_hyperbolic_parallel_lines.svg)
-*Hình 1: Mô hình Đĩa Poincaré. Đường cong màu đỏ là một "đường thẳng" (trắc địa). Qua điểm P nằm ngoài đường đỏ, có vô số đường màu xanh đi qua P mà không cắt đường đỏ (song song).*
+*Hình 1: Mô hình Đĩa Poincaré. Cung tròn màu đỏ vuông góc với biên là một "đường thẳng" (trắc địa). Qua điểm P nằm ngoài đường đỏ, có vô số cung màu xanh đi qua P mà không cắt đường đỏ.*
 
-Hãy tưởng tượng một cái đĩa tròn.
-1.  **Luật chơi:** Bạn không bao giờ có thể chạm vào mép đĩa. Mép đĩa là "vô cực".
-2.  **Phép thuật:** Khi bạn đi từ tâm ra mép đĩa, bạn bị thu nhỏ lại. Càng gần mép, bạn càng bé đi. Bước chân bạn ngắn lại.
-3.  **Hệ quả:** Để đi đến mép đĩa, bạn phải bước vô hạn bước chân. Đối với bạn (người sống trong đĩa), thế giới này là vô tận, dù người ngoài nhìn vào thấy nó hữu hạn.
+Trong mô hình này, ta có thể hình dung quy luật đo khoảng cách như sau:
+1. **Biên ở vô cực:** Đường tròn biên của đĩa không thuộc không gian hyperbolic mà đại diện cho vô cực.
+2. **Thước đo co lại gần biên:** Càng tiến từ tâm ra gần mép đĩa, độ dài Euclid của mỗi bước chân có cùng độ dài hyperbolic càng nhỏ đi.
+3. **Không gian vô hạn trong đĩa hữu hạn:** Vì bước chân co nhỏ dần theo tỉ lệ nghịch với khoảng cách đến biên, để đi tới mép đĩa cần vô hạn bước. Đối với sinh vật sống bên trong đĩa, thế giới này rộng vô tận dù người quan sát trong mặt phẳng Euclid thấy nó nằm gọn trong một hình tròn bán kính 1.
 
-Trong hình học vi phân, ta mô tả điều này bằng Metric Tensor:
+Trong ngôn ngữ hình học vi phân, quy luật đo khoảng cách này được cho bởi tensor metric Poincaré:
 
 $$ ds^2 = \frac{4(dx^2 + dy^2)}{(1 - (x^2 + y^2))^2} $$
 
-Khi \(r^2 = x^2 + y^2 \to 1\) (tiến ra mép), mẫu số tiến về 0, làm cho khoảng cách \(ds\) tiến tới vô cùng.
+Khi \(r^2 = x^2 + y^2 \to 1\) (tiến sát đường tròn biên), mẫu số tiến về 0 khiến phần tử độ dài \(ds\) tăng ra vô cùng.
 
-## 3. M.C. Escher: Người họa sĩ của Vô tận
+## 3. M.C. Escher và bức tranh *Circle Limit III*
 
-M.C. Escher, nghệ sĩ đồ họa thiên tài người Hà Lan, không phải là nhà toán học. Nhưng ông bị ám ảnh bởi sự vô tận và các quy luật lấp đầy mặt phẳng (tessellation).
-Năm 1954, ông nhìn thấy một hình minh họa của đĩa Poincaré trong một cuốn sách toán. Ông bị sốc. Ông nhận ra đây chính là cái khung hoàn hảo để ông vẽ sự vô tận.
+Nghệ sĩ đồ họa người Hà Lan M.C. Escher không phải là nhà toán học chuyên nghiệp, nhưng ông đặc biệt quan tâm đến việc biểu diễn sự vô tận và các phép lát kín mặt phẳng (tessellation). Năm 1954, sau khi nhìn thấy một hình vẽ mô hình đĩa Poincaré trong tài liệu toán học, ông nhận thấy đây là cấu trúc hình học phù hợp để thể hiện sự lặp lại vô hạn bên trong một khung hình hữu hạn.
 
-Bức tranh **Circle Limit III** (1959) ra đời.
-- Ông vẽ những con cá bơi nối đuôi nhau.
-- Ở tâm, con cá to. Ra ngoài biên, con cá nhỏ dần.
-- Nhưng hãy nhớ: **Trong thế giới Hyperbolic, tất cả những con cá đó đều to bằng nhau!**
-- Chúng chỉ "trông có vẻ" nhỏ đi do hiệu ứng của metric Poincaré khi chiếu lên mặt phẳng Euclid của chúng ta.
+Từ đó ra đời tác phẩm **Circle Limit III** (1959), vẽ các dãy cá bơi nối đuôi nhau từ tâm tỏa ra biên đĩa. Ở gần tâm, các con cá trông lớn và thu nhỏ dần khi tiến ra mép đĩa. Tuy nhiên, **theo metric của hình học hyperbolic, tất cả các con cá đó đều có cùng kích thước**; chúng chỉ trông nhỏ dần khi được chiếu lên mặt phẳng Euclid. Các đường cong trắng chạy dọc theo sống lưng các hàng cá trong tranh khớp rất sát với các đường trắc địa (cung tròn vuông góc hoặc cắt biên dưới góc cố định) của hình học hyperbolic.
 
-Escher đã vẽ chính xác đến mức các nhà toán học sau này dùng thước đo và thấy các đường cong màu trắng chạy dọc theo lưng cá chính là các đường trắc địa (geodesics) chuẩn xác trong hình học Hyperbolic. Ông đã thấu hiểu cấu trúc của không gian này bằng trực giác nghệ thuật.
+## 4. Hình học hyperbolic trong tự nhiên: Lá xà lách và san hô
 
-## 4. Tại sao Rau Xà lách lại xoăn?
-
-Hình học Hyperbolic không chỉ nằm trong tranh của Escher. Nó nằm trong đĩa salad của bạn.
-Hãy nhìn một lá rau xà lách, hoặc một miếng san hô, hay một cây nấm. Tại sao mép của chúng lại xoăn tít thò lò như vậy?
+Hình học hyperbolic không chỉ tồn tại trong mô hình toán học hay tranh vẽ mà còn xuất hiện phổ biến ở sinh vật tự nhiên như mép lá rau xà lách xoăn, nấm tai mèo hay các loài san hô.
 
 ![Tam giác Hyperbolic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hyperbolic_triangle_angle_sum.svg/400px-Hyperbolic_triangle_angle_sum.svg.png)
-*Hình 2: Một tam giác trong không gian Hyperbolic có các cạnh cong vào trong và tổng ba góc nhỏ hơn 180 độ. Diện tích càng lớn, tổng góc càng nhỏ.*
+*Hình 2: Tam giác trong không gian hyperbolic có các cạnh uốn cong vào trong và tổng ba góc nhỏ hơn 180 độ; diện tích càng lớn thì tổng góc càng nhỏ.*
 
-Đó là biểu hiện của **Độ cong Âm (Negative Curvature)**.
-- Trong mặt phẳng (Euclid): Chu vi vòng tròn là \(2\pi R\).
-- Trong hình học Hyperbolic: Chu vi vòng tròn lớn hơn \(2\pi R\) rất nhiều (tăng theo hàm mũ \( \sinh R \)).
+Đó là hệ quả trực tiếp của **độ cong Gauss âm (\(K < 0\))**:
+- Trên mặt phẳng Euclid, chu vi đường tròn bán kính \(R\) là \(2\pi R\) và diện tích tăng theo \(R^2\).
+- Trên mặt phẳng hyperbolic (với \(K = -1\)), chu vi đường tròn là \(2\pi \sinh R\), tăng theo hàm mũ khi \(R\) tăng.
 
-Cây xà lách muốn phát triển diện tích bề mặt thật nhanh để quang hợp được nhiều ánh sáng nhất.
-- Nếu nó mọc phẳng, diện tích chỉ tăng theo bình phương bán kính (\(R^2\)). Quá chậm.
-- Để tăng diện tích nhanh hơn bán kính, nó phải uốn cong không gian của chính nó. Nó tạo ra một bề mặt Hyperbolic. Mép lá dài ra nhanh hơn mức bình thường, nên nó không còn chỗ để nằm phẳng, buộc phải uốn lượn, gấp nếp chồng chéo lên nhau.
-
-San hô cũng vậy. Để lọc được nhiều thức ăn trong nước biển, nó cần diện tích tiếp xúc tối đa. Cấu trúc Hyperbolic là giải pháp tối ưu của tiến hóa.
+Để tăng nhanh diện tích bề mặt nhằm hấp thụ ánh sáng quang hợp (ở lá xà lách) hoặc lọc chất dinh dưỡng trong nước (ở san hô), phần mép sinh trưởng nhanh hơn nhiều so với bán kính. Vì phần mép dài ra vượt quá chỗ chứa của một mặt phẳng, cấu trúc buộc phải uốn lượn, gợn sóng thành dạng bề mặt mang độ cong âm.
 
 ## 5. Kết luận
 
-Chúng ta đã đi một chặng đường dài. Từ những đường cong trơn láng của giải tích, đến độ cong của không gian-thời gian, và giờ là vẻ đẹp vô tận của hình học Hyperbolic.
-Hình học Vi phân cho chúng ta thấy rằng "Không gian" không phải là một tờ giấy trắng thụ động. Nó có hình dáng, có tính cách, và có sức sống.
-- Nó có thể phẳng lặng và bình yên (Euclid).
-- Nó có thể khép kín và tròn trịa (Mặt cầu).
-- Nó có thể bùng nổ và hoang dại (Hyperbolic).
-
-Và dù là trong một bức tranh, một chiếc lá, hay một thiên hà xa xôi, toán học vẫn luôn ở đó, âm thầm dệt nên vẻ đẹp của thực tại.
+Từ hình học phẳng Euclid (\(K = 0\)) đến hình học cầu (\(K > 0\)) và hình học hyperbolic (\(K < 0\)), hình học vi phân cho thấy độ cong quyết định sâu sắc cách khoảng cách, góc và diện tích vận hành. Dù xuất hiện trong mô hình đĩa Poincaré, tác phẩm đồ họa của Escher hay hình thái gấp nếp của sinh vật biển, cấu trúc của hình học phi Euclid đều mang ý nghĩa hình học rõ ràng và nhất quán.
 
 ---
-*Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+*Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" — dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
 
 ## Video tham khảo
 
-- [Ditching the Fifth Axiom - Numberphile](https://www.youtube.com/watch?v=PnW5IRvgvLY) — Numberphile, tiếng Anh. xem trước. việc bỏ tiên đề song song: qua một điểm có thể có vô số đường song song, đúng cuộc nổi loạn mở đầu bài.
-- [Playing Sports in Hyperbolic Space - Numberphile](https://www.youtube.com/watch?v=u6Got0X41pY) — Numberphile, tiếng Anh. Đĩa Poincaré hiện ra như mô hình: đường thẳng là cung vuông góc với biên, và diện tích tăng theo hàm mũ khi ra xa tâm, đúng cảm giác “càng ra rìa càng nhiều chỗ”.
-- [Non-euclidean virtual reality](https://www.youtube.com/watch?v=ztsi0CLxmjw) — Henry Segerman, tiếng Anh. Đi bộ trong một không gian hyperbolic được dựng thật, để mắt thấy cái vô tận mà tranh Circle Limit của Escher đang vẽ.
+- [Ditching the Fifth Axiom - Numberphile](https://www.youtube.com/watch?v=PnW5IRvgvLY) — Numberphile, tiếng Anh. Xem trước: giải thích hệ quả của việc bỏ tiên đề thứ năm của Euclid, mở ra trường hợp có vô số đường song song qua một điểm.
+- [Playing Sports in Hyperbolic Space - Numberphile](https://www.youtube.com/watch?v=u6Got0X41pY) — Numberphile, tiếng Anh. Minh họa mô hình đĩa Poincaré, nơi đường thẳng là các cung vuông góc với biên và diện tích tăng theo hàm mũ khi ra xa tâm.
+- [Non-euclidean virtual reality](https://www.youtube.com/watch?v=ztsi0CLxmjw) — Henry Segerman, tiếng Anh. Trải nghiệm di chuyển trực quan trong không gian hyperbolic được dựng bằng thực tế ảo, minh họa trực tiếp không gian vô tận trong tranh *Circle Limit* của Escher.

@@ -7,112 +7,83 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời nói đầu: Từ Bữa trưa đến Vũ trụ
+## 1. Lời nói đầu: Từ miếng pizza đến tấm bản đồ
 
-Bạn đã bao giờ rơi vào tình huống khó xử này chưa: Bạn đang cầm một lát pizza New York to bản, nóng hổi trên tay. Lớp vỏ bánh mỏng manh, phô mai chảy ra, và trọng lực đang làm việc của nó—kéo đầu nhọn của lát bánh rũ xuống, đe dọa làm rơi toàn bộ phần nhân ngon lành xuống sàn nhà.
-
-Theo bản năng, bạn làm một động tác đơn giản: Bạn dùng ngón cái và các ngón còn lại bóp nhẹ phần vỏ bánh, tạo thành hình chữ U (hoặc chữ V). Kỳ diệu thay, lát bánh bỗng nhiên trở nên cứng cáp, đầu bánh vểnh lên thẳng tắp, thách thức trọng lực.
+Khi cầm một lát pizza New York bản rộng và mỏng trên tay, trọng lực kéo đầu nhọn của lát bánh rũ xuống, dễ làm phần nhân trượt khỏi đế bánh. Theo phản xạ quen thuộc, ta dùng các ngón tay uốn nhẹ phần vỏ bánh thành hình chữ U (hoặc chữ V). Ngay lập tức, lát bánh trở nên cứng cáp hơn và giữ thẳng theo chiều dọc mà không còn gập xuống.
 
 ![Minh họa cách cầm Pizza](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Pizza_slice_folded.png/640px-Pizza_slice_folded.png)
-*Hình 1: Gập vỏ bánh tạo ra độ cong ngang, buộc độ cong dọc phải bằng 0 để giữ nguyên độ cong Gauss bằng 0. (Ảnh minh họa)*
+*Hình 1: Uốn cong vỏ bánh theo phương ngang buộc độ cong theo phương dọc phải bằng 0 để bảo toàn độ cong Gauss bằng 0. (Ảnh minh họa)*
 
-Bạn vừa thực hiện một phép tính vi phân phức tạp ngay trên bàn ăn. Hành động đơn giản đó là minh chứng sống động cho một trong những định lý đẹp nhất và sâu sắc nhất của toán học: **Theorema Egregium** (Định lý Tuyệt vời) của Carl Friedrich Gauss.
+Thao tác quen thuộc đó là một minh họa trực tiếp cho một kết quả nền tảng của hình học vi phân: **Theorema Egregium** (Định lý Đáng chú ý) của Carl Friedrich Gauss. Trong bài giảng này, chúng ta sẽ đi từ lát bánh pizza đến bài toán vẽ bản đồ thế giới để hiểu bản chất nội tại của độ cong.
 
-Trong bài giảng này, chúng ta sẽ đi từ miếng pizza trên tay bạn đến những tấm bản đồ thế giới, và cuối cùng là hiểu về bản chất của không gian mà chúng ta đang sống.
+*Nếu bạn muốn tìm hiểu phần toán học chi tiết, hãy tham khảo [Bài giảng 7: Dạng cơ bản thứ hai và Độ cong Gauss]({{ '/contents/vi/chapter03/lecture-07-second-fundamental-form/' | absolute_url }}) và [Bài giảng 8: Theorema Egregium]({{ '/contents/vi/chapter04/lecture-08-gauss-map-theorema-egregium/' | absolute_url }}).*
 
-*Nếu bạn muốn tìm hiểu sâu về mặt toán học, hãy tham khảo [Bài giảng 7: Dạng cơ bản thứ hai và Độ cong Gauss]({{ '/contents/vi/chapter03/lecture-07-second-fundamental-form/' | absolute_url }}) và [Bài giảng 8: Theorema Egregium]({{ '/contents/vi/chapter04/lecture-08-gauss-map-theorema-egregium/' | absolute_url }}).*
+## 2. Phân loại độ cong bề mặt
 
-## 2. Bí mật của Độ cong: Không chỉ là "Cong"
+Trong đời thường, ta gọi một vật là "cong" khi nó không phẳng. Tuy nhiên, trong toán học, độ cong của một bề mặt có nhiều dạng khác nhau. Để hiểu vì sao miếng pizza cứng lại khi uốn vỏ, ta cần phân biệt các hướng cong tại một điểm.
 
-Trong ngôn ngữ đời thường, chúng ta nói một vật là "cong" nếu nó không phẳng. Nhưng trong toán học, "cong" có nhiều sắc thái hơn thế. Để hiểu tại sao miếng pizza lại cứng lại, chúng ta cần phân biệt các loại độ cong.
-
-Hãy tưởng tượng bạn là một con kiến bò trên một bề mặt. Tại bất kỳ điểm nào bạn đứng, bề mặt có thể cong theo nhiều hướng khác nhau.
-- Nếu bạn bò dọc theo vỏ bánh pizza, nó cong lên.
-- Nếu bạn bò dọc theo chiều dài miếng bánh, nó có thể cong xuống.
-
-Gauss định nghĩa **Độ cong Gauss** (\(K\)) là tích của hai độ cong cực trị này (gọi là độ cong chính \(k_1\) và \(k_2\)):
+Hãy hình dung một con kiến bò trên bề mặt: tại mỗi điểm, bề mặt có thể uốn theo các hướng khác nhau — chẳng hạn cong lên dọc theo mép vỏ bánh nhưng lại cong xuống dọc theo chiều dài lát bánh. Gauss định nghĩa **độ cong Gauss** (\(K\)) là tích của hai độ cong chính \(k_1\) và \(k_2\) (hai giá trị độ cong cực trị theo hai phương vuông góc tại điểm đó):
 
 $$ K = k_1 \cdot k_2 $$
 
-### Ba loại hình học cơ bản
-Dựa vào dấu của \(K\), chúng ta có ba loại thế giới:
+### Ba loại hình học bề mặt cơ bản
+Dựa vào dấu của \(K\), ta phân biệt ba trường hợp:
 
 ![Ba loại độ cong](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Minkowski_curvature.gif/400px-Minkowski_curvature.gif)
-*Hình 2: Minh họa trực quan về độ cong. Bên trái: Độ cong âm (Yên ngựa). Ở giữa: Độ cong bằng 0 (Phẳng/Trụ). Bên phải: Độ cong dương (Cầu).*
+*Hình 2: Minh họa trực quan ba loại độ cong. Bên trái: độ cong âm (yên ngựa). Ở giữa: độ cong bằng 0 (mặt phẳng hoặc mặt trụ). Bên phải: độ cong dương (mặt cầu).*
 
-1.  **Thế giới Phẳng (\(K = 0\)):** Mặt bàn, tờ giấy, hình trụ (ống nước). Tại sao hình trụ lại phẳng? Chúng ta sẽ bàn ngay sau đây.
-2.  **Thế giới Lồi (\(K > 0\)):** Quả cam, quả bóng, vỏ trứng. Cả hai độ cong chính đều cùng dấu (cùng cong lên hoặc cùng cong xuống).
-3.  **Thế giới Yên ngựa (\(K < 0\)):** Miếng khoai tây chiên Pringles, đèo núi. Một chiều cong lên, chiều kia cong xuống.
+1. **Bề mặt phẳng nội tại (\(K = 0\)):** Mặt bàn, tờ giấy hay mặt trụ (ống nước). Lý do mặt trụ có \(K = 0\) sẽ được giải thích ngay dưới đây.
+2. **Bề mặt cong dương (\(K > 0\)):** Quả cam, quả bóng, vỏ trứng. Cả hai độ cong chính đều cùng dấu (cùng uốn về một phía).
+3. **Bề mặt cong âm hay dạng yên ngựa (\(K < 0\)):** Miếng khoai tây chiên Pringles, đèo núi. Một phương cong lên và phương vuông góc với nó cong xuống.
 
-## 3. Định lý Pizza: Tại sao gập lại thì cứng?
+## 3. Định lý Pizza: Vì sao gập lại thì bánh cứng hơn?
 
-Quay lại với miếng pizza.
-Ban đầu, miếng pizza nằm phẳng trên đĩa.
-- Độ cong ngang \(k_1 = 0\).
-- Độ cong dọc \(k_2 = 0\).
-- Độ cong Gauss \(K = 0 \times 0 = 0\).
+Khi lát pizza nằm phẳng trên đĩa, cả độ cong ngang \(k_1 = 0\) và độ cong dọc \(k_2 = 0\), nên độ cong Gauss \(K = 0 \times 0 = 0\). Khi bạn nhấc lát bánh lên mà giữ phẳng phần vỏ (\(k_1 = 0\)), trọng lực có thể uốn lát bánh cong xuống theo chiều dọc (\(k_2 \neq 0\)) mà tích \(K = 0 \cdot k_2 = 0\) vẫn được bảo toàn.
 
-Khi bạn cầm nó lên, trọng lực muốn bẻ cong nó theo chiều dọc (đầu bánh rũ xuống). Nếu điều này xảy ra, \(k_2\) sẽ khác 0, nhưng \(k_1\) vẫn bằng 0 (vỏ bánh phẳng). Lúc này \(K\) vẫn bằng 0. Điều này hoàn toàn được phép.
+Theo *Theorema Egregium* của Gauss, **độ cong Gauss là bất biến dưới các phép uốn đẳng cự (isometry)**: nếu chỉ uốn một vật liệu mà không kéo giãn hay làm rách nó, độ cong Gauss tại mọi điểm phải giữ nguyên.
 
-Tuy nhiên, Gauss đã phát hiện ra một quy luật tự nhiên bất di bất dịch: **Độ cong Gauss là bất biến dưới các phép uốn cong (isometry).**
-Nghĩa là: Nếu bạn chỉ uốn một vật liệu (mà không co giãn, không làm rách nó), độ cong Gauss của nó **phải giữ nguyên**.
+Vì miếng pizza ban đầu phẳng nên có \(K = 0\); miễn là đế bánh không bị kéo giãn hoặc rách, nó vẫn phải giữ \(K = 0\). Khi bạn chủ động bóp vỏ bánh tạo hình chữ U, bạn làm cho độ cong ngang \(k_1 \neq 0\). Vì tích \(K = k_1 \cdot k_2 = 0\), điều kiện toán học buộc **\(k_2 = 0\)**. Điều này có nghĩa là lát bánh không thể cong theo chiều dọc được nữa — nó giữ thẳng theo phương dọc nhờ sự ràng buộc hình học giữa hai phương cong.
 
-Miếng pizza bắt đầu với \(K=0\). Dù bạn uốn nó thế nào, nó vẫn phải giữ \(K=0\).
+### Các ứng dụng quen thuộc
+Nguyên lý bảo toàn độ cong Gauss xuất hiện rộng rãi trong kỹ thuật và tự nhiên:
+- **Tôn lợp mái nhà:** Tấm kim loại phẳng rất dễ bị võng dưới trọng lượng của chính nó. Khi được cán dập thành các nếp lượn sóng (\(k_1 \neq 0\)), tấm tôn buộc phải giữ thẳng theo phương vuông góc (\(k_2 = 0\)), nhờ đó tăng đáng kể độ cứng vững mà không cần tăng độ dày vật liệu.
+- **Thân cây hình ống (như cọng rau muống):** Cấu trúc hình trụ có \(K = 0\) với một phương uốn tròn (\(k_1 \neq 0\)), giúp phương còn lại dọc theo thân giữ thẳng (\(k_2 = 0\)) và khó bị gập gãy.
 
-Khi bạn chủ động gập vỏ bánh lại (tạo hình chữ U):
-- Bạn ép độ cong ngang \(k_1\) trở nên rất lớn (khác 0).
-- Theo định lý Gauss: \(K = k_1 \cdot k_2 = 0\).
-- Vì \(k_1 \neq 0\), toán học bắt buộc **\(k_2\) phải bằng 0**.
+## 4. Thách thức của người vẽ bản đồ
 
-\(k_2 = 0\) nghĩa là gì? Nghĩa là miếng bánh **không thể cong theo chiều dọc**. Nó bắt buộc phải thẳng tắp! Bằng cách tạo ra độ cong ở phương này, bạn đã triệt tiêu khả năng cong ở phương kia. Bạn đã "khóa" hình dáng của miếng bánh lại.
+Cùng một định lý giúp giữ thẳng lát pizza lại đặt ra giới hạn toán học không thể vượt qua trong ngành bản đồ học: **Trái Đất có dạng gần cầu (\(K > 0\)), còn tờ giấy bản đồ thì phẳng (\(K = 0\)).**
 
-### Ứng dụng: Tôn lợp nhà và Lon nước ngọt
-Nguyên lý này không chỉ dùng cho pizza.
-- **Tôn lợp mái nhà:** Tại sao người ta không dùng tấm kim loại phẳng để lợp nhà? Vì nó sẽ oặt xuống ngay lập tức. Người ta dập nó thành hình lượn sóng. Những nếp sóng này tạo ra độ cong \(k_1 \neq 0\), buộc tấm tôn phải thẳng tắp theo chiều kia (\(k_2 = 0\)), giúp nó chịu lực cực tốt mà không cần xà gồ dày đặc.
-- **Cọng rau muống:** Cọng rau muống hình ống (hình trụ). Hình trụ có \(K=0\) (vì một chiều cong tròn, chiều kia thẳng). Cấu trúc ống giúp cọng rau vươn thẳng đứng lên trời mà không bị gãy gập.
-
-## 4. Nỗi đau của những người làm bản đồ
-
-Nếu định lý Gauss giúp chúng ta ăn pizza ngon lành, thì nó lại là cơn ác mộng đối với những người làm bản đồ suốt hàng ngàn năm qua.
-
-Vấn đề là: **Trái Đất hình cầu (\(K > 0\)), còn tờ giấy bản đồ thì phẳng (\(K = 0\)).**
-
-Gauss chứng minh rằng: **Không thể biến đổi một bề mặt có \(K > 0\) thành bề mặt có \(K = 0\) mà không làm biến dạng khoảng cách.**
-Bạn không thể trải vỏ cam ra bàn mà không làm nó rách hoặc nát. Tương tự, bạn không thể vẽ một bản đồ thế giới chính xác hoàn toàn.
+Từ *Theorema Egregium*, Gauss chứng minh rằng **không thể trải một bề mặt có \(K > 0\) lên mặt phẳng có \(K = 0\) mà bảo toàn đồng thời mọi khoảng cách**. Cũng như không thể ép phẳng một mảnh vỏ cam trên mặt bàn mà không làm rách hoặc nhăn nó, không tồn tại một tấm bản đồ phẳng nào thể hiện chính xác đồng thời cả hình dạng, góc và diện tích của Trái Đất.
 
 ![Sự biến dạng của phép chiếu Mercator](https://upload.wikimedia.org/wikipedia/commons/8/87/Tissot_mercator.png)
-*Hình 3: Các vòng tròn Tissot minh họa sự biến dạng của phép chiếu Mercator. Hãy chú ý các vòng tròn ở gần cực bị phóng đại khủng khiếp như thế nào so với ở xích đạo.*
+*Hình 3: Các vòng tròn chỉ thị Tissot minh họa mức độ biến dạng của phép chiếu Mercator: các vòng tròn càng gần cực càng bị phóng đại mạnh so với vùng xích đạo.*
 
-### Sự đánh đổi vĩ đại
-Mọi tấm bản đồ đều là một sự dối trá. Bạn chỉ có thể chọn "nói dối" về cái gì:
-1.  **Bản đồ Mercator (Google Maps dùng):**
-    - *Ưu điểm:* Giữ đúng hình dáng và góc (Conformal). Nếu bạn vẽ một góc 90 độ trên bản đồ, nó là 90 độ ngoài thực tế. Rất tốt cho hàng hải.
-    - *Nhược điểm:* Sai lệch diện tích kinh khủng. Càng về cực, diện tích càng bị phóng đại. Greenland trông to bằng Châu Phi, nhưng thực tế Châu Phi lớn gấp 14 lần Greenland!
-2.  **Bản đồ Gall-Peters:**
-    - *Ưu điểm:* Giữ đúng diện tích. Các nước nghèo ở xích đạo được thể hiện đúng kích thước thật so với các nước phương Tây.
-    - *Nhược điểm:* Sai lệch hình dáng. Châu Phi trông như bị kéo dài ra như giọt nước, rất xấu xí.
+### Sự đánh đổi giữa các phép chiếu bản đồ
+Mỗi phép chiếu bản đồ phải chấp nhận đánh đổi giữa các yếu tố hình học khác nhau:
+1. **Phép chiếu Mercator (được dùng phổ biến trên bản đồ web):**
+   - *Ưu điểm:* Bảo toàn góc và hình dạng cục bộ (phép chiếu bảo giác — conformal), rất thuận tiện cho định hướng hàng hải.
+   - *Nhược điểm:* Làm sai lệch mạnh diện tích ở các vĩ độ cao. Trên bản đồ Mercator, Greenland trông lớn ngang châu Phi, trong khi thực tế diện tích châu Phi lớn gấp khoảng 14 lần Greenland.
+2. **Phép chiếu Gall–Peters:**
+   - *Ưu điểm:* Bảo toàn tỉ lệ diện tích thực giữa các khu vực, giúp các quốc gia gần xích đạo được thể hiện đúng quy mô diện tích so với vùng vĩ độ cao.
+   - *Nhược điểm:* Làm biến dạng hình dạng địa lý, khiến các lục địa gần xích đạo (như châu Phi) bị kéo dài theo chiều dọc.
 
-Không có giải pháp hoàn hảo. Đó là giới hạn toán học mà Gauss đã vạch ra.
+Không có phép chiếu phẳng nào tránh được hoàn toàn biến dạng; đó là hệ quả trực tiếp từ định lý của Gauss.
 
-## 5. Giai thoại: Gauss và những ngọn núi
+## 5. Giai thoại: Gauss và công việc đo đạc trắc địa
 
-Làm thế nào Gauss phát hiện ra điều này? Không phải khi ngồi trong tháp ngà.
-Vào những năm 1820, Gauss được vua Hanover thuê làm trắc địa viên để đo đạc vương quốc. Ông đã dành nhiều năm lội bùn, cưỡi ngựa đi khắp các đỉnh núi để đo đạc tam giác đạc.
+Phát hiện của Gauss gắn liền với công việc thực địa. Vào những năm 1820, ông đảm nhận nhiệm vụ khảo sát trắc địa cho Vương quốc Hanover, trực tiếp đo đạc các lưới tam giác nối giữa những đỉnh núi (như Brocken, Hohenhagen và Inselberg).
 
-Chính trong lúc đo các góc của những tam giác khổng lồ nối các đỉnh núi (như đỉnh Brocken, Hohenhagen và Inselberg), Gauss nhận ra một điều kỳ lạ: **Tổng ba góc của tam giác thực tế lớn hơn 180 độ.**
-Sai số này không phải do dụng cụ đo, mà do bề mặt Trái Đất bị cong.
-
-Ông nhận ra rằng độ cong không phải là thứ gì đó bạn nhìn thấy từ bên ngoài (như nhìn quả địa cầu từ vũ trụ). Độ cong là thứ bạn có thể cảm nhận được từ **bên trong**, bằng cách đo đạc các góc và khoảng cách ngay tại nơi bạn đứng. Đây là nội dung cốt lõi của *Theorema Egregium* - Độ cong là một thuộc tính nội tại.
+Khi đo góc của các tam giác lớn trên bề mặt Trái Đất, tổng ba góc của tam giác cầu lớn hơn 180 độ — độ lệch này không phải sai số thiết bị mà xuất phát từ chính độ cong của Trái Đất. Từ đó, Gauss nhận ra rằng độ cong không nhất thiết phải quan sát từ bên ngoài không gian ba chiều (như nhìn quả địa cầu từ xa), mà có thể xác định hoàn toàn từ **bên trong** bề mặt thông qua các phép đo độ dài và góc. Đó chính là nội dung cốt lõi của *Theorema Egregium*: độ cong Gauss là một đại lượng nội tại.
 
 ## 6. Kết luận
 
-Lần tới khi bạn gập miếng pizza, hay nhìn vào sự méo mó của Greenland trên bản đồ, hãy nhớ rằng bạn đang tương tác với những quy luật sâu sắc của vũ trụ. Hình học Vi phân không xa vời; nó nằm ngay trong cấu trúc của vật chất, quy định cái gì có thể phẳng, cái gì phải cong, và cái gì bền vững.
+Từ việc uốn nhẹ vỏ một lát pizza đến sự biến dạng diện tích của Greenland trên bản đồ phẳng, cả hai hiện tượng đều chịu sự chi phối của cùng một nguyên lý hình học. Hình học vi phân cho thấy độ cong là thuộc tính nội tại của bề mặt, quy định những biến dạng nào có thể thực hiện mà không làm co giãn vật liệu và những giới hạn nào là bất khả kháng.
 
 ---
-*Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" - dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
+*Bài giảng này thuộc chương "Vẻ đẹp của Hình học Vi phân" — dành cho đại chúng, nằm trong khóa học Tự học Hình học Vi phân.*
 
 ## Video tham khảo
 
-- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. xem trước. chính thí nghiệm lát bánh: gập theo một hướng buộc hướng kia thẳng, vì độ cong Gauss của tờ bánh phẳng vẫn bằng không.
-- [La manera más matemática de comerse una pizza](https://www.youtube.com/watch?v=1mVTp-8Zmok) — Lemnismath, tiếng Tây Ban Nha. Cùng câu chuyện, rồi nối sang bản đồ: mặt cầu không trải phẳng được mà giữ cả góc lẫn diện tích.
-- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Nguồn bài giảng của định lý mà giai thoại đo đạc Hanover dẫn tới; phần cuối nêu Theorema Egregium.
+- [The Remarkable Way We Eat Pizza - Numberphile](https://www.youtube.com/watch?v=gi-TBlh44gY) — Numberphile, tiếng Anh. Xem trước: minh họa trực tiếp thí nghiệm lát pizza — uốn cong theo một phương buộc phương kia giữ thẳng vì độ cong Gauss của mặt phẳng vẫn bằng 0.
+- [La manera más matemática de comerse una pizza](https://www.youtube.com/watch?v=1mVTp-8Zmok) — Lemnismath, tiếng Tây Ban Nha. Cùng câu chuyện lát pizza, sau đó mở rộng sang bản đồ: mặt cầu không thể trải phẳng mà giữ nguyên đồng thời cả góc lẫn diện tích.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Bài giảng toán học dẫn tới định lý liên quan đến công việc đo đạc Hanover, với phần cuối trình bày *Theorema Egregium*.
