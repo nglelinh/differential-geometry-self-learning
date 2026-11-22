@@ -9,106 +9,97 @@ owner: "Hình học Vi phân"
 
 ## 1. Lời mở đầu: Con kiến và Tấm bản đồ
 
-Hãy quay lại với người bạn nhỏ của chúng ta: Con kiến.
-Lần này, nó không bò trên một sợi dây mảnh mai nữa. Nó đang đứng giữa sa mạc Sahara mênh mông, hoặc trên bề mặt của một quả cam khổng lồ.
+Hãy quay lại hình ảnh con kiến ở Bài 1, nhưng lần này con kiến không còn đi dọc theo một sợi dây 1 chiều nữa mà đứng trên bề mặt của một quả cam lớn:
+- Con kiến có thể di chuyển theo hai phương độc lập (trái–phải và trước–sau), tức có **2 bậc tự do**.
+- Trong một vùng đủ nhỏ quanh vị trí đứng, bề mặt trông gần như phẳng.
 
-Đối với con kiến:
-- Nó có thể đi sang trái, sang phải, đi lên, đi xuống. Nó có **2 bậc tự do**.
-- Thế giới xung quanh nó trông phẳng lì (nếu nó không đi quá xa).
+Đây là trực giác cơ bản của một **bề mặt (surface)** hay **đa tạp 2 chiều (2-manifold)**: một không gian mà *cục bộ* giống như mặt phẳng Euclid $$\mathbb{R}^2$$.
 
-Đây chính là định nghĩa trực giác của một **Bề mặt (Surface)** hay **Đa tạp 2 chiều (2-Manifold)**: Một không gian mà *cục bộ* trông giống như mặt phẳng Euclid $$\mathbb{R}^2$$.
+Để mô tả toán học toàn bộ một bề mặt cong bằng tọa độ phẳng, ta sử dụng các **bản đồ tọa độ (maps/charts)**. Tương tự cách bản đồ địa lý biểu diễn từng vùng của bề mặt Trái Đất lên mặt phẳng giấy, ta dùng các ánh xạ để gán tọa độ phẳng $$(u, v)$$ cho từng mảnh của bề mặt.
 
-Nhưng làm sao để mô tả toàn bộ quả cam (vốn cong queo) bằng ngôn ngữ phẳng của toán học?
-Chúng ta dùng **Bản đồ (Maps/Charts)**.
-Giống như Google Maps trải phẳng bề mặt Trái Đất lên màn hình điện thoại, chúng ta dùng các hàm số để "trải" các vùng của bề mặt lên mặt phẳng tọa độ $$(u, v)$$.
+## 2. Tham số hóa bề mặt
 
-## 2. Tham số hóa: Nghệ thuật dán nhãn
-
-Một bề mặt trong không gian $$\mathbb{R}^3$$ được định nghĩa bởi một ánh xạ:
+Một mảnh bề mặt trong không gian $$\mathbb{R}^3$$ được mô tả bằng một ánh xạ trơn:
 $$ \mathbf{r}: U \subset \mathbb{R}^2 \to \mathbb{R}^3 $$
 $$ (u, v) \mapsto \mathbf{r}(u, v) = (x(u,v), y(u,v), z(u,v)) $$
 
 **Ý nghĩa:**
-- $$(u, v)$$ là tọa độ trên bản đồ phẳng (ví dụ: Kinh độ và Vĩ độ).
-- $$\mathbf{r}(u, v)$$ là vị trí thực tế trong không gian 3 chiều.
-- Ánh xạ $$\mathbf{r}$$ giống như việc bạn lấy một tấm cao su phẳng và uốn nắn nó thành hình dạng mong muốn.
+- $$(u, v)$$ là tọa độ trên miền phẳng $$U$$ (ví dụ: kinh độ và vĩ độ).
+- $$\mathbf{r}(u, v)$$ là vị trí tương ứng của điểm đó trong không gian 3 chiều.
+- Về trực giác, ánh xạ $$\mathbf{r}$$ giống như phép uốn cong một tấm cao su phẳng $$U$$ để tạo thành hình dạng bề mặt trong $$\mathbb{R}^3$$.
 
-### Ví dụ 1: Quả Địa Cầu (Mặt cầu)
-Cách phổ biến nhất để dán nhãn Trái Đất là dùng Kinh độ ($$\theta$$) và Vĩ độ ($$\varphi$$).
+### Ví dụ 1: Mặt cầu (Quả địa cầu)
+Cách phổ biến để gán tọa độ cho mặt cầu bán kính $$R$$ là dùng góc kinh độ $$\theta$$ và góc cực (colatitude) $$\varphi$$:
 $$ \mathbf{r}(\theta, \varphi) = (R\sin\varphi\cos\theta, R\sin\varphi\sin\theta, R\cos\varphi) $$
-Ở đây, lưới kinh vĩ tuyến hình chữ nhật trên bản đồ giấy được "cuộn" lại thành hình cầu.
+Ở đây, lưới tọa độ hình chữ nhật trên mặt phẳng $$(\theta, \varphi)$$ được cuộn lại thành mặt cầu.
 
-### Ví dụ 2: Cái Bánh Donut (Mặt xuyến - Torus)
-Làm sao để tạo ra một cái bánh Donut toán học?
+### Ví dụ 2: Mặt xuyến (Torus)
+Mặt xuyến hình bánh donut có thể hình dung qua ba bước từ một hình chữ nhật phẳng:
 1.  Lấy một hình chữ nhật phẳng.
-2.  Cuộn nó lại thành một cái ống (hình trụ).
-3.  Uốn cong cái ống đó để nối hai đầu lại với nhau.
-Tham số hóa $$(u, v)$$ chính là hai góc quay: một góc quay quanh ống, một góc quay quanh tâm bánh.
+2.  Cuộn hai cạnh đối diện lại thành một ống trụ.
+3.  Uốn cong ống trụ đó để nối hai đầu tròn lại với nhau.
+
+Hai tham số $$(u, v)$$ chính là hai góc quay: một góc quay quanh tiết diện ống và một góc quay quanh trục đối xứng của mặt xuyến.
 
 ![Mặt xuyến Torus](https://upload.wikimedia.org/wikipedia/commons/8/81/Torus_cycles.svg)
-*Hình 1: Mặt xuyến được tạo ra từ hai vòng tròn. Tọa độ $$(u, v)$$ tương ứng với vị trí trên hai vòng tròn này.*
+*Hình 1: Mặt xuyến được tạo thành từ tích của hai đường tròn; cặp tọa độ $$(u, v)$$ xác định vị trí dọc theo hai vòng tròn này.*
 
-## 3. Điều kiện Chính quy: Đừng làm rách bản đồ
+## 3. Điều kiện Chính quy: Tránh nếp gấp và điểm kỳ dị
 
-Không phải ánh xạ nào cũng tạo ra một bề mặt đẹp.
-Nếu bạn bóp nát tấm bản đồ lại thành một điểm, hoặc gấp nếp nó lại, nó không còn là bề mặt trơn nữa.
+Không phải mọi ánh xạ $$\mathbf{r}(u, v)$$ đều tạo ra một bề mặt trơn đúng nghĩa: nếu một vùng của miền phẳng bị bóp thành một điểm hoặc bị gấp nếp sắc cạnh, bề mặt sẽ mất tính trơn tại đó.
 
-Để đảm bảo bề mặt trơn tru, chúng ta cần hai vector vận tốc riêng phần:
+Để bề mặt là **chính quy (regular)**, hai vector đạo hàm riêng:
 $$ \mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u} \quad \text{và} \quad \mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v} $$
-phải **độc lập tuyến tính**.
-
-Nghĩa là tích có hướng của chúng phải khác 0:
+phải **độc lập tuyến tính** tại mọi điểm. Trong $$\mathbb{R}^3$$, điều kiện này tương đương với việc tích có hướng của chúng khác vector không:
 $$ \mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0} $$
 
-**Tại sao?**
-- $$\mathbf{r}_v$$ là vector tiếp tuyến khi bạn đi dọc theo lưới $$v$$.
-- Nếu chúng cùng phương (hoặc bằng 0), lưới tọa độ bị "xẹp" lại thành một đường thẳng hoặc một điểm. Bề mặt mất đi tính chất 2 chiều của nó.
+**Lý do:**
+- $$\mathbf{r}_u$$ và $$\mathbf{r}_v$$ lần lượt là các vector tiếp tuyến dọc theo các đường tọa độ $$u$$ và $$v$$.
+- Nếu chúng cùng phương (hoặc một trong hai bằng $$\mathbf{0}$$), lưới tọa độ tại điểm đó bị suy biến thành một đường thẳng hoặc một điểm, làm mất cấu trúc 2 chiều cục bộ.
 
 > [!NOTE]
-> **Chính quy = Không có nếp gấp nhọn:**
-> Điều kiện $$\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$$ đảm bảo rằng tại mọi điểm, bề mặt luôn trải ra thành một mặt phẳng nhỏ (có vector pháp tuyến xác định).
-> Hãy tưởng tượng một tờ giấy bị gấp nếp. Tại đường nếp gấp, bạn không thể đặt một cây bút chì vuông góc với tờ giấy một cách duy nhất (nó có thể nghiêng sang trái hoặc phải). Đó là điểm kỳ dị (singular point). Hình học vi phân chỉ chơi với những bề mặt trơn tru, không có nếp gấp như vậy.
+> **Tính chính quy và sự vắng mặt của nếp gấp nhọn:**
+> Điều kiện $$\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$$ đảm bảo rằng tại mỗi điểm, bề mặt có một mặt phẳng tiếp xúc và một phương pháp tuyến xác định duy nhất.
+> Hãy hình dung một tờ giấy bị gấp nếp: dọc theo nếp gấp, không có một phương vuông góc duy nhất với tờ giấy. Những vị trí như vậy gọi là điểm kỳ dị (singular point). Hình học vi phân tập trung nghiên cứu các bề mặt chính quy, không có nếp gấp như vậy.
 
-## 4. Mặt phẳng Tiếp tuyến: Sàn nhà của con kiến
+## 4. Mặt phẳng Tiếp tuyến và Vector Pháp tuyến
 
-Tại mỗi điểm $$P$$ trên bề mặt, hai vector $$\mathbf{r}_u$$ và $$\mathbf{r}_v$$ tạo thành một mặt phẳng. Đó là **Mặt phẳng Tiếp tuyến (Tangent Plane - $$T_P S$$)**.
-
-Đây là khái niệm cực kỳ quan trọng.
-- Đối với con kiến, mặt phẳng tiếp tuyến chính là "thế giới phẳng" mà nó cảm nhận được ngay dưới chân.
-- Trong giải tích, đây là **xấp xỉ tuyến tính tốt nhất** của bề mặt tại điểm đó.
+Tại mỗi điểm $$P$$ trên bề mặt chính quy, hai vector độc lập tuyến tính $$\mathbf{r}_u$$ và $$\mathbf{r}_v$$ sinh ra một mặt phẳng gọi là **mặt phẳng tiếp tuyến (tangent plane)**, ký hiệu $$T_P S$$:
+- Theo góc nhìn nội tại, mặt phẳng tiếp tuyến là không gian phẳng cục bộ ngay dưới chân con kiến.
+- Theo giải tích, đây là **xấp xỉ tuyến tính tốt nhất** của bề mặt tại điểm $$P$$.
 
 > [!TIP]
-> **Thế giới Tuyến tính hóa (Linearized World):**
-> Hình học vi phân là nghệ thuật biến cái cong thành cái phẳng.
-> - Bề mặt cong rất khó làm việc.
-> - Mặt phẳng tiếp tuyến là một không gian vector (đại số tuyến tính). Chúng ta có thể cộng vector, nhân với số, tính tích vô hướng...
-> Hầu hết các phép tính vi phân thực chất là làm việc trên mặt phẳng tiếp tuyến này, sau đó "chiếu" kết quả trở lại bề mặt cong.
+> **Tuyến tính hóa bề mặt cong:**
+> - Làm việc trực tiếp trên bề mặt cong là bài toán phi tuyến và phức tạp.
+> - Mặt phẳng tiếp tuyến $$T_P S$$ là một không gian vector 2 chiều, nơi ta có thể áp dụng trọn vẹn Đại số Tuyến tính (cộng vector, nhân vô hướng, tính tích vô hướng).
+> Do đó, phần lớn các phép tính trong hình học vi phân được thực hiện trên mặt phẳng tiếp tuyến rồi liên kết trở lại với bề mặt cong.
 
-**Vector Pháp tuyến (Normal Vector - $$\mathbf{n}$$):**
-Vector $$\mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v$$ vuông góc với mặt phẳng tiếp tuyến. Nó chỉ hướng "lên trời".
-Vector pháp tuyến đơn vị $$\mathbf{n} = \mathbf{N} / \|\mathbf{N}\|$$ đóng vai trò quan trọng trong việc định hướng bề mặt và tính toán ánh sáng trong đồ họa máy tính.
+**Vector pháp tuyến (Normal Vector — $$\mathbf{n}$$):**
+Vector $$\mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v$$ vuông góc với mặt phẳng tiếp tuyến $$T_P S$$. Sau khi chuẩn hóa, ta thu được **vector pháp tuyến đơn vị**:
+$$ \mathbf{n} = \frac{\mathbf{N}}{\|\mathbf{N}\|} $$
+Vector $$\mathbf{n}$$ giữ vai trò then chốt trong việc định hướng bề mặt, định nghĩa độ cong và tính toán ánh sáng trong đồ họa máy tính.
 
-## 5. Ẩn hay Hiện? (Implicit vs Parametric)
+## 5. Hai cách biểu diễn bề mặt: Tham số và Ẩn
 
-Có hai cách để mô tả bề mặt:
-1.  **Tham số (Parametric):** $$\mathbf{r}(u, v)$$. Giống như vẽ bản đồ. Dễ dàng để sinh ra các điểm trên bề mặt (dùng trong game, vẽ lưới).
-2.  **Ẩn (Implicit):** $$F(x, y, z) = 0$$. Ví dụ: $$x^2 + y^2 + z^2 - 1 = 0$$. Giống như điêu khắc (cắt bỏ phần thừa). Dễ dàng để kiểm tra một điểm có nằm trên bề mặt hay không (dùng trong va chạm vật lý, Ray tracing).
+Có hai cách chính để mô tả một bề mặt trong $$\mathbb{R}^3$$:
+1.  **Dạng tham số (Parametric):** $$\mathbf{r}(u, v)$$. Tương tự việc vẽ bản đồ, thuận tiện để sinh điểm và dựng lưới bề mặt (thường dùng trong đồ họa và mô phỏng).
+2.  **Dạng ẩn (Implicit):** $$F(x, y, z) = 0$$ (ví dụ: $$x^2 + y^2 + z^2 - 1 = 0$$). Thuận tiện để kiểm tra nhanh một điểm nằm trong, ngoài hay trên bề mặt (thường dùng trong phát hiện va chạm và dò tia — ray tracing).
 
-Trong khóa học này, chúng ta chủ yếu dùng dạng **Tham số** vì nó cho phép chúng ta làm giải tích (đạo hàm, tích phân) trên bề mặt dễ dàng hơn.
+Trong khóa học này, ta chủ yếu sử dụng dạng **tham số** vì nó cho phép tính đạo hàm, tích phân và các dạng cơ bản trên bề mặt một cách trực tiếp.
 
 ## Video tham khảo
 
-- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. xem trước. mặt được cho bởi tham số hóa, mặt phẳng tiếp tuyến và pháp tuyến đơn vị, đúng ba mục giữa bài; phần ánh xạ Gauss ở sau có thể để dành cho bài 8.
-- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. Vì sao một mặt hai chiều, chứ không phải một đám tam giác, là đối tượng mà đồ họa và hình học cùng đo.
-- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, tiếng Anh. Sau khi đã có pháp tuyến, bài giảng này cho thấy mặt cong lệch khỏi mặt phẳng tiếp tuyến theo những cách khác nhau; xem như cầu nối sang dạng cơ bản thứ hai.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Nên xem trước để nắm tham số hóa bề mặt, mặt phẳng tiếp tuyến và vector pháp tuyến đơn vị, khớp với ba mục giữa bài; phần ánh xạ Gauss ở cuối video có thể để dành cho Bài 8.
+- [Lecture 1: Overview (Discrete Differential Geometry)](https://www.youtube.com/watch?v=8JCR6z3GLVI) — Keenan Crane, tiếng Anh. Giải thích vì sao đối tượng trung tâm của cả hình học và đồ họa máy tính là bề mặt 2 chiều trơn chứ không chỉ là tập hợp tam giác rời rạc.
+- [Shape Analysis (Lecture 6): Second fundamental form and surface curvature](https://www.youtube.com/watch?v=UewzuzaPlxA) — Justin Solomon, tiếng Anh. Sau khi đã có khái niệm pháp tuyến, bài giảng này cho thấy bề mặt cong lệch khỏi mặt phẳng tiếp tuyến như thế nào, tạo cầu nối sang dạng cơ bản thứ hai.
 
 ## 6. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**
 
-1.  **Mặt cầu:** Tính $$\mathbf{r}_\theta$$ và $$\mathbf{r}_\varphi$$ cho mặt cầu. Tính tích có hướng của chúng. Bạn sẽ thấy độ lớn của nó là $$R^2\sin\varphi$$. Tại sao nó lại bằng 0 tại cực Bắc và cực Nam ($$\varphi = 0, \pi$$)? Điều này có nghĩa là gì về tấm bản đồ của chúng ta tại các cực? (Gợi ý: Các đường kinh tuyến hội tụ lại một điểm).
-2.  **Mặt trụ:** Viết tham số hóa cho một hình trụ đứng. Tính vector pháp tuyến của nó. Nó luôn chỉ theo hướng nào? (Gợi ý: Vuông góc với trục z).
-3.  **Suy ngẫm:** Tại sao chúng ta cần ít nhất 2 tấm bản đồ để phủ kín mặt cầu mà không có điểm kỳ dị? (Gợi ý: Bạn không thể chải mượt quả bóng lông - Định lý Hairy Ball liên quan đến việc không thể có hệ tọa độ toàn cục trơn tru trên mặt cầu).
+1.  **Mặt cầu:** Tính $$\mathbf{r}_\theta$$, $$\mathbf{r}_\varphi$$ và tích có hướng $$\mathbf{r}_\theta \times \mathbf{r}_\varphi$$ cho mặt cầu. Kiểm chứng rằng độ lớn của tích có hướng bằng $$R^2\sin\varphi$$. Giải thích vì sao biểu thức này triệt tiêu tại cực Bắc và cực Nam ($$\varphi = 0, \pi$$), và điều đó nói lên hạn chế gì của hệ tọa độ kinh–vĩ độ tại hai cực? (Gợi ý: Mọi đường kinh tuyến đều hội tụ về cùng một điểm).
+2.  **Mặt trụ:** Viết một tham số hóa cho mặt trụ tròn đứng và tính vector pháp tuyến đơn vị của nó. Vector pháp tuyến này luôn vuông góc với trục nào? (Gợi ý: Trục $$z$$).
+3.  **Suy ngẫm:** Vì sao cần ít nhất 2 bản đồ tọa độ để phủ kín toàn bộ mặt cầu mà không xuất hiện điểm kỳ dị? (Gợi ý: Liên hệ với định lý Quả bóng có lông — Hairy Ball Theorem — về việc không tồn tại trường vector tiếp tuyến liên tục khác không ở mọi điểm trên mặt cầu).
 
 ---
-*Chúng ta đã có bề mặt. Chúng ta đã có bản đồ. Nhưng làm sao để đo khoảng cách trên bản đồ đó? 1 cm trên bản đồ bằng bao nhiêu km ngoài thực tế? Bài tiếp theo sẽ trả lời câu hỏi đó với khái niệm: Dạng Cơ bản Thứ nhất (First Fundamental Form).*
+*Sau khi đã có cách tham số hóa bề mặt, câu hỏi tiếp theo là làm thế nào để đo khoảng cách, góc và diện tích thực tế trên bề mặt thông qua tọa độ bản đồ $$(u, v)$$. Bài tiếp theo sẽ trả lời câu hỏi này bằng khái niệm Dạng Cơ bản Thứ nhất (First Fundamental Form).*

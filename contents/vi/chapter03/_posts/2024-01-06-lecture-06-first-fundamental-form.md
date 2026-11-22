@@ -7,103 +7,94 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Bài toán của những Nhà làm Bản đồ
+## 1. Lời mở đầu: Bài toán của người vẽ bản đồ
 
-Hãy tưởng tượng bạn là một nhà thám hiểm đang vẽ bản đồ cho một vùng đất mới.
-Bạn có một tờ giấy phẳng $$(u, v)$$.
-Bạn có một bề mặt thực địa lồi lõm $$\mathbf{r}(u, v)$$.
-Vấn đề là: **1 cm trên bản đồ của bạn tương ứng với bao nhiêu km ngoài thực địa?**
+Hãy hình dung bạn đang vẽ bản đồ phẳng $$(u, v)$$ cho một vùng địa hình lồi lõm được mô tả bởi bề mặt $$\mathbf{r}(u, v)$$. Câu hỏi cơ bản đặt ra là: **1 cm trên bản đồ phẳng tương ứng với bao nhiêu km ngoài thực địa?**
 
-Câu trả lời không đơn giản.
-- Ở vùng đồng bằng, 1 cm có thể là 1 km.
-- Ở vùng núi dốc, 1 cm trên bản đồ (nhìn từ trên xuống) có thể tương ứng với 2 km leo dốc.
-- Ở gần cực Bắc (trên bản đồ Mercator), 1 cm có thể chỉ là vài mét.
+Tỉ lệ quy đổi này thay đổi tùy theo vị trí trên bản đồ:
+- Ở vùng đồng bằng phẳng, 1 cm trên bản đồ có thể tương ứng với 1 km thực tế.
+- Ở vùng núi dốc, 1 cm trên bản đồ chiếu từ trên xuống có thể tương ứng với 2 km quãng đường thực tế.
+- Gần cực Bắc trên phép chiếu Mercator, 1 cm trên bản đồ chỉ tương ứng với một khoảng cách rất ngắn ngoài thực địa.
 
-**Dạng Cơ bản Thứ nhất (First Fundamental Form)** chính là công cụ toán học để giải quyết vấn đề này. Nó là "bảng quy đổi tỉ giá" từ tọa độ bản đồ sang khoảng cách thực tế.
+**Dạng Cơ bản Thứ nhất (First Fundamental Form)** là công cụ toán học giải quyết bài toán này: nó đóng vai trò thước đo quy đổi từ các độ dịch chuyển nhỏ trên hệ tọa độ bản đồ $$(u, v)$$ sang khoảng cách, góc và diện tích thực tế trên bề mặt.
 
-## 2. Dạng Cơ bản Thứ nhất: Metric Tensor
+## 2. Dạng Cơ bản Thứ nhất: Tensor Metric
 
 ### 2.1. Ý tưởng trực giác
-Xét một bước đi vô cùng nhỏ trên bản đồ: $$(du, dv)$$.
-Vector dịch chuyển thực tế trong không gian là:
+Xét một độ dịch chuyển vô cùng nhỏ $$(du, dv)$$ trong miền tham số. Vector dịch chuyển tương ứng trên bề mặt trong không gian 3 chiều là:
 $$ d\mathbf{r} = \mathbf{r}_u du + \mathbf{r}_v dv $$
 
-Bình phương độ dài thực tế của bước đi này là:
+Bình phương độ dài thực tế của bước dịch chuyển này là:
 $$ ds^2 = \| d\mathbf{r} \|^2 = d\mathbf{r} \cdot d\mathbf{r} $$
 $$ ds^2 = (\mathbf{r}_u du + \mathbf{r}_v dv) \cdot (\mathbf{r}_u du + \mathbf{r}_v dv) $$
 $$ ds^2 = (\mathbf{r}_u \cdot \mathbf{r}_u) du^2 + 2(\mathbf{r}_u \cdot \mathbf{r}_v) du dv + (\mathbf{r}_v \cdot \mathbf{r}_v) dv^2 $$
 
-Chúng ta đặt tên cho các tích vô hướng này là $$E, F, G$$:
-- $$E = \mathbf{r}_u \cdot \mathbf{r}_u$$: Hệ số co giãn theo hướng $$u$$.
-- $$F = \mathbf{r}_u \cdot \mathbf{r}_v$$: Hệ số méo góc (nếu $$F=0$$, lưới tọa độ vuông góc).
-- $$G = \mathbf{r}_v \cdot \mathbf{r}_v$$: Hệ số co giãn theo hướng $$v$$.
+Đặt tên các tích vô hướng này lần lượt là $$E, F, G$$:
+- $$E = \mathbf{r}_u \cdot \mathbf{r}_u$$: Hệ số co giãn theo phương tọa độ $$u$$.
+- $$F = \mathbf{r}_u \cdot \mathbf{r}_v$$: Hệ số đo độ lệch góc giữa hai đường tọa độ (nếu $$F=0$$, lưới tọa độ trực giao).
+- $$G = \mathbf{r}_v \cdot \mathbf{r}_v$$: Hệ số co giãn theo phương tọa độ $$v$$.
 
-Vậy công thức thần thánh của chúng ta là:
+Từ đó ta thu được biểu thức của Dạng Cơ bản Thứ nhất:
 $$ I = ds^2 = E du^2 + 2F du dv + G dv^2 $$
 
-Trong ngôn ngữ hiện đại, chúng ta gọi ma trận $$\begin{pmatrix} E & F \\ F & G \end{pmatrix}$$ là **Tensor Metric** ($$g_{ij}$$).
+Trong ngôn ngữ hình học hiện đại, ma trận đối xứng $$\begin{pmatrix} E & F \\ F & G \end{pmatrix}$$ được gọi là **tensor metric** ($$g_{ij}$$).
 
-### 2.2. Ví dụ Kinh điển: Tọa độ Cực
-Xét mặt phẳng phẳng lì, nhưng dùng tọa độ cực $$(r, \theta)$$.
+### 2.2. Ví dụ: Tọa độ Cực
+Xét mặt phẳng Euclid nhưng biểu diễn bằng tọa độ cực $$(r, \theta)$$:
 $$ x = r \cos \theta, \quad y = r \sin \theta $$
-- $$\mathbf{r}_r = (\cos\theta, \sin\theta)$$. Suy ra $$E = 1$$.
-- $$\mathbf{r}_\theta = (-r\sin\theta, r\cos\theta)$$. Suy ra $$G = r^2$$.
-- $$\mathbf{r}_r \cdot \mathbf{r}_\theta = 0$$. Suy ra $$F = 0$$.
+Tính các đạo hàm riêng và tích vô hướng:
+- $$\mathbf{r}_r = (\cos\theta, \sin\theta) \Rightarrow E = 1$$.
+- $$\mathbf{r}_\theta = (-r\sin\theta, r\cos\theta) \Rightarrow G = r^2$$.
+- $$\mathbf{r}_r \cdot \mathbf{r}_\theta = 0 \Rightarrow F = 0$$.
 
-Metric: $$ds^2 = dr^2 + r^2 d\theta^2$$.
+Do đó, metric có dạng $$ds^2 = dr^2 + r^2 d\theta^2$$.
 
 **Ý nghĩa:**
-- Đi theo hướng bán kính ($$dr$$): Khoảng cách là thật ($$1 \cdot dr$$).
-- Đi theo vòng tròn ($$d\theta$$): Khoảng cách bị phóng đại theo $$r$$. Ở xa tâm ($$r$$ lớn), cùng một góc quay $$d\theta$$ tương ứng với quãng đường dài hơn rất nhiều ($$r d\theta$$).
-Đó là lý do tại sao các đường chạy điền kinh ở làn ngoài cùng phải xuất phát trước làn trong cùng!
+- Khi di chuyển dọc theo phương bán kính ($$dr$$), khoảng cách thực tế đúng bằng $$1 \cdot dr$$.
+- Khi di chuyển dọc theo đường tròn ($$d\theta$$), khoảng cách thực tế tỉ lệ thuận với bán kính $$r$$ (bằng $$r\,d\theta$$): ở càng xa tâm, cùng một góc quay $$d\theta$$ tương ứng với cung đường càng dài. Đó cũng là lý do trên đường chạy điền kinh hình vòng, các làn chạy phía ngoài phải đặt vạch xuất phát nhô lên trước so với làn trong.
 
 ## 3. Diện tích và Góc
 
-Dạng cơ bản thứ nhất không chỉ đo độ dài, nó đo cả diện tích và góc.
+Bên cạnh độ dài cung, dạng cơ bản thứ nhất cho phép tính trực tiếp cả diện tích và góc trên bề mặt.
 
 ### 3.1. Diện tích
-Một hình chữ nhật nhỏ kích thước $$du \times dv$$ trên bản đồ sẽ biến thành một hình bình hành cong trên bề mặt thực tế.
-Diện tích thực tế của nó là:
+Một hình chữ nhật vô cùng nhỏ kích thước $$du \times dv$$ trên miền tham số được ánh xạ thành một hình bình hành nhỏ trên bề mặt với phần tử diện tích:
 $$ dA = \| \mathbf{r}_u \times \mathbf{r}_v \| du dv = \sqrt{EG - F^2} du dv $$
 
-Đại lượng $$\sqrt{EG - F^2}$$ (hoặc $$\sqrt{\det g}$$) là "nhân tử diện tích".
-- Trên mặt cầu bán kính $$R$$, nhân tử này là $$R^2 \sin \varphi$$.
-- Gần xích đạo ($$\sin \varphi \approx 1$$), diện tích lớn nhất.
-- Gần cực ($$\sin \varphi \approx 0$$), diện tích co về 0.
+Đại lượng $$\sqrt{EG - F^2}$$ (tức $$\sqrt{\det g}$$) là nhân tử quy đổi diện tích:
+- Trên mặt cầu bán kính $$R$$, nhân tử này bằng $$R^2 \sin \varphi$$.
+- Gần xích đạo ($$\sin \varphi \approx 1$$), cùng một ô lưới tọa độ tương ứng với diện tích lớn nhất.
+- Gần hai cực ($$\sin \varphi \approx 0$$), diện tích thực tế co dần về 0.
 
 ### 3.2. Góc
-Góc $$\alpha$$ giữa hai đường cong giao nhau được tính bằng tích vô hướng (sử dụng metric):
+Góc $$\alpha$$ giữa hai đường cong cắt nhau trên bề mặt được xác định bằng tích vô hướng cảm sinh từ metric:
 $$ \cos \alpha = \frac{\langle \mathbf{v}, \mathbf{w} \rangle}{\|\mathbf{v}\| \|\mathbf{w}\|} $$
-Nếu $$F=0$$, lưới tọa độ là trực giao (vuông góc) mọi nơi. Hầu hết các hệ tọa độ tốt (Kinh vĩ độ, Cực) đều có tính chất này.
+Nếu $$F=0$$ tại mọi điểm, hai họ đường tọa độ luôn vuông góc với nhau (hệ tọa độ trực giao), như trong tọa độ cực hay tọa độ kinh–vĩ độ.
 
 ## 4. Bản chất của Hình học Nội tại
 
-Điều quan trọng nhất cần nhớ: **$$E, F, G$$ là tất cả những gì con kiến cần biết.**
-Con kiến không cần biết bề mặt cong trong không gian 3 chiều như thế nào. Nó chỉ cần biết metric $$ds^2$$.
-- Nếu con kiến đo được $$E=1, F=0, G=1$$ mọi nơi: Nó biết nó đang ở trên một mặt phẳng (hoặc một tờ giấy cuộn tròn - mặt trụ).
-- Nếu con kiến đo được $$E=1, F=0, G=\sin^2 u$$: Nó biết nó đang ở trên một mặt cầu (hoặc vật gì đó có độ cong tương đương).
+Điểm cốt lõi cần nắm là **bộ ba hàm $$E, F, G$$ chứa toàn bộ thông tin nội tại mà con kiến có thể đo được trên bề mặt**, mà không cần biết bề mặt được nhúng trong không gian 3 chiều ra sao:
+- Nếu đo được $$E=1, F=0, G=1$$ ở mọi điểm, bề mặt có hình học nội tại phẳng (như mặt phẳng hoặc mặt trụ cuộn từ tờ giấy).
+- Nếu đo được $$E=1, F=0, G=\sin^2 u$$, bề mặt có hình học nội tại giống mặt cầu đơn vị.
 
-Dạng cơ bản thứ nhất định nghĩa **Hình học Nội tại**. Nó phân biệt "Cong do metric" (như mặt cầu) và "Cong do uốn nắn" (như mặt trụ).
-Mặt trụ là phẳng về mặt nội tại (bạn có thể trải nó ra bàn). Mặt cầu thì không.
+Như vậy, dạng cơ bản thứ nhất xác định **hình học nội tại** của bề mặt, phân biệt giữa độ cong thực sự do metric (như mặt cầu, không thể trải phẳng) và độ cong ngoại tại do uốn không co giãn (như mặt trụ, vốn phẳng về mặt nội tại vì có thể trải phẳng ra mặt bàn).
 
 ## Video tham khảo
 
-- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. xem trước. tensor metric đo độ dài cung trên mặt cong, đúng $$ds^2 = E\,du^2 + 2F\,du\,dv + G\,dv^2$$ của con kiến.
-- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Dạng cơ bản thứ nhất xuất hiện như dạng toàn phương của tham số hóa, cùng với pháp tuyến; đây là nguồn cổ điển của $$E,F,G$$.
-- [Change of Variables & The Jacobian \| Multi-variable Integration](https://www.youtube.com/watch?v=wUF-lyyWpUc) — Dr. Trefor Bazett, tiếng Anh. Nhân tử Jacobian khi đổi biến là họ hàng của $$\sqrt{EG-F^2}$$: cùng một ý “ô lưới trên bản đồ không giữ nguyên diện tích thật”.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. Nên xem trước để thấy cách tensor metric đo độ dài cung trên mặt cong, đúng biểu thức $$ds^2 = E\,du^2 + 2F\,du\,dv + G\,dv^2$$ trong bài.
+- [Gauss, normals and fundamental forms \| Differential Geometry 34 \| NJ Wildberger](https://www.youtube.com/watch?v=drOldszOT7I) — Insights into Mathematics, tiếng Anh. Trình bày dạng cơ bản thứ nhất dưới dạng dạng toàn phương gắn với tham số hóa bề mặt, làm rõ nguồn gốc các hệ số $$E, F, G$$.
+- [Change of Variables & The Jacobian \| Multi-variable Integration](https://www.youtube.com/watch?v=wUF-lyyWpUc) — Dr. Trefor Bazett, tiếng Anh. Giải thích nhân tử Jacobian khi đổi biến — cơ sở trực tiếp của thừa số diện tích $$\sqrt{EG-F^2}$$ khi ánh xạ từ bản đồ lên bề mặt.
 
 ## 5. Bài tập và Suy ngẫm
 
 🧩 **Bài tập Thực hành**
 
-1.  **Kiểm tra Mặt trụ:**
-    Tham số hóa mặt trụ: $$\mathbf{r}(u, v) = (R\cos u, R\sin u, v)$$.
-    Tính $$E, F, G$$. Bạn sẽ thấy $$ds^2 = R^2 du^2 + dv^2$$.
-    Nếu ta đổi biến $$U = Ru$$, thì $$ds^2 = dU^2 + dv^2$$. Đây chính xác là metric của mặt phẳng Pythagore ($$dx^2 + dy^2$$)! Điều này chứng minh mặt trụ có thể trải phẳng hoàn toàn.
-2.  **Thách thức Mặt cầu:**
-    Tính diện tích bề mặt của chỏm cầu từ vĩ độ $$0$$ đến $$\alpha$$ bằng công thức tích phân diện tích $$\iint \sqrt{EG-F^2} du dv$$. (Kết quả phải là $$2\pi R^2 (1-\cos\alpha)$$).
+1.  **Kiểm tra mặt trụ:**
+    Cho tham số hóa mặt trụ $$\mathbf{r}(u, v) = (R\cos u, R\sin u, v)$$. Hãy tính $$E, F, G$$ để thu được $$ds^2 = R^2 du^2 + dv^2$$. Sau đó đặt biến mới $$U = Ru$$ để suy ra $$ds^2 = dU^2 + dv^2$$ — trùng với metric Euclid $$dx^2 + dy^2$$ trên mặt phẳng. Điều này chứng tỏ mặt trụ đẳng cự cục bộ với mặt phẳng và có thể trải phẳng mà không bị co giãn.
+2.  **Tính diện tích chỏm cầu:**
+    Tính diện tích của chỏm cầu từ cực Bắc (góc cực $$\varphi = 0$$) đến góc cực $$\varphi = \alpha$$ bằng tích phân diện tích $$\iint \sqrt{EG-F^2} du dv$$. (Kết quả là $$2\pi R^2 (1-\cos\alpha)$$).
 3.  **Suy ngẫm:**
-    Tại sao không có bản đồ thế giới nào là hoàn hảo? (Gợi ý: Để vẽ mặt cầu lên giấy phẳng, bạn phải thay đổi metric. Bạn có thể giữ đúng góc (Mercator) nhưng sai diện tích, hoặc giữ đúng diện tích (Peters) nhưng sai góc. Bạn không thể giữ cả hai cùng lúc vì $$E, G$$ của mặt cầu không thể biến thành hằng số cùng lúc).
+    Vì sao không thể vẽ một bản đồ phẳng của Trái Đất bảo toàn đồng thời cả góc và diện tích? (Gợi ý: Mọi phép chiếu từ mặt cầu lên mặt phẳng đều làm thay đổi metric; phép chiếu Mercator bảo toàn góc nhưng làm biến dạng diện tích, còn phép chiếu Peters bảo toàn diện tích nhưng làm biến dạng góc).
 
 ---
-*Con kiến đã biết cách đo độ dài. Nhưng nó vẫn chưa biết mình đang ở trên đỉnh núi hay dưới thung lũng. Để biết điều đó, nó cần đo độ cong. Đó là nhiệm vụ của Dạng Cơ bản Thứ hai.*
+*Dạng cơ bản thứ nhất cho phép đo độ dài, góc và diện tích ngay trên bề mặt. Để đo cách bề mặt uốn cong trong không gian 3 chiều bao quanh, bài tiếp theo sẽ giới thiệu Dạng Cơ bản Thứ hai (Second Fundamental Form).*

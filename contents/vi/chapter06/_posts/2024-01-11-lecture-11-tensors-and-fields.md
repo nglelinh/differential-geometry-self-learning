@@ -9,56 +9,53 @@ owner: "Hình học Vi phân"
 
 ## 1. Tổng quan
 
-Trong các bài giảng trước, chúng ta đã làm quen với vector tiếp tuyến (đại diện cho vận tốc, hướng) và vector pháp tuyến. Tuy nhiên, để mô tả đầy đủ các tính chất hình học và vật lý trên một đa tạp, vector thôi là chưa đủ. Chúng ta cần những đối tượng phức tạp hơn có thể kết hợp nhiều vector lại với nhau, đo lường độ lớn, thể tích, hoặc mô tả các quan hệ tuyến tính phức tạp. Những đối tượng đó được gọi là *tensor*.
+Trong các bài giảng trước, chúng ta đã làm quen với vector tiếp tuyến (biểu diễn vận tốc, hướng) và vector pháp tuyến. Tuy nhiên, để mô tả đầy đủ các tính chất hình học và vật lý trên đa tạp, chỉ dùng vector là chưa đủ. Ta cần những đối tượng tổng quát hơn có thể kết hợp nhiều vector cùng lúc, đo độ dài, thể tích hoặc biểu diễn các quan hệ đa tuyến tính phức tạp. Các đối tượng đó được gọi là *tensor*.
 
-Tensor là khái niệm nền tảng không chỉ trong hình học vi phân cao cấp mà còn trong vật lý lý thuyết (Thuyết tương đối rộng, Cơ học lượng tử) và kỹ thuật (Cơ học môi trường liên tục, Ứng suất - Biến dạng). Nếu vector là "mũi tên", thì tensor có thể được hình dung như một "cỗ máy" đa năng: bạn đưa vào đó các vector, và nó trả về cho bạn một con số thực hoặc một vector khác.
+Tensor là khái niệm nền tảng trong hình học vi phân hiện đại, vật lý lý thuyết (Thuyết tương đối rộng, Cơ học lượng tử) và kỹ thuật (Cơ học môi trường liên tục, ứng suất – biến dạng). Nếu vector được hình dung như một mũi tên, thì tensor có thể xem như một hàm đa tuyến tính: nhận vào các vector (và covector) rồi trả về một số thực hoặc một vector khác.
 
-Trong bài giảng này, chúng ta sẽ xây dựng khái niệm tensor từ nền tảng đại số tuyến tính (không gian đối ngẫu, tích tensor) lên đa tạp trơn. Chúng ta sẽ học cách làm việc với các chỉ số (indices) — ký hiệu Einstein — một công cụ tính toán cực kỳ hiệu quả. Cuối cùng, chúng ta sẽ thấy rằng metric (dạng cơ bản thứ nhất) mà chúng ta đã học thực chất là một tensor hạng (0,2).
+Trong bài giảng này, chúng ta xây dựng khái niệm tensor từ nền tảng đại số tuyến tính (không gian đối ngẫu, tích tensor) mở rộng lên đa tạp trơn, đồng thời làm quen với ký hiệu chỉ số và quy ước tổng Einstein. Cuối cùng, ta sẽ thấy metric (dạng cơ bản thứ nhất đã học) thực chất là một tensor kiểu $$(0, 2)$$.
 
-Việc nắm vững ngôn ngữ tensor là bước chuẩn bị thiết yếu để hiểu về độ cong Riemann và các phương trình trường của Einstein trong các bài giảng cuối của khóa học.
-
-## 2. Giải thích Trực quan
+Nắm vững ngôn ngữ tensor là bước chuẩn bị cần thiết để tiếp cận độ cong Riemann và phương trình trường Einstein ở các bài giảng sau.
 
 ## 2. Giải thích Trực quan
 
-### 2.1. Tensor như một "Cỗ máy Ăn Vector"
+### 2.1. Tensor như một "Cỗ máy nhận đầu vào là Vector"
 
-Hãy tưởng tượng một tensor như một cỗ máy màu đen với các khe cắm (slots).
-- Một **hàm số** (scalar) là một cỗ máy không có khe cắm nào. Nó chỉ là một con số.
-- Một **covector** (dạng 1) là một cỗ máy có 1 khe cắm. Bạn nhét vào đó một vector, nó nhả ra một con số. Ví dụ: $$df(\mathbf{v})$$ là đạo hàm theo hướng $$\mathbf{v}$$.
-- Một **metric tensor** $$g$$ là một cỗ máy có 2 khe cắm. Bạn nhét vào hai vector $$\mathbf{u}$$ và $$\mathbf{v}$$, nó nhả ra tích vô hướng $$g(\mathbf{u}, \mathbf{v})$$.
-- Một **tensor độ cong Riemann** là một cỗ máy có 3 khe cắm đầu vào và 1 khe cắm đầu ra (hoặc 4 khe cắm đầu vào nếu coi nó là tensor (0,4)).
+Có thể hình dung một tensor như một hộp đen có sẵn các khe đầu vào (slots):
+- Một **đại lượng vô hướng** (scalar) không có khe đầu vào nào; nó chỉ là một con số.
+- Một **covector** (dạng bậc 1) có 1 khe đầu vào: đưa vào một vector, nó trả về một số thực. Ví dụ: $$df(\mathbf{v})$$ là đạo hàm của hàm $$f$$ theo hướng $$\mathbf{v}$$.
+- Một **tensor metric** $$g$$ có 2 khe đầu vào: đưa vào hai vector $$\mathbf{u}$$ và $$\mathbf{v}$$, nó trả về tích vô hướng $$g(\mathbf{u}, \mathbf{v})$$.
+- Một **tensor độ cong Riemann** có 3 khe đầu vào và trả về 1 vector đầu ra (hoặc có 4 khe đầu vào trả về số thực nếu xét dưới dạng tensor kiểu $$(0, 4)$$).
 
 > [!TIP]
-> **Góc nhìn Lập trình viên: "Data Container with Rules":**
-> Hãy nghĩ về Tensor như một cấu trúc dữ liệu (struct/class) chứa một mảng đa chiều các con số.
-> Nhưng nó không chỉ là mảng số! Nó đi kèm với một **phương thức (method) biến đổi tọa độ**.
-> - Nếu bạn đổi hệ tọa độ (ví dụ: xoay trục), các con số trong mảng sẽ tự động cập nhật theo một công thức toán học chính xác để đảm bảo ý nghĩa vật lý của nó không đổi.
-> - "Tensor là một đối tượng biến đổi như một tensor" — nghĩa là nó tuân thủ đúng cái interface biến đổi đó.
+> **Góc nhìn lập trình: Cấu trúc dữ liệu kèm quy tắc biến đổi**
+> Có thể xem tensor như một cấu trúc dữ liệu (struct/class) chứa một mảng đa chiều các con số, đi kèm một **quy tắc biến đổi tọa độ**:
+> - Khi đổi hệ tọa độ (chẳng hạn xoay trục), các con số trong mảng thay đổi theo một công thức xác định sao cho bản chất hình học hay vật lý của đối tượng không đổi.
+> - Câu nói quen thuộc trong vật lý — "tensor là đối tượng biến đổi như một tensor" — hàm ý chính sự tuân thủ quy tắc biến đổi này.
 
-Điều quan trọng nhất của tensor là tính *đa tuyến tính* (multilinearity): nó tuyến tính trên từng khe cắm riêng biệt. Nếu bạn nhét vào vector $$2\mathbf{v}$$, kết quả đầu ra sẽ gấp đôi (hoặc gấp 4, 8... tùy thuộc vào số lượng khe cắm mà vector đó đi vào, nhưng với tensor đơn giản thì là tuyến tính).
+Đặc trưng cốt lõi của tensor là tính *đa tuyến tính* (multilinearity): nó tuyến tính theo từng khe đầu vào riêng biệt. Khi nhân vector ở một khe với hằng số $$2$$ (giữ nguyên các khe khác), kết quả đầu ra tăng gấp đôi; nếu nhân đồng thời vector ở $$k$$ khe khác nhau với $$2$$, kết quả sẽ nhân với $$2^k$$.
 
-### 2.2. Vector vs Covector: Mũi tên và Chồng Bánh kếp
+### 2.2. Vector và Covector: Mũi tên và Chồng mặt phẳng song song
 
-- **Vector (Contravariant):** Được hình dung như một mũi tên. Nó đại diện cho sự dịch chuyển hoặc vận tốc.
-- **Covector (Covariant):** Được hình dung như một tập hợp các mặt phẳng song song đều nhau (giống như một chồng bánh kếp hoặc các đường đồng mức trên bản đồ).
+- **Vector (phản biến — Contravariant):** Được hình dung như một mũi tên, biểu diễn độ dịch chuyển hoặc vận tốc.
+- **Covector (hiệp biến — Covariant):** Được hình dung như một họ các mặt phẳng song song cách đều nhau (tương tự các đường đồng mức trên bản đồ địa hình).
 
-Khi một vector "tác động" lên một covector (hoặc ngược lại), chúng ta đếm xem mũi tên xuyên qua bao nhiêu mặt phẳng. Số lượng mặt phẳng bị xuyên qua chính là giá trị của phép đo.
+Khi một covector tác động lên một vector, giá trị thu được có thể hình dung là số mặt phẳng song song mà mũi tên xuyên qua.
 
-### 2.3. Tại sao cần Chỉ số trên/dưới?
+### 2.3. Vì sao cần phân biệt chỉ số trên và chỉ số dưới?
 
-Trong hình học vi phân, chúng ta phân biệt chặt chẽ giữa vector (thường viết chỉ số trên, $$v^i$$) và covector (thường viết chỉ số dưới, $$\alpha_i$$).
-- **Vector (contravariant):** Biến đổi ngược với cơ sở. Ví dụ: nếu thước đo dài gấp đôi (cơ sở tăng), số đo chiều dài sẽ giảm một nửa (thành phần giảm).
-- **Covector (covariant):** Biến đổi cùng chiều với cơ sở. Ví dụ: gradient của một hàm số.
+Trong hình học vi phân, ta phân biệt rõ thành phần của vector (viết bằng chỉ số trên, $$v^i$$) và thành phần của covector (viết bằng chỉ số dưới, $$\alpha_i$$):
+- **Vector (phản biến):** Biến đổi ngược chiều với sự thay đổi của cơ sở. Ví dụ, nếu đơn vị đo dài gấp đôi (vector cơ sở tăng gấp đôi), thì số đo độ dài sẽ giảm đi một nửa (thành phần giảm một nửa).
+- **Covector (hiệp biến):** Biến đổi cùng chiều với sự thay đổi của cơ sở, chẳng hạn như gradient của một hàm số.
 
 > [!NOTE]
-> **Ví dụ "Đổi Tiền" (Currency Exchange):**
-> Hãy tưởng tượng bạn đổi đơn vị tiền tệ từ USD sang Cents.
-> - **Cơ sở (Basis):** 1 USD $$\to$$ 1 Cent. Cơ sở trở nên "nhỏ đi" 100 lần.
-> - **Số tiền (Vector Component):** Nếu bạn có 1 tờ tiền (1 USD), bây giờ bạn có 100 xu. Số lượng thành phần "tăng lên" 100 lần. (Đây là Contravariant - biến đổi ngược).
-> - **Giá trị (Covector Component):** Nếu một cái kẹo giá 1 USD/cái, thì giá của nó là 0.01 USD/xu. Giá trị trên mỗi đơn vị cơ sở "giảm đi" 100 lần. (Đây là Covariant - biến đổi cùng chiều với độ lớn của cơ sở).
+> **Ví dụ đổi đơn vị tiền tệ:**
+> Giả sử bạn đổi đơn vị đo từ USD sang xu (Cent):
+> - **Cơ sở (Basis):** 1 USD $$\to$$ 1 xu. Đơn vị cơ sở nhỏ đi 100 lần.
+> - **Thành phần vector (số tiền):** Số tiền 1 USD nay biểu diễn thành 100 xu. Giá trị số tăng lên 100 lần (biến đổi ngược chiều với cơ sở — phản biến).
+> - **Thành phần covector (sức mua trên mỗi đơn vị cơ sở):** Nếu 1 USD mua được 1 cái kẹo (1 cái/USD), thì 1 xu chỉ mua được 0,01 cái kẹo (0,01 cái/xu). Giá trị số giảm đi 100 lần (biến đổi cùng chiều với cơ sở — hiệp biến).
 
-Tensor là sự kết hợp của các thành phần này. Ký hiệu chỉ số giúp chúng ta theo dõi chính xác loại đối tượng nào đang được xử lý và đảm bảo tính bất biến (invariant) của các phương trình vật lý dưới sự thay đổi hệ tọa độ.
+Tensor kết hợp cả hai loại thành phần trên. Ký hiệu chỉ số giúp theo dõi rõ bản chất từng đại lượng và bảo đảm các phương trình vật lý giữ nguyên dạng khi đổi hệ tọa độ.
 
 ## 3. Định nghĩa Hình thức và Ký hiệu
 
@@ -66,10 +63,10 @@ Tensor là sự kết hợp của các thành phần này. Ký hiệu chỉ số
 
 <div class="textbook-definition" markdown="1">
 **Định nghĩa:**
-Cho $$V$$ là một không gian vector thực $$n$$ chiều. *Không gian đối ngẫu* $$V^*$$ là tập hợp tất cả các ánh xạ tuyến tính từ $$V$$ vào $$\mathbb{R}$$. Các phần tử của $$V^*$$ gọi là covector hoặc dạng 1.
+Cho $$V$$ là một không gian vector thực $$n$$ chiều. *Không gian đối ngẫu* $$V^*$$ là tập hợp tất cả các ánh xạ tuyến tính từ $$V$$ vào $$\mathbb{R}$$. Các phần tử của $$V^*$$ được gọi là covector hay dạng bậc 1.
 </div>
 
-Nếu $$\{e_1, \dots, e_n\}$$ là cơ sở của $$V$$, thì cơ sở đối ngẫu $$\{\epsilon^1, \dots, \epsilon^n\}$$ của $$V^*$$ được định nghĩa bởi:
+Nếu $$\{e_1, \dots, e_n\}$$ là một cơ sở của $$V$$, thì cơ sở đối ngẫu $$\{\epsilon^1, \dots, \epsilon^n\}$$ của $$V^*$$ được xác định bởi:
 $$
 \epsilon^i(e_j) = \delta^i_j = \begin{cases} 1 & \text{nếu } i=j \\ 0 & \text{nếu } i \neq j \end{cases}
 $$
@@ -82,68 +79,68 @@ Một tensor kiểu $$(r, s)$$ trên không gian vector $$V$$ là một ánh x�
 $$
 T: \underbrace{V^* \times \dots \times V^*}_{r \text{ lần}} \times \underbrace{V \times \dots \times V}_{s \text{ lần}} \to \mathbb{R}
 $$
-- $$r$$ là số lượng chỉ số "contravariant" (trên).
-- $$s$$ là số lượng chỉ số "covariant" (dưới).
+- $$r$$ là số chỉ số phản biến (chỉ số trên).
+- $$s$$ là số chỉ số hiệp biến (chỉ số dưới).
 </div>
 
 **Ký hiệu:**
-Không gian các tensor kiểu $$(r, s)$$ ký hiệu là $$T^{(r, s)}(V) = V \otimes \dots \otimes V \otimes V^* \otimes \dots \otimes V^*$$.
+Không gian các tensor kiểu $$(r, s)$$ được ký hiệu là $$T^{(r, s)}(V) = V \otimes \dots \otimes V \otimes V^* \otimes \dots \otimes V^*$$.
 
-### 3.3. Thành phần của Tensor và Quy ước Einstein
+### 3.3. Thành phần của Tensor và Quy ước Tổng Einstein
 
-Trong một hệ tọa độ địa phương $$(x^1, \dots, x^n)$$, chúng ta có cơ sở vector $$\{\frac{\partial}{\partial x^i}\}$$ và cơ sở covector $$\{dx^i\}$$.
+Trong một hệ tọa độ địa phương $$(x^1, \dots, x^n)$$, ta có cơ sở vector $$\{\frac{\partial}{\partial x^i}\}$$ và cơ sở covector đối ngẫu $$\{dx^i\}$$.
 
-Một tensor $$T$$ kiểu $$(1, 2)$$ có thể được viết là:
+Một tensor $$T$$ kiểu $$(1, 2)$$ có thể được biểu diễn dưới dạng:
 $$
 T = T^i_{jk} \frac{\partial}{\partial x^i} \otimes dx^j \otimes dx^k
 $$
-(Sử dụng quy ước tổng Einstein: chỉ số lặp lại một trên một dưới nghĩa là lấy tổng theo chỉ số đó từ 1 đến $$n$$).
+(theo quy ước tổng Einstein: một chỉ số xuất hiện hai lần — một ở trên và một ở dưới — được hiểu ngầm là lấy tổng từ $$1$$ đến $$n$$).
 
-Các số $$T^i_{jk}$$ là *thành phần* của tensor trong hệ tọa độ đó.
+Các hàm $$T^i_{jk}$$ là các *thành phần* của tensor trong hệ tọa độ đã chọn.
 
 ### 3.4. Quy tắc Biến đổi Tọa độ
 
-Khi đổi từ hệ tọa độ $$x$$ sang $$y$$, các thành phần của tensor biến đổi theo quy tắc chuỗi (chain rule) cho từng chỉ số:
+Khi chuyển từ hệ tọa độ $$x$$ sang hệ tọa độ $$y$$, các thành phần của tensor biến đổi theo quy tắc đạo hàm hàm hợp (chain rule) đối với từng chỉ số:
 
 $$
 T'^{p}_{qr} = T^i_{jk} \underbrace{\frac{\partial y^p}{\partial x^i}}_{\text{cho chỉ số trên}} \underbrace{\frac{\partial x^j}{\partial y^q}}_{\text{cho chỉ số dưới}} \underbrace{\frac{\partial x^k}{\partial y^r}}_{\text{cho chỉ số dưới}}
 $$
 
-Đây chính là định nghĩa thực dụng của tensor trong vật lý: "Tensor là đối tượng biến đổi như một tensor". Nếu một đại lượng không tuân theo quy tắc này khi đổi tọa độ, nó không phải là tensor (ví dụ: ký hiệu Christoffel không phải là tensor).
+Đây chính là cách định nghĩa thực hành phổ biến trong vật lý: một bộ đại lượng chỉ là tensor nếu các thành phần của nó tuân theo đúng quy tắc biến đổi trên khi đổi tọa độ (chẳng hạn, ký hiệu Christoffel không tuân theo quy tắc này nên không phải là tensor).
 
 ### 3.5. Tensor Metric (Metric Tensor)
 
 <div class="textbook-definition" markdown="1">
 **Định nghĩa:**
-Tensor metric $$g$$ là một trường tensor kiểu $$(0, 2)$$, đối xứng và xác định dương. Tại mỗi điểm $$p$$, nó là một tích vô hướng trên không gian tiếp tuyến $$T_pM$$.
+Tensor metric $$g$$ là một trường tensor kiểu $$(0, 2)$$, đối xứng và xác định dương. Tại mỗi điểm $$p$$, $$g$$ xác định một tích vô hướng trên không gian tiếp tuyến $$T_pM$$:
 $$
 g = g_{ij} dx^i \otimes dx^j
 $$
-Trong đó $$g_{ij} = g(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j})$$. Đây chính là các hệ số $$E, F, G$$ (trong 2D) được tổng quát hóa.
+trong đó $$g_{ij} = g(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j})$$. Đây chính là sự tổng quát hóa của các hệ số $$E, F, G$$ trên mặt hai chiều.
 </div>
 
-Metric cho phép chúng ta "hạ chỉ số" (chuyển vector thành covector) và ngược lại ("nâng chỉ số" bằng metric nghịch đảo $$g^{ij}$$).
+Metric cho phép "hạ chỉ số" (chuyển vector thành covector) và "nâng chỉ số" (chuyển covector thành vector thông qua metric nghịch đảo $$g^{ij}$$).
 
 ## 4. Các Ví dụ Quan trọng
 
 ### 4.1. Tensor Metric (Hạng 2)
 
-Trong không gian Euclid 3D với tọa độ Descartes $$(x, y, z)$$, tensor metric là ma trận đơn vị:
+Trong không gian Euclid 3 chiều với tọa độ Descartes $$(x, y, z)$$, tensor metric là ma trận đơn vị:
 $$
 g_{ij} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
 $$
-Trong tọa độ cầu $$(r, \theta, \varphi)$$, nó trở thành:
+Trong tọa độ cầu $$(r, \theta, \varphi)$$, tensor metric có dạng:
 $$
 g_{ij} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & r^2 & 0 \\ 0 & 0 & r^2\sin^2\theta \end{pmatrix}
 $$
 
 ### 4.2. Tensor Ứng suất (Stress Tensor)
 
-Trong cơ học môi trường liên tục, tensor ứng suất Cauchy $$\sigma$$ là một tensor hạng (2, 0) (hoặc (0, 2) nếu dùng metric để hạ chỉ số). Thành phần $$\sigma_{ij}$$ biểu diễn lực theo phương $$i$$ tác dụng lên một mặt phẳng có pháp tuyến theo phương $$j$$.
+Trong cơ học môi trường liên tục, tensor ứng suất Cauchy $$\sigma$$ là một tensor kiểu $$(2, 0)$$ (hoặc kiểu $$(0, 2)$$ sau khi hạ chỉ số bằng metric). Thành phần $$\sigma_{ij}$$ biểu diễn lực theo phương $$i$$ tác dụng lên đơn vị diện tích của mặt phẳng có pháp tuyến theo phương $$j$$.
 
 ### 4.3. Tensor Độ cong Riemann (Hạng 4)
 
-Đây là tensor quan trọng nhất trong hình học Riemann, đo lường sự không giao hoán của đạo hàm hiệp biến (hoặc sự thay đổi của vector khi vận chuyển song song quanh một vòng kín). Nó là một tensor kiểu (1, 3), ký hiệu là $$R^i_{jkl}$$.
+Đây là tensor trung tâm của hình học Riemann, đo mức độ không giao hoán của đạo hàm hiệp biến (hoặc góc xoay của vector khi vận chuyển song song quanh một vòng kín). Nó là một tensor kiểu $$(1, 3)$$, ký hiệu là $$R^i_{jkl}$$.
 
 ## 5. Hình ảnh minh họa
 
@@ -151,67 +148,66 @@ Trong cơ học môi trường liên tục, tensor ứng suất Cauchy $$\sigma$
 *Hình 1: Tensor ứng suất Cauchy. Các mũi tên biểu diễn các thành phần lực tác dụng lên các mặt của một phân tố thể tích vô cùng nhỏ.*
 
 ![Covector như Chồng Mặt phẳng](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Covector_stack.svg/640px-Covector_stack.svg.png)
-*Hình 2: Minh họa hình học của Covector (dạng 1). Trong khi vector là một mũi tên, covector được hình dung như các lớp mặt phẳng song song. Giá trị của covector tác động lên vector là số lớp mặt phẳng mà vector xuyên qua.*
+*Hình 2: Minh họa hình học của covector (dạng bậc 1). Trong khi vector là một mũi tên, covector được hình dung như một họ mặt phẳng song song. Giá trị của covector tác động lên vector là số lớp mặt phẳng mà vector xuyên qua.*
 
 ## 6. Các Công trình Nền tảng & Tài liệu Tham khảo
 
 🧠 **Các Công trình Nền tảng & Tài liệu Tham khảo**
 
-1.  **Ricci-Curbastro, Gregorio & Levi-Civita, Tullio (1900).** *Méthodes de calcul différentiel absolu et leurs applications*.
-    Công trình nền tảng phát triển phép tính tensor (hay còn gọi là phép tính vi phân tuyệt đối), công cụ mà sau này Einstein sử dụng cho Thuyết tương đối rộng.
+1. **Ricci-Curbastro, Gregorio & Levi-Civita, Tullio (1900).** *Méthodes de calcul différentiel absolu et leurs applications*.  
+   Công trình nền tảng xây dựng phép tính tensor (phép tính vi phân tuyệt đối), công cụ mà Einstein sau này sử dụng cho Thuyết tương đối rộng.
 
-2.  **Einstein, Albert (1916).** *The Foundation of the General Theory of Relativity*.
-    Tác phẩm nổi tiếng nhất đưa giải tích tensor từ toán học thuần túy vào trung tâm của vật lý hiện đại.
+2. **Einstein, Albert (1916).** *The Foundation of the General Theory of Relativity*.  
+   Công trình đưa giải tích tensor từ toán học thuần túy trở thành ngôn ngữ trung tâm của vật lý lý thuyết hiện đại.
 
-3.  **Lee, John M. (2013).** *Introduction to Smooth Manifolds*.
-    Chương về Tensor và Trường Tensor là tài liệu tham khảo chuẩn mực và chi tiết cho sinh viên toán.
+3. **Lee, John M. (2013).** *Introduction to Smooth Manifolds*.  
+   Chương về tensor và trường tensor là tài liệu tham khảo chuẩn mực và chi tiết cho sinh viên toán học.
 
-4.  **Misner, Thorne, Wheeler (1973).** *Gravitation*.
-    Cuốn "Kinh thánh" của thuyết tương đối, với cách giải thích hình học về tensor (cỗ máy đa tuyến tính) rất trực quan và sâu sắc.
+4. **Misner, Thorne, Wheeler (1973).** *Gravitation*.  
+   Giáo trình kinh điển về thuyết tương đối rộng, trình bày cách tiếp cận hình học về tensor như các ánh xạ đa tuyến tính rất trực quan.
 
 ## 7. Ứng dụng và Kết nối Liên ngành
 
 🔗 **Ứng dụng và Kết nối Liên ngành**
 
 ### 7.1. Vật lý: Thuyết Tương đối Rộng
-Trong thuyết tương đối, không gian và thời gian hòa quyện thành không-thời gian 4 chiều. Các định luật vật lý phải đúng trong mọi hệ quy chiếu, do đó chúng phải được viết dưới dạng các phương trình tensor.
-Ví dụ: Phương trình trường Einstein $$G_{\mu\nu} = 8\pi T_{\mu\nu}$$ liên hệ tensor độ cong Einstein $$G_{\mu\nu}$$ với tensor năng lượng-xung lượng $$T_{\mu\nu}$$.
+Trong thuyết tương đối rộng, không gian và thời gian hợp nhất thành không-thời gian 4 chiều. Vì các định luật vật lý phải giữ nguyên dạng trong mọi hệ tọa độ, chúng được viết dưới dạng các phương trình tensor. Chẳng hạn, phương trình trường Einstein $$G_{\mu\nu} = 8\pi T_{\mu\nu}$$ liên hệ tensor độ cong Einstein $$G_{\mu\nu}$$ với tensor năng lượng – xung lượng $$T_{\mu\nu}$$.
 
 ### 7.2. Cơ học Môi trường Liên tục
-Trong kỹ thuật cơ khí và xây dựng, trạng thái ứng suất bên trong một vật thể rắn hoặc lỏng được mô tả bởi *tensor ứng suất Cauchy* $$\sigma_{ij}$$. Nó mô tả lực trên đơn vị diện tích theo các phương khác nhau. Biến dạng của vật thể được mô tả bởi *tensor biến dạng* $$\epsilon_{ij}$$. Định luật Hooke tổng quát là mối quan hệ tensor giữa ứng suất và biến dạng.
+Trong kỹ thuật cơ khí và xây dựng, trạng thái ứng suất bên trong vật thể rắn hoặc lỏng được mô tả bởi *tensor ứng suất Cauchy* $$\sigma_{ij}$$ (lực trên đơn vị diện tích theo các phương), còn biến dạng được mô tả bởi *tensor biến dạng* $$\epsilon_{ij}$$. Định luật Hooke tổng quát biểu diễn mối liên hệ tuyến tính (dạng tensor) giữa ứng suất và biến dạng.
 
 ### 7.3. Khoa học Dữ liệu và Học máy
-Khái niệm "Tensor" trong các thư viện như TensorFlow hay PyTorch thực chất là mảng đa chiều (multi-dimensional array). Mặc dù trong bối cảnh này, tính chất biến đổi tọa độ ít được nhấn mạnh, nhưng cấu trúc tổ chức dữ liệu (hạng 3 là video, hạng 4 là batch video...) lấy cảm hứng trực tiếp từ cấu trúc chỉ số của tensor toán học.
+Khái niệm "tensor" trong các thư viện như TensorFlow hay PyTorch thực chất chỉ các mảng đa chiều (multi-dimensional arrays). Dù tính chất biến đổi tọa độ ít được đặt nặng trong ngữ cảnh này, cách tổ chức dữ liệu theo nhiều chỉ số (chẳng hạn mảng 3 chiều cho video, 4 chiều cho một lô video) bắt nguồn trực tiếp từ cấu trúc chỉ số của tensor toán học.
 
-### 7.4. Đồ họa Máy tính: Diffusion Tensor Imaging (DTI)
-Trong y học và đồ họa, DTI sử dụng tensor khuyếch tán (một tensor hạng 2 tại mỗi voxel) để mô tả sự di chuyển của phân tử nước trong não, giúp tái tạo hình ảnh các bó sợi thần kinh. Đây là ứng dụng trực tiếp của trường tensor trong xử lý ảnh 3D.
+### 7.4. Chẩn đoán Hình ảnh Y khoa: Diffusion Tensor Imaging (DTI)
+Trong y học và xử lý ảnh 3D, kỹ thuật DTI sử dụng tensor khuếch tán (một tensor hạng 2 tại mỗi voxel) để mô tả sự khuếch tán có hướng của phân tử nước trong não, từ đó tái tạo hình ảnh các bó sợi thần kinh.
 
 ## Video tham khảo
 
-- [Tensors for Beginners 4: What are Covectors?](https://www.youtube.com/watch?v=LNoQ_Q5JQMY) — eigenchris, tiếng Anh. xem trước. vector và covector, chỉ số trên và chỉ số dưới, đúng mục “mũi tên và chồng bánh kếp”.
-- [Change of basis \| Chapter 13, Essence of linear algebra](https://www.youtube.com/watch?v=P2LTAUO1TdA) — 3Blue1Brown, tiếng Anh. Đổi cơ sở làm tọa độ chạy ngược với cơ sở, hình ảnh tuyến tính của quy tắc biến đổi tensor trong bài.
-- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. Tensor metric hạng $$(0,2)$$ đo độ dài, đúng ví dụ trung tâm sau định nghĩa đa tuyến tính.
+- [Tensors for Beginners 4: What are Covectors?](https://www.youtube.com/watch?v=LNoQ_Q5JQMY) — eigenchris, tiếng Anh. Xem trước: trình bày vector và covector cùng chỉ số trên và chỉ số dưới, tương ứng với hình ảnh mũi tên và chồng mặt phẳng trong bài.
+- [Change of basis \| Chapter 13, Essence of linear algebra](https://www.youtube.com/watch?v=P2LTAUO1TdA) — 3Blue1Brown, tiếng Anh. Minh họa việc đổi cơ sở làm tọa độ biến đổi ngược chiều với cơ sở — nền tảng đại số tuyến tính cho quy tắc biến đổi tensor.
+- [Tensor Calculus 12: The Metric Tensor in Curved Spaces for Measuring Arc Length](https://www.youtube.com/watch?v=SmjbpIgVKFs) — eigenchris, tiếng Anh. Trình bày tensor metric kiểu $$(0,2)$$ dùng để đo độ dài cung, đúng với ví dụ trung tâm của bài giảng.
 
 ## 8. Bài tập và Suy ngẫm
 
 🧩 **Bài tập và Suy ngẫm**
 
-**Bài tập 1: Đếm thành phần**
-Một tensor hạng $$(1, 2)$$ trong không gian 3 chiều có bao nhiêu thành phần độc lập? Nếu không gian là 4 chiều (như không-thời gian) thì sao?
+**Bài tập 1: Đếm số thành phần**
+Một tensor tổng quát kiểu $$(1, 2)$$ trong không gian 3 chiều có bao nhiêu thành phần độc lập? Kết quả thay đổi thế nào trong không gian 4 chiều (như không-thời gian)?
 (Gợi ý: Số thành phần là $$n^{r+s}$$).
 
 **Bài tập 2: Tích Tensor**
 Cho $$v = (1, 2)$$ và $$w = (3, 4)$$ trong $$\mathbb{R}^2$$. Hãy viết ma trận biểu diễn tích tensor $$v \otimes w$$.
 
-**Bài tập 3: Co thắt (Contraction)**
-Cho tensor $$T^i_j$$. Phép co thắt chỉ số (cho $$i=j$$ và lấy tổng) tạo ra một số thực $$S = \sum_i T^i_i$$. Trong đại số tuyến tính, đại lượng này gọi là gì của ma trận $$T$$? (Gợi ý: Vết - Trace).
+**Bài tập 3: Rút gọn chỉ số (Contraction)**
+Cho tensor $$T^i_j$$. Phép rút gọn chỉ số (đặt $$i=j$$ và lấy tổng) cho ra số thực $$S = \sum_i T^i_i$$. Trong đại số tuyến tính, đại lượng này gọi là gì của ma trận $$T$$? (Gợi ý: Vết — Trace).
 
-**Bài tập 4: Metric và Hạ chỉ số**
-Cho không gian $$\mathbb{R}^2$$ với metric Euclid $$g_{ij} = \delta_{ij}$$ (ma trận đơn vị). Và cho một vector $$v^i = (3, -1)$$. Tính các thành phần của covector tương ứng $$v_i = g_{ij}v^j$$. Nếu metric thay đổi thành $$g_{11}=2, g_{22}=3, g_{12}=0$$, thì $$v_i$$ mới là gì?
+**Bài tập 4: Metric và phép hạ chỉ số**
+Xét không gian $$\mathbb{R}^2$$ với metric Euclid $$g_{ij} = \delta_{ij}$$ (ma trận đơn vị) và vector $$v^i = (3, -1)$$. Tính các thành phần của covector tương ứng $$v_i = g_{ij}v^j$$. Nếu metric đổi thành $$g_{11}=2, g_{22}=3, g_{12}=0$$, thì các thành phần $$v_i$$ mới bằng bao nhiêu?
 
 **Bài tập 5: Suy ngẫm về Vật lý**
-Tại sao các đại lượng vật lý (như lực, vận tốc, điện trường) lại là vector hoặc tensor mà không phải là những danh sách số ngẫu nhiên? (Gợi ý: Hãy nghĩ về việc quay đầu hoặc thay đổi vị trí quan sát - quy luật tự nhiên có thay đổi không?)
+Vì sao các đại lượng vật lý như lực, vận tốc hay điện trường phải là vector hoặc tensor thay vì những danh sách số tùy ý? (Gợi ý: Xét việc xoay hệ quy chiếu hoặc thay đổi vị trí quan sát — bản thân quy luật tự nhiên có thay đổi không?)
 
 ---
 
-Trong bài giảng tiếp theo, chúng ta sẽ giải quyết một vấn đề hóc búa: Làm thế nào để lấy đạo hàm của một trường vector trên bề mặt cong? Khái niệm đạo hàm thông thường không còn hoạt động tốt, và chúng ta sẽ cần đến một công cụ mới gọi là *Liên kết* (Connection) hay *Đạo hàm hiệp biến*.
+Trong bài giảng tiếp theo, chúng ta sẽ giải quyết một câu hỏi quan trọng: làm thế nào để lấy đạo hàm của một trường vector trên một bề mặt cong? Vì phép lấy đạo hàm thông thường không còn phù hợp, ta sẽ cần đến khái niệm *Liên kết* (Connection) và *Đạo hàm hiệp biến*.

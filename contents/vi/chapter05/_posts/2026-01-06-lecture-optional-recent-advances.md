@@ -10,69 +10,67 @@ lesson_type: optional
 
 ## Tổng quan
 
-Dạng vi phân là cách hiện đại để tích phân trên đa tạp: chúng ăn các bộ vector và trả về số, tự xử lý định hướng và đổi biến. Tích nêm và đạo hàm ngoài dẫn tới công thức Stokes duy nhất. Bài tùy chọn này không dạy lại $$d$$ và $$\wedge$$. Nó kể rằng, khoảng 2023, học sâu đã lấy lại đúng tinh thần ấy dưới tên *đại số hình học* (Clifford) và *transformer đẳng biến*.
+Dạng vi phân là công cụ hiện đại để lấy tích phân trên đa tạp: chúng tác động lên các bộ vector và trả về số thực, đồng thời xử lý tự nhiên định hướng và phép đổi biến. Tích nêm và đạo hàm ngoài dẫn tới công thức Stokes tổng quát. Bài tùy chọn này không trình bày lại $$d$$ và $$\wedge$$, mà giới thiệu cách học sâu khoảng năm 2023 tiếp thu đúng tinh thần này thông qua *đại số hình học* (Clifford) và *transformer đẳng biến*.
 
-Clifford Group Equivariant Neural Networks (Ruhe, Brandstetter, Forré, NeurIPS 2023) xây các lớp $$O(n)$$ và $$E(n)$$-đẳng biến bằng tích hình học trên đa vector: vô hướng, vector, 2-form, … sống trong cùng một đại số. Geometric Algebra Transformer (Brehmer, de Haan, Behrends, Cohen, NeurIPS 2023) nhúng điểm, hướng, phép tịnh tiến và phép quay vào đại số hình học xạ ảnh 16 chiều, rồi viết một transformer đẳng biến với $$E(3)$$. Cả hai đều nói một điều mà bài dạng vi phân đã chuẩn bị: *các đối tượng hình học khác bậc không nên bị ép thành cùng một vector Euclid*.
+*Clifford Group Equivariant Neural Networks* (Ruhe, Brandstetter, Forré, NeurIPS 2023) xây dựng các lớp mạng đẳng biến với $$O(n)$$ và $$E(n)$$ dựa trên tích hình học của đa vector: vô hướng, vector, 2-form... cùng nằm trong một đại số. *Geometric Algebra Transformer* (GATr — Brehmer, de Haan, Behrends, Cohen, NeurIPS 2023) nhúng điểm, phương hướng, phép tịnh tiến và phép quay vào đại số hình học xạ ảnh 16 chiều, từ đó xây dựng kiến trúc transformer đẳng biến với $$E(3)$$. Cả hai công trình đều nhấn mạnh một nguyên lý mà bài học về dạng vi phân đã chuẩn bị sẵn: *các đối tượng hình học khác bậc không nên bị gộp chung thành một vector Euclid thuần túy*.
 
 ## Giải thích trực quan
 
-Hãy nhớ 1-form như một máy đo lưu lượng qua một hướng, 2-form như máy đo thông lượng qua một mảnh diện tích. Đại số Clifford thêm một phép nhân — tích hình học — hòa cả tích vô hướng lẫn tích nêm. Một đa vector có thể chứa “một chút số, một chút mũi tên, một chút diện tích có hướng”. Khi bạn quay không gian, từng thành phần biến đổi đúng theo bậc của nó: số thì im, vector thì quay, 2-form thì quay như một diện tích.
+Ta đã biết 1-form đo lưu lượng theo một phương, còn 2-form đo thông lượng qua một mảnh diện tích. Đại số Clifford bổ sung một phép nhân — gọi là tích hình học — kết hợp cả tích vô hướng lẫn tích nêm. Một đa vector có thể chứa đồng thời thành phần vô hướng (bậc 0), thành phần vector (bậc 1) và thành phần diện tích có hướng (bậc 2). Khi quay không gian, từng thành phần biến đổi đúng theo bậc của nó: vô hướng giữ nguyên, vector quay theo phép quay, còn 2-form biến đổi như một phần tử diện tích.
 
-Mạng nơ-ron thông thường không biết điều ấy. Chúng xếp mọi thứ thành một danh sách số và hy vọng phép nhân ma trận tự học đối xứng. Các mạng 2023 *ép* đối xứng: nếu thế giới quay, đầu ra phải quay cùng một luật. Đó là đẳng biến, và đại số ngoài / Clifford là ngôn ngữ tự nhiên của luật ấy — cùng ngôn ngữ với $$dx\wedge dy$$.
+Mạng nơ-ron thông thường không có sẵn cấu trúc này: chúng xếp mọi đặc trưng thành một mảng số và kỳ vọng phép nhân ma trận tự học được tính đối xứng từ dữ liệu. Các kiến trúc năm 2023 tích hợp sẵn tính đối xứng: khi hệ tọa độ trong không gian quay, đầu ra của mạng cũng quay theo đúng quy luật tương ứng. Tính chất đó gọi là *đẳng biến* (equivariance), và đại số ngoài / đại số Clifford cung cấp ngôn ngữ tự nhiên cho quy luật ấy — cùng chung nền tảng với $$dx\wedge dy$$.
 
-Ứng dụng trong bài GATr trải từ bài toán $$n$$-vật, đến ứng suất thành mạch máu trên lưới lớn, đến quy hoạch chuyển động robot: đúng những nơi bạn đã được hứa rằng dạng vi phân sống ngoài trang giáo trình.
+Các ứng dụng trong bài báo GATr trải từ bài toán $$n$$-vật, ước lượng ứng suất thành mạch máu trên lưới lớn cho đến quy hoạch chuyển động robot, cho thấy dạng vi phân và đại số hình học có mặt trực tiếp trong các bài toán ứng dụng thực tế.
 
 ![Định hướng trên một mặt — điều mà dạng vi phân ghi nhớ giúp ta.](https://upload.wikimedia.org/wikipedia/commons/1/17/Torus.png)
-*Hình 1. Một mặt định hướng được (torus): 2-form thể tích “biết” mặt trên và mặt dưới. Wikimedia Commons.*
+*Hình 1. Một mặt định hướng được (hình xuyến — torus): 2-form thể tích phân biệt rõ hai phía của mặt. Wikimedia Commons.*
 
 ## Định nghĩa hình thức và ký hiệu
 
-**Nhắc lại.** Một $$k$$-form tại $$p$$ là một ánh xạ đa tuyến tính phản xứng $$\omega_p:(T_pM)^k\to\mathbb{R}$$. Tích nêm thỏa $$\alpha\wedge\beta = (-1)^{\deg\alpha\deg\beta}\beta\wedge\alpha$$, và Stokes đọc
+**Nhắc lại.** Một $$k$$-form tại điểm $$p$$ là một ánh xạ đa tuyến tính phản đối xứng $$\omega_p:(T_pM)^k\to\mathbb{R}$$. Tích nêm thỏa mãn $$\alpha\wedge\beta = (-1)^{\deg\alpha\deg\beta}\beta\wedge\alpha$$, và định lý Stokes viết là
 $$
 \int_\Omega d\omega = \int_{\partial\Omega}\omega.
 $$
 
-**Đa vector Clifford (mức khẩu hiệu).** Đại số Clifford $$\mathrm{Cl}(\mathbb{R}^n)$$ được sinh bởi các vector với
+**Đa vector Clifford (khái quát).** Đại số Clifford $$\mathrm{Cl}(\mathbb{R}^n)$$ được sinh bởi các vector với quan hệ
 $$
 v w + w v = 2\langle v,w\rangle.
 $$
-Phần bậc $$0$$ là vô hướng, bậc $$1$$ là vector, bậc $$2$$ chứa các 2-form. Nhóm Clifford tác động bằng tự đẳng cấu trực giao, bảo toàn bậc và bảo toàn tích hình học: mọi đa thức theo đa vector, kể cả phép chiếu bậc, đều đẳng biến. Đó là định lý thiết kế mạng của Ruhe và cộng sự.
+Phần bậc $$0$$ là đại lượng vô hướng, bậc $$1$$ là vector, còn bậc $$2$$ chứa các 2-form. Nhóm Clifford tác động lên đại số này bằng các tự đẳng cấu trực giao, bảo toàn bậc lẫn tích hình học. Nhờ đó, mọi đa thức theo đa vector (bao gồm cả phép chiếu theo từng bậc) đều đẳng biến — đây chính là cơ sở cho định lý thiết kế mạng của Ruhe và cộng sự.
 
 ## Minh họa hình học
 
 ![Vận chuyển một vector quanh một vòng — cảm giác “dạng” nhớ định hướng.](https://upload.wikimedia.org/wikipedia/commons/7/7d/Parallel_Transport.svg)
-*Hình 2. Một vòng kín trên mặt cầu: định hướng biên và diện tích bên trong, đúng cặp mà Stokes kết nối. Fred the Oyster / Wikimedia Commons.*
-
-[Image placeholder: “Một đa vector 3D: chấm vô hướng, mũi tên, song song có hướng; phép quay SO(3) tác động khác nhau lên từng bậc”]
+*Hình 2. Một vòng kín trên mặt cầu: định hướng của đường biên và phần diện tích bên trong là cặp đối tượng mà định lý Stokes liên kết với nhau. Fred the Oyster / Wikimedia Commons.*
 
 ## 🧠 Tài liệu nền tảng và các bài báo gần đây
 
-1. **Spivak, M.** *Calculus on Manifolds*. Định nghĩa $$d$$, $$\wedge$$, Stokes — không viết lại.
+1. **Spivak, M.** *Calculus on Manifolds*. Định nghĩa $$d$$, $$\wedge$$ và định lý Stokes.
 
 2. **Ruhe, D., Brandstetter, J., & Forré, P. (2023).** *Clifford Group Equivariant Neural Networks*. NeurIPS 2023. arXiv:2305.11141.
 
 3. **Brehmer, J., de Haan, P., Behrends, S., & Cohen, T. (2023).** *Geometric Algebra Transformer*. NeurIPS 2023. arXiv:2305.18415.
 
-4. **Cohen, T., Weiler, M., Kicanaoglu, B., & Welling, M. (2019).** *Gauge Equivariant Convolutional Networks and the Icosahedral CNN*. ICML 2019. Nguồn của chữ “gauge” trong học sâu; đọc như tiền sử của các bài 2023.
+4. **Cohen, T., Weiler, M., Kicanaoglu, B., & Welling, M. (2019).** *Gauge Equivariant Convolutional Networks and the Icosahedral CNN*. ICML 2019. Bài báo đặt nền cho khái niệm "gauge" trong học sâu, có thể đọc như tiền đề cho các công trình năm 2023.
 
 ## 🔗 Ứng dụng và kết nối liên ngành
 
-Trong vật lý hạt, đẳng biến Lorentz bốn chiều xuất hiện như một thí nghiệm trong bài Clifford. Trong y sinh, ước lượng ứng suất trên lưới động mạch là tích phân một 2-form trên mặt — GATr làm việc ấy mà không phá đối xứng Euclid. Trong robot, điểm, trục quay và mặt phẳng kẹp phải sống chung một kiến trúc; đại số hình học xạ ảnh được sinh ra đúng cho việc ấy.
+Trong vật lý hạt, tính đẳng biến Lorentz bốn chiều được thử nghiệm trực tiếp trong bài báo về mạng Clifford. Trong y sinh, bài toán ước lượng ứng suất trên lưới động mạch tương ứng với việc tích phân một 2-form trên mặt, và GATr thực hiện việc này mà không phá vỡ đối xứng Euclid. Trong kỹ thuật robot, điểm, trục quay và mặt phẳng kẹp cần cùng tồn tại trong một kiến trúc thống nhất — đúng với mục đích của đại số hình học xạ ảnh.
 
 ## Video tham khảo
 
-- [A Swift Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8) — sudgylacmoe, tiếng Anh. xem trước. tích hình học: vô hướng, vector và diện tích có hướng sống trong cùng một đại số, đúng tinh thần Clifford mà bài kể về các mạng 2023.
-- [Differential Forms \| What is a 1-form?](https://www.youtube.com/watch?v=Pw1ejJzsCPA) — Michael Penn, tiếng Anh. 1-form và bậc của dạng, để nhớ vì sao bài nói các đối tượng khác bậc không nên bị ép thành cùng một danh sách số.
-- [Siggraph2019 Geometric Algebra](https://www.youtube.com/watch?v=tX4H_ctggYo) — Bivector, tiếng Anh. Khóa ngắn tại SIGGRAPH về đại số hình học trong đồ họa: cùng ngôn ngữ đa vector, nhìn từ phía người làm hình.
+- [A Swift Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8) — sudgylacmoe, tiếng Anh. Xem trước: giới thiệu tích hình học, nơi đại lượng vô hướng, vector và diện tích có hướng cùng nằm trong một đại số, đúng tinh thần đại số Clifford của các mạng năm 2023.
+- [Differential Forms \| What is a 1-form?](https://www.youtube.com/watch?v=Pw1ejJzsCPA) — Michael Penn, tiếng Anh. Nhắc lại 1-form và bậc của dạng vi phân, giúp thấy rõ vì sao các đối tượng khác bậc không nên bị gộp thành một danh sách số thông thường.
+- [Siggraph2019 Geometric Algebra](https://www.youtube.com/watch?v=tX4H_ctggYo) — Bivector, tiếng Anh. Khóa ngắn tại SIGGRAPH về đại số hình học trong đồ họa máy tính, sử dụng cùng ngôn ngữ đa vector dưới góc nhìn trực quan.
 
 ## 🧩 Bài tập và suy ngẫm
 
-**Bài 1.** Viết bằng lời, không cần khai triển, sự khác nhau giữa một vector và một 2-form khi bạn đảo định hướng không gian (phép phản xạ). Mạng đẳng biến $$E(3)$$ phải làm gì với từng loại?
+**Bài 1.** Diễn đạt bằng lời sự khác nhau giữa một vector và một 2-form khi đảo định hướng không gian (phép phản xạ). Một mạng đẳng biến $$E(3)$$ cần xử lý từng loại đối tượng này như thế nào?
 
-**Bài 2.** Stokes nói tích phân $$d\omega$$ trong $$\Omega$$ bằng tích phân $$\omega$$ trên biên. Hãy tưởng tượng một mạng “học” thông lượng qua một mặt kín. Vì sao việc biểu diễn thông lượng như 2-form (chứ không như một kênh vô hướng) giúp mạng tôn trọng định hướng?
+**Bài 2.** Định lý Stokes khẳng định tích phân $$d\omega$$ trên $$\Omega$$ bằng tích phân $$\omega$$ trên biên $$\partial\Omega$$. Giả sử một mạng nơ-ron học đại lượng thông lượng qua một mặt kín. Vì sao biểu diễn thông lượng như một 2-form (thay vì một kênh vô hướng) giúp mạng tôn trọng định hướng của bề mặt?
 
-**Bài 3.** Suy ngẫm: tích nêm phản giao hoán. Nếu một lớp mạng dùng tích hình học, chỗ nào trong công thức $$vw+wv=2\langle v,w\rangle$$ là phần đối xứng (metric) và chỗ nào là phần phản đối xứng (dạng)?
+**Bài 3.** Suy ngẫm: tích nêm có tính phản giao hoán. Nếu một lớp mạng sử dụng tích hình học, phần nào trong quan hệ $$vw+wv=2\langle v,w\rangle$$ tương ứng với phần đối xứng (metric) và phần nào ứng với phần phản đối xứng (dạng vi phân)?
 
 ---
 
-Ngôn ngữ dạng vi phân không đổi. Chapter 06 sẽ nói về tensor và liên kết; bài tùy chọn bên ấy nhìn các mạng đẳng biến như những liên kết rời rạc.
+Ngôn ngữ dạng vi phân vẫn giữ nguyên cấu trúc nền tảng. Chương 6 sẽ chuyển sang tensor và liên kết; bài tùy chọn ở chương đó nhìn các mạng đẳng biến như những liên kết rời rạc.
