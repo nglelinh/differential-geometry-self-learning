@@ -31,15 +31,18 @@ More lightly still, information geometry treats a parametric family of distribut
 
 ## Formal definitions and notation
 
+<div class="textbook-definition" markdown="1">
 **Definition (working form of the manifold hypothesis).**
 Given samples $$x_1,\dots,x_n \in \mathbb{R}^N$$, we say they obey a manifold hypothesis if there exist a smooth manifold $$M$$ of dimension $$d \ll N$$, an embedding $$\iota: M \to \mathbb{R}^N$$, and small noise $$\varepsilon_i$$ such that
 $$
 x_i = \iota(p_i) + \varepsilon_i, \qquad p_i \in M.
 $$
 The integer $$d$$ is the true number of degrees of freedom; $$N$$ is only the dimension of the observational coordinates.
+</div>
 
 **Intuition.** $$M$$ is the sheet of paper; $$\iota$$ is the way we crumple it into a large space; $$\varepsilon_i$$ is wrinkling and measurement noise.
 
+<div class="textbook-definition" markdown="1">
 **Definition (Fisher–Rao metric, a light touch).**
 For a family $$p_\theta$$, $$\theta \in \Theta \subset \mathbb{R}^k$$, the Fisher information
 $$
@@ -50,6 +53,7 @@ $$
 \widetilde{\nabla} L = g(\theta)^{-1} \nabla L,
 $$
 the Euclidean gradient raised by the statistical metric.
+</div>
 
 You need not yet be fluent in Riemannian geometry: $$g$$ is a change of measuring stick, as in a change of basis, and $$g^{-1}\nabla L$$ is the same covector written in that basis.
 

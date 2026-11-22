@@ -27,15 +27,19 @@ Gaussian splatting is more like covering the object with countless flat sweets, 
 
 ## Formal definitions and notation
 
+<div class="textbook-definition" markdown="1">
 **Definition (surface as a level set).**
 If $$f:\mathbb{R}^3\to\mathbb{R}$$ is of class $$C^1$$, $$f(p)=0$$, and $$\nabla f(p)\neq 0$$, then near $$p$$ the set $$f^{-1}(0)$$ is a regular surface. The unit normal is $$\mathbf{n}=\nabla f/\|\nabla f\|$$.
+</div>
 
+<div class="textbook-definition" markdown="1">
 **Definition (a Gaussian patch, at the level of intuition).**
 A 3D Gaussian with centre $$\boldsymbol{\mu}$$ and covariance $$\Sigma$$ describes an ellipsoidal “cloud”
 $$
 G(\mathbf{x}) = \exp\bigl(-\tfrac12 (\mathbf{x}-\boldsymbol{\mu})^\top \Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})\bigr).
 $$
 When the axes of $$\Sigma$$ are flattened against a plane, the cloud becomes a tangent patch — a reminder of your stiff card.
+</div>
 
 NeuS observed that naïve volume rendering, if density is tied to an SDF carelessly, is *biased* away from the zero level set. Their corrected formula cancels that first-order error: a reminder that “a pretty picture” and “the right surface” do not automatically coincide.
 

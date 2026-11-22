@@ -75,12 +75,14 @@ Trong đó $$J$$ là vector phân cách (deviation vector) và $$T$$ là vector 
 
 ### 3.1. Tensor Độ cong Riemann
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Cho $$M$$ là đa tạp Riemann với liên kết Levi-Civita $$\nabla$$. *Tensor độ cong Riemann* $$R$$ là một trường tensor kiểu (1, 3) được định nghĩa bởi:
 $$
 R(X, Y)Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]} Z
 $$
 với $$X, Y, Z$$ là các trường vector.
+</div>
 
 Trong hệ tọa độ địa phương:
 $$

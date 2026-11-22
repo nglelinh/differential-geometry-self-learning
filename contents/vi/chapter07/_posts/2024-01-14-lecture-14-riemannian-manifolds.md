@@ -71,6 +71,7 @@ Một không gian được gọi là "đầy đủ" nếu bạn có thể đi m�
 
 ### Đa tạp Riemann
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Một *Đa tạp Riemann* là một cặp $$(M, g)$$, trong đó:
 - $$M$$ là một đa tạp trơn $$n$$ chiều.
@@ -79,9 +80,11 @@ $$
 g_p: T_pM \times T_pM \to \mathbb{R}
 $$
 Trong tọa độ địa phương: $$g = g_{ij} dx^i \otimes dx^j$$.
+</div>
 
 ### Khoảng cách Riemann
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Độ dài của một đường cong trơn từng khúc $$\gamma: [a, b] \to M$$ được tính bởi:
 $$
@@ -92,9 +95,11 @@ $$
 d(p, q) = \inf \{ L(\gamma) \mid \gamma(a)=p, \gamma(b)=q \}
 $$
 Với khoảng cách này, $$(M, d)$$ trở thành một không gian metric (theo nghĩa tô pô).
+</div>
 
 ### Đẳng cự (Isometry)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Một vi phôi (diffeomorphism) $$\varphi: (M, g) \to (N, h)$$ là một *đẳng cự* nếu nó bảo toàn metric:
 $$
@@ -105,14 +110,17 @@ $$
 h_{\varphi(p)}(d\varphi_p(u), d\varphi_p(v)) = g_p(u, v)
 $$
 Hai đa tạp Riemann được gọi là đẳng cự nếu tồn tại một phép đẳng cự giữa chúng. Về mặt hình học Riemann, chúng là một.
+</div>
 
 ### Định lý Hopf-Rinow
 
+<div class="textbook-theorem" markdown="1">
 **Định lý:**
 Cho $$(M, g)$$ là một đa tạp Riemann liên thông. Các mệnh đề sau là tương đương:
 1.  $$M$$ là một không gian metric đầy đủ (mọi dãy Cauchy đều hội tụ).
 2.  $$M$$ là đầy đủ trắc địa (geodesically complete): mọi đường trắc địa $$\gamma(t)$$ đều có thể xác định với mọi $$t \in \mathbb{R}$$.
 3.  Mọi tập con đóng và bị chặn của $$M$$ đều compact (tính chất Heine-Borel).
+</div>
 
 **Hệ quả quan trọng:**
 Nếu $$M$$ đầy đủ, thì với bất kỳ hai điểm $$p, q \in M$$, luôn *tồn tại* một đường trắc địa nối chúng có độ dài bằng đúng khoảng cách $$d(p, q)$$ (đường ngắn nhất).

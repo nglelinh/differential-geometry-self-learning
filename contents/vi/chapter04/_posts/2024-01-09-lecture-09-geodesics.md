@@ -50,6 +50,7 @@ Hãy tưởng tượng một viên bi lăn trên bề mặt mà không có ma s�
 
 ### 3.1. Định nghĩa Geodesic
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa 1 (Gia tốc geodesic bằng 0):**  
 Một đường cong $$\gamma(t)$$ trên bề mặt $$S$$ là *geodesic* nếu gia tốc $$\gamma''(t)$$ vuông góc với bề mặt tại mọi điểm, tức là
 
@@ -58,6 +59,7 @@ $$
 $$
 
 trong đó $$\mathbf{n}$$ là vector pháp tuyến đơn vị.
+</div>
 
 Tương đương, gia tốc tiếp tuyến (thành phần gia tốc nằm trong không gian tiếp tuyến) bằng không.
 
@@ -67,8 +69,10 @@ Tương đương, gia tốc tiếp tuyến (thành phần gia tốc nằm trong 
 > - Định nghĩa "độ dài cực tiểu" nói rằng geodesic là đường **ngắn nhất**.
 > - Về mặt địa phương (khoảng cách gần), hai khái niệm này trùng nhau. Nhưng ở khoảng cách xa, geodesic có thể không còn là ngắn nhất (ví dụ: đường cung lớn đi vòng quanh trái đất theo hướng ngược lại vẫn là geodesic, nhưng không ngắn nhất).
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa 2 (Cực trị hóa độ dài):**  
 Một đường cong $$\gamma$$ là geodesic nếu nó cực tiểu hóa độ dài (cục bộ) giữa hai điểm đầu mút cố định.
+</div>
 
 Cụ thể, $$\gamma$$ là điểm tới hạn của phiếm hàm năng lượng
 
@@ -78,6 +82,7 @@ $$
 
 ### 3.2. Phương trình Geodesic và Ký hiệu Christoffel
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa (Phương trình geodesic):**  
 Trong tọa độ tham số $$(u(t), v(t))$$, geodesic thỏa mãn hệ phương trình vi phân
 
@@ -89,6 +94,7 @@ $$
 $$
 
 trong đó $$\Gamma^i_{jk}$$ là các *ký hiệu Christoffel* (Christoffel symbols).
+</div>
 
 **Ký hiệu Christoffel:**  
 Ký hiệu Christoffel được định nghĩa từ dạng cơ bản thứ nhất:
@@ -111,8 +117,10 @@ Ký hiệu Christoffel mô tả cách mà hệ tọa độ "xoắn" trên bề m
 
 ### 3.3. Độ cong Geodesic
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**  
 Cho đường cong $$\gamma(s)$$ tham số hóa theo độ dài cung trên bề mặt. *Độ cong geodesic* $$\kappa_g$$ là thành phần của vector độ cong nằm trong không gian tiếp tuyến.
+</div>
 
 Nếu $$\gamma$$ là geodesic, thì $$\kappa_g = 0$$.
 

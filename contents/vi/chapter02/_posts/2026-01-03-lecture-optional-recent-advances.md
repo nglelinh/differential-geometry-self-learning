@@ -27,15 +27,19 @@ Gaussian splatting thì giống việc phủ vật thể bằng vô số viên k
 
 ## Định nghĩa hình thức và ký hiệu
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa (bề mặt như mặt mức).**
 Nếu $$f:\mathbb{R}^3\to\mathbb{R}$$ thuộc lớp $$C^1$$ và $$f(p)=0$$, $$\nabla f(p)\neq 0$$, thì gần $$p$$ tập $$f^{-1}(0)$$ là một bề mặt chính quy. Pháp tuyến đơn vị là $$\mathbf{n}=\nabla f/\|\nabla f\|$$.
+</div>
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa (mảnh Gaussian, mức trực giác).**
 Một Gaussian 3D có trung tâm $$\boldsymbol{\mu}$$ và hiệp phương sai $$\Sigma$$ mô tả một “đám mây” elip
 $$
 G(\mathbf{x}) = \exp\bigl(-\tfrac12 (\mathbf{x}-\boldsymbol{\mu})^\top \Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})\bigr).
 $$
 Khi các trục của $$\Sigma$$ bị ép sát một mặt phẳng, đám mây trở thành một mảnh tiếp xúc — một lời nhắc về tấm bìa cứng của bạn.
+</div>
 
 NeuS quan sát rằng kết xuất thể tích cổ điển, nếu gắn mật độ một cách ngây thơ vào SDF, sẽ *lệch* khỏi mặt mức không. Công thức hiệu chỉnh của họ nhằm khử sai số bậc nhất ấy: một lời nhắc rằng “bề mặt” và “ảnh đẹp” không tự động trùng nhau.
 

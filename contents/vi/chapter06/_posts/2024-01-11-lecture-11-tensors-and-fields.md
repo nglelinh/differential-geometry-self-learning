@@ -64,8 +64,10 @@ Tensor là sự kết hợp của các thành phần này. Ký hiệu chỉ số
 
 ### 3.1. Không gian Đối ngẫu (Dual Space)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Cho $$V$$ là một không gian vector thực $$n$$ chiều. *Không gian đối ngẫu* $$V^*$$ là tập hợp tất cả các ánh xạ tuyến tính từ $$V$$ vào $$\mathbb{R}$$. Các phần tử của $$V^*$$ gọi là covector hoặc dạng 1.
+</div>
 
 Nếu $$\{e_1, \dots, e_n\}$$ là cơ sở của $$V$$, thì cơ sở đối ngẫu $$\{\epsilon^1, \dots, \epsilon^n\}$$ của $$V^*$$ được định nghĩa bởi:
 $$
@@ -74,6 +76,7 @@ $$
 
 ### 3.2. Tensor và Tích Tensor
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Một tensor kiểu $$(r, s)$$ trên không gian vector $$V$$ là một ánh xạ đa tuyến tính:
 $$
@@ -81,6 +84,7 @@ T: \underbrace{V^* \times \dots \times V^*}_{r \text{ lần}} \times \underbrace
 $$
 - $$r$$ là số lượng chỉ số "contravariant" (trên).
 - $$s$$ là số lượng chỉ số "covariant" (dưới).
+</div>
 
 **Ký hiệu:**
 Không gian các tensor kiểu $$(r, s)$$ ký hiệu là $$T^{(r, s)}(V) = V \otimes \dots \otimes V \otimes V^* \otimes \dots \otimes V^*$$.
@@ -109,12 +113,14 @@ $$
 
 ### 3.5. Tensor Metric (Metric Tensor)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Tensor metric $$g$$ là một trường tensor kiểu $$(0, 2)$$, đối xứng và xác định dương. Tại mỗi điểm $$p$$, nó là một tích vô hướng trên không gian tiếp tuyến $$T_pM$$.
 $$
 g = g_{ij} dx^i \otimes dx^j
 $$
 Trong đó $$g_{ij} = g(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j})$$. Đây chính là các hệ số $$E, F, G$$ (trong 2D) được tổng quát hóa.
+</div>
 
 Metric cho phép chúng ta "hạ chỉ số" (chuyển vector thành covector) và ngược lại ("nâng chỉ số" bằng metric nghịch đảo $$g^{ij}$$).
 

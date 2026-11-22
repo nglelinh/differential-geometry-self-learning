@@ -31,15 +31,18 @@ Song song, Bronstein, Bruna, Cohen và Veličković đã vẽ một bản đồ 
 
 ## Định nghĩa hình thức và ký hiệu
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa (phiên bản làm việc của giả thuyết đa tạp).**
 Cho dữ liệu $$x_1,\dots,x_n \in \mathbb{R}^N$$. Ta nói chúng thỏa một giả thuyết đa tạp nếu tồn tại một đa tạp trơn $$M$$ chiều $$d \ll N$$, một nhúng $$\iota: M \to \mathbb{R}^N$$, và nhiễu nhỏ $$\varepsilon_i$$ sao cho
 $$
 x_i = \iota(p_i) + \varepsilon_i, \qquad p_i \in M.
 $$
 Chiều $$d$$ là “số bậc tự do thật”; $$N$$ chỉ là chiều của hệ tọa độ quan sát.
+</div>
 
 **Trực giác.** $$M$$ là tờ giấy; $$\iota$$ là cách ta vo tờ giấy bỏ vào không gian lớn; $$\varepsilon_i$$ là nếp nhăn và nhiễu đo.
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa (metric Fisher–Rao, chạm nhẹ).**
 Với họ phân bố $$p_\theta$$, $$\theta \in \Theta \subset \mathbb{R}^k$$, ma trận thông tin Fisher
 $$
@@ -50,6 +53,7 @@ $$
 \widetilde{\nabla} L = g(\theta)^{-1} \nabla L,
 $$
 tức là “nâng” gradient Euclid bằng metric thống kê.
+</div>
 
 Bạn chưa cần thành thạo hình học Riemann để hiểu câu chuyện: $$g$$ chỉ là một cách đổi thước đo, giống như đổi cơ sở trong đại số tuyến tính, và $$g^{-1}\nabla L$$ là tọa độ của cùng một covector trong cơ sở ấy.
 

@@ -75,6 +75,7 @@ Nếu $$K = 0$$, ánh xạ Gauss "suy biến" diện tích về 0 (như trên m�
 
 ### 3.1. Ánh xạ Gauss
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**  
 Cho bề mặt định hướng $$S$$ với vector pháp tuyến đơn vị $$\mathbf{n}: S \to \mathbb{R}^3$$. *Ánh xạ Gauss* là ánh xạ
 
@@ -83,22 +84,27 @@ $$
 $$
 
 trong đó $$S^2 = \{(x,y,z) : x^2 + y^2 + z^2 = 1\}$$ là mặt cầu đơn vị.
+</div>
 
 ### 3.2. Độ cong Gauss từ Ánh xạ Gauss
 
+<div class="textbook-theorem" markdown="1">
 **Định lý:**  
 Độ cong Gauss tại điểm $$p$$ là Jacobian (determinant của ánh xạ tuyến tính tiếp tuyến) của ánh xạ Gauss:
 
 $$
 K(p) = \det(d\mathcal{N}_p).
 $$
+</div>
 
 Dấu của $$K$$ cho biết ánh xạ Gauss bảo toàn hay đảo ngược hướng.
 
 ### 3.3. Theorema Egregium
 
+<div class="textbook-theorem" markdown="1">
 **Định lý (Gauss, 1827):**  
 Độ cong Gauss $$K$$ của một bề mặt là một bất biến nội tại. Cụ thể, $$K$$ có thể được biểu diễn chỉ qua dạng cơ bản thứ nhất $$E, F, G$$ và các đạo hàm bậc nhất và bậc hai của chúng.
+</div>
 
 **Công thức tường minh (Brioschi):**  
 Độ cong Gauss có thể được tính bằng công thức chỉ phụ thuộc vào $$E, F, G$$:
@@ -120,8 +126,10 @@ Một sinh vật hai chiều sống trên bề mặt, chỉ có thể đo độ 
 
 ### 3.4. Biến dạng Đẳng cự (Isometry)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**  
 Hai bề mặt $$S_1$$ và $$S_2$$ được gọi là *đẳng cự* (isometric) nếu tồn tại một song ánh $$\varphi: S_1 \to S_2$$ bảo toàn độ dài của mọi đường cong.
+</div>
 
 **Hệ quả của Theorema Egregium:**  
 Nếu hai bề mặt đẳng cự, chúng có cùng độ cong Gauss tại các điểm tương ứng.

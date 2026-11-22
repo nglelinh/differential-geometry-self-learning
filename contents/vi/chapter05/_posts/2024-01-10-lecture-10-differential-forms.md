@@ -92,6 +92,7 @@ $$
 
 ### 3.1. Dạng Vi phân Bậc k
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**  
 Trên không gian vector $$n$$ chiều với hệ tọa độ $$(x^1, \ldots, x^n)$$, một *dạng vi phân bậc $$k$$* (hoặc $$k$$-form) là một biểu thức có dạng
 
@@ -100,6 +101,7 @@ $$
 $$
 
 trong đó các $$f_{i_1 \cdots i_k}$$ là các hàm số trơn.
+</div>
 
 **Ví dụ trong $$\mathbb{R}^3$$:**
 
@@ -110,6 +112,7 @@ trong đó các $$f_{i_1 \cdots i_k}$$ là các hàm số trơn.
 
 ### 3.2. Tích Ngoài (Wedge Product)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**  
 Tích ngoài $$\wedge$$ là một phép toán nhân các dạng vi phân, thỏa mãn:
 
@@ -119,12 +122,16 @@ $$
 \alpha \wedge \beta = (-1)^{k \cdot l} \beta \wedge \alpha,
 $$
 trong đó $$l$$ là bậc của $$\beta$$.
+</div>
 
+<div class="textbook-theorem" markdown="1">
 **Hệ quả:**  
 $$dx^i \wedge dx^j = -dx^j \wedge dx^i$$, và $$dx^i \wedge dx^i = 0$$.
+</div>
 
 ### 3.3. Đạo hàm Ngoài
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**  
 *Đạo hàm ngoài* $$d$$ là một ánh xạ tuyến tính gửi $$k$$-forms thành $$(k+1)$$-forms, định nghĩa bởi:
 
@@ -133,6 +140,7 @@ Nếu $$\omega = f_{i_1 \cdots i_k} \, dx^{i_1} \wedge \cdots \wedge dx^{i_k}$$,
 $$
 d\omega = \sum_j \frac{\partial f_{i_1 \cdots i_k}}{\partial x^j} \, dx^j \wedge dx^{i_1} \wedge \cdots \wedge dx^{i_k}.
 $$
+</div>
 
 **Tính chất quan trọng:**
 
@@ -150,12 +158,14 @@ $$
 
 ### 3.4. Định lý Stokes Tổng quát
 
+<div class="textbook-theorem" markdown="1">
 **Định lý (Định lý Stokes Tổng quát):**  
 Cho $$M$$ là một đa tạp định hướng $$k$$ chiều với biên $$\partial M$$, và $$\omega$$ là một $$(k-1)$$-form trơn trên $$M$$. Khi đó
 
 $$
 \int_M d\omega = \int_{\partial M} \omega.
 $$
+</div>
 
 **Ý nghĩa:**  
 Định lý này thống nhất nhiều định lý cổ điển và cho thấy mối quan hệ sâu sắc giữa tích phân cục bộ (đạo hàm) và tích phân toàn cục (biên).

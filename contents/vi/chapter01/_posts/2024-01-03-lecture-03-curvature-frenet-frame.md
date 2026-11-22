@@ -27,8 +27,10 @@ Nó giống như kim của một chiếc la bàn.
 - Nếu đường cong thẳng: Kim la bàn đứng yên.
 - Nếu đường cong uốn lượn: Kim la bàn quay.
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:** Độ cong $$\kappa$$ là tốc độ quay của vector tiếp tuyến $$\mathbf{T}$$.
 $$ \kappa(s) = \| \mathbf{T}'(s) \| = \| \gamma''(s) \| $$
+</div>
 
 - $$\kappa = 0$$: Đường thẳng.
 - $$\kappa$$ lớn: Đường cong gấp (bán kính cong nhỏ).
@@ -65,8 +67,10 @@ Bây giờ, hãy nhìn vào vector $$\mathbf{B}$$.
 - Nếu đường cong nằm hoàn toàn trên mặt phẳng (như đường tròn, parabol), thì $$\mathbf{B}$$ luôn hướng thẳng đứng lên trời (vuông góc với mặt giấy). Nó không đổi. $$\mathbf{B}' = 0$$.
 - Nhưng nếu đường cong bắt đầu xoắn ốc bay lên (như lò xo), vector $$\mathbf{B}$$ sẽ bị nghiêng đi.
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:** Độ xoắn $$\tau$$ đo tốc độ thay đổi của vector $$\mathbf{B}$$.
 $$ \mathbf{B}'(s) = -\tau(s) \mathbf{N}(s) $$
+</div>
 
 - $$\tau = 0$$: Đường cong phẳng.
 - $$\tau \neq 0$$: Đường cong không gian.

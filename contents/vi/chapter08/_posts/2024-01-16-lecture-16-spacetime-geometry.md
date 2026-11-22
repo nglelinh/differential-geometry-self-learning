@@ -72,6 +72,7 @@ Không có lực hấp dẫn nào cả. Chỉ có sự cong của đa tạp Lore
 
 ### Đa tạp Lorentz
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Một *Đa tạp Lorentz* là cặp $$(M, g)$$ trong đó $$M$$ là đa tạp trơn 4 chiều và $$g$$ là một metric có dấu (signature) $$(-, +, +, +)$$ (hoặc $$(+, -, -, -)$$).
 Nghĩa là tại mỗi điểm $$p$$, tồn tại một cơ sở của $$T_pM$$ sao cho ma trận metric có dạng:
@@ -79,6 +80,7 @@ $$
 \eta = \begin{pmatrix} -1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 $$
 Metric này không xác định dương (có thể âm hoặc bằng 0), nên không thể dùng để định nghĩa khoảng cách tô pô như metric Riemann.
+</div>
 
 ### Phương trình Trường Einstein
 

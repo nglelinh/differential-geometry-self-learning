@@ -73,6 +73,7 @@ Các hệ số $$\Gamma^i_{jk}$$ chính là ký hiệu Christoffel. Chúng khôn
 
 ### 3.1. Liên kết Affine (Affine Connection)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Một *liên kết affine* $$\nabla$$ trên đa tạp trơn $$M$$ là một quy tắc gán cho mỗi cặp trường vector $$X, Y$$ một trường vector thứ ba $$\nabla_X Y$$, gọi là đạo hàm hiệp biến của $$Y$$ theo hướng $$X$$, thỏa mãn các tính chất:
 
@@ -83,6 +84,7 @@ Một *liên kết affine* $$\nabla$$ trên đa tạp trơn $$M$$ là một quy 
 3.  **Quy tắc Leibniz (Product Rule):**
     $$\nabla_X (fY) = f \nabla_X Y + (Xf)Y$$
     (Trong đó $$Xf$$ là đạo hàm hướng của hàm $$f$$ theo vector $$X$$).
+</div>
 
 ### 3.2. Thành phần và Ký hiệu Christoffel
 

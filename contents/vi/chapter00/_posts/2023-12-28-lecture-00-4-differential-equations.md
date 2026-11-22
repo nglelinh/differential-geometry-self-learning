@@ -38,10 +38,12 @@ với điều kiện ban đầu: $$x(0) = x_0$$.
 
 Đây là định lý quan trọng nhất của lý thuyết ODE. Nó đảm bảo rằng thế giới là tất định (deterministic).
 
+<div class="textbook-theorem" markdown="1">
 **Định lý:**
 Nếu hàm $$F(t, x)$$ liên tục và trơn (cụ thể là Lipschitz theo biến $$x$$) trong một vùng lân cận của $$(t_0, x_0)$$, thì:
 1.  **Tồn tại:** Có một nghiệm $$x(t)$$ thỏa mãn phương trình trong một khoảng thời gian ngắn $$(t_0 - \epsilon, t_0 + \epsilon)$$.
 2.  **Duy nhất:** Bất kỳ hai nghiệm nào thỏa mãn cùng điều kiện ban đầu thì phải trùng nhau trong khoảng thời gian chung.
+</div>
 
 **Ý nghĩa trong Hình học Vi phân:**
 - **Tại sao đường trắc địa không rẽ nhánh?** Vì tính duy nhất. Nếu bạn đứng tại một điểm và phóng đi theo một hướng cụ thể, chỉ có duy nhất một con đường "thẳng nhất" để đi. Bạn không thể đi được một đoạn rồi đột nhiên có hai ngã rẽ đều là trắc địa.

@@ -78,10 +78,12 @@ $$
 
 ### Nhóm Lie
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Một *Nhóm Lie* $$G$$ là một tập hợp vừa là một nhóm, vừa là một đa tạp trơn, sao cho các phép toán nhóm là trơn (smooth):
 1.  Phép nhân: $$\mu: G \times G \to G, (g, h) \mapsto gh$$ là ánh xạ trơn.
 2.  Phép nghịch đảo: $$\iota: G \to G, g \mapsto g^{-1}$$ là ánh xạ trơn.
+</div>
 
 **Ví dụ:**
 - $$GL(n, \mathbb{R})$$: Nhóm các ma trận khả nghịch $$n \times n$$ (Đa tạp mở trong $$\mathbb{R}^{n^2}$$).
@@ -101,8 +103,10 @@ Tính chất quan trọng: Một trường vector bất biến trái được x�
 
 ### Đại số Lie
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 *Đại số Lie* $$\mathfrak{g}$$ của nhóm Lie $$G$$ là không gian tiếp tuyến tại đơn vị, $$\mathfrak{g} = T_eG$$, được trang bị phép toán song tuyến tính $$[\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}$$ gọi là *dấu ngoặc Lie*.
+</div>
 
 Dấu ngoặc Lie trên $$\mathfrak{g}$$ được định nghĩa thông qua dấu ngoặc Lie của các trường vector bất biến trái tương ứng. Với ma trận, nó đơn giản là giao hoán tử:
 $$
@@ -111,12 +115,14 @@ $$
 
 ### Ánh xạ Mũ (Exponential Map)
 
+<div class="textbook-definition" markdown="1">
 **Định nghĩa:**
 Ánh xạ $$\exp: \mathfrak{g} \to G$$ được định nghĩa bởi:
 $$
 \exp(X) = \gamma_X(1)
 $$
 Trong đó $$\gamma_X(t)$$ là đường tích phân (integral curve) của trường vector bất biến trái sinh bởi $$X$$, đi qua đơn vị $$e$$. Với nhóm ma trận, đây chính là chuỗi lũy thừa ma trận.
+</div>
 
 ## Hình ảnh minh họa
 
