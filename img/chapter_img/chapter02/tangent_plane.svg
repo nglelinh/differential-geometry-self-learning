@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Surface -->
+  <path d="M 50 200 Q 200 250 350 200 Q 300 100 200 120 Q 100 100 50 200" fill="#e0e0e0" stroke="black" stroke-width="1"/>
+  
+  <!-- Point P -->
+  <circle cx="200" cy="180" r="3" fill="black"/>
+  <text x="210" y="185" font-family="Arial" font-size="14">P</text>
+  
+  <!-- Tangent Plane (Parallelogram) -->
+  <path d="M 120 200 L 220 220 L 280 160 L 180 140 Z" fill="rgba(100, 200, 255, 0.5)" stroke="blue" stroke-width="1"/>
+  <text x="260" y="155" font-family="Arial" font-size="12" fill="blue">TpS</text>
+  
+  <!-- Vectors -->
+  <line x1="200" y1="180" x2="240" y2="190" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="245" y="200" font-family="Arial" font-size="12">ru</text>
+  
+  <line x1="200" y1="180" x2="220" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="225" y="150" font-family="Arial" font-size="12">rv</text>
+  
+  <!-- Normal Vector -->
+  <line x1="200" y1="180" x2="200" y2="100" stroke="red" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <text x="205" y="110" font-family="Arial" font-size="14" fill="red">n</text>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="red" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Sphere Outline -->
+  <circle cx="200" cy="200" r="100" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Equator -->
+  <ellipse cx="200" cy="200" rx="100" ry="30" fill="none" stroke="gray" stroke-dasharray="4"/>
+  
+  <!-- Axes -->
+  <line x1="200" y1="200" x2="320" y2="200" stroke="black" stroke-width="1"/> <!-- y -->
+  <line x1="200" y1="200" x2="200" y2="80" stroke="black" stroke-width="1"/> <!-- z -->
+  <line x1="200" y1="200" x2="140" y2="280" stroke="black" stroke-width="1"/> <!-- x -->
+  
+  <text x="330" y="205" font-family="Arial" font-size="12">y</text>
+  <text x="205" y="75" font-family="Arial" font-size="12">z</text>
+  <text x="130" y="290" font-family="Arial" font-size="12">x</text>
+  
+  <!-- Point P -->
+  <line x1="200" y1="200" x2="260" y2="140" stroke="blue" stroke-width="2"/>
+  <circle cx="260" cy="140" r="3" fill="blue"/>
+  <text x="270" y="135" font-family="Arial" font-size="14" fill="blue">P</text>
+  
+  <!-- Projection to xy plane -->
+  <line x1="260" y1="140" x2="260" y2="220" stroke="gray" stroke-dasharray="2"/>
+  <line x1="200" y1="200" x2="260" y2="220" stroke="gray" stroke-dasharray="2"/>
+  
+  <!-- Angles -->
+  <!-- Phi (from Z axis) -->
+  <path d="M 200 160 Q 210 165 215 185" fill="none" stroke="red" stroke-width="1"/> 
+  <!-- This is tricky in 2D, just drawing a representative arc -->
+  <text x="215" y="150" font-family="Arial" font-size="12" fill="red">φ</text>
+  
+  <!-- Theta (in xy plane) -->
+  <path d="M 230 200 Q 235 210 220 215" fill="none" stroke="green" stroke-width="1"/>
+  <text x="240" y="210" font-family="Arial" font-size="12" fill="green">θ</text>
+  
+</svg>
