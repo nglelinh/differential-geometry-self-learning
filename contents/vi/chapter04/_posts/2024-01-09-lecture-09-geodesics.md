@@ -7,6 +7,26 @@ order: 2
 owner: "Hình học Vi phân"
 ---
 
+Nếu bạn từng ngồi trên chuyến bay thẳng từ TP. Hồ Chí Minh hay Tokyo sang Mỹ và mở bản đồ màn hình ghế trước, hẳn bạn đã từng thắc mắc: tại sao máy bay lại bay vòng tít lên gần vùng biển Alaska lạnh giá thay vì kẻ một đường thẳng ngang qua Thái Bình Dương? Hay hãy thử một thí nghiệm tưởng tượng khác: đặt một chiếc ô tô đồ chơi có bánh lái bị khóa cứng đi thẳng lên một quả địa cầu khổng lồ, rồi đẩy nó chạy dọc theo vĩ tuyến $$45^\circ$$ Bắc. Nó có ở lại trên vĩ tuyến đó không? Không hề — nó sẽ lập tức trôi xuống phía xích đạo!
+
+Cả hai hiện tượng ấy đều dẫn về một khái niệm xương sống của hình học nội tại: **đường trắc địa (geodesics)** — những quỹ đạo "thẳng nhất" có thể trong một thế giới cong, nơi người lái không hề xoay vô-lăng sang trái hay phải. Và điều tuyệt đẹp là toàn bộ phương trình xác định đường trắc địa chỉ cần đến metric nội tại $$g_{ij}$$ thông qua các **ký hiệu Christoffel** $$\Gamma^k_{ij}$$.
+
+**Mạch bài học:** Câu đố đường bay & vĩ tuyến $$45^\circ$$ → Bản đồ kiến thức nền (Gia tốc trắc địa, Ký hiệu Christoffel, Biến phân năng lượng) → Trực giác vận chuyển song song & viên bi không ma sát → Định nghĩa hình thức & Phương trình trắc địa → Khung giải thích tính tay ký hiệu Christoffel của mặt cầu và kiểm tra Xích đạo vs. Vĩ tuyến $$45^\circ$$ → Ví dụ mặt phẳng, mặt trụ, mặt cầu & Ứng dụng.
+
+## Bản đồ kiến thức nền: Đường trắc địa kết nối giải tích, cơ học và hình học ra sao?
+
+### 1. Độ cong trắc địa $$\kappa_g$$ và Vận chuyển song song (Parallel Transport)
+- **Là gì:** Khi một hạt chạy đều trên bề mặt, vector gia tốc $$\gamma''(s)$$ tách thành hai phần vuông góc: phần hướng vào không gian ngoài $$\kappa_n \mathbf{n}$$ (do bề mặt cong ép hạt phải uốn theo) và phần nằm ngay trong mặt phẳng tiếp tuyến $$\kappa_g \mathbf{n}_g$$ (do hạt tự bẻ lái).
+- **Nghiên cứu gì:** Đường trắc địa được định nghĩa bởi $$\kappa_g = 0$$ — không bẻ lái sang trái hay phải. Điều này tương đương với việc vector tiếp tuyến $$\gamma'(s)$$ được **vận chuyển song song** dọc theo chính quỹ đạo của nó.
+
+### 2. Ký hiệu Christoffel ($$\Gamma^k_{ij}$$) — Chiếc cầu nối metric với đạo hàm
+- **Là gì:** Bộ hệ số $$\Gamma^k_{ij}$$ được tính hoàn toàn từ $$g_{ij}$$ và các đạo hàm bậc nhất $$\partial g_{ij}/\partial x^l$$, xuất hiện trong phương trình trắc địa $$\ddot{u}^k + \Gamma^k_{ij}\dot{u}^i\dot{u}^j = 0$$.
+- **Nghiên cứu gì:** Đóng vai trò "số hạng hiệu chỉnh" cho lưới tọa độ cong (giống lực ly tâm hay lực Coriolis trong hệ quy chiếu quay). Quan trọng hơn: dù $$\Gamma^k_{ij}$$ không phải là một tensor, chúng định nghĩa phép **đạo hàm hiệp biến (covariant derivative)** — phép lấy đạo hàm đúng đắn trên mọi đa tạp cong.
+
+### 3. Nguyên lý biến phân: "Ngắn nhất cục bộ" vs. "Thẳng nhất"
+- **Là gì:** Đường trắc địa đồng thời là nghiệm phương trình Euler–Lagrange của phiếm hàm năng lượng $$E[\gamma] = \frac{1}{2}\int \|\gamma'(t)\|^2\,dt$$.
+- **Nghiên cứu gì:** Nối thẳng hình học vi phân với cơ học cổ điển (Nguyên lý tác dụng cực tiểu) và thuyết tương đối rộng (hạt rơi tự do và tia sáng đi theo đường trắc địa của không-thời gian cong). Cần nhớ: mọi đường ngắn nhất đều là đường trắc địa, nhưng một đường trắc địa đủ dài (như đi vòng quá nửa Trái Đất) có thể không còn ngắn nhất toàn cục.
+
 ## 1. Tổng quan
 
 Trong hình học Euclid, đường thẳng là đường đi ngắn nhất giữa hai điểm. Trên một bề mặt cong, không tồn tại "đường thẳng" theo nghĩa thông thường của không gian phẳng; thay vào đó, ta có **đường trắc địa (geodesics)** — những đường cong giữ vai trò tương tự đường thẳng: chúng là đường "thẳng nhất" theo góc nhìn nội tại của bề mặt và ngắn nhất ở phạm vi cục bộ.
@@ -128,6 +148,34 @@ $$
 
 trong đó $$\mathbf{n}_g$$ là vector pháp tuyến trắc địa (nằm trong mặt phẳng tiếp tuyến và vuông góc với $$\gamma'(s)$$), còn $$\kappa_n$$ là độ cong pháp tuyến.
 
+## Khung giải thích: Tính tay ký hiệu Christoffel trên mặt cầu — Vì sao Xích đạo là trắc địa còn Vĩ tuyến $$45^\circ$$ thì không? (nên đọc chậm)
+
+Hãy tính trọn vẹn các ký hiệu Christoffel của mặt cầu đơn vị ($$R = 1$$) với metric:
+$$ ds^2 = d\theta^2 + \sin^2\theta\,d\varphi^2, $$
+trong đó $$x^1 = \theta$$ (góc cực tính từ cực Bắc, $$0 < \theta < \pi$$) và $$x^2 = \varphi$$ (kinh độ).
+
+### Bước 1: Ghi ma trận metric và nghịch đảo
+$$ g = \begin{pmatrix} 1 & 0 \\ 0 & \sin^2\theta \end{pmatrix}, \qquad g^{-1} = \begin{pmatrix} 1 & 0 \\ 0 & \dfrac{1}{\sin^2\theta} \end{pmatrix}. $$
+Đạo hàm riêng duy nhất khác $$0$$ trong cả ma trận $$g$$ là:
+$$ \frac{\partial g_{\varphi\varphi}}{\partial \theta} = 2\sin\theta\cos\theta. $$
+
+### Bước 2: Tính 8 ký hiệu Christoffel (rất gọn vì $$g$$ chéo!)
+Vì $$g^{kl} = 0$$ khi $$k \neq l$$, tổng chỉ còn đúng số hạng $$l = k$$:
+- **Với $$k = \theta$$ ($$g^{\theta\theta} = 1$$):** Thành phần duy nhất chứa $$\partial_\theta g_{\varphi\varphi}$$ là khi $$i = j = \varphi$$:
+  $$ \Gamma^\theta_{\varphi\varphi} = \frac{1}{2} g^{\theta\theta}\left(0 + 0 - \frac{\partial g_{\varphi\varphi}}{\partial \theta}\right) = -\frac{1}{2}(2\sin\theta\cos\theta) = -\sin\theta\cos\theta. $$
+  Cả ba ký hiệu còn lại $$\Gamma^\theta_{\theta\theta} = \Gamma^\theta_{\theta\varphi} = \Gamma^\theta_{\varphi\theta} = 0$$.
+- **Với $$k = \varphi$$ ($$g^{\varphi\varphi} = \frac{1}{\sin^2\theta}$$):** Thành phần khác $$0$$ xuất hiện khi một chỉ số là $$\theta$$ và chỉ số kia là $$\varphi$$:
+  $$ \Gamma^\varphi_{\theta\varphi} = \Gamma^\varphi_{\varphi\theta} = \frac{1}{2} g^{\varphi\varphi}\left(\frac{\partial g_{\varphi\varphi}}{\partial \theta} + 0 - 0\right) = \frac{1}{2\sin^2\theta}(2\sin\theta\cos\theta) = \cot\theta. $$
+  Hai ký hiệu còn lại $$\Gamma^\varphi_{\theta\theta} = \Gamma^\varphi_{\varphi\varphi} = 0$$.
+
+### Bước 3: Lắp vào phương trình trắc địa và kiểm chứng hai đường tròn vĩ tuyến!
+Hệ phương trình trắc địa của mặt cầu đơn vị trở nên gọn đẹp bất ngờ:
+$$ \frac{d^2\theta}{dt^2} - \sin\theta\cos\theta\left(\frac{d\varphi}{dt}\right)^2 = 0, \qquad \frac{d^2\varphi}{dt^2} + 2\cot\theta\,\frac{d\theta}{dt}\frac{d\varphi}{dt} = 0. $$
+Bây giờ cho xe chạy đều dọc một vòng vĩ tuyến cố định $$\theta(t) = \theta_0$$ với tốc độ góc $$\varphi(t) = \omega t$$ ($$\omega \neq 0$$). Khi đó $$\frac{d\theta}{dt} = 0$$, $$\frac{d^2\theta}{dt^2} = 0$$, $$\frac{d^2\varphi}{dt^2} = 0$$. Phương trình thứ hai tự động thỏa mãn ($$0 + 0 = 0$$), còn phương trình thứ nhất trở thành:
+$$ -\sin\theta_0\cos\theta_0 \cdot \omega^2 = 0. $$
+- **Tại Xích đạo ($$\theta_0 = \frac{\pi}{2}$$):** $$\cos(\frac{\pi}{2}) = 0 \implies 0 = 0$$! Xích đạo là một **đường trắc địa** chính hiệu.
+- **Tại Vĩ tuyến $$45^\circ$$ Bắc ($$\theta_0 = \frac{\pi}{4}$$):** Vế trái bằng $$-\sin\frac{\pi}{4}\cos\frac{\pi}{4}\,\omega^2 = -\frac{1}{2}\omega^2 \neq 0$$! Phương trình bị phá vỡ: để bám trụ trên vĩ tuyến $$45^\circ$$, người lái **bắt buộc phải đánh lái liên tục về phía cực Bắc** (chống lại xu hướng trôi về Xích đạo với độ cong trắc địa $$\kappa_g = \cot\frac{\pi}{4} = 1$$). Nếu thả vô-lăng, chiếc xe sẽ lập tức trượt sang một đường tròn lớn cắt xiên xuống Xích đạo!
+
 ## 4. Các Ví dụ Tính toán Chi tiết
 
 ### 4.1. Mặt phẳng
@@ -151,7 +199,7 @@ Sử dụng tọa độ $$u = R\theta, \, v = z$$, metric của mặt trụ là 
 
 ### 4.3. Mặt cầu
 
-Metric của mặt cầu bán kính $$R$$ trong tọa độ cầu ($$\theta$$ là góc cực tính từ cực Bắc, $$\varphi$$ là kinh độ) là $$ds^2 = R^2 \, d\theta^2 + R^2\sin^2\theta \, d\varphi^2$$, với $$E = R^2, \, G = R^2\sin^2\theta$$. Một số ký hiệu Christoffel ở đây khác không.
+Metric của mặt cầu bán kính $$R$$ trong tọa độ cầu ($$\theta$$ là góc cực tính từ cực Bắc, $$\varphi$$ là kinh độ) là $$ds^2 = R^2 \, d\theta^2 + R^2\sin^2\theta \, d\varphi^2$$, với $$E = R^2, \, G = R^2\sin^2\theta$$. Một số ký hiệu Christoffel ở đây khác không (như ta vừa tính ở trên: $$\Gamma^\theta_{\varphi\varphi} = -\sin\theta\cos\theta$$ và $$\Gamma^\varphi_{\theta\varphi} = \cot\theta$$ — chú ý chúng không phụ thuộc vào bán kính $$R$$!).
 
 Xét các đường kinh tuyến $$\varphi = \text{const}$$ (với tốc độ góc đều $$d^2\theta/dt^2 = 0$$): khi đó $$d\varphi/dt = 0$$ và $$d^2\varphi/dt^2 = 0$$, đồng thời $$\Gamma^\varphi_{\theta\theta} = 0$$ nên cả hai phương trình trắc địa đều thỏa mãn. Nhờ tính đối xứng quay của mặt cầu, mọi đường tròn lớn đều có thể đưa về một đường kinh tuyến bằng phép quay, do đó mọi đường tròn lớn đều là đường trắc địa trên mặt cầu.
 

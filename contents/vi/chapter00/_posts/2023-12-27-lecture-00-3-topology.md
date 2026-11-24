@@ -9,11 +9,28 @@ owner: "Hình học Vi phân"
 
 ## 1. Lời mở đầu: Chiếc ly cà phê và chiếc bánh donut
 
-Có một câu nói đùa quen thuộc trong toán học: "Nhà tô-pô học không phân biệt được chiếc ly cà phê và chiếc bánh donut." Lý do là nếu chiếc ly được làm từ đất sét dẻo, ta có thể biến dạng liên tục nó thành hình chiếc bánh donut mà không cần xé rách hay dán dính thêm phần nào: phần quai ly trở thành cái lỗ của bánh, còn phần thân ly dồn lại thành phần thân bánh.
+Có một câu nói đùa kinh điển trong toán học: *"Nhà tô-pô học không phân biệt được chiếc ly cà phê buổi sáng với chiếc bánh donut."* Lý do là nếu chiếc ly được nặn từ đất sét dẻo, bạn có thể biến dạng liên tục nó thành chiếc bánh donut mà không cần xé rách hay dán thêm: phần quai ly trở thành cái lỗ của bánh, còn phần thân ly dồn lại thành phần thân bánh.
 
-**Tô-pô (Topology)** là ngành toán học nghiên cứu những tính chất bất biến qua các phép biến đổi liên tục (co giãn, uốn nắn mà không cắt hay dán). Khác với Hình học vốn quan tâm đến khoảng cách, độ dài và góc, Tô-pô chỉ tập trung vào tính "liên kết" và khái niệm "lân cận".
+**Tô-pô (Topology)** là nghệ thuật nghiên cứu những tính chất còn sống sót sau mọi phép biến dạng liên tục (co giãn, uốn nắn mà không cắt hay dán). Nếu Hình học quan tâm đến độ dài, góc đo và độ cong, thì Tô-pô bỏ sạch thước đo để chỉ giữ lại **tính liên kết** và **cấu trúc lân cận**. Trong Hình học Vi phân, Tô-pô chính là bộ khung xương: trước khi đo độ cong trên một không gian (tính chất hình học), ta phải biết hình dạng tổng thể và cách vá các mảnh bản đồ phẳng lại với nhau thành một **đa tạp (manifold)**.
 
-Trong Hình học Vi phân, Tô-pô đóng vai trò là phần khung nền: trước khi đo độ cong (tính chất hình học), ta cần xác định hình dạng tổng thể và cấu trúc lân cận (tính chất tô-pô) của không gian.
+**Mạch bài học:** Bản đồ kiến thức nền (tập mở & liên tục, bất biến tô-pô, đa tạp & tập đồ) → Tập mở và không gian tô-pô → Ánh xạ liên tục và phép đồng phôi → Tính compắc, liên thông và Hausdorff → Đa tạp, bản đồ và tập đồ → Khung giải thích chậm: tự tay dựng tập đồ 2 bản đồ chiếu nổi cho mặt cầu $$S^2$$ và kiểm tra ánh xạ chuyển trơn.
+
+---
+
+## Bản đồ kiến thức nền: Tô-pô Đại cương là gì và đóng vai trò gì trong Hình học Vi phân?
+
+Với sinh viên đại học đã quen định nghĩa giới hạn $$\epsilon - \delta$$ trong giải tích, tô-pô mở rộng tư duy qua **ba trụ cột lớn**:
+
+### 1. Tập mở và Liên tục không cần thước đo
+Trong giải tích, ta nói hai điểm "gần nhau" bằng khoảng cách $$\vert x - y\vert < \delta$$. Tô-pô trừu tượng hóa khái niệm "gần" bằng **họ các tập mở**, cho phép định nghĩa ánh xạ liên tục (*nghịch ảnh tập mở là tập mở*) trên những không gian không hề có khoảng cách sẵn, hoặc trước khi ta chọn một metric Riemann cụ thể.
+
+### 2. Bất biến Tô-pô (Compắc, Liên thông, Giống $$g$$)
+Hai không gian đồng phôi phải có cùng các tính chất tô-pô toàn cục: tính **compắc** (đảm bảo bài toán tìm đường trắc địa ngắn nhất có nghiệm đạt cực tiểu), tính **liên thông**, và số lỗ hổng (mặt cầu $$S^2$$ có 0 lỗ, mặt xuyến $$T^2$$ có 1 lỗ). Đặc biệt, Định lý Gauss–Bonnet về sau sẽ chứng minh một cầu nối kỳ diệu: tích phân độ cong *hình học* trên cả mặt đóng phụ thuộc hoàn toàn vào số lỗ *tô-pô*!
+
+### 3. Đa tạp (Manifold), Bản đồ (Chart) và Tập đồ (Atlas)
+Một đa tạp $$n$$-chiều là không gian cục bộ giống $$\mathbb{R}^n$$ nhưng toàn cục có thể cong và khép kín. Giống như một cuốn tập bản đồ địa lý gồm nhiều trang phẳng chồng lấn lên nhau để phủ kín Trái Đất, một **tập đồ trơn** cho phép ta thực hiện phép tính vi phân trên không gian cong bằng cách chuyển qua lại giữa các trang bản đồ qua **ánh xạ chuyển trơn**.
+
+---
 
 ## 2. Tập Mở (Open Sets) — Nền tảng của Tô-pô
 
@@ -79,6 +96,36 @@ Một **đa tạp tô-pô $$n$$-chiều** $$M$$ là một không gian tô-pô th
 - **Bản đồ (Chart):** Một cặp $$(U, \varphi)$$ gồm một tập mở $$U \subset M$$ và một phép đồng phôi $$\varphi: U \to \mathbb{R}^n$$ (lên ảnh mở trong $$\mathbb{R}^n$$), giúp biểu diễn vùng $$U$$ bằng tọa độ phẳng.
 - **Tập đồ (Atlas):** Một họ các bản đồ phủ kín toàn bộ đa tạp $$M$$.
 - **Ánh xạ chuyển (Transition Map):** Trên phần giao của hai bản đồ, ánh xạ chuyển $$\varphi_2 \circ \varphi_1^{-1}$$ đi từ một tập mở của $$\mathbb{R}^n$$ vào $$\mathbb{R}^n$$ cho phép đổi giữa hai hệ tọa độ. Nếu mọi ánh xạ chuyển đều trơn (khả vi vô hạn), ta thu được một **đa tạp khả vi** (hay đa tạp trơn).
+
+---
+
+## Khung giải thích: tự tay dựng tập đồ 2 bản đồ cho mặt cầu $$S^2$$ (nên đọc chậm)
+
+Để khái niệm *bản đồ (chart)* và *ánh xạ chuyển trơn* không còn trừu tượng, hãy tự tay kiểm tra **phép chiếu nổi (stereographic projection)** trên mặt cầu đơn vị $$S^2 = \{(x,y,z) : x^2 + y^2 + z^2 = 1\}$$:
+
+1. **Bản đồ 1 (chiếu từ Cực Bắc $$N = (0, 0, 1)$$):** Phủ toàn bộ $$U_N = S^2 \setminus \{N\}$$ lên mặt phẳng xích đạo $$z = 0$$ bằng tia thẳng nối $$N$$ với điểm $$(x, y, z) \in S^2$$:
+   $$
+   \varphi_N(x, y, z) \;=\; \left(\frac{x}{1 - z},\ \frac{y}{1 - z}\right) \;=\; (u, v).
+   $$
+   *Kiểm tra trên điểm cụ thể:* Điểm $$(1, 0, 0)$$ trên xích đạo ứng với $$(1, 0)$$; Cực Nam $$S = (0, 0, -1)$$ ứng với $$(0, 0)$$; còn điểm gần Cực Bắc $$(0.6, 0, 0.8)$$ ứng với $$(0.6 / 0.2,\ 0) = (3, 0)$$.
+2. **Công thức ngược $$\varphi_N^{-1}(u, v)$$:** Đặt $$r^2 = u^2 + v^2$$, ta giải ngược lại được:
+   $$
+   \varphi_N^{-1}(u, v) \;=\; \left(\frac{2u}{r^2 + 1},\ \frac{2v}{r^2 + 1},\ \frac{r^2 - 1}{r^2 + 1}\right).
+   $$
+   (Thử thay $$(u, v) = (3, 0) \implies r^2 = 9 \implies (6/10,\ 0,\ 8/10) = (0.6, 0, 0.8)$$, chuẩn xác!)
+3. **Bản đồ 2 (chiếu từ Cực Nam $$S = (0, 0, -1)$$):** Phủ toàn bộ $$U_S = S^2 \setminus \{S\}$$ bằng:
+   $$
+   \varphi_S(x, y, z) \;=\; \left(\frac{x}{1 + z},\ \frac{y}{1 + z}\right).
+   $$
+   Hai tập mở $$U_N$$ và $$U_S$$ hợp lại phủ kín 100% mặt cầu $$S^2$$!
+4. **Kiểm tra ánh xạ chuyển trên phần giao $$U_N \cap U_S = S^2 \setminus \{N, S\}$$:**
+   Thay $$\varphi_N^{-1}(u, v)$$ vào $$\varphi_S$$, để ý $$1 + z = 1 + \frac{r^2 - 1}{r^2 + 1} = \frac{2r^2}{r^2 + 1}$$:
+   $$
+   (\varphi_S \circ \varphi_N^{-1})(u, v) \;=\; \left(\frac{u}{u^2 + v^2},\ \frac{v}{u^2 + v^2}\right).
+   $$
+   Trên $$\mathbb{R}^2 \setminus \{(0, 0)\}$$, mẫu số $$u^2 + v^2 > 0$$ nên ánh xạ chuyển này **khả vi vô hạn lần**! Vậy mặt cầu $$S^2$$ chính thức là một **đa tạp trơn 2 chiều** được phủ gọn bởi đúng 2 bản đồ.
+
+---
 
 ## 6. Tổng kết
 

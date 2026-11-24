@@ -7,6 +7,27 @@ order: 2
 owner: "Hình học Vi phân"
 ---
 
+Hãy thử một thí nghiệm nhỏ trên mặt phẳng $$\mathbb{R}^2$$ bị khoét đúng một lỗ kim tại gốc tọa độ: $$M = \mathbb{R}^2 \setminus \{(0,0)\}$$. Chọn hai điểm đối xứng nhau qua gốc là $$p = (-1, 0)$$ và $$q = (1, 0)$$. Đường nối ngắn nhất giữa chúng *đáng lẽ* phải là đoạn thẳng nằm ngang dài $$2$$ — nhưng đoạn thẳng ấy lại vấp ngay vào lỗ thủng tại $$(0,0)$$! Bạn có thể vẽ những đường cong vòng tránh gốc tọa độ với độ dài $$2.1,\; 2.01,\; 2.0001,\; \ldots$$ tiến sát về $$2$$, nhưng **không bao giờ tồn tại** một đường ngắn nhất nào nằm hoàn toàn trong $$M$$ đạt được đúng độ dài $$2$$!
+
+Câu chuyện giản dị ấy mở ra cánh cửa vào **hình học Riemann toàn cục**: chỉ riêng một **metric** $$g$$ trơn trên đa tạp $$M$$ đã tự động sinh ra độ dài, góc, liên kết Levi-Civita và độ cong Riemann — nhưng để đảm bảo giữa hai điểm bất kỳ *luôn tồn tại* một đường trắc địa ngắn nhất toàn cục, không gian cần thêm một điều kiện toàn cục cực kỳ đẹp gọi là **tính đầy đủ (completeness)**, được khẳng định qua **Định lý Hopf–Rinow** lừng danh!
+
+**Mạch bài học:** Bản đồ kiến thức nền (cỗ máy tự sinh từ $$(M,g)$$, đẳng cự cục bộ vs. toàn cục, tính đầy đủ) → Trực giác tấm màng cao su, thế giới Pac-Man & mặt bàn có biên → Định nghĩa hình thức & Định lý Hopf–Rinow → Ví dụ tính tay cầm tay chỉ việc: so sánh mặt phẳng thủng lỗ $$\mathbb{R}^2\setminus\{0\}$$ (không đầy đủ) với nửa mặt phẳng Poincaré $$\mathbb{H}^2$$ (đầy đủ vì trục hoành bị đẩy ra vô cực!) → Khung giải thích chậm: 4 bước nối Giải tích Cauchy với Hình học Trắc địa trong Định lý Hopf–Rinow → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hình học Đa tạp Riemann nghiên cứu những gì?
+
+### 1. Một cặp $$(M, g)$$ duy nhất sinh ra toàn bộ hình học
+Khi đặt một tensor metric $$g$$ xác định dương lên đa tạp trơn $$M$$, ta lập tức có miễn phí năm công cụ ăn khớp với nhau: (i) thước đo độ dài cung và góc; (ii) khoảng cách toàn cục $$d(p, q)$$ biến $$M$$ thành không gian metric; (iii) phần tử thể tích $$\sqrt{\det g}\,dx^1\cdots dx^n$$; (iv) liên kết Levi-Civita duy nhất $$\nabla$$; và (v) tensor độ cong Riemann $$R$$.
+
+### 2. Phép đẳng cự (Isometry) — khi nào hai không gian là "một"?
+Trong tôpô, hai không gian giống nhau nếu tồn tại đồng phôi (co giãn liên tục không xé rách). Trong hình học Riemann, tiêu chuẩn khắt khe hơn nhiều: hai đa tạp $$(M, g)$$ và $$(N, h)$$ là một nếu có một **phép đẳng cự** bảo toàn chính xác độ dài mọi vector tiếp tuyến. Mặt phẳng và mặt trụ **đẳng cự cục bộ** nhưng **không đẳng cự toàn cục** (vì mặt trụ có vòng tròn khép kín không co về điểm được).
+
+### 3. Tính đầy đủ (Completeness) — bảo hiểm chống "rơi khỏi mép vũ trụ"
+Một đa tạp không đầy đủ có "lỗ thủng" hoặc "biên bị cắt mất" ở khoảng cách hữu hạn, khiến các đường trắc địa đứt gãy giữa chừng. **Định lý Hopf–Rinow** chứng minh sự tương đương ngoạn mục giữa ba thế giới: đầy đủ giải tích (mọi dãy Cauchy hội tụ) $$\iff$$ đầy đủ hình học (mọi đường trắc địa kéo dài vô hạn) $$\iff$$ tính chất Heine–Borel (mọi tập đóng và bị chặn đều compact).
+
+---
+
 ## Tổng quan
 
 Đến đây, chúng ta đã xây dựng lần lượt từng cấu trúc cơ bản: vector, covector, tensor, liên kết và độ cong. Bài giảng này ghép nối toàn bộ các thành phần đó vào một khung thống nhất: *Đa tạp Riemann* (Riemannian Manifold).
@@ -115,6 +136,50 @@ Cho $$(M, g)$$ là một đa tạp Riemann liên thông. Ba mệnh đề sau là
 
 **Hệ quả quan trọng:**
 Nếu $$M$$ đầy đủ và liên thông, thì với hai điểm bất kỳ $$p, q \in M$$, luôn *tồn tại* ít nhất một đường trắc địa nối $$p$$ và $$q$$ có độ dài bằng đúng khoảng cách $$d(p, q)$$ (đường ngắn nhất toàn cục).
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: So sánh không gian không đầy đủ vs. Nửa mặt phẳng Poincaré $$\mathbb{H}^2$$
+
+Cùng một tập hợp điểm mở $$H = \{(x, y) \in \mathbb{R}^2 : y > 0\}$$, nhưng chỉ cần thay đổi metric $$g$$ là tính đầy đủ đảo ngược hoàn toàn!
+
+1. **Với metric Euclid thường $$g_{\text{Euc}} = dx^2 + dy^2$$:**
+   Xét đường trắc địa thẳng đứng đi xuống biên $$\gamma(t) = (0, 1 - t)$$ với tốc độ đơn vị. Tại đúng thời điểm hữu hạn $$t = 1$$, đường đi đâm vào trục hoành $$y = 0 \notin H$$ và bị đứt đoạn! Tương tự, dãy $$p_k = (0, 1/k)$$ là dãy Cauchy nhưng không có giới hạn trong $$H$$ $$\implies$$ **$$(H, g_{\text{Euc}})$$ không đầy đủ**.
+
+2. **Với metric hyperbolic Poincaré $$g_{\text{hyp}} = \frac{dx^2 + dy^2}{y^2}$$:**
+   Tính lại độ dài của đúng đoạn thẳng đứng đi từ $$(0, 1)$$ xuống $$(0, \varepsilon)$$ ($$0 < \varepsilon < 1$$):
+   $$
+   L(\varepsilon) = \int_\varepsilon^1 \frac{dy}{y} = \bigl[\ln y\bigr]_\varepsilon^1 = \ln\!\left(\frac{1}{\varepsilon}\right) \xrightarrow{\varepsilon \to 0^+} +\infty!
+   $$
+   Metric $$\frac{1}{y^2}$$ phóng to khoảng cách gần trục hoành mạnh đến mức **biên $$y = 0$$ bị đẩy ra tận vô cực**! Không một đường trắc địa nào chạm tới $$y = 0$$ trong thời gian hữu hạn — do đó **$$(H, g_{\text{hyp}})$$ hoàn toàn đầy đủ** (và theo Định lý Hopf–Rinow, mọi cặp điểm đều nối được bằng một đường trắc địa ngắn nhất — là các nửa đường tròn vuông góc với trục hoành)!
+
+---
+
+### Khung giải thích: Định lý Hopf–Rinow nối dãy Cauchy với đường trắc địa như thế nào? (nên đọc chậm)
+
+#### Bước 1: Hình cầu trắc địa nhỏ luôn tồn tại cục bộ
+Tại mọi điểm $$p \in M$$, ánh xạ mũ $$\exp_p : T_p M \to M$$ (bắn tia trắc địa từ $$p$$ theo vận tốc ban đầu $$v$$) là một vi phôi trên một quả cầu nhỏ bán kính $$\delta > 0$$. Trong quả cầu nhỏ ấy, mọi điểm $$q$$ đều nối với $$p$$ bằng **duy nhất** một đường trắc địa ngắn nhất.
+
+#### Bước 2: Đầy đủ trắc địa $$\implies$$ tồn tại đường ngắn nhất nối hai điểm bất kỳ $$p, q$$
+Muốn nối $$p$$ với một điểm $$q$$ ở xa ($$r = d(p, q)$$), ta đặt mặt cầu trắc địa nhỏ $$S_\delta(p)$$ quanh $$p$$ (compact!) và tìm điểm $$x_0 \in S_\delta(p)$$ sao cho khoảng cách tới $$q$$ nhỏ nhất. Bắn đường trắc địa $$\gamma(t)$$ từ $$p$$ xuyên qua $$x_0$$. Vì $$M$$ **đầy đủ trắc địa**, ta kéo dài $$\gamma(t)$$ mãi tới tận $$t = r$$ mà không sợ đứt gãy — và chứng minh bằng phương pháp mở–đóng rằng $$\gamma(r)$$ chạm đúng vào $$q$$!
+
+#### Bước 3: Ánh xạ mũ phủ kín toàn bộ $$M$$ $$\implies$$ tính chất Heine–Borel
+Khi mọi điểm $$q$$ cách $$p$$ không quá $$R$$ đều nằm trên một tia trắc địa dài không quá $$R$$, hình cầu đóng $$\overline{B_R(p)}$$ chính là ảnh liên tục của quả cầu đóng compact $$\overline{B_R(0)} \subset T_p M$$ qua ánh xạ $$\exp_p$$ — nên $$\overline{B_R(p)}$$ lập tức **compact**!
+
+#### Bước 4: Khép vòng tương đương với tính đầy đủ metric (Cauchy)
+Mọi dãy Cauchy đều bị chặn nên nằm gọn trong một quả cầu đóng compact $$\overline{B_R(p)}$$, do đó chắc chắn có dãy con hội tụ — và dãy Cauchy có dãy con hội tụ thì chính nó hội tụ! Ba khái niệm tưởng chừng từ ba môn học khác nhau khép chặt thành một vòng tròn tương đương hoàn hảo.
+
+Tóm tắt vòng tròn Hopf–Rinow:
+
+$$
+\text{Đầy đủ trắc địa } (\exp_p \text{ toàn cục})
+\;\Longrightarrow\;
+\overline{B_R(p)} \text{ compact (Heine–Borel)}
+\;\Longrightarrow\;
+\text{Đầy đủ metric (Cauchy)}
+\;\Longrightarrow\;
+\exists\,\text{trắc địa ngắn nhất } p \to q.
+$$
 
 ## Hình ảnh minh họa
 

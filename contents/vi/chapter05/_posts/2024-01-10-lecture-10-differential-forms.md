@@ -7,15 +7,32 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
+Trong giải tích năm nhất và năm hai đại học, hẳn bạn từng phải học thuộc lòng đến bốn định lý tích phân trông có vẻ rất khác nhau: Định lý cơ bản của giải tích trên đoạn thẳng, Định lý Green trên miền phẳng, Định lý Stokes cho độ xoáy (curl) trên mặt cong, và Định lý Gauss–Ostrogradsky cho độ phân kỳ (divergence) trên khối thể tích. Mỗi định lý đi kèm một ký hiệu riêng, một kiểu tích phân riêng, và một quy ước hướng pháp tuyến riêng. Nhưng nếu bước lùi lại một bước, tất cả chúng đều kể đúng **một câu chuyện duy nhất**: tổng lượng "thay đổi bên trong" một miền luôn bằng tổng giá trị "chảy qua biên" của miền đó!
+
+Vào đầu thế kỷ 20, **Élie Cartan** đã phát minh ra ngôn ngữ biến linh cảm ấy thành một phương trình chỉ vỏn vẹn sáu ký tự — **$$\int_M d\omega = \int_{\partial M} \omega$$** — mang tên **giải tích ngoài** (*exterior calculus*) và **dạng vi phân** (*differential forms*). Đây không chỉ là cách viết gọn hơn cho giải tích vector, mà là ngôn ngữ tiêu chuẩn của hình học Riemann, tôpô vi phân, thuyết tương đối rộng và lý thuyết trường lượng tử, vì nó vận hành hoàn toàn **độc lập với hệ tọa độ** ở mọi số chiều $$n$$.
+
+**Mạch bài học:** Bản đồ kiến thức nền (tại sao cần dạng vi phân, đại số ngoài và đối đồng điều de Rham) → Trực giác 1-form, 2-form, tích ngoài và đạo hàm ngoài → Định nghĩa hình thức & Định lý Stokes tổng quát → Ví dụ tính toán cầm tay chỉ việc (tích ngoài, đạo hàm ngoài và kiểm chứng trực tiếp Định lý Stokes trên đĩa đơn vị) → Khung giải thích chậm: 4 bước giải mã vì sao $$\int_M d\omega = \int_{\partial M} \omega$$ hợp nhất toàn bộ giải tích vector → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Dạng vi phân, Đại số ngoài và Đối đồng điều de Rham nghiên cứu gì?
+
+### 1. Từ giải tích vector 3D sang hình học đa tạp $$n$$ chiều
+Giải tích vector cổ điển (với tích có hướng $$\mathbf{u} \times \mathbf{v}$$ và toán tử $$\nabla \times \mathbf{F}$$) là đặc sản chỉ hoạt động trọn vẹn trong đúng không gian phẳng $$\mathbb{R}^3$$. Bước sang không-thời gian 4 chiều hay không gian cấu hình 10 chiều của robot, tích có hướng không còn tồn tại nữa! **Dạng vi phân** thay thế mọi công cụ 3D rời rạc đó bằng một hệ thống thống nhất làm việc trơn tru ở mọi số chiều $$n$$ và trên mọi đa tạp cong.
+
+### 2. Đại số ngoài (Exterior Algebra) — hình học của thể tích có hướng
+Tại mỗi điểm $$p$$ trên đa tạp $$M$$, một **$$k$$-form** là một hàm đa tuyến tính **phản đối xứng** nhận vào $$k$$ vector tiếp tuyến và trả về một số thực: thể tích $$k$$-chiều có dấu của hình hộp căng bởi $$k$$ vector đó. Chính tính phản đối xứng ($$dx \wedge dy = -dy \wedge dx$$) tự động ghi nhớ **định hướng** (mặt trên/mặt dưới, chiều kim đồng hồ/ngược chiều kim đồng hồ) và tự động sinh ra định thức Jacobi khi đổi biến tích phân!
+
+### 3. Đạo hàm ngoài $$d$$ và Đối đồng điều de Rham — cầu nối giải tích với tôpô
+Toán tử duy nhất $$d$$ biến $$k$$-form thành $$(k+1)$$-form và luôn thỏa mãn $$d^2 = 0$$. Mọi dạng khớp ($$\omega = d\eta$$) đều đóng ($$d\omega = 0$$), nhưng điều ngược lại có thể sai nếu không gian có "lỗ thủng"! Mức độ sai khác giữa dạng đóng và dạng khớp chính là **đối đồng điều de Rham** $$H^k_{\mathrm{dR}}(M)$$ — dùng đạo hàm để đếm số lỗ thủng tôpô của đa tạp.
+
+---
+
 ## 1. Tổng quan
 
 Trong chín bài giảng trước, chúng ta đã xây dựng nền tảng của hình học vi phân cổ điển: đường cong, mặt cong, độ cong và đường trắc địa (geodesics). Các công cụ được dùng chủ yếu đến từ giải tích vector như hệ tọa độ, đạo hàm riêng và các tensor như dạng cơ bản thứ nhất và thứ hai.
 
-Trong bài giảng này, chúng ta chuyển sang một cách tiếp cận hiện đại và tổng quát hơn: *giải tích ngoài* (exterior calculus) và *dạng vi phân* (differential forms). Đây là ngôn ngữ tiêu chuẩn của hình học vi phân hiện đại, do Élie Cartan và các nhà toán học thế kỷ 20 phát triển, đóng vai trò nền tảng cho hình học Riemann, lý thuyết đa tạp, tô pô vi phân và vật lý lý thuyết.
-
-Dạng vi phân mang lại cách tiếp cận độc lập tọa độ, gọn gàng và giàu tính khái niệm để nghiên cứu phép tích phân, tính định hướng cũng như mối liên hệ giữa hình học cục bộ và toàn cục. Một trong những kết quả trung tâm là *Định lý Stokes tổng quát*, hợp nhất nhiều định lý cổ điển như định lý Green, định lý Gauss–Ostrogradsky và định lý Stokes trong giải tích vector.
-
-Bài giảng này dừng ở mức giới thiệu khái niệm, giúp bạn nắm bức tranh tổng thể làm bàn đạp cho các chủ đề chuyên sâu hơn của hình học vi phân hiện đại.
+Trong bài giảng này, chúng ta chuyển sang một cách tiếp cận hiện đại và tổng quát hơn: *giải tích ngoài* (exterior calculus) và *dạng vi phân* (differential forms). Dạng vi phân mang lại cách tiếp cận độc lập tọa độ, gọn gàng và giàu tính khái niệm để nghiên cứu phép tích phân, tính định hướng cũng như mối liên hệ giữa hình học cục bộ và toàn cục. Bài giảng này dừng ở mức giới thiệu khái niệm, giúp bạn nắm bức tranh tổng thể làm bàn đạp cho các chủ đề chuyên sâu hơn của hình học vi phân hiện đại.
 
 ## 2. Giải thích Trực quan
 
@@ -171,7 +188,7 @@ Các trường hợp đặc biệt bao gồm:
 - **Định lý Stokes cổ điển:** trên mặt cong trong $$\mathbb{R}^3$$.
 - **Định lý Gauss–Ostrogradsky (định lý phân kỳ):** trên miền thể tích trong $$\mathbb{R}^3$$.
 
-## 4. Các Ví dụ Tính toán Chi tiết
+## 4. Các Ví dụ Tính toán Cầm tay Chỉ việc
 
 ### 4.1. Tính Tích Ngoài
 
@@ -184,6 +201,7 @@ $$
 &= -13 dx \wedge dy.
 \end{aligned}
 $$
+*(Nhận xét hay: hệ số $$-13$$ chính là định thức $$\det\begin{pmatrix} 2 & 3 \\ 1 & -5 \end{pmatrix} = -10 - 3 = -13$$!)*
 
 ### 4.2. Tính Đạo hàm Ngoài
 
@@ -196,6 +214,61 @@ d\omega &= d(x^2 y) \wedge dx + d(yz) \wedge dy \\
 &= 0 - x^2 \, dx \wedge dy + 0 - y \, dy \wedge dz \\
 &= -x^2 \, dx \wedge dy - y \, dy \wedge dz.
 \end{aligned}
+$$
+
+### 4.3. Tự tay kiểm chứng Định lý Stokes trên đĩa tròn đơn vị
+
+Xét đĩa tròn đơn vị $$D = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 \le 1\}$$ (biên $$\partial D$$ là đường tròn đơn vị đi ngược chiều kim đồng hồ) và 1-form xoay quanh gốc:
+
+$$
+\omega = -y \, dx + x \, dy.
+$$
+
+- **Vế trái ($$\int_D d\omega$$):** Lấy đạo hàm ngoài:
+  $$
+  d\omega = -dy \wedge dx + dx \wedge dy = dx \wedge dy + dx \wedge dy = 2 \, dx \wedge dy.
+  $$
+  Tích phân trên đĩa đơn vị có diện tích $$\pi$$ cho ngay:
+  $$
+  \int_D d\omega = \iint_D 2 \, dx \, dy = 2\pi.
+  $$
+- **Vế phải ($$\int_{\partial D} \omega$$):** Tham số hóa đường tròn biên $$x = \cos\theta, y = \sin\theta$$ ($$\theta \in [0, 2\pi]$$), suy ra $$dx = -\sin\theta\,d\theta$$ và $$dy = \cos\theta\,d\theta$$:
+  $$
+  \int_{\partial D} \omega = \int_0^{2\pi} \bigl((-\sin\theta)(-\sin\theta) + (\cos\theta)(\cos\theta)\bigr)\,d\theta = \int_0^{2\pi} (\sin^2\theta + \cos^2\theta)\,d\theta = 2\pi!
+  $$
+
+Hai vế khớp nhau tuyệt đối đến từng con số — không cần nhớ bất kỳ quy tắc bàn tay phải hay công thức pháp tuyến rườm rà nào!
+
+---
+
+### Khung giải thích: Vì sao Định lý Stokes hợp nhất giải tích vector và sinh ra đối đồng điều de Rham? (nên đọc chậm)
+
+Để cảm nhận trọn vẹn sức mạnh của phương trình $$\int_M d\omega = \int_{\partial M} \omega$$, hãy đi qua 4 bước mạch lạc sau:
+
+#### Bước 1: Tính phản đối xứng biến đổi tọa độ thành định thức Jacobi tự động
+Nếu đổi tọa độ $$(x, y) \mapsto (u, v)$$, ta chỉ cần thay $$dx = x_u du + x_v dv$$ và $$dy = y_u du + y_v dv$$ rồi nhân bằng tích nêm:
+$$
+dx \wedge dy = (x_u du + x_v dv) \wedge (y_u du + y_v dv) = (x_u y_v - x_v y_u) \, du \wedge dv = \det\!\left(\frac{\partial(x,y)}{\partial(u,v)}\right) du \wedge dv!
+$$
+Cả công thức đổi biến lẫn dấu định hướng tự động bật ra từ một quy tắc duy nhất $$du \wedge dv = -dv \wedge du$$!
+
+#### Bước 2: Đạo hàm ngoài $$d$$ thỏa $$d^2 = 0$$ chính vì đạo hàm riêng hỗn hợp giao hoán
+Khi tính $$d(df)$$ cho hàm trơn $$f$$, mỗi cặp chỉ số $$(i, j)$$ xuất hiện hai lần dưới dạng $$\frac{\partial^2 f}{\partial x^i \partial x^j} dx^i \wedge dx^j + \frac{\partial^2 f}{\partial x^j \partial x^i} dx^j \wedge dx^i$$. Vì $$\partial_i \partial_j f = \partial_j \partial_i f$$ (đối xứng) còn $$dx^i \wedge dx^j = -dx^j \wedge dx^i$$ (phản đối xứng), tổng hai số hạng triệt tiêu hoàn toàn!
+
+#### Bước 3: Lập luận "triệt tiêu cạnh bên trong" sinh ra Định lý Stokes
+Chia miền $$M$$ thành vô số ô hình hộp siêu nhỏ. Trên mỗi ô nhỏ, tích phân $$\int_{\text{ô}} d\omega$$ xấp xỉ tích phân $$\omega$$ trên biên của ô đó. Khi cộng tất cả các ô lại, mọi mặt tiếp giáp bên trong đều xuất hiện **hai lần với định hướng ngược nhau** nên triệt tiêu sạch sẽ — chỉ còn sót lại đúng lớp vỏ ngoài cùng $$\partial M$$!
+
+#### Bước 4: Đảo ngược câu hỏi: khi nào $$d\omega = 0$$ kéo theo $$\omega = d\eta$$?
+Trên mặt phẳng thủng lỗ $$\mathbb{R}^2 \setminus \{(0,0)\}$$, xét 1-form góc $$\alpha = \frac{-y\,dx + x\,dy}{x^2 + y^2}$$. Bạn có thể tự kiểm tra $$d\alpha = 0$$ (dạng đóng), nhưng tích phân dọc đường tròn đơn vị bao quanh lỗ thủng bằng $$\oint_{S^1} \alpha = 2\pi \neq 0$$! Nếu tồn tại hàm $$f$$ sao cho $$\alpha = df$$ thì theo Định lý Stokes tích phân trên đường kín phải bằng $$0$$ — mâu thuẫn! Như vậy **dạng vi phân đã "nhìn thấy" lỗ thủng tại gốc tọa độ** bằng đúng công cụ đối đồng điều de Rham!
+
+Tóm tắt mạch nối của giải tích ngoài:
+
+$$
+dx^i \wedge dx^j = -dx^j \wedge dx^i
+\;\xrightarrow{d,\; d^2 = 0}\;
+\int_M d\omega = \int_{\partial M} \omega
+\;\xrightarrow{\text{Đóng vs. Khớp}}\;
+H^k_{\mathrm{dR}}(M)\ (\text{Tôpô đa tạp}).
 $$
 
 ## 5. Hình ảnh minh họa

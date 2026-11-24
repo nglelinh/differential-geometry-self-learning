@@ -8,6 +8,30 @@ owner: "Hình học Vi phân"
 lesson_type: optional
 ---
 
+Khi một mạng nơ-ron đồ thị (GNN) muốn dự đoán lực tác dụng lên từng nguyên tử trong một chất xúc tác 3D hay ước lượng ứng suất trên bề mặt cong của cánh máy bay, nó đối mặt với chính nút thắt mà Levi-Civita từng gặp năm 1917: *mỗi đỉnh có một hệ quy chiếu cục bộ riêng!* Nếu bạn cứ hồn nhiên cộng dồn vector đặc trưng từ các nguyên tử láng giềng mà không vận chuyển chúng về cùng một hệ khung, hay cho các tọa độ $$(x, y, z)$$ đi qua một hàm ReLU thông thường, tính đối xứng không gian lập tức bị phá nát!
+
+Đó là lý do từ ý tưởng mạng tích chập đẳng biến **gauge** của Cohen và cộng sự (ICML 2019), giai đoạn 2022–2024 đã chứng kiến sự bùng nổ của **Equiformer** (ICLR 2023) và **EquiformerV2** (Liao, Smidt và cộng sự, 2023): thay vì chỉ xử lý mảng số phẳng, các kiến trúc transformer này cấy thẳng **biểu diễn bất khả quy (irreps)** của nhóm quay $$SO(3)$$ và phép nhân **Clebsch–Gordan** vào cơ chế chú ý (attention) — biến bài toán liên kết và vận chuyển song song thành hạ tầng lõi của AI cho khoa học vật liệu!
+
+**Mạch bài học:** Bản đồ kiến thức nền (gauge = chọn khung cục bộ, biểu diễn bất khả quy bậc $$l$$ của $$SO(3)$$, tích tensor Clebsch–Gordan) → Trực giác vận chuyển đặc trưng trên lưới & Equiformer → Định nghĩa hình thức → Ví dụ tính tay cầm tay chỉ việc: kiểm tra phép quay $$90^\circ$$ trên lưỡng cực nguyên tử (vô hướng $$l=0$$ vs. lực $$l=1$$ vs. ReLU thường) → Khung giải thích chậm: 3 bước từ liên kết gauge đến Equiformer / EquiformerV2 → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Gauge, Biểu diễn bất khả quy và Equiformer là gì?
+
+### 1. "Gauge" trong hình học và vật lý chính là quyền tự do chọn khung cục bộ
+Trên một bề mặt cong (như mặt cầu — nơi không thể chải phẳng bộ lông mà không có xoáy), ta không có hướng "Đông–Bắc" chung cho mọi điểm. Tại mỗi điểm $$p$$ ta chọn một hệ khung trực chuẩn địa phương — lựa chọn đó gọi là một **gauge**. Để truyền thông điệp từ điểm $$q$$ sang $$p$$, ta cần một **liên kết** (phép vận chuyển song song) xoay đặc trưng từ gauge tại $$q$$ khớp vào gauge tại $$p$$.
+
+### 2. Biểu diễn bất khả quy (Irreps) của $$SO(3)$$ — phân loại đặc trưng theo bậc $$l$$
+Mọi đối tượng hình học trong không gian 3D đều phân rã thành các khối cơ bản không thể chia nhỏ hơn dưới phép quay $$SO(3)$$, đánh số bằng bậc $$l = 0, 1, 2, \dots$$ (ứng với các hàm hài cầu $$Y_l^m$$ có $$2l+1$$ thành phần):
+- **$$l = 0$$ (1 thành phần):** đại lượng **vô hướng** bất biến (năng lượng, nhiệt độ, khối lượng).
+- **$$l = 1$$ (3 thành phần):** **vector** 3D quay đúng theo ma trận $$R \in SO(3)$$ (lực, vận tốc, mô-men lưỡng cực).
+- **$$l = 2$$ (5 thành phần):** **tensor bậc 2 đối xứng không vết** (tensor ứng suất, độ phân cực).
+
+### 3. Tích tensor Clebsch–Gordan — cách nhân hai đặc trưng mà không phá vỡ đối xứng
+Khi hai nguyên tử tương tác, ta cần kết hợp đặc trưng bậc $$l_1$$ của nguyên tử nguồn với vector khoảng cách tương đối bậc $$l_2$$ (hàm hài cầu của hướng nối $$q \to p$$). Phép nhân **tích tensor Clebsch–Gordan** trộn chúng thành các đặc trưng đầu ra bậc $$l_3$$ (với $$\vert l_1 - l_2\vert \le l_3 \le l_1 + l_2$$) mà vẫn bảo toàn tuyệt đối tính đẳng biến quay!
+
+---
+
 ## Tổng quan
 
 Tensor là đối tượng bất biến về bản chất dưới phép đổi tọa độ; liên kết affine là quy tắc so sánh hai vector đặt tại hai điểm khác nhau; đạo hàm hiệp biến và vận chuyển song song là các hệ quả trực tiếp. Bài tùy chọn này không trình bày lại $$\nabla_XY$$, mà chỉ ra rằng trong học sâu hình học, *gauge* chính là cách gọi khác của bài toán liên kết: tại mỗi điểm (hay mỗi đỉnh, mỗi mặt của lưới) có một không gian đặc trưng riêng, và ta cần một quy tắc vận chuyển đặc trưng đó sang điểm lân cận trước khi tổng hợp chúng lại.
@@ -36,6 +60,47 @@ $$
 \bigl\{f(q)\bigr\}_{q\sim p} \longmapsto \tilde f(p)
 $$
 giao hoán với $$\rho$$: khi quay toàn bộ đầu vào, đầu ra cũng quay theo đúng quy luật đó. Tích tensor của hai biểu diễn bất khả quy (irrep), sau đó chiếu lại bằng hệ số Clebsch–Gordan, đóng vai trò tương tự hệ số $$\Gamma$$ — không phải ký hiệu Christoffel sinh từ metric, nhưng cùng chung ý tưởng là quy tắc kết hợp các thành phần khi so sánh.
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: Thử phép quay $$90^\circ$$ trên lưỡng cực 2 nguyên tử
+
+Xét hệ 2 nguyên tử có vector nối $$r = (1, 0, 0)^T$$ và phép quay $$90^\circ$$ quanh trục $$z$$:
+
+$$
+R = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \;\Longrightarrow\; Rr = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}.
+$$
+
+1. **Năng lượng thế ($$l=0$$, bất biến):** $$E(r) = \Vert r \Vert^2 = 1$$. Sau khi quay: $$E(Rr) = \Vert (0,1,0)^T \Vert^2 = 1 = E(r)$$. Khớp tuyệt đối!
+2. **Vector lực ($$l=1$$, đẳng biến):** $$F(r) = -\nabla E(r) = -2r = (-2, 0, 0)^T$$. Sau khi quay đầu vào: $$F(Rr) = -2(Rr) = (0, -2, 0)^T$$, khớp chính xác với $$R F(r) = (0, -2, 0)^T$$!
+3. **Tại sao mạng ReLU thường lại thất bại?** Thử áp dụng hàm $$\mathrm{ReLU}$$ theo từng tọa độ lên vector lực $$F(r) = (-2, 0, 0)^T$$:
+   - Tính ReLU trước rồi mới quay: $$R\,\mathrm{ReLU}(-2, 0, 0)^T = R(0, 0, 0)^T = (0, 0, 0)^T$$.
+   - Quay trước rồi mới tính ReLU (nếu đổi dấu hoặc xoay góc $$180^\circ$$, $$R_{180} F(r) = (+2, 0, 0)^T$$): $$\mathrm{ReLU}(+2, 0, 0)^T = (+2, 0, 0)^T \neq (0, 0, 0)^T$$!
+
+Chỉ một phép thử 3 dòng đủ thấy tại sao các mạng đẳng biến phải thay ReLU tọa độ bằng các toán tử **cổng vô hướng** (nhân vector $$v$$ với $$\sigma(\Vert v \Vert)$$) và tích tensor Clebsch–Gordan!
+
+---
+
+### Khung giải thích: Từ liên kết gauge đến kiến trúc Equiformer & EquiformerV2 (nên đọc chậm)
+
+#### Bước 1: Gauge CNN (Cohen et al., 2019) — vận chuyển song song trên lưới cong
+Trên một mặt cong rời rạc hóa (như mặt cầu 20 mặt đều), mỗi mặt có một hệ khung cục bộ. Trước khi nhân tích chập với bộ lọc tại đỉnh $$p$$, đặc trưng của láng giềng $$q$$ được nhân với ma trận vận chuyển song song $$\rho(g_{q\to p})$$ — đúng là phiên bản rời rạc của liên kết trên phân thớ vector!
+
+#### Bước 2: Equiformer (ICLR 2023) — Attention đẳng biến với biểu diễn $$SO(3)$$
+Trong Transformer truyền thống, trọng số chú ý tính từ tích vô hướng $$q^T k$$. Trong **Equiformer**, mỗi nút mang một bộ đặc trưng phân bậc $$l = 0, 1, 2, \dots$$; thông điệp giữa hai nguyên tử $$p, q$$ được tính qua **Depthwise Tensor Product (DTP)** kết hợp đặc trưng nút với hàm hài cầu của hướng $$r_{pq}$$, còn trọng số chú ý chỉ rút ra từ kênh **vô hướng $$l=0$$** (bất biến dưới quay) rồi nhân đều lên các kênh $$l \ge 1$$!
+
+#### Bước 3: EquiformerV2 (2023) — tăng tốc lên bậc $$l$$ cao nhờ xoay về trục chuẩn
+Tính tích tensor tổng quát bậc $$l$$ tốn chi phí $$O(L^6)$$. EquiformerV2 dùng một mẹo hình học cực khéo: **tạm xoay hệ khung sao cho trục nối hai nguyên tử $$r_{pq}$$ trùng khít trục $$z$$** (tức chọn một gauge đặc biệt dọc cạnh $$pq$$!), nơi tích tensor $$SO(3)$$ sụp gọn thành tích $$SO(2)$$ chỉ tốn $$O(L^3)$$, rồi xoay ngược lại!
+
+Tóm tắt mạch nối hình học – AI của Chương 6:
+
+$$
+\text{Liên kết } \nabla \text{ (Levi-Civita)}
+\;\xrightarrow{\text{Rời rạc hóa khung}}\;
+\text{Gauge CNN (2019)}
+\;\xrightarrow{\text{Irreps } SO(3) + \text{Attention}}\;
+\text{Equiformer / V2 (2023)}.
+$$
 
 ## Minh họa hình học
 

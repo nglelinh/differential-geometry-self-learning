@@ -15,6 +15,23 @@ Trong bài giảng này, chúng ta đi từ thí nghiệm tư duy đó đến c�
 
 *Nếu bạn muốn tìm hiểu phần toán học chi tiết, hãy đọc [Bài giảng 13: Độ cong Riemann]({{ '/contents/vi/chapter07/lecture-13-riemann-curvature/' | absolute_url }}) và [Bài giảng 16: Hình học Không-Thời gian]({{ '/contents/vi/chapter08/lecture-16-spacetime-geometry/' | absolute_url }}).*
 
+**Mạch bài học:** Bản đồ kiến thức nền (nguyên lý tương đương, không-thời gian cong vs. lực Newton, chân trời sự kiện) → Giới hạn mô hình Newton & Phương trình Einstein → Ví dụ tính số cầm tay chỉ việc: độ chậm đồng hồ gần lỗ đen Schwarzschild và góc bẻ cong ánh sáng $$1.75''$$ qua Mặt Trời → Khung giải thích chậm: 3 bước từ "người rơi tự do" đến lỗ đen và GPS → Thấu kính hấp dẫn & Video.
+
+---
+
+## Bản đồ kiến thức nền: Hình học của Hấp dẫn và Lỗ đen dựa trên những trụ cột nào?
+
+### 1. Nguyên lý tương đương — xóa bỏ "lực hút" bằng đường trắc địa
+Nếu đứng trong một chiếc thang máy kín đang rơi tự do, bạn lơ lửng y hệt như đang ở ngoài vũ trụ không trọng lực. Einstein đẩy nhận xét đó thành tiên đề hình học: **hấp dẫn không phải lực kéo từ xa, mà là hình học cong của không-thời gian 4 chiều**, còn chuyển động rơi tự do chỉ đơn giản là đi dọc **đường trắc địa**!
+
+### 2. Phương trình Einstein — vòng lặp tương tác giữa Vật chất và Độ cong
+Phương trình trường Einstein đặt **độ cong Ricci** ở vế trái và **năng lượng–khối lượng** ở vế phải. Không giống lực Newton truyền tức thời, mọi biến động của khối lượng (như hai lỗ đen va chạm) làm gợn sóng độ cong lan truyền đúng bằng tốc độ ánh sáng $$c$$ (**sóng hấp dẫn**).
+
+### 3. Chân trời sự kiện và Giãn nở thời gian hấp dẫn
+Khi khối lượng bị nén chặt xuống dưới bán kính Schwarzschild $$r_s = \frac{2GM}{c^2}$$, độ cong không-thời gian mạnh đến mức mọi tia sáng đều bị bẻ quay vào trong — tạo ra **lỗ đen**. Ngay cả bên ngoài lỗ đen, càng lại gần vật thể nặng, nhịp trôi của thời gian riêng càng chậm lại!
+
+---
+
 ## 2. Giới hạn của mô hình Newton
 
 Trong hơn 200 năm, cơ học Newton mô tả vũ trụ dựa trên ba giả định:
@@ -43,8 +60,8 @@ Mối liên hệ định lượng giữa độ cong và vật chất được ph
 $$ R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} $$
 
 Ý nghĩa của hai vế phương trình:
-- **Vế trái (Hình học):** chứa tensor Ricci \(R_{\mu\nu}\), độ cong vô hướng \(R\) và tensor metric \(g_{\mu\nu}\), mô tả độ cong của không-thời gian.
-- **Vế phải (Vật chất và năng lượng):** chứa tensor năng lượng – xung lượng \(T_{\mu\nu}\), mô tả phân bố khối lượng, năng lượng và áp suất.
+- **Vế trái (Hình học):** chứa tensor Ricci $$R_{\mu\nu}$$, độ cong vô hướng $$R$$ và tensor metric $$g_{\mu\nu}$$, mô tả độ cong của không-thời gian.
+- **Vế phải (Vật chất và năng lượng):** chứa tensor năng lượng – xung lượng $$T_{\mu\nu}$$, mô tả phân bố khối lượng, năng lượng và áp suất.
 - **Dấu bằng (=):** khẳng định phân bố vật chất – năng lượng xác định trực tiếp độ cong của không-thời gian.
 
 ## 5. Lỗ đen và sự giãn nở thời gian do hấp dẫn
@@ -55,6 +72,43 @@ Bên cạnh việc làm lệch đường đi của ánh sáng (hiện tượng *
 
 ![Thấu kính hấp dẫn](https://upload.wikimedia.org/wikipedia/commons/0/03/Black_hole_lensing_web.gif)
 *Hình 2: Mô phỏng lỗ đen đi ngang qua phía trước một thiên hà. Trường hấp dẫn làm cong đường truyền ánh sáng từ thiên hà phía sau, tạo nên hình ảnh biến dạng gọi là thấu kính hấp dẫn.*
+
+---
+
+## Ví dụ tính số cầm tay chỉ việc: Đồng hồ gần lỗ đen & Góc bẻ cong ánh sáng qua Mặt Trời
+
+### Ví dụ 1: Thời gian trôi chậm cỡ nào gần chân trời sự kiện $$r_s$$?
+Với một phi hành gia lơ lửng ở khoảng cách $$r > r_s$$ quanh lỗ đen Schwarzschild, tỷ lệ nhịp đồng hồ riêng $$d\tau$$ so với đồng hồ ở rất xa $$dt$$ tuân theo công thức đơn giản từ thành phần $$g_{00}$$ của metric:
+
+$$
+\frac{d\tau}{dt} = \sqrt{1 - \frac{r_s}{r}}.
+$$
+
+Thử thay hai khoảng cách cụ thể:
+- **Tại $$r = 1.25\,r_s$$:** $$\frac{d\tau}{dt} = \sqrt{1 - 0.8} = \sqrt{0.2} \approx 0.447$$ $$\implies$$ **1 giờ** của phi hành gia tương đương **$$2.24$$ giờ** ngoài vũ trụ xa!
+- **Tại $$r = 1.01\,r_s$$** (sát mép chân trời sự kiện $$1\%$$): $$\frac{d\tau}{dt} = \sqrt{1 - \frac{1}{1.01}} \approx 0.0995 \approx \frac{1}{10}$$ $$\implies$$ **1 giờ** ở đó bằng **10 giờ** ở xa (đúng như cảnh hành tinh Miller trong phim *Interstellar*!).
+
+### Ví dụ 2: Tính góc bẻ cong tia sáng lướt sát Mặt Trời (Thí nghiệm Eddington 1919)
+Theo thuyết tương đối rộng, một tia sáng đi sát rìa Mặt Trời (bán kính $$R_\odot \approx 6.96 \times 10^5\text{ km}$$, bán kính Schwarzschild $$r_s = \frac{2GM_\odot}{c^2} \approx 2.95\text{ km}$$) bị bẻ cong một góc:
+
+$$
+\Delta\theta = \frac{2 r_s}{R_\odot} \approx \frac{5.90}{6.96 \times 10^5} \approx 8.48 \times 10^{-6}\text{ rad} \approx 1.75\text{ giây cung}!
+$$
+
+Con số $$1.75''$$ này **lớn gấp đúng hai lần** dự đoán của cơ học Newton ($$0.875''$$), bởi ngoài độ cong thời gian, **độ cong không gian 3 chiều** đóng góp thêm đúng một nửa nữa — và đoàn thám hiểm nhật thực năm 1919 của Eddington đã đo được kết quả khớp sát với Einstein!
+
+---
+
+### Khung giải thích: Ba bước từ "Người rơi tự do" đến Lỗ đen và GPS (nên đọc chậm)
+
+#### Bước 1: Tại sao mô hình tấm bạt 2D chỉ kể một nửa sự thật?
+Trong đời sống hàng ngày (như quả táo rơi xuống đất), nguyên nhân chính khiến vật rơi xuống **không phải** độ cong không gian 3D mà là **độ cong của chiều thời gian** (đồng hồ trên đỉnh tòa nhà chạy nhanh hơn đồng hồ ở tầng trệt một chút xíu!). Đường thế giới muốn cực đại hóa thời gian riêng tự nhiên uốn cong về phía mặt đất!
+
+#### Bước 2: Độ cong không gian thể hiện rõ nhất ở tốc độ ánh sáng
+Ánh sáng di chuyển cực nhanh nên "cảm nhận" đồng đều cả độ cong thời gian lẫn độ cong không gian — đó là lý do góc lệch ánh sáng quanh Mặt Trời bằng đúng $$2 \times$$ dự đoán Newton!
+
+#### Bước 3: Từ chân trời sự kiện đến đồng hồ vệ tinh GPS
+Cùng một hệ số metric $$\sqrt{1 - r_s/r}$$ giải thích cả hai thái cực: ở sát lỗ đen nó làm thời gian gần như đóng băng đối với người quan sát từ xa; còn ở độ cao $$20{,}200\text{ km}$$ của vệ tinh GPS, nó tạo ra sai lệch $$+38\,\mu\text{s/ngày}$$ buộc mọi điện thoại thông minh phải áp dụng công thức hình học vi phân của Einstein mỗi giây!
 
 ### Ứng dụng thực tế: Hệ thống định vị GPS
 Hiệu ứng giãn nở thời gian tương đối tính không chỉ xuất hiện quanh lỗ đen mà ảnh hưởng trực tiếp đến hệ thống định vị GPS hằng ngày. Các vệ tinh GPS bay ở độ cao khoảng 20.000 km; khi tổng hợp hiệu ứng trường hấp dẫn yếu hơn (làm đồng hồ chạy nhanh hơn) và vận tốc quỹ đạo (làm đồng hồ chạy chậm đi), đồng hồ trên vệ tinh chạy **nhanh hơn** đồng hồ dưới mặt đất khoảng 38 microgiây mỗi ngày. Nếu không hiệu chỉnh sai lệch này theo công thức tương đối tính, sai số định vị sẽ tích lũy hàng kilômét chỉ sau một ngày.

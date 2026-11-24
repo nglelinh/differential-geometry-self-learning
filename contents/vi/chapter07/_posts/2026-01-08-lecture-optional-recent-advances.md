@@ -8,6 +8,27 @@ owner: "Hình học Vi phân"
 lesson_type: optional
 ---
 
+Mỗi khi bạn huấn luyện một mạng nơ-ron bằng thuật toán SGD hay **Adam**, bước cập nhật quen thuộc $$w_{t+1} = w_t - \alpha \nabla L(w_t)$$ ngầm giả định rằng tham số $$w$$ sống trong một không gian Euclid phẳng $$\mathbb{R}^n$$ — nơi phép trừ hai điểm luôn nằm lại trong không gian. Nhưng chuyện gì xảy ra khi tham số của bạn buộc phải là một **ma trận trực giao** (đa tạp Stiefel), một **ma trận hiệp phương sai đối xứng xác định dương (SPD)**, hay một **điểm trong đĩa hyperbolic Poincaré** để biểu diễn cây phân cấp? Nếu cứ trừ thẳng tay theo công thức Euclid, điểm cập nhật lập tức **văng ra khỏi đa tạp**!
+
+Đó là sân chơi sôi động của **tối ưu hóa trên đa tạp Riemann** giai đoạn 2022–2026 — tiêu biểu là cuốn giáo trình chuẩn mực năm 2023 của **Nicolas Boumal** (*An Introduction to Optimization on Smooth Manifolds*), thư viện **Geoopt** trong PyTorch với thuật toán **`RiemannianAdam`** (Bécigneul & Ganea, ICLR 2019; Kochurov et al., 2020), cùng hướng nghiên cứu song song dùng **độ cong Ollivier–Ricci** trên đồ thị (Nguyen et al., ICML 2023) để chẩn đoán tận gốc hai căn bệnh kinh điển của GNN: *over-smoothing* và *over-squashing*!
+
+**Mạch bài học:** Bản đồ kiến thức nền (gradient Riemann, phép co rút retraction, vận chuyển mô-men & độ cong Ricci trên đồ thị) → Trực giác tối ưu trên mặt cong → Định nghĩa hình thức → Ví dụ tính tay cầm tay chỉ việc: thực hiện 1 bước hạ gradient Riemann trên mặt cầu $$S^2$$ bằng retraction chuẩn hóa so với ánh xạ mũ chính xác → Khung giải thích chậm: 3 bước vận hành `RiemannianAdam` và cơ chế độ cong Ollivier–Ricci trong GNN → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Tối ưu hóa Riemann và Độ cong Đồ thị nghiên cứu gì?
+
+### 1. Gradient Riemann $$\operatorname{grad} f$$ — không phải mọi đạo hàm riêng đều là hướng dốc nhất!
+Trên đa tạp Riemann $$(M, g)$$, vi phân $$df$$ là một **covector** (1-form). Muốn biến nó thành một **vector tiếp tuyến** chỉ hướng tăng nhanh nhất theo thước đo $$g$$, ta phải nâng chỉ số bằng metric nghịch đảo: $$(\operatorname{grad} f)^i = g^{ij}\partial_j f$$. Trên một mặt cong nhúng trong $$\mathbb{R}^N$$, $$\operatorname{grad} f$$ chính là hình chiếu trực giao của gradient Euclid lên không gian tiếp tuyến $$T_x M$$!
+
+### 2. Phép co rút (Retraction) — "đường trắc địa tốc hành" cho GPU
+Ánh xạ mũ $$\exp_x(v)$$ đi chính xác dọc đường trắc địa, nhưng giải phương trình vi phân đường trắc địa ở mỗi bước huấn luyện quá tốn kém. **Retraction** $$R_x : T_x M \to M$$ là một ánh xạ rẻ hơn nhiều (như phép chia cho chuẩn trên mặt cầu, hay phân tích QR trên đa tạp Stiefel) nhưng khớp với $$\exp_x$$ đến bậc một tại $$0$$ — giữ điểm cập nhật nằm chặt trên $$M$$ mà vẫn bảo toàn tốc độ hội tụ!
+
+### 3. Độ cong Ollivier–Ricci — đưa Tensor Ricci xuống đồ thị rời rạc
+Trên đa tạp trơn, độ cong Ricci dương làm hai chùm đường trắc địa hội tụ; độ cong âm làm chúng phân kỳ. Trên đồ thị rời rạc, **độ cong Ollivier–Ricci** của cạnh $$(u, v)$$ so sánh khoảng cách vận chuyển tối ưu (Wasserstein-1) giữa hai phân bố láng giềng của $$u$$ và $$v$$ với khoảng cách đồ thị $$d(u, v) = 1$$ — giúp chỉ mặt điểm tên cạnh nào gây **over-smoothing** (cong dương) và cạnh nào là nút thắt cổ chai **over-squashing** (cong âm)!
+
+---
+
 ## Tổng quan
 
 Đa tạp Riemann $$(M,g)$$ là nơi hội tụ các khái niệm cốt lõi của khóa học: độ dài, đường trắc địa, liên kết Levi-Civita, tensor độ cong Riemann, tensor Ricci và độ cong vô hướng. Định lý Hopf–Rinow kết nối tính đầy đủ metric với tính đầy đủ trắc địa. Bài tùy chọn này không chứng minh lại các định lý đó, mà giới thiệu hai hướng ứng dụng nổi bật: tối ưu hóa trên $$(M,g)$$ — câu hỏi "thuật toán Adam hoạt động thế nào khi tham số không nằm trong $$\mathbb{R}^n$$" — và độ cong Ricci rời rạc trên đồ thị (đã nhắc ở Chương 4, nay đặt trong ngôn ngữ tensor Ricci của chương này).
@@ -40,6 +61,51 @@ $$
 x_{t+1} = R_{x_t}(-\alpha\, m_t/\sqrt{v_t}).
 $$
 Các chi tiết cài đặt số nằm trong Geoopt, còn khung khái niệm hình học nằm ở chính chương này.
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: Một bước hạ gradient Riemann trên mặt cầu $$S^2$$
+
+Giả sử ta muốn cực tiểu hóa hàm độ cao $$f(x) = x_3$$ trên mặt cầu đơn vị $$S^2 \subset \mathbb{R}^3$$, xuất phát từ một điểm trên Xích đạo $$x_0 = (1, 0, 0)^T$$ với tốc độ học $$\alpha = 0.5$$:
+
+1. **Tính gradient Riemann tại $$x_0$$:** Gradient Euclid là $$\nabla f = (0, 0, 1)^T$$. Chiếu vuông góc xuống mặt phẳng tiếp tuyến $$T_{x_0} S^2$$ (trừ đi thành phần song song $$x_0$$):
+   $$
+   \operatorname{grad} f(x_0) = \nabla f - (\nabla f \cdot x_0)\,x_0 = (0, 0, 1)^T - 0 = (0, 0, 1)^T.
+   $$
+2. **Thử bước Euclid ngây thơ:** $$x_{\text{Euc}} = x_0 - 0.5\,\operatorname{grad} f(x_0) = (1, 0, -0.5)^T$$. Kiểm tra chuẩn: $$\Vert x_{\text{Euc}}\Vert = \sqrt{1^2 + (-0.5)^2} = \sqrt{1.25} \approx 1.118 \neq 1$$ — đã **văng ra khỏi mặt cầu**!
+3. **Dùng Retraction chuẩn hóa (nhanh, không cần $$\sin/\cos$$):**
+   $$
+   x_1^{\text{ret}} = R_{x_0}(-0.5\,\operatorname{grad} f) = \frac{(1, 0, -0.5)^T}{\sqrt{1.25}} \approx (0.894,\, 0,\, -0.447)^T \in S^2.
+   $$
+4. **So với Ánh xạ mũ chính xác (đi dọc kinh tuyến một góc $$0.5$$ rad):**
+   $$
+   x_1^{\exp} = \exp_{x_0}(-0.5\,\operatorname{grad} f) = (\cos 0.5,\, 0,\, -\sin 0.5)^T \approx (0.878,\, 0,\, -0.479)^T \in S^2.
+   $$
+
+Cả hai đều hạ độ cao $$x_3$$ xuống phía Nam Cực và nằm gọn trên mặt cầu $$S^2$$ — trong đó retraction chỉ tốn đúng một phép chia chuẩn thay vì tính lượng giác!
+
+---
+
+### Khung giải thích: Ba trụ cột của Tối ưu hóa Riemann và Độ cong Đồ thị (nên đọc chậm)
+
+#### Bước 1: Tại sao `RiemannianAdam` cần đến "Vận chuyển song song" từ Bài 12?
+Adam thông thường cộng trung bình động mô-men $$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$$. Trên đa tạp cong, $$m_{t-1}$$ sống trong $$T_{x_{t-1}} M$$ còn $$g_t$$ sống trong $$T_{x_t} M$$ — hai không gian tiếp tuyến khác nhau nên không thể cộng trực tiếp! `RiemannianAdam` phải áp dụng phép **vận chuyển vector** $$\mathcal{T}_{x_{t-1} \to x_t}(m_{t-1})$$ (vận chuyển song song hoặc phép chiếu) đưa $$m_{t-1}$$ về $$T_{x_t} M$$ trước khi cộng!
+
+#### Bước 2: Boumal (2023) & Geoopt — biến hình học vi phân thành thư viện tối ưu
+Cuốn sách của Nicolas Boumal hệ thống hóa điều kiện hội tụ của Gradient Descent, Trust-Region và Newton bậc hai trên đa tạp chỉ bằng bốn nguyên liệu: điểm $$x$$, không gian tiếp tuyến $$T_x M$$, metric $$g_x$$ và retraction $$R_x$$. Nhờ kiến trúc mô-đun đó, **Geoopt** cho phép lập trình viên PyTorch khai báo tham số trên `PoincareBall`, `Sphere`, hay `SymmetricPositiveDefinite` và huấn luyện mượt như tensor thường!
+
+#### Bước 3: Độ cong Ollivier–Ricci chẩn đoán hai căn bệnh của GNN (Nguyen et al., ICML 2023)
+Trên một cụm dày đặc (clique), láng giềng của hai đỉnh kề nhau trùng lặp gần hết $$\implies$$ độ cong Ollivier–Ricci **dương lớn** $$\implies$$ truyền tin nhiều lớp khiến mọi nút giống hệt nhau (**over-smoothing**). Ngược lại, trên một cạnh "cầu nối" mảnh giữa hai cộng đồng tách biệt, hai đám mây láng giềng cách xa nhau $$\implies$$ độ cong **âm lớn** $$\implies$$ thông tin từ hàng triệu nút phải chui qua đúng 1 cạnh (**over-squashing**)!
+
+Tóm tắt cầu nối hình học Riemann – học sâu hiện đại:
+
+$$
+(M, g, \nabla, \mathrm{Ric})
+\;\xrightarrow{\text{Retraction + Transport}}\;
+\text{RiemannianAdam (Geoopt)}
+\quad \& \quad
+\text{Ollivier–Ricci} \to \text{Chẩn đoán GNN}.
+$$
 
 ## Minh họa hình học
 

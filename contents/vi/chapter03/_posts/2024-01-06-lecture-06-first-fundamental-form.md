@@ -7,16 +7,37 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Bài toán của người vẽ bản đồ
+## 1. Lời mở đầu: Vì sao đảo Greenland trông to ngang châu Phi trên bản đồ?
 
-Hãy hình dung bạn đang vẽ bản đồ phẳng $$(u, v)$$ cho một vùng địa hình lồi lõm được mô tả bởi bề mặt $$\mathbf{r}(u, v)$$. Câu hỏi cơ bản đặt ra là: **1 cm trên bản đồ phẳng tương ứng với bao nhiêu km ngoài thực địa?**
+Mở bất kỳ bản đồ thế giới Mercator nào, bạn sẽ thấy đảo Greenland trông đồ sộ chẳng kém gì cả lục địa châu Phi — dù ngoài thực tế châu Phi rộng gấp **14 lần** Greenland! Chuyện đó xảy ra vì phép chiếu từ mặt cầu lên trang giấy phẳng làm **tỉ lệ co giãn thay đổi theo từng vị trí**: $$1\,\text{cm}$$ trên bản đồ ở xích đạo dài hơn gấp nhiều lần $$1\,\text{cm}$$ trên bản đồ ở gần cực Bắc.
 
-Tỉ lệ quy đổi này thay đổi tùy theo vị trí trên bản đồ:
-- Ở vùng đồng bằng phẳng, 1 cm trên bản đồ có thể tương ứng với 1 km thực tế.
-- Ở vùng núi dốc, 1 cm trên bản đồ chiếu từ trên xuống có thể tương ứng với 2 km quãng đường thực tế.
-- Gần cực Bắc trên phép chiếu Mercator, 1 cm trên bản đồ chỉ tương ứng với một khoảng cách rất ngắn ngoài thực địa.
+Câu hỏi cốt lõi của người vẽ bản đồ — và của con kiến sống trên bề mặt cong — là: **khi ta nhích một bước nhỏ $$(du, dv)$$ trên bản đồ phẳng, quãng đường thực tế $$ds$$ ngoài bề mặt dài bao nhiêu?** Công cụ toán học trả lời trọn vẹn câu hỏi đó, đồng thời đo luôn cả **góc** và **diện tích**, chính là **Dạng Cơ bản Thứ nhất (First Fundamental Form)** — hay trong ngôn ngữ hiện đại là **tensor metric $$g_{ij}$$**.
 
-**Dạng Cơ bản Thứ nhất (First Fundamental Form)** là công cụ toán học giải quyết bài toán này: nó đóng vai trò thước đo quy đổi từ các độ dịch chuyển nhỏ trên hệ tọa độ bản đồ $$(u, v)$$ sang khoảng cách, góc và diện tích thực tế trên bề mặt.
+**Mạch bài học:** Bản đồ kiến thức nền (tensor metric $$g_{ij}$$, định lý Pythagoras trên mặt cong, hình học nội tại & đẳng cự) → Dạng cơ bản thứ nhất $$I = E\,du^2 + 2F\,du\,dv + G\,dv^2$$ → Ví dụ tọa độ cực → Khung giải thích chậm: tự tay tính $$E, F, G$$ và tích phân diện tích $$4\pi R^2$$ cho mặt cầu bán kính $$R$$ → Diện tích, góc, hình học nội tại và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Dạng Cơ bản Thứ nhất và Tensor Metric là gì?
+
+Để người tốt nghiệp đại học thấy ngay cầu nối giữa Đại số Tuyến tính (Bài 0.1) với Hình học Riemann hiện đại, hãy nắm ba trụ cột của bài học:
+
+### 1. Tensor Metric ($$g_{ij}$$) — Tích vô hướng biến đổi theo từng điểm
+Nhắc lại Bài 0.1: trên mỗi mặt phẳng tiếp tuyến $$T_P S$$, tích vô hướng Euclid của không gian $$\mathbb{R}^3$$ cảm sinh một tích vô hướng 2 chiều, biểu diễn trong cơ sở $$\{\mathbf{r}_u, \mathbf{r}_v\}$$ bởi ma trận đối xứng xác định dương $$2 \times 2$$:
+$$
+g = \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} \mathbf{r}_u \cdot \mathbf{r}_u & \mathbf{r}_u \cdot \mathbf{r}_v \\ \mathbf{r}_v \cdot \mathbf{r}_u & \mathbf{r}_v \cdot \mathbf{r}_v \end{pmatrix}.
+$$
+Đó chính là **Dạng Cơ bản Thứ nhất** — định lý Pythagoras tổng quát cho hệ trục có thể co giãn và không vuông góc!
+
+### 2. Từ Độ dài đến Góc và Diện tích ($$\sqrt{\det g}$$)
+Chỉ cần biết đúng 3 hàm $$E(u,v), F(u,v), G(u,v)$$, bạn lập tức tính được:
+- **Độ dài đường cong:** $$L = \int \sqrt{E (u')^2 + 2F u' v' + G (v')^2}\,dt$$.
+- **Góc giữa hai đường cong:** qua tích vô hướng $$\mathbf{v}^T g \mathbf{w}$$.
+- **Diện tích miền:** $$A = \iint \sqrt{EG - F^2}\,du\,dv = \iint \sqrt{\det g}\,du\,dv$$.
+
+### 3. Hình học Nội tại (Intrinsic Geometry) và Phép Đẳng cự
+Mọi đại lượng tính được *chỉ từ $$E, F, G$$* thuộc về **hình học nội tại** — những gì con kiến tự đo được bằng thước dây mà không cần nhìn ra chiều thứ ba. Hai bề mặt có cùng dạng cơ bản thứ nhất (như tờ giấy phẳng và ống trụ cuộn lại) là **đẳng cự cục bộ** và hoàn toàn không phân biệt được dưới góc nhìn nội tại!
+
+---
 
 ## 2. Dạng Cơ bản Thứ nhất: Tensor Metric
 
@@ -52,6 +73,38 @@ Do đó, metric có dạng $$ds^2 = dr^2 + r^2 d\theta^2$$.
 **Ý nghĩa:**
 - Khi di chuyển dọc theo phương bán kính ($$dr$$), khoảng cách thực tế đúng bằng $$1 \cdot dr$$.
 - Khi di chuyển dọc theo đường tròn ($$d\theta$$), khoảng cách thực tế tỉ lệ thuận với bán kính $$r$$ (bằng $$r\,d\theta$$): ở càng xa tâm, cùng một góc quay $$d\theta$$ tương ứng với cung đường càng dài. Đó cũng là lý do trên đường chạy điền kinh hình vòng, các làn chạy phía ngoài phải đặt vạch xuất phát nhô lên trước so với làn trong.
+
+---
+
+## Khung giải thích: tự tay tính $$E, F, G$$ và diện tích $$4\pi R^2$$ cho Mặt cầu (nên đọc chậm)
+
+Hãy tính tay trọn vẹn Dạng Cơ bản Thứ nhất của **mặt cầu bán kính $$R$$** với tham số hóa $$\mathbf{r}(\varphi, \theta) = (R\sin\varphi\cos\theta,\ R\sin\varphi\sin\theta,\ R\cos\varphi)$$ ($$\varphi \in (0, \pi)$$ là góc cực, $$\theta \in [0, 2\pi)$$ là kinh độ):
+
+1. **Bước 1 — Hai vector tiếp tuyến cơ sở:**
+   $$
+   \mathbf{r}_\varphi = (R\cos\varphi\cos\theta,\ R\cos\varphi\sin\theta,\ -R\sin\varphi), \qquad
+   \mathbf{r}_\theta = (-R\sin\varphi\sin\theta,\ R\sin\varphi\cos\theta,\ 0).
+   $$
+2. **Bước 2 — Tính ba hệ số $$E, F, G$$:**
+   - $$E = \mathbf{r}_\varphi \cdot \mathbf{r}_\varphi = R^2\cos^2\varphi(\cos^2\theta + \sin^2\theta) + R^2\sin^2\varphi = R^2(\cos^2\varphi + \sin^2\varphi) = \mathbf{R^2}$$.
+   - $$F = \mathbf{r}_\varphi \cdot \mathbf{r}_\theta = -R^2\sin\varphi\cos\varphi\sin\theta\cos\theta + R^2\sin\varphi\cos\varphi\sin\theta\cos\theta + 0 = \mathbf{0}$$ (kinh tuyến luôn vuông góc vĩ tuyến!).
+   - $$G = \mathbf{r}_\theta \cdot \mathbf{r}_\theta = R^2\sin^2\varphi(\sin^2\theta + \cos^2\theta) = \mathbf{R^2\sin^2\varphi}$$.
+   Vậy metric mặt cầu là:
+   $$
+   ds^2 \;=\; R^2\,d\varphi^2 + R^2\sin^2\varphi\,d\theta^2.
+   $$
+3. **Bước 3 — Kiểm tra phần tử diện tích và diện tích toàn mặt cầu:**
+   $$
+   dA = \sqrt{EG - F^2}\,d\varphi\,d\theta = \sqrt{R^4\sin^2\varphi}\,d\varphi\,d\theta = R^2\sin\varphi\,d\varphi\,d\theta.
+   $$
+   Lấy tích phân trên toàn mặt cầu:
+   $$
+   A = \int_0^{2\pi} \int_0^{\pi} R^2\sin\varphi\,d\varphi\,d\theta = 2\pi R^2 \bigl[-\cos\varphi\bigr]_0^{\pi} = 2\pi R^2(1 - (-1)) = \mathbf{4\pi R^2}!
+   $$
+4. **Bước 4 — Đọc ra bí mật của Greenland:**
+   Tại xích đạo ($$\varphi = 90^\circ, \sin\varphi = 1$$), một ô $$1^\circ \times 1^\circ$$ có diện tích tỉ lệ với $$1$$. Tại vĩ độ $$70^\circ\text{B}$$ của Greenland ($$\varphi = 20^\circ, \sin 20^\circ \approx 0.34$$), cùng ô $$1^\circ \times 1^\circ$$ chỉ rộng bằng khoảng $$1/3$$ theo chiều đông–tây — đó chính là lý do bản đồ phẳng kéo ngang Greenland phồng to một cách giả tạo!
+
+---
 
 ## 3. Diện tích và Góc
 

@@ -8,6 +8,26 @@ owner: "Hình học Vi phân"
 lesson_type: optional
 ---
 
+Một đồ thị mạng xã hội hay một phân tử hóa học không có tọa độ $$(x, y, z)$$ tự nhiên, không có mặt phẳng tiếp tuyến, cũng chẳng có vector pháp tuyến — vậy mà giới học máy giai đoạn 2022–2023 lại phát hiện ra rằng **độ cong nội tại** của đồ thị chính là thủ phạm đứng sau hai căn bệnh nan y nhất của mạng nơ-ron đồ thị (GNN): *làm mượt quá mức (over-smoothing)* và *nén thông tin quá mức (over-squashing)*.
+
+Làm sao một ý tưởng ra đời từ đo đạc bề mặt Trái Đất năm 1827 của Gauss và dòng chảy Ricci của Hamilton–Perelman lại có thể chẩn đoán đúng điểm nghẽn thông tin trong trí tuệ nhân tạo hiện đại? Bài đọc thêm này sẽ giải mã điều đó qua **độ cong Ollivier–Ricci** và các thuật toán **dòng chảy Ricci rời rạc** (SDRF, BORF).
+
+**Mạch bài học:** Tinh thần nội tại của Gauss trên không gian rời rạc → Bản đồ kiến thức nền (Độ cong Ollivier–Ricci, Over-smoothing vs. Over-squashing, Dòng chảy Ricci rời rạc) → Trực giác hội tụ/phân kỳ đường trắc địa trên đồ thị → Định nghĩa hình thức $$\kappa(i, j)$$ & phương trình Ricci flow → Khung giải thích tự tính tay độ cong Ollivier–Ricci trên tam giác $$K_3$$ ($$\kappa = +1/2$$) và cạnh cầu nối hai sao bậc 3 ($$\kappa = -2/3$$) → Tài liệu nền tảng & ứng dụng.
+
+## Bản đồ kiến thức nền: Hình học nội tại bước vào học sâu đồ thị như thế nào?
+
+### 1. Độ cong Ollivier–Ricci (Ollivier–Ricci Curvature)
+- **Là gì:** Khái niệm độ cong thuần nội tại trên không gian metric rời rạc (Yann Ollivier, 2009), so sánh khoảng cách vận chuyển tối ưu Wasserstein $$W_1(\mu_i, \mu_j)$$ giữa hai phân bố lân cận tại hai đỉnh kề nhau $$i \sim j$$ với chính khoảng cách $$d(i, j)$$.
+- **Nghiên cứu gì:** Chuyển ý tưởng hình học "hai quả cầu nhỏ quanh hai điểm gần nhau có xích lại gần nhau hơn tâm của chúng không?" (đặc trưng độ cong Ricci dương/âm trong hình học Riemann) sang ngôn ngữ xác suất và đường đi ngắn nhất trên đồ thị, không cần bất kỳ phép nhúng nào vào $$\mathbb{R}^3$$.
+
+### 2. Hai căn bệnh hình học của GNN: Over-smoothing và Over-squashing
+- **Là gì:** Khi mạng nơ-ron đồ thị truyền tin qua nhiều lớp, các nút ở vùng có **độ cong dương mạnh** (nhiều tam giác, liên kết dày đặc) hòa trộn đặc trưng quá nhanh khiến mọi nút trở nên na ná nhau (**over-smoothing**); ngược lại, thông tin đi qua các **cạnh cầu có độ cong âm mạnh** (cấu trúc kiểu cây phân nhánh) bị dồn nén vào một vector cố định duy nhất gây mất mát thông tin từ xa (**over-squashing**).
+- **Nghiên cứu gì:** Liên kết trực tiếp cấu trúc tô-pô/hình học của đồ thị với giới hạn lý thuyết của cơ chế truyền tin (message passing) trong học sâu.
+
+### 3. Dòng chảy Ricci rời rạc (Discrete Ricci Flow — SDRF, BORF)
+- **Là gì:** Phiên bản số của phương trình dòng chảy Ricci $$\partial_t g_{ij} = -2\mathrm{Ric}_{ij}$$ dùng để "tái đi dây" (rewiring) đồ thị: thêm cạnh tắt để giải tỏa cổ chai ở vùng $$\kappa \ll 0$$ và tỉa bớt cạnh dư thừa ở vùng $$\kappa \gg 0$$.
+- **Nghiên cứu gì:** Biến đổi hình học của đồ thị đầu vào trước khi huấn luyện GNN, giống như cách dòng chảy Ricci trong toán thuần túy làm trơn đều độ cong của đa tạp.
+
 ## Tổng quan
 
 Theorema Egregium khẳng định độ cong Gauss $$K$$ có thể xác định hoàn toàn từ các phép đo *nội tại* trên bề mặt mà không cần biết đến không gian bao ngoài; còn đường trắc địa là những đường "thẳng nhất" theo góc nhìn nội tại ấy. Bài đọc thêm này giữ nguyên nền tảng lý thuyết đó và giới thiệu cách lĩnh vực học biểu diễn trên đồ thị (2022–2023) vận dụng các khái niệm độ cong nội tại để phân tích hiện tượng *nghẽn thông tin* trong mạng nơ-ron đồ thị (GNN).
@@ -43,6 +63,37 @@ $$
 \frac{\partial}{\partial t}\,g_{ij} = -2\,\mathrm{Ric}_{ij}.
 $$
 Phiên bản rời rạc trên đồ thị hoạt động theo chu trình lặp: ước lượng độ cong $$\kappa$$ trên các cạnh, bổ sung cạnh tại những vùng có $$\kappa$$ rất âm và giảm bớt cạnh tại những vùng có $$\kappa$$ rất dương. Hai thuật toán SDRF và BORF là những cách cụ thể hóa nguyên lý này cho dữ liệu đồ thị.
+
+## Khung giải thích: Tự tính tay độ cong Ollivier–Ricci trên hai đồ thị mẫu (nên đọc chậm)
+
+Để không thấy công thức Wasserstein $$W_1$$ trừu tượng, hãy chọn phân bố đều trên các láng giềng $$\mu_u(x) = \frac{1}{\deg(u)}$$ với mọi $$x \sim u$$ (không giữ khối lượng tại chính $$u$$) và tính tay $$\kappa(A, B) = 1 - W_1(\mu_A, \mu_B)$$ trên hai đồ thị tí hon (đều có $$d(A, B) = 1$$).
+
+### Trường hợp 1: Tam giác $$K_3$$ gồm 3 đỉnh $$A, B, C$$ (độ cong dương)
+- Láng giềng của $$A$$ là $$\{B, C\} \implies \mu_A(B) = \frac{1}{2},\; \mu_A(C) = \frac{1}{2}$$.
+- Láng giềng của $$B$$ là $$\{A, C\} \implies \mu_B(A) = \frac{1}{2},\; \mu_B(C) = \frac{1}{2}$$.
+- **Vận chuyển tối ưu từ $$\mu_A$$ sang $$\mu_B$$:** Khối lượng $$\frac{1}{2}$$ tại đỉnh chung $$C$$ đứng yên (chi phí $$0$$); khối lượng $$\frac{1}{2}$$ tại $$B$$ chuyển sang $$A$$ qua quãng đường $$d(B, A) = 1$$ (chi phí $$\frac{1}{2} \times 1 = \frac{1}{2}$$).
+- Do đó $$W_1(\mu_A, \mu_B) = \frac{1}{2}$$, suy ra:
+  $$ \kappa(A, B) = 1 - \frac{1/2}{1} = +\frac{1}{2} > 0. $$
+  Vì $$A$$ và $$B$$ chia sẻ láng giềng chung $$C$$, hai đám mây xác suất chồng lấp mạnh — giống hai đường trắc địa hội tụ trên mặt cầu!
+
+### Trường hợp 2: Cạnh cầu $$(A, B)$$ nối hai đỉnh bậc 3 dạng cây (độ cong âm)
+Xét đồ thị cây gồm cạnh cầu $$(A, B)$$, trong đó $$A$$ nối thêm với hai lá $$a_1, a_2$$ còn $$B$$ nối thêm với hai lá $$b_1, b_2$$ (không có cạnh chéo nào khác).
+- $$\mu_A$$ đặt khối lượng $$\frac{1}{3}$$ lên mỗi đỉnh trong $$\{B, a_1, a_2\}$$.
+- $$\mu_B$$ đặt khối lượng $$\frac{1}{3}$$ lên mỗi đỉnh trong $$\{A, b_1, b_2\}$$.
+- **Vận chuyển tối ưu từ $$\mu_A$$ sang $$\mu_B$$:**
+  1. Đẩy $$\frac{1}{3}$$ từ $$a_1 \to A$$ (quãng đường $$1$$, chi phí $$\frac{1}{3}$$).
+  2. Đẩy $$\frac{1}{3}$$ từ $$B \to b_1$$ (quãng đường $$1$$, chi phí $$\frac{1}{3}$$).
+  3. Phần còn lại $$\frac{1}{3}$$ tại $$a_2$$ buộc phải vượt qua cả cạnh cầu để tới $$b_2$$ theo đường $$a_2 \to A \to B \to b_2$$ (quãng đường $$3$$, chi phí $$\frac{1}{3} \times 3 = 1$$).
+- Tổng chi phí vận chuyển tối ưu là $$W_1(\mu_A, \mu_B) = \frac{1}{3} + \frac{1}{3} + 1 = \frac{5}{3}$$ (có thể kiểm chứng tối ưu bằng hàm 1-Lipschitz $$f(a_1)=f(a_2)=3,\; f(A)=2,\; f(B)=1,\; f(b_1)=f(b_2)=0$$ cho $$\mathbb{E}_{\mu_A}[f] - \mathbb{E}_{\mu_B}[f] = \frac{7}{3} - \frac{2}{3} = \frac{5}{3}$$).
+- Suy ra độ cong Ollivier–Ricci của cạnh cầu là:
+  $$ \kappa(A, B) = 1 - \frac{5/3}{1} = -\frac{2}{3} < 0. $$
+
+| Cấu trúc cạnh $$(A, B)$$ | Khoảng cách $$W_1(\mu_A, \mu_B)$$ | Độ cong $$\kappa(A, B)$$ | Hành vi truyền tin trong GNN |
+| :--- | :--- | :--- | :--- |
+| Tam giác $$K_3$$ (chung láng giềng) | $$\frac{1}{2}$$ | $$+\frac{1}{2} > 0$$ | Hòa trộn nhanh — nguy cơ **over-smoothing** |
+| Cạnh cầu nối hai cây bậc 3 | $$\frac{5}{3}$$ | $$-\frac{2}{3} < 0$$ | Cổ chai hẹp — nguy cơ **over-squashing** |
+
+Chỉ cần thêm một cạnh tắt nối $$a_2$$ với $$b_2$$ (đúng thao tác của SDRF/BORF!), quãng đường $$d(a_2, b_2)$$ tụt từ $$3$$ xuống $$1$$, đẩy $$\kappa(A, B)$$ tăng vọt và giải phóng ngay nút thắt thông tin.
 
 ## Minh họa hình học
 

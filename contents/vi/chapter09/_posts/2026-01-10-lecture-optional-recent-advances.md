@@ -8,6 +8,30 @@ owner: "Hình học Vi phân"
 lesson_type: optional
 ---
 
+Khi khép lại hành trình từ đường cong phẳng đến đa tạp Riemann, nhóm Lie và sáu câu chuyện trực quan của Chương 9 — từ lát pizza, đường bay Bắc Cực, màng xà phòng, lỗ đen, quả bóng có lông cho đến tranh Escher — ta nhận ra một điều kỳ diệu: **mỗi câu chuyện tưởng chừng chỉ để thưởng thức ấy đều đang là trái tim của một nhánh công nghệ mũi nhọn giai đoạn 2022–2026!**
+
+Độ cong Gauss $$K$$ của lát pizza nay sống trong **3D Gaussian Splatting** và **Neural Jacobian Fields**; đường trắc địa mặt cầu sống trong **tối ưu hóa Riemann (Geoopt)**; mặt phẳng hyperbolic của Escher nay trở thành không gian nhúng cây phân cấp trong **mạng nơ-ron hyperbolic** (*IEEE TPAMI*, 2022); còn đường trắc địa ánh sáng quanh lỗ đen trở thành bộ mô phỏng **GRMHD** dựng ảnh **Sagittarius A\*** của Event Horizon Telescope! Bài tùy chọn kết khóa này là bản đồ tổng hợp toàn bộ các nhịp cầu đó.
+
+**Mạch bài học:** Bản đồ kiến thức nền (bảng nối 6 câu chuyện Chương 9 với 6 mũi nhọn công nghệ 2022–2026) → Bức tranh tổng hợp & nhắc lại các biểu thức cốt lõi → Ví dụ tính số cầm tay chỉ việc: so sánh nhúng cây nhị phân độ sâu $$D = 10$$ ($$1024$$ nút lá) trong mặt phẳng Euclid 2D vs. Đĩa Poincaré 2D → Khung giải thích chậm: 3 trục lớn từ Hình học Vi phân cổ điển sang Công nghệ hiện đại → Tài liệu, Video & Bài tập tổng kết.
+
+---
+
+## Bản đồ kiến thức nền: Sáu viên ngọc Chương 9 đi về đâu trong công nghệ 2022–2026?
+
+### 1. Độ cong Nội tại & Bề mặt (Pizza & Màng xà phòng) $$\to$$ Thị giác 3D & Đồ họa
+- **3D Gaussian Splatting (Kerbl et al., 2023)** và **Neural Jacobian Fields (Aigerman et al., 2022):** tái dựng và biến dạng bề mặt 3D tôn trọng hình học nội tại và độ cong Gauss $$K$$ thay vì chỉ xử lý điểm ảnh phẳng.
+- **Dòng độ cong trung bình rời rạc ($$H = 0$$):** công cụ chuẩn mực để làm mượt lưới tam giác và mô phỏng vật liệu đàn hồi.
+
+### 2. Đường Trắc địa, Nhóm Lie & Tôpô (Đường bay & Quả bóng có lông) $$\to$$ Robot & Tối ưu hóa
+- **Theseus (Pineda et al., 2022)** và **Geometric Fabrics (Van Wyk et al., 2022):** tối ưu quỹ đạo và điều khiển robot trực tiếp trên $$SE(3)$$ và không gian cấu hình cong.
+- **Định lý Quả bóng có lông ($$\chi(S^2) = 2$$):** lý do đồ họa 3D và điều khiển vệ tinh không bao giờ có một trường khung tiếp tuyến duy nhất không kỳ dị trên mặt cầu, buộc phải dùng nhiều bản đồ (atlas) hoặc quaternion/$$SU(2)$$.
+
+### 3. Độ cong Âm & Không-Thời gian (Escher & Lỗ đen) $$\to$$ AI Hyperbolic & Thiên văn học số
+- **Mạng nơ-ron Hyperbolic (Peng et al., IEEE TPAMI 2022)** và **Độ cong Ollivier–Ricci (Nguyen et al., ICML 2023):** khai thác độ cong âm $$K < 0$$ để biểu diễn đồ thị phân cấp và chữa nghẽn thông tin trên GNN.
+- **Event Horizon Telescope (2022):** tích phân hàng triệu đường trắc địa kiểu ánh sáng trên metric Lorentz để đối chiếu ảnh lỗ đen Sagittarius A\*.
+
+---
+
 ## Tổng quan
 
 Chương 9 đã mở ra nhiều ví dụ trực quan của hình học vi phân: định lý pizza và độ cong Gauss, đường bay vòng tròn lớn, màng xà phòng, lỗ đen, định lý quả bóng lông và hình học hyperbolic của Escher. Bài tùy chọn này không đưa thêm định lý mới mà cập nhật, thông qua các công trình giai đoạn 2022–2026, cách từng chủ đề trên được ứng dụng trong thị giác máy tính, kỹ thuật robot, phân tích hình dạng, học sâu hyperbolic và tính toán số trong thuyết tương đối rộng.
@@ -34,6 +58,45 @@ $$
 g = \frac{4\,(dx^2+dy^2)}{(1-x^2-y^2)^2},
 $$
 chính là metric làm nền cho các thuật toán tối ưu Riemann (Geoopt, Boumal) và các lớp mạng hyperbolic. Còn metric Lorentz là đầu vào cho bước tích phân đường trắc địa trong các mã mô phỏng của EHT.
+
+---
+
+## Ví dụ tính số cầm tay chỉ việc: Nhúng cây nhị phân độ sâu $$D = 10$$ trong Euclid 2D vs. Hyperbolic 2D
+
+Giả sử bạn cần nhúng một **cây phân cấp nhị phân** (như cây từ vựng WordNet hay cây phân loại sinh học) có độ sâu $$D = 10$$ — đặt nút gốc tại tâm và mỗi tầng cách nhau khoảng cách $$1$$, nên tầng lá ở bán kính $$R = 10$$ có đúng $$2^{10} = 1{,}024$$ nút lá cần đặt cách đều nhau (mỗi nút chiếm ít nhất khoảng cách $$1$$ để không dính vào nhau):
+- **Trong mặt phẳng Euclid 2D ($$K = 0$$):** Chu vi vòng tròn bán kính $$R = 10$$ chỉ là:
+  $$
+  C_{\text{Euc}}(10) = 2\pi \cdot 10 \approx 62.8.
+  $$
+  Bạn chỉ có chỗ cho khoảng **$$62$$ nút lá** — nhồi $$1{,}024$$ nút lá vào đó sẽ gây chồng chéo khủng khiếp, ép các mô hình học máy Euclid phải nhảy lên không gian hàng trăm chiều!
+- **Trong Đĩa Poincaré 2D ($$K = -1$$):** Chu vi vòng tròn bán kính hyperbolic $$R = 10$$ là:
+  $$
+  C_{\text{hyp}}(10) = 2\pi \sinh(10) \approx 2\pi \cdot 11{,}013.2 \approx 69{,}198!
+  $$
+  Chỉ với **2 chiều duy nhất**, không gian hyperbolic cung cấp chỗ trống gấp **hơn $$1{,}100$$ lần** không gian Euclid — thừa sức trải phẳng toàn bộ $$1{,}024$$ nút lá mà vẫn giữ nguyên cấu trúc khoảng cách của cây!
+
+---
+
+### Khung giải thích: Ba trục xuyên suốt từ Lý thuyết Hình học Vi phân đến Công nghệ 2022–2026 (nên đọc chậm)
+
+#### Bước 1: Trục 1 — Tôn trọng tính "Nội tại" (Intrinsic Geometry)
+Từ *Theorema Egregium* của Gauss (1827) đến Neural Jacobian Fields và 3D Gaussian Splatting (2022–2023): bài học lớn nhất là **đừng làm việc bằng tọa độ nhúng thô trong $$\mathbb{R}^3$$** khi bản chất bài toán nằm trên bề mặt (metric $$g$$ và độ cong $$K$$).
+
+#### Bước 2: Trục 2 — Tôn trọng "Đường trắc địa & Độ cong" (Geodesics & Curvature)
+Từ đường bay Bắc Cực, bài toán tối ưu Riemann (Geoopt, Boumal 2023) đến mạng nơ-ron hyperbolic (Peng et al., 2022) và ảnh lỗ đen (EHT 2022): chọn đúng metric $$g$$ (cầu, hyperbolic hay Lorentz) sẽ tự động sinh ra đúng đường đi ngắn nhất và đúng hình học dữ liệu.
+
+#### Bước 3: Trục 3 — Tôn trọng "Đối xứng & Tôpô" (Symmetry & Topology)
+Từ Định lý Quả bóng có lông, Nhóm Lie $$SE(3)$$ đến Theseus (2022) và EquiformerV2 (2023): cấy trực tiếp nhóm đối xứng vào kiến trúc và nhận diện sớm các rào cản tôpô (như gimbal lock hay điểm kỳ dị trên $$S^2$$) giúp hệ thống vừa chính xác, vừa tiết kiệm dữ liệu vượt bậc!
+
+Tóm tắt hành trình trọn khóa học:
+
+$$
+\text{Đường cong \& Mặt cong}
+\;\xrightarrow{\text{Tensor, Liên kết, Độ cong}}\;
+\text{Đa tạp Riemann, Lie \& Lorentz}
+\;\xrightarrow{\text{2022–2026}}\;
+\text{Thị giác 3D, Robot, AI Hyperbolic \& EHT}.
+$$
 
 ## Minh họa hình học
 

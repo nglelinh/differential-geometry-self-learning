@@ -7,15 +7,32 @@ order: 2
 owner: "Hình học Vi phân"
 ---
 
+Hãy thử một thí nghiệm tưởng tượng trên quả địa cầu: bạn đứng ở Bắc Cực, cầm một ngọn giáo chỉ thẳng về phía kinh tuyến $$0^\circ$$ (London). Bây giờ bạn đi thẳng xuống Xích đạo, luôn giữ ngọn giáo **song song với chính nó** (không xoay cổ tay). Đến Xích đạo, bạn rẽ trái đi $$90^\circ$$ dọc Xích đạo về phía Đông (vẫn giữ ngọn giáo luôn hướng về phía Nam, vuông góc với đường đi). Cuối cùng, bạn đi thẳng dọc kinh tuyến $$90^\circ$$ Đông trở lại Bắc Cực. Khi đặt chân về đúng điểm xuất phát, hãy nhìn ngọn giáo trên tay: **nó đã xoay đúng $$90^\circ$$ so với hướng ban đầu!**
+
+Nghịch lý thú vị đó tiết lộ một sự thật nền tảng của hình học vi phân: trên đa tạp cong, không hề tồn tại khái niệm "song song toàn cục", và bạn thậm chí **không thể trừ trực tiếp** hai vector nằm ở hai điểm khác nhau vì chúng sống trong hai mặt phẳng tiếp tuyến khác nhau! Để làm phép tính vi phân trên không gian cong, Tullio Levi-Civita (1917) và Jean-Louis Koszul (1950) đã xây dựng khái niệm **Liên kết (Connection)** và **Đạo hàm hiệp biến (Covariant Derivative)** — chiếc cầu nối giữa các không gian tiếp tuyến lân cận nhau.
+
+**Mạch bài học:** Bản đồ kiến thức nền (vì sao đạo hàm thường hỏng, vận chuyển song song, liên kết Levi-Civita) → Trực giác đi bộ cầm cờ & ký hiệu Christoffel → Định nghĩa hình thức & đường trắc địa $$\nabla_{\dot\gamma}\dot\gamma = 0$$ → Ví dụ tính tay cầm tay chỉ việc: tính tường minh $$\Gamma^r_{\theta\theta} = -r$$, $$\Gamma^\theta_{r\theta} = 1/r$$ trong tọa độ cực và kiểm tra tam giác cầu $$90^\circ$$ → Khung giải thích chậm: 4 bước chứng minh định lý cơ bản của hình học Riemann (tính duy nhất của liên kết Levi-Civita) → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Liên kết, Vận chuyển song song và Liên kết Levi-Civita nghiên cứu gì?
+
+### 1. Khủng hoảng của phép trừ vector trên đa tạp cong
+Trong $$\mathbb{R}^n$$, mọi không gian tiếp tuyến đều trùng với chính $$\mathbb{R}^n$$, nên phép lấy giới hạn $$\lim_{h\to 0}\frac{V(p+h)-V(p)}{h}$$ hợp lệ. Trên đa tạp cong $$M$$, $$V(p) \in T_p M$$ còn $$V(p+h) \in T_{p+h}M$$ — hai không gian vector khác hẳn nhau! Muốn lấy đạo hàm, ta bắt buộc phải trang bị một **liên kết** $$\nabla$$ làm quy tắc dịch chuyển vector từ $$T_{p+h}M$$ về $$T_p M$$.
+
+### 2. Liên kết Affine và Ký hiệu Christoffel $$\Gamma^k_{ij}$$
+Một liên kết affine $$\nabla_X Y$$ đo tốc độ biến thiên thực sự của trường vector $$Y$$ dọc theo hướng $$X$$. Trong tọa độ địa phương, nó bằng đạo hàm thường cộng thêm **số hạng hiệu chỉnh Christoffel** $$\Gamma^k_{ij}$$ đo tốc độ các vector cơ sở $$\partial_j$$ tự bẻ hướng theo lưới tọa độ. Bản thân $$\Gamma^k_{ij}$$ không phải tensor, nhưng tổ hợp $$\nabla_i Y^k = \partial_i Y^k + \Gamma^k_{ij} Y^j$$ lại là một **tensor thực sự**!
+
+### 3. Định lý cơ bản của hình học Riemann: Liên kết Levi-Civita
+Trên một đa tạp có trang bị metric $$g$$, trong vô số liên kết có thể chọn, tồn tại **duy nhất một** liên kết vừa **không xoắn** ($$\Gamma^k_{ij} = \Gamma^k_{ji}$$) vừa **bảo toàn độ dài và góc khi vận chuyển song song** ($$\nabla g = 0$$). Đó chính là **liên kết Levi-Civita** — nền móng trực tiếp sinh ra đường trắc địa và tensor độ cong Riemann ở Bài 13.
+
+---
+
 ## 1. Tổng quan
 
 Trong không gian phẳng $$\mathbb{R}^n$$, việc so sánh hai vector đặt tại hai điểm khác nhau rất đơn giản: ta chỉ cần tịnh tiến song song một vector đến gốc của vector kia rồi so sánh từng thành phần. Vì không gian phẳng, phép tịnh tiến không phụ thuộc vào đường đi, và đạo hàm của một trường vector đơn giản là lấy đạo hàm từng thành phần tọa độ.
 
-Tuy nhiên, trên một đa tạp cong (chẳng hạn mặt cầu), khái niệm "song song" không còn đơn giản như vậy. Nếu bạn vận chuyển một vector "song song" với chính nó dọc theo một vòng kín trên mặt cầu (ví dụ từ Bắc Cực xuống Xích đạo, đi dọc Xích đạo một đoạn rồi quay về Bắc Cực), vector khi trở về sẽ bị xoay đi một góc so với hướng ban đầu. Điều đó cho thấy không gian cong không có khái niệm "song song toàn cục".
-
-Để thực hiện phép tính vi phân trên đa tạp cong, ta cần một quy tắc liên hệ giữa các không gian tiếp tuyến tại những điểm lân cận nhau. Quy tắc đó gọi là *Liên kết* (Connection) hay *Liên kết Affine*, cho phép định nghĩa *Đạo hàm hiệp biến* (Covariant Derivative) — sự tổng quát hóa của đạo hàm theo hướng cho trường vector trên đa tạp.
-
-Bài giảng này trình bày khái niệm đạo hàm hiệp biến, vai trò của các ký hiệu Christoffel dưới góc nhìn hiện đại, và định nghĩa lại đường trắc địa (geodesic) một cách gọn gàng: đường cong có vector vận tốc song song dọc theo chính nó.
+Tuy nhiên, trên một đa tạp cong (chẳng hạn mặt cầu), khái niệm "song song" phụ thuộc vào đường đi. Để thực hiện phép tính vi phân trên đa tạp cong, ta cần một quy tắc liên hệ giữa các không gian tiếp tuyến tại những điểm lân cận nhau gọi là *Liên kết* (Connection), cho phép định nghĩa *Đạo hàm hiệp biến* (Covariant Derivative). Bài giảng này trình bày khái niệm đạo hàm hiệp biến, vai trò của các ký hiệu Christoffel dưới góc nhìn hiện đại, và định nghĩa lại đường trắc địa một cách gọn gàng: đường cong có vector vận tốc song song dọc theo chính nó.
 
 ## 2. Giải thích Trực quan
 
@@ -117,6 +134,54 @@ $$
 \ddot{x}^k + \Gamma^k_{ij} \dot{x}^i \dot{x}^j = 0
 $$
 Cách nhìn này thống nhất hai đặc trưng của đường trắc địa: "ngắn nhất cục bộ" (theo phép tính biến phân) và "thẳng nhất" (gia tốc nội tại bằng 0).
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: Ký hiệu Christoffel trong tọa độ cực & lực quán tính
+
+Xét chính mặt phẳng $$\mathbb{R}^2$$ với tọa độ cực $$(r, \theta)$$ và metric $$g_{rr} = 1,\; g_{\theta\theta} = r^2,\; g_{r\theta} = 0$$ (nên nghịch đảo $$g^{rr} = 1,\; g^{\theta\theta} = 1/r^2$$). Chỉ có đúng một đạo hàm riêng khác $$0$$ là $$\partial_r g_{\theta\theta} = 2r$$!
+
+Thay trực tiếp vào công thức Levi-Civita $$\Gamma^k_{ij} = \frac{1}{2}g^{kl}(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij})$$, ta tính ngay bằng tay tất cả các hệ số khác $$0$$:
+- $$\Gamma^r_{\theta\theta} = \frac{1}{2} g^{rr}(0 + 0 - \partial_r g_{\theta\theta}) = \frac{1}{2}(1)(-2r) = -r$$.
+- $$\Gamma^\theta_{r\theta} = \Gamma^\theta_{\theta r} = \frac{1}{2} g^{\theta\theta}(\partial_r g_{\theta\theta} + 0 - 0) = \frac{1}{2}\left(\frac{1}{r^2}\right)(2r) = \frac{1}{r}$$.
+- Tất cả các thành phần còn lại ($$\Gamma^r_{rr}, \Gamma^r_{r\theta}, \Gamma^\theta_{rr}, \Gamma^\theta_{\theta\theta}$$) đều bằng $$0$$!
+
+Bây giờ thay vào phương trình đường trắc địa $$\ddot{x}^k + \Gamma^k_{ij}\dot{x}^i\dot{x}^j = 0$$:
+
+$$
+\ddot{r} - r\dot{\theta}^2 = 0, \qquad \ddot{\theta} + \frac{2}{r}\dot{r}\dot{\theta} = 0!
+$$
+
+Bạn nhận ra hai số hạng quen thuộc trong cơ học cổ điển chứ? Số hạng $$-r\dot{\theta}^2$$ chính là **gia tốc hướng tâm / lực ly tâm**, còn $$\frac{2}{r}\dot{r}\dot{\theta}$$ chính là **gia tốc Coriolis**! Trên một đường thẳng trong $$\mathbb{R}^2$$ không hề có lực nào tác dụng, nhưng chỉ vì ta dùng lưới tọa độ cực bị cong mà các hệ số $$\Gamma^k_{ij}$$ tự xuất hiện để giữ cho phương trình đường thẳng bất biến!
+
+---
+
+### Khung giải thích: Tại sao Liên kết Levi-Civita tồn tại duy nhất từ metric $$g$$? (nên đọc chậm)
+
+#### Bước 1: Ghi lại hai đòi hỏi hình học tự nhiên nhất
+Ta muốn phép đạo hàm hiệp biến $$\nabla$$ tôn trọng thước đo độ dài–góc (tương thích metric: $$X\bigl(g(Y,Z)\bigr) = g(\nabla_X Y, Z) + g(Y, \nabla_X Z)$$) và không vặn xoắn hình bình hành vô cùng nhỏ (không xoắn: $$\nabla_X Y - \nabla_Y X = [X, Y]$$).
+
+#### Bước 2: "Thủ thuật vòng tròn Koszul" — viết ba phương trình hoán vị
+Viết điều kiện tương thích metric cho ba hoán vị vòng của $$(X, Y, Z)$$:
+1. $$X g(Y, Z) = g(\nabla_X Y, Z) + g(Y, \nabla_X Z)$$
+2. $$Y g(Z, X) = g(\nabla_Y Z, X) + g(Z, \nabla_Y X)$$
+3. $$-Z g(X, Y) = -g(\nabla_Z X, Y) - g(X, \nabla_Z Y)$$
+
+#### Bước 3: Cộng ba dòng lại và rút gọn bằng điều kiện không xoắn
+Khi cộng (1) + (2) + (3) và ghép cặp bằng tính không xoắn $$\nabla_X Y - \nabla_Y X = [X, Y]$$, mọi số hạng đạo hàm hiệp biến khác triệt tiêu lẫn nhau, chỉ còn sót lại đúng **một** số hạng $$2g(\nabla_X Y, Z)$$ ở vế phải!
+
+#### Bước 4: Rút ra công thức tường minh cho $$\Gamma^k_{ij}$$
+Thay $$X = \partial_i,\; Y = \partial_j,\; Z = \partial_l$$ (nên mọi móc Lie $$[\partial_i, \partial_j] = 0$$), ta thu được ngay $$2 g_{kl}\Gamma^k_{ij} = \partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}$$, nhân thêm metric nghịch đảo $$g^{kl}$$ là ra công thức Levi-Civita duy nhất!
+
+Tóm tắt mạch chứng minh định lý cơ bản của hình học Riemann:
+
+$$
+\nabla g = 0 \text{ \& } \text{Torsion} = 0
+\;\xrightarrow{\text{Cộng 3 hoán vị Koszul}}\;
+\Gamma^k_{ij} = \frac{1}{2}g^{kl}(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij})
+\;\Longrightarrow\;
+\nabla \text{ duy nhất!}
+$$
 
 ## 4. Hình ảnh minh họa
 

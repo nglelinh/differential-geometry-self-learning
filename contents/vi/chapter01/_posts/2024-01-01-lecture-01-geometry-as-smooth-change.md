@@ -9,9 +9,9 @@ owner: "Hình học Vi phân"
 
 ## 1. Lời mở đầu: Bước ra khỏi thế giới phẳng
 
-Trong hơn hai nghìn năm, hình học Euclid là khuôn khổ quen thuộc nhất để mô tả không gian: một không gian phẳng, nơi đường thẳng kéo dài vô tận, tổng ba góc trong một tam giác luôn bằng $$180^\circ$$ và các hình khối có cấu trúc cứng.
+Trong hơn hai nghìn năm, hình học Euclid là ngôi nhà quen thuộc nhất của tư duy loài người: một không gian phẳng tuyệt đối, nơi hai đường song song không bao giờ cắt nhau, tổng ba góc trong mọi tam giác luôn bằng đúng $$180^\circ$$, và mọi hình khối đều cứng nhắc.
 
-Tuy nhiên, các đối tượng trong tự nhiên hiếm khi phẳng: những sườn đồi uốn lượn, dòng sông quanh co, đám mây liên tục biến dạng và chính bề mặt Trái Đất (gần đúng là một mặt cầu). Thế giới thực cong, xoắn và biến đổi liên tục.
+Thế nhưng chỉ cần ngẩng mắt nhìn quanh, bạn sẽ thấy thiên nhiên hầu như từ chối sự phẳng lì ấy: những dãy núi trập trùng, dòng sông uốn lượn, chuỗi xoắn DNA, bề mặt Trái Đất, và thậm chí chính cấu trúc không-thời gian bị bẻ cong bởi lực hấp dẫn. **Hình học Vi phân (Differential Geometry)** ra đời từ một cuộc hôn nhân vĩ đại giữa **Hình học** (nghiên cứu hình dạng) và **Giải tích** (nghiên cứu sự biến thiên trơn) để chinh phục thế giới cong đó.
 
 > [!NOTE]
 > **Không gian như một Đa tạp (Manifold):**
@@ -20,7 +20,24 @@ Tuy nhiên, các đối tượng trong tự nhiên hiếm khi phẳng: những s
 > - **Toàn cục (nhìn xa):** Có thể cong, xoắn và mang hình dạng phức tạp.
 > Bề mặt Trái Đất là một ví dụ điển hình: trên một sân bóng nhỏ, mặt đất trông gần như phẳng, nhưng nếu đi thẳng mãi theo một hướng, ta sẽ quay trở lại điểm xuất phát.
 
-**Hình học Vi phân (Differential Geometry)** kết hợp **Hình học** (nghiên cứu hình dạng) với **Giải tích** (nghiên cứu sự biến thiên liên tục) để mô tả các không gian cong đó. Trong khóa học này, bên cạnh các công thức tính toán, ta sẽ làm quen với cách tư duy hình học vi phân: xem xét bề mặt như một đối tượng trơn có thể biến dạng, tìm hiểu cách đo độ cong của không gian và mối liên hệ giữa hình học với lực hấp dẫn.
+**Mạch bài học:** Bản đồ kiến thức nền (từ Euclid đến Gauss và Riemann) → Trực giác con kiến trên quả táo (ngoại tại vs. nội tại) → Phép tính vi phân và tiếp tuyến → Đường cong tham số hóa → Khung giải thích chậm: tự tay đo tổng góc tam giác $$270^\circ$$ trên Trái Đất và tính vận tốc đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Lược sử, ứng dụng và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hình học Vi phân là gì và nghiên cứu những gì?
+
+Với sinh viên tốt nghiệp đại học lần đầu bước vào Hình học Vi phân, bức tranh toàn ngành có thể gói gọn trong **ba bước nhảy vọt lịch sử**:
+
+### 1. Hình học Đường cong và Mặt cổ điển (Thế kỷ XVII–XVIII: Newton, Euler, Monge)
+Đặt một đường cong $$\gamma(t)$$ hoặc một mặt cong $$\mathbf{r}(u, v)$$ vào không gian 3 chiều $$\mathbb{R}^3$$, dùng đạo hàm cấp 1 để dựng tiếp tuyến / mặt phẳng tiếp tuyến, và đạo hàm cấp 2 để đo **độ cong** và **độ xoắn**. Đây là **góc nhìn ngoại tại (extrinsic)** — đứng từ ngoài $$\mathbb{R}^3$$ nhìn vào.
+
+### 2. Cuộc cách mạng Nội tại của Gauss (1827)
+Trong công trình bất hủ năm 1827, Carl Friedrich Gauss chứng minh một điều gần như không tưởng (**Theorema Egregium**): một sinh vật 2 chiều sống *bên trong* bề mặt hoàn toàn có thể đo được độ cong Gauss $$K$$ mà **không cần biết gì về không gian 3 chiều bên ngoài**, chỉ bằng thước dây và thước đo góc ngay trên mặt!
+
+### 3. Hình học Riemann nhiều chiều và Vật lý hiện đại (1854–nay)
+Năm 1854, học trò của Gauss là **Bernhard Riemann** giải phóng hoàn toàn hình học khỏi $$\mathbb{R}^3$$: ta có thể định nghĩa một không gian cong $$n$$-chiều (đa tạp Riemann) cùng thước đo khoảng cách (metric $$g$$) ngay từ bên trong. Sáu mươi năm sau, Albert Einstein tìm thấy đúng ngôn ngữ của Riemann để viết nên **Thuyết Tương đối rộng**: *vật chất nói cho không-thời gian cách uốn cong, và độ cong không-thời gian nói cho vật chất cách chuyển động*.
+
+---
 
 ## 2. Trực giác: Con kiến và Quả táo
 
@@ -95,6 +112,34 @@ Về mặt hình học, $$\gamma'(t)$$ nằm trên đường tiếp tuyến củ
 - Độ dài $$\|\gamma'(t)\|$$ chỉ tốc độ chuyển động.
 
 Một đường cong được gọi là **chính quy (regular)** nếu vận tốc luôn khác không ($$\gamma'(t) \neq 0$$ với mọi $$t \in I$$). Điều kiện này loại trừ các điểm dừng đột ngột, nơi đường cong có thể tạo thành góc nhọn hoặc điểm lùi.
+
+---
+
+## Khung giải thích: tự tay kiểm tra độ cong nội tại trên Trái Đất và vận tốc đường xoắn ốc (nên đọc chậm)
+
+Để hai ý tưởng nền tảng của bài học — *đo độ cong nội tại* và *tính tiếp tuyến đường cong tham số* — trở nên hoàn toàn cụ thể, hãy kiểm tra hai phép tính tay ngắn gọn:
+
+### Ví dụ cầm tay 1: Tam giác có ba góc vuông ($$270^\circ$$) ngay trên bề mặt Trái Đất!
+Một nhà thám hiểm không hề có tàu vũ trụ để bay ra ngoài nhìn Trái Đất, nhưng thực hiện đúng 3 chặng đi thẳng (đường trắc địa):
+1. Xuất phát từ **Cực Bắc**, đi thẳng xuống dọc kinh tuyến $$0^\circ$$ tới **Xích đạo**.
+2. Tại Xích đạo, rẽ trái đúng **$$90^\circ$$**, đi thẳng dọc theo Xích đạo qua $$90^\circ$$ kinh độ (đúng $$1/4$$ chu vi Xích đạo).
+3. Rẽ trái tiếp đúng **$$90^\circ$$**, đi thẳng dọc kinh tuyến $$90^\circ\text{Đ}$$ quay trở về đúng **Cực Bắc** — gặp lại con đường xuất phát dưới góc **$$90^\circ$$**!
+
+Cộng tổng ba góc của tam giác cầu vừa vẽ: $$90^\circ + 90^\circ + 90^\circ = \mathbf{270^\circ}$$ — dư ra đúng $$90^\circ = \frac{\pi}{2}$$ so với tam giác phẳng $$180^\circ$$! Hơn nữa, diện tích tam giác này chiếm đúng $$1/8$$ diện tích mặt cầu ($$A = \frac{1}{8}(4\pi R^2) = \frac{\pi}{2}R^2$$). Lấy *phần dư góc chia cho diện tích*:
+$$
+\frac{\text{Phần dư góc}}{\text{Diện tích}} \;=\; \frac{\pi/2}{(\pi/2)R^2} \;=\; \mathbf{\frac{1}{R^2}}!
+$$
+Nhà thám hiểm vừa đo chính xác **độ cong Gauss $$K = 1/R^2$$** của Trái Đất hoàn toàn từ bên trong bề mặt!
+
+### Ví dụ cầm tay 2: Tính vận tốc, tốc độ và tiếp tuyến của đường xoắn ốc $$\gamma(t) = (3\cos t,\ 3\sin t,\ 4t)$$
+- **Đạo hàm từng tọa độ:** $$\gamma'(t) = (-3\sin t,\ 3\cos t,\ 4)$$.
+- **Tốc độ (độ dài vector vận tốc):**
+  $$
+  \|\gamma'(t)\| \;=\; \sqrt{(-3\sin t)^2 + (3\cos t)^2 + 4^2} \;=\; \sqrt{9(\sin^2 t + \cos^2 t) + 16} \;=\; \sqrt{9 + 16} \;=\; \mathbf{5}.
+  $$
+- Vì $$\|\gamma'(t)\| = 5 \neq 0$$ tại mọi $$t$$, đường xoắn ốc này **chính quy** ở mọi điểm. Tại $$t = 0$$, hạt ở vị trí $$\gamma(0) = (3, 0, 0)$$ với vector tiếp tuyến $$\gamma'(0) = (0, 3, 4)$$, nên phương trình đường tiếp tuyến tại đó là $$L(u) = (3, 0, 0) + u(0, 3, 4) = (3, 3u, 4u)$$.
+
+---
 
 ## 5. Lược sử: Từ phép tính vi phân đến độ cong nội tại
 

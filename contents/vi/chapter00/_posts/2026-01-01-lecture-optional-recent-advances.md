@@ -10,11 +10,28 @@ lesson_type: optional
 
 ## Tổng quan
 
-Bài đọc thêm này không thay thế các bài nền tảng trước đó. Đại số tuyến tính, giải tích đa biến, tô-pô và phương trình vi phân vẫn là ngôn ngữ bắt buộc; nội dung dưới đây chỉ nhằm minh họa cách các công cụ ấy đang được vận dụng trong việc phân tích dữ liệu cao chiều hiện nay.
+Một bức ảnh khuôn mặt độ phân giải $$256 \times 256$$ ảnh xám sống trong không gian $$\mathbb{R}^{65\,536}$$ — một không gian khổng lồ có hơn sáu mươi lăm nghìn chiều! Nếu các khuôn mặt người phân bố ngẫu nhiên khắp $$\mathbb{R}^{65\,536}$$, mọi mô hình AI trên Trái Đất đều bất lực vì "lời nguyền số chiều". Thế nhưng thực tế các mô hình học sâu lại học được chỉ từ vài nghìn đến vài triệu mẫu. Tại sao? Bởi vì mọi khuôn mặt thực chỉ xoay quanh vài chục bậc tự do (góc quay đầu, ánh sáng, biểu cảm) — tức là chúng nằm gọn trên một **đa tạp trơn chiều thấp** uốn lượn bên trong không gian hàng vạn chiều đó!
 
-Trong giai đoạn 2022–2026, một luận điểm quen thuộc — *giả thuyết đa tạp* (manifold hypothesis) — đã được xem xét lại bằng các công cụ thống kê chặt chẽ hơn. Song song với đó, *học sâu hình học* (geometric deep learning) dùng các khái niệm của chương này làm khung thiết kế kiến trúc mạng: lưới, nhóm, đồ thị, trắc địa và chuẩn (gauge). Ở một hướng khác, hình học thông tin cho thấy không gian các phân bố xác suất cũng mang cấu trúc metric, và đạo hàm phù hợp trên không gian đó là đạo hàm gắn với metric này thay vì đạo hàm Euclid thông thường.
+Bài đọc thêm này không thay thế các bài nền tảng trước đó. Đại số tuyến tính, giải tích đa biến, tô-pô và phương trình vi phân vẫn là ngôn ngữ bắt buộc; nội dung dưới đây minh họa cách các công cụ ấy trở thành xương sống của **học máy hình học** và **hình học thông tin** trong giai đoạn 2022–2026.
 
-Bạn nên đọc bài này sau khi đã nắm vững không gian vector, ma trận Jacobian, tập mở và trường vector. Mục đích không phải là học thêm một lý thuyết mới, mà là nhận ra các công cụ cơ bản của Chương 0 đã trở thành ngôn ngữ chung cho hình học, học máy và khoa học dữ liệu.
+**Mạch bài học:** Bản đồ kiến thức nền (giả thuyết đa tạp, học sâu hình học 5G, hình học thông tin Fisher–Rao) → Trực giác Swiss roll và các công trình 2022–2026 → Định nghĩa hình thức → Khung giải thích chậm: tự tay tính khoảng cách nội tại vs. ngoại tại trên Swiss roll và tính metric Fisher–Rao cho phân bố chuẩn 1D → Ứng dụng và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hình học của Dữ liệu, Học sâu Hình học và Hình học Thông tin là gì?
+
+Trước khi đi vào các công thức, hãy nối Chương 0 với ba hướng nghiên cứu mũi nhọn của khoa học dữ liệu hiện đại:
+
+### 1. Giả thuyết Đa tạp (Manifold Hypothesis) và Học đa tạp
+Thay vì coi dữ liệu là những vector rời rạc trong không gian Euclid phẳng $$\mathbb{R}^N$$, học đa tạp xem tập dữ liệu như một đám mây điểm lấy mẫu từ một **đa tạp $$d$$-chiều** ($$d \ll N$$) cộng thêm nhiễu nhỏ. Các thuật toán như PCA (tuyến tính), Isomap, t-SNE hay UMAP thực chất là nỗ lực xây dựng lại các **bản đồ tọa độ (charts)** và bảo toàn quan hệ lân cận tô-pô của đa tạp ẩn đó.
+
+### 2. Học sâu Hình học (Geometric Deep Learning — Khung 5G)
+Bronstein và cộng sự (2021–2026) thống nhất gần như toàn bộ kiến trúc mạng nơ-ron hiện đại qua năm đối tượng hình học: **Grids** (CNN trên lưới ảnh), **Groups** (mạng đẳng biến theo nhóm đối xứng), **Graphs** (GNN trên đồ thị), **Geodesics** (mạng trên bề mặt 3D), và **Gauges** (chọn hệ trục cục bộ trên không gian tiếp tuyến).
+
+### 3. Hình học Thông tin (Information Geometry) và Metric Fisher–Rao
+Khi tối ưu hóa một mô hình xác suất $$p_\theta$$, mỗi bộ tham số $$\theta$$ là một điểm trên một **đa tạp thống kê**. Nhưng hai phân bố chuẩn $$\mathcal{N}(0, 0.01^2)$$ và $$\mathcal{N}(1, 0.01^2)$$ hầu như không chồng lấp (rất xa nhau), trong khi $$\mathcal{N}(0, 100^2)$$ và $$\mathcal{N}(1, 100^2)$$ gần như y hệt nhau — dù khoảng cách Euclid $$\Delta\mu = 1$$ là như nhau! **Metric Fisher–Rao** sửa lại thước đo đó để phản ánh khoảng cách thống kê thực sự, sinh ra **gradient tự nhiên** (natural gradient).
+
+---
 
 ## Giải thích trực quan
 
@@ -22,7 +39,7 @@ Hãy hình dung một cuộn giấy Swiss roll: một dải mặt phẳng hai ch
 
 Whiteley, Gray và Rubin-Delanchy (bản thảo 2022, sau đó hoàn thiện và thảo luận trên tạp chí JRSS-B vào giữa thập niên 2020) chỉ ra rằng cấu trúc đa tạp có thể phát sinh tự nhiên từ một mô hình thống kê đơn giản: các trường ngẫu nhiên xác định trên một không gian biến ẩn cộng thêm nhiễu. Nói cách khác, không nhất thiết phải giả định sẵn một đa tạp trừu tượng nào đó; bản thân cấu trúc tương quan và các biến ẩn đã đủ khiến các điểm dữ liệu tập trung quanh một hình dạng trơn. Khi đó, các công cụ tô-pô và giải tích đa biến phát huy tác dụng: PCA, đồ thị láng giềng gần nhất và các thuật toán trên đồ thị đều là những phương pháp xấp xỉ để đọc lại hình dạng cục bộ và toàn cục ấy.
 
-Song song với hướng thống kê, Bronstein, Bruna, Cohen và Veličković đề xuất khung nhìn "năm chữ G" — Grids (lưới), Groups (nhóm), Graphs (đồ thị), Geodesics (trắc địa), Gauges (chuẩn) — để hệ thống hóa nhiều kiến trúc học sâu dưới góc độ rời rạc hóa các đối tượng hình học. Trong khung này, lưới tương ứng với không gian Euclid có hệ tọa độ, nhóm biểu diễn đối xứng, đồ thị mô tả quan hệ, trắc địa là đường ngắn nhất cục bộ, còn chuẩn (gauge) cung cấp cách so sánh các không gian tiếp tuyến tại các điểm khác nhau. Chương 0 chưa định nghĩa đầy đủ mọi khái niệm đó, nhưng đã cung cấp ngôn ngữ nền tảng để tiếp cận chúng.
+Song song với hướng thống kê, Bronstein, Bruna, Cohen và Veličković đề xuất khung nhìn "năm chữ G" — Grids (lưới), Groups (nhóm), Graphs (đồ thị), Geodesics (trắc địa), Gauges (chuẩn) — để hệ thống hóa nhiều kiến trúc học sâu dưới góc độ rời rạc hóa các đối tượng hình học. Trong khung này, lưới tương ứng với không gian Euclid có hệ tọa độ, nhóm biểu diễn đối xứng, đồ thị mô tả quan hệ, trắc địa là đường ngắn nhất cục bộ, còn chuẩn (gauge) cung cấp cách so sánh các không gian tiếp tuyến tại các điểm khác nhau.
 
 Ở góc độ thống kê, hình học thông tin xem một họ các phân bố xác suất như một đa tạp. Metric Fisher–Rao đo mức độ thay đổi giữa các tham số theo nghĩa thống kê thay vì theo khoảng cách Euclid trên không gian tham số $$(\mu,\sigma)$$. Gradient tự nhiên (natural gradient) chính là gradient được xác định theo metric ấy: cùng một nguyên tắc "không trừ trực tiếp hai vector ở các hệ thước đo khác nhau mà bỏ qua metric", chỉ khác là mỗi điểm trên đa tạp lúc này đại diện cho một phân bố xác suất.
 
@@ -55,7 +72,48 @@ $$
 tức là chuyển từ covector vi phân sang vector bằng cách nhân với nghịch đảo của metric thống kê.
 </div>
 
-Ngay cả khi chưa học sâu về hình học Riemann, ta vẫn có thể hiểu ý nghĩa của công thức trên qua Đại số Tuyến tính: $$g$$ đóng vai trò thay đổi thước đo tương tự phép đổi cơ sở, còn $$g^{-1}\nabla L$$ là biểu diễn vector tương ứng của cùng một covector trong thước đo ấy.
+---
+
+## Khung giải thích: tự tay tính khoảng cách trên Swiss roll và metric Fisher–Rao (nên đọc chậm)
+
+Để thấy sức mạnh thực sự của hình học dữ liệu và hình học thông tin, hãy tự tay kiểm tra hai ví dụ cụ thể:
+
+### Ví dụ cầm tay 1: Khoảng cách Euclid "đánh lừa" ra sao trên Swiss roll?
+Xét cuộn Swiss roll tham số hóa bởi $$\iota(u, v) = (u\cos u,\ v,\ u\sin u)$$ tại cùng lát cắt $$v = 0$$. So sánh hai điểm nằm trên hai lớp cuộn kề nhau:
+- Điểm $$A$$ tại $$u_1 = \pi/2 \approx 1.57$$: $$\iota(A) = (0,\ 0,\ \pi/2)$$.
+- Điểm $$B$$ tại $$u_2 = 5\pi/2 \approx 7.85$$: $$\iota(B) = (0,\ 0,\ 5\pi/2)$$.
+
+1. **Khoảng cách Euclid trong $$\mathbb{R}^3$$ (đâm xuyên qua không khí giữa hai lớp giấy):**
+   $$
+   d_{\mathbb{R}^3}(A, B) = \frac{5\pi}{2} - \frac{\pi}{2} = 2\pi \approx \mathbf{6.28}.
+   $$
+2. **Khoảng cách nội tại dọc theo mặt giấy:** Với $$\gamma(u) = (u\cos u, 0, u\sin u)$$, ta có $$\|\gamma'(u)\| = \sqrt{1 + u^2} > u$$. Do đó quãng đường thực đi trên mặt giấy từ $$u_1 = \pi/2$$ đến $$u_2 = 5\pi/2$$ lớn hơn hẳn:
+   $$
+   d_M(A, B) = \int_{\pi/2}^{5\pi/2} \sqrt{1 + u^2}\,du \;>\; \int_{\pi/2}^{5\pi/2} u\,du \;=\; \frac{1}{2}\left(\frac{25\pi^2}{4} - \frac{\pi^2}{4}\right) = 3\pi^2 \approx \mathbf{29.61}!
+   $$
+Khoảng cách nội tại lớn gần **gấp 5 lần** khoảng cách Euclid! Nếu thuật toán phân cụm chỉ dùng khoảng cách Euclid, nó sẽ gom nhầm $$A$$ và $$B$$ vào cùng một cụm dù chúng nằm cách xa nhau gần 30 đơn vị trên đa tạp.
+
+### Ví dụ cầm tay 2: Metric Fisher–Rao của phân bố chuẩn 1D chính là mặt phẳng Hyperbolic!
+Xét họ phân bố chuẩn $$p_{\mu,\sigma}(x) = \frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$ với $$\theta = (\mu, \sigma)$$. Lấy logarit:
+$$
+\log p_{\mu,\sigma}(x) = -\log(\sqrt{2\pi}) - \log\sigma - \frac{(x-\mu)^2}{2\sigma^2}.
+$$
+Đạo hàm theo $$\mu$$ và $$\sigma$$:
+$$
+\frac{\partial \log p}{\partial \mu} = \frac{x - \mu}{\sigma^2}, \qquad \frac{\partial \log p}{\partial \sigma} = -\frac{1}{\sigma} + \frac{(x-\mu)^2}{\sigma^3}.
+$$
+Lấy kỳ vọng (nhớ rằng $$\mathbb{E}[(X-\mu)^2] = \sigma^2$$, $$\mathbb{E}[(X-\mu)^3] = 0$$, $$\mathbb{E}[(X-\mu)^4] = 3\sigma^4$$):
+- $$g_{\mu\mu} = \mathbb{E}\left[\frac{(X-\mu)^2}{\sigma^4}\right] = \frac{\sigma^2}{\sigma^4} = \mathbf{\frac{1}{\sigma^2}}$$.
+- $$g_{\mu\sigma} = 0$$ (do tính đối xứng bậc 3 bằng 0).
+- $$g_{\sigma\sigma} = \mathbb{E}\left[\frac{1}{\sigma^2} - \frac{2(X-\mu)^2}{\sigma^4} + \frac{(X-\mu)^4}{\sigma^6}\right] = \frac{1 - 2 + 3}{\sigma^2} = \mathbf{\frac{2}{\sigma^2}}$$.
+
+Vậy metric Fisher–Rao của phân bố chuẩn là:
+$$
+ds^2 \;=\; \frac{d\mu^2 + 2\,d\sigma^2}{\sigma^2}!
+$$
+Nhìn vào mẫu số $$\sigma^2$$: khi $$\sigma$$ càng nhỏ (phân bố càng nhọn), cùng một bước dịch $$d\mu$$ tạo ra khoảng cách thống kê $$d\mu/\sigma$$ càng **khổng lồ** — và hình học của nửa mặt phẳng $$(\mu, \sigma > 0)$$ với metric này chính là **hình học Hyperbolic** (mặt phẳng Poincaré có độ cong âm không đổi)!
+
+---
 
 ## Minh họa hình học
 

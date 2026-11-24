@@ -7,16 +7,35 @@ order: 2
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Tại sao Covector quan trọng?
+## 1. Lời mở đầu: Tại sao "gradient" không phải lúc nào cũng là một vector?
 
-Covector (hay 1-dạng — 1-form) là một khái niệm tương đối trừu tượng nhưng đóng vai trò nền tảng trong hình học vi phân hiện đại. Hiểu rõ covector là điều kiện cần để tiếp cận các chủ đề sau:
+Hầu hết sinh viên đại học đều lớn lên với thói quen đồng nhất vi phân $$df$$ với vector gradient $$\nabla f = (\partial f/\partial x, \partial f/\partial y)$$ — bởi trong hệ tọa độ Descartes vuông góc chuẩn, hai thứ ấy có chung một bộ tọa độ! Thế nhưng ngay khi bạn bước sang một hệ tọa độ cong (như tọa độ cực) hay một không gian cong (như bề mặt Trái Đất hay không-thời gian), hai đối tượng đó lập tức **tách rời nhau**: một thứ chỉ cần cấu trúc trơn là định nghĩa được (**covector** $$df$$), còn thứ kia bắt buộc phải có thước đo khoảng cách (**metric** $$g$$) mới dựng lên được (**vector** $$\nabla f$$).
+
+Hiểu rõ **covector** (hay 1-dạng — 1-form) mở khóa đồng loạt năm cánh cửa lớn của hình học vi phân và vật lý lý thuyết:
 - Vi phân của hàm số ($$df$$)
 - Phân thớ đối tiếp tuyến (cotangent bundle, $$T^*M$$)
 - Dạng vi phân (differential forms, $$dx, dy, dz$$)
 - Hình học symplectic
 - Cơ học Hamilton
 
-Bài giảng này trình bày covector từ định nghĩa hình thức đến các cách diễn giải hình học và giải tích tương ứng.
+**Mạch bài học:** Bản đồ kiến thức nền (không gian đối ngẫu $$V^*$$, phân thớ đối tiếp tuyến $$T^*M$$, hình học symplectic) → Ba cách nhìn về covector → Cơ sở đối ngẫu và quy tắc biến đổi hiệp biến/phản biến → Vi phân vs. Gradient → Khung giải thích chậm: tự tay tính $$df$$ và $$\nabla f$$ trong tọa độ cực tại $$(r, \theta) = (2, 0)$$ → Ứng dụng và Bài tập thực hành.
+
+---
+
+## Bản đồ kiến thức nền: Không gian Đối ngẫu, Phân thớ $$T^*M$$ và Hình học Symplectic là gì?
+
+Để nhìn rõ vị trí của covector trên bản đồ toán học và vật lý hiện đại, hãy nắm ba trụ cột sau:
+
+### 1. Không gian Đối ngẫu ($$V^*$$) — Thế giới của các phép đo tuyến tính
+Mọi không gian vector $$V$$ đều có một "bản sao soi gương" gọi là **không gian đối ngẫu $$V^*$$**, gồm mọi phiếm hàm tuyến tính $$\alpha: V \to \mathbb{R}$$. Điểm tinh tế bậc nhất: ta có thể đo một vector bằng một covector ($$\alpha(\mathbf{v}) \in \mathbb{R}$$) mà **không hề cần đến tích vô hướng hay góc vuông**! Chỉ khi có thêm tensor metric $$g$$, ta mới ghép đôi tự nhiên được vector với covector (phép *nâng–hạ chỉ số* trong đại số tensor).
+
+### 2. Phân thớ Đối tiếp tuyến ($$T^*M$$) — Không gian pha của Cơ học Hamilton
+Khi gắn không gian đối ngẫu $$T_p^*M$$ lên từng điểm $$p$$ của một đa tạp $$M$$, ta thu được **phân thớ đối tiếp tuyến $$T^*M$$**. Trong vật lý cổ điển, nếu đa tạp $$M$$ là không gian vị trí $$q^i$$ của một hệ cơ học, thì vận tốc $$\dot{q}^i$$ sống trong $$TM$$, còn **động lượng tổng quát $$p_i = \partial L / \partial \dot{q}^i$$** sống chính xác trong $$T^*M$$! Chính vì thế động lượng là một *covector*, còn vận tốc là một *vector*.
+
+### 3. Dạng vi phân và Hình học Symplectic
+Trên đa tạp $$M$$, một trường covector trơn gọi là **1-dạng** (thứ ta tích phân dọc theo đường cong: $$\int_\gamma \omega$$). Tổng quát lên $$k$$-dạng cho phép định nghĩa phép tích phân không phụ thuộc tọa độ và Định lý Stokes tổng quát. Riêng trên không gian pha $$T^*M$$, 2-dạng tự nhiên $$\omega = dp_i \wedge dq^i$$ khai sinh **Hình học Symplectic** — ngôn ngữ bảo toàn thể tích pha (Định lý Liouville) của cơ học Hamilton và lượng tử hóa hình học.
+
+---
 
 ## 2. Ba cách nhìn về Covector
 
@@ -138,14 +157,37 @@ $$ \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}
 
 Trong không gian cong hoặc trong hệ tọa độ cong, hai đối tượng này không có cùng biểu thức tọa độ; chính metric $$g$$ quyết định phép chuyển đổi giữa chúng.
 
-### 5.2. Ví dụ: Tọa độ cực
+### 5.2. Khung giải thích: tự tay so sánh $$df$$ và $$\nabla f$$ trong tọa độ cực (nên đọc chậm)
 
-Trong tọa độ cực $$(r, \theta)$$ với cơ sở tọa độ $$\mathbf{e}_r, \mathbf{e}_\theta$$:
-- Metric: $$ds^2 = dr^2 + r^2 d\theta^2$$.
-- Vi phân của hàm $$f$$: $$df = \frac{\partial f}{\partial r} dr + \frac{\partial f}{\partial \theta} d\theta$$ (covector).
-- Gradient: $$\nabla f = \frac{\partial f}{\partial r} \mathbf{e}_r + \frac{1}{r^2} \frac{\partial f}{\partial \theta} \mathbf{e}_\theta$$ (vector).
+Hãy tính trực tiếp bằng tay để thấy vì sao tọa độ của $$df$$ và $$\nabla f$$ **khác nhau rõ rệt** trong tọa độ cực $$(r, \theta)$$!
 
-Hệ số $$1/r^2$$ xuất hiện là do thành phần nghịch đảo của metric là $$g^{\theta\theta} = 1/r^2$$.
+Xét hàm số cụ thể $$f(r, \theta) = r^2 + 4\theta$$ tại điểm $$p$$ có tọa độ $$(r, \theta) = (2, 0)$$.
+1. **Metric và nghịch đảo của nó tại $$r = 2$$:**
+   Vì $$ds^2 = dr^2 + r^2 d\theta^2$$, ma trận metric và nghịch đảo tại $$r = 2$$ là:
+   $$
+   g = \begin{pmatrix} 1 & 0 \\ 0 & r^2 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}, \qquad g^{-1} = \begin{pmatrix} 1 & 0 \\ 0 & 1/4 \end{pmatrix}.
+   $$
+2. **Tính covector vi phân $$df$$ (không cần metric!):**
+   $$
+   \frac{\partial f}{\partial r} = 2r = 4, \qquad \frac{\partial f}{\partial \theta} = 4 \implies df_p = 4\,dr + 4\,d\theta.
+   $$
+   Tọa độ hiệp biến của $$df$$ là $$(4, 4)$$.
+3. **Tính vector gradient $$\nabla f$$ (phải nhân với $$g^{-1}$$ để nâng chỉ số):**
+   $$
+   (\nabla f)^r = g^{rr} \frac{\partial f}{\partial r} = 1 \cdot 4 = 4, \qquad (\nabla f)^\theta = g^{\theta\theta} \frac{\partial f}{\partial \theta} = \frac{1}{4} \cdot 4 = 1.
+   $$
+   Vậy $$\nabla f_p = 4\,\mathbf{e}_r + \mathbf{e}_\theta$$ — tọa độ phản biến là $$(4, 1)$$, **khác hẳn** $$(4, 4)$$!
+4. **Kiểm tra khớp nối trên một vector thử $$\mathbf{v} = \mathbf{e}_r + \mathbf{e}_\theta$$ (tức $$v^r = 1, v^\theta = 1$$):**
+   - Dùng covector $$df$$ (không cần metric):
+     $$
+     df_p(\mathbf{v}) = 4(1) + 4(1) = \mathbf{8}.
+     $$
+   - Dùng tích vô hướng $$g(\nabla f_p, \mathbf{v})$$:
+     $$
+     g(\nabla f_p, \mathbf{v}) = g_{rr} (\nabla f)^r v^r + g_{\theta\theta} (\nabla f)^\theta v^\theta = 1(4)(1) + 4(1)(1) = 4 + 4 = \mathbf{8}!
+     $$
+
+Nếu bạn nhầm lẫn bỏ quên hệ số $$g^{\theta\theta} = 1/r^2$$ mà lấy $$\nabla f = (4, 4)$$, tích vô hướng sẽ vọt lên thành $$1(4)(1) + 4(4)(1) = 20 \neq 8$$ — sai ngay lập tức! Chính phép kiểm tra tay này cho thấy vai trò sống còn của sự phân biệt vector và covector.
 
 ## 6. Ứng dụng trong Hình học Vi phân
 

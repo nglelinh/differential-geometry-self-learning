@@ -7,15 +7,32 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
+Cầm một cuốn sách trên bàn rồi thử hai thao tác: đầu tiên xoay cuốn sách $$90^\circ$$ quanh trục ngang (hướng mặt về phía bạn), sau đó xoay $$90^\circ$$ quanh trục thẳng đứng. Bây giờ đặt lại như cũ và làm **ngược thứ tự**: xoay trục thẳng đứng trước, rồi mới xoay trục ngang. Cuốn sách rơi vào hai tư thế khác hẳn nhau! Tập hợp tất cả các phép xoay 3D ấy ($$SO(3)$$) không chỉ là một nhóm đại số không giao hoán — nó còn là một **đa tạp trơn cong 3 chiều**, nơi ta có thể xoay liên tục từng phần nghìn độ một!
+
+Vào cuối thế kỷ 19, nhà toán học Na Uy **Sophus Lie** đã phát hiện một bí mật làm chấn động cả đại số lẫn hình học: thay vì đánh vật trực tiếp với đa tạp cong phi tuyến $$G$$ (**Nhóm Lie**), ta chỉ cần nhìn sát vào **mặt phẳng tiếp tuyến tại đúng một điểm duy nhất** — phần tử đơn vị $$e$$ (**Đại số Lie** $$\mathfrak{g}$$)! Bằng một phép toán song tuyến tính đơn giản mang tên **dấu ngoặc Lie** $$[X, Y] = XY - YX$$ và cầu nối **ánh xạ mũ** $$\exp$$, không gian phẳng nhỏ bé ấy mã hóa gần như trọn vẹn cấu trúc của cả nhóm đối xứng khổng lồ!
+
+**Mạch bài học:** Bản đồ kiến thức nền (cuộc hôn nhân Đại số + Đa tạp, Đại số Lie, Ánh xạ mũ & Định lý Noether) → Trực giác đối xứng liên tục, tuyến tính hóa và thí nghiệm cuốn sách → Định nghĩa hình thức → Ví dụ tính tay cầm tay chỉ việc: tính móc Lie $$[L_x, L_y] = L_z$$ của $$\mathfrak{so}(3)$$ và khai triển $$\exp(\theta L_z)$$ ra đúng ma trận quay $$R_z(\theta)$$ → Khung giải thích chậm: 4 bước nối Đại số Lie phẳng với Nhóm Lie cong (và phân biệt $$SU(2)$$ vs. $$SO(3)$$) → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Lý thuyết Nhóm Lie và Đại số Lie nghiên cứu gì?
+
+### 1. Cuộc hôn nhân giữa Nhóm đại số và Đa tạp trơn
+Trong toán học, **nhóm** mô tả đối xứng (có phép hợp và nghịch đảo), còn **đa tạp trơn** mô tả không gian cong khả vi. **Nhóm Lie** ghép cả hai lại làm một: phép nhân $$(g, h) \mapsto gh$$ và phép nghịch đảo $$g \mapsto g^{-1}$$ đều là ánh xạ trơn! Nhờ đó ta vừa có thể nhân các phép biến đổi, vừa có thể lấy đạo hàm vận tốc của chúng.
+
+### 2. Đại số Lie $$\mathfrak{g} = T_e G$$ — "bộ điều khiển vận tốc" của nhóm
+Tại phần tử đơn vị $$e \in G$$, không gian tiếp tuyến $$\mathfrak{g} = T_e G$$ là một **không gian vector phẳng** chứa các phép biến đổi vô cùng nhỏ (như vận tốc góc trong $$\mathfrak{so}(3)$$). Tuy mất đi phép nhân nhóm phi tuyến, $$\mathfrak{g}$$ giữ lại đúng phần "sai khác không giao hoán" thông qua **dấu ngoặc Lie** $$[X, Y]$$ thỏa tính phản đối xứng và đồng nhất thức Jacobi.
+
+### 3. Cầu nối Ánh xạ mũ $$\exp : \mathfrak{g} \to G$$ và sức mạnh trong Vật lý–Kỹ thuật
+Ánh xạ mũ biến một vận tốc không đổi $$X \in \mathfrak{g}$$ thành phép biến đổi hữu hạn $$\exp(tX) \in G$$. Trong vật lý, Định lý Noether gắn mỗi chiều của đại số Lie đối xứng với một **định luật bảo toàn** (đối xứng quay $$SO(3) \leftrightarrow$$ bảo toàn mô-men động lượng); trong robot và SLAM, tối ưu trên $$\mathfrak{se}(3)$$ giúp tránh hoàn toàn hiện tượng khóa khớp (*gimbal lock*)!
+
+---
+
 ## Tổng quan
 
 Trong toán học và vật lý, khái niệm *đối xứng* giữ vai trò trung tâm. Một mặt cầu có đối xứng quay: quay quanh tâm theo bất kỳ hướng nào, hình dạng của nó vẫn giữ nguyên. Một không gian phẳng có đối xứng tịnh tiến. Để mô tả các phép biến đổi liên tục bảo toàn cấu trúc hình học này, ta cần một đối tượng vừa có cấu trúc đa tạp trơn (liên tục, khả vi), vừa có cấu trúc nhóm đại số (có phép nhân và phép nghịch đảo). Đối tượng đó là *Nhóm Lie*.
 
-Nhóm Lie (đặt theo tên nhà toán học Sophus Lie) là đa tạp trơn mà trên đó phép nhân nhóm và phép lấy nghịch đảo là các ánh xạ trơn. Những ví dụ quen thuộc gồm nhóm ma trận quay $$SO(3)$$ hay nhóm biến đổi Lorentz trong thuyết tương đối.
-
-Một đặc điểm quan trọng của nhóm Lie là ta có thể nghiên cứu cấu trúc toàn cục phi tuyến của nó thông qua một không gian vector tuyến tính đơn giản hơn gọi là *Đại số Lie* (Lie Algebra). Cầu nối giữa nhóm Lie (toàn cục, cong) và đại số Lie (cục bộ, phẳng) chính là *Ánh xạ mũ* (Exponential map).
-
-Bài giảng này trình bày các khái niệm cơ bản về nhóm Lie, đại số Lie và trường vector bất biến trái, đặt nền tảng cho lý thuyết đối xứng hiện đại.
+Nhóm Lie (đặt theo tên nhà toán học Sophus Lie) là đa tạp trơn mà trên đó phép nhân nhóm và phép lấy nghịch đảo là các ánh xạ trơn. Những ví dụ quen thuộc gồm nhóm ma trận quay $$SO(3)$$ hay nhóm biến đổi Lorentz trong thuyết tương đối. Một đặc điểm quan trọng của nhóm Lie là ta có thể nghiên cứu cấu trúc toàn cục phi tuyến của nó thông qua *Đại số Lie* (Lie Algebra) thông qua *Ánh xạ mũ* (Exponential map). Bài giảng này trình bày các khái niệm cơ bản về nhóm Lie, đại số Lie và trường vector bất biến trái, đặt nền tảng cho lý thuyết đối xứng hiện đại.
 
 ## 2. Giải thích Trực quan
 
@@ -112,6 +129,64 @@ $$
 $$
 trong đó $$\gamma_X(t)$$ là đường tích phân (integral curve) xuất phát từ phần tử đơn vị $$e$$ của trường vector bất biến trái sinh bởi $$X$$. Với nhóm ma trận, ánh xạ này trùng với chuỗi lũy thừa hàm mũ ma trận.
 </div>
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: Móc Lie của $$\mathfrak{so}(3)$$ và Ánh xạ mũ ra ma trận quay $$R_z(\theta)$$
+
+Ba ma trận cơ sở của đại số Lie $$\mathfrak{so}(3)$$ (ứng với vận tốc quay quanh trục $$x, y, z$$) là:
+
+$$
+L_x = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}, \qquad
+L_y = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0 \end{pmatrix}, \qquad
+L_z = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}.
+$$
+
+1. **Tự tính móc Lie $$[L_x, L_y] = L_x L_y - L_y L_x$$:**
+   $$
+   L_x L_y = \begin{pmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \qquad
+   L_y L_x = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+   \;\Longrightarrow\;
+   [L_x, L_y] = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} = L_z!
+   $$
+   Móc Lie của $$\mathfrak{so}(3)$$ tái hiện chính xác quy tắc tích có hướng $$\mathbf{i} \times \mathbf{j} = \mathbf{k}$$!
+
+2. **Tự tính ánh xạ mũ $$\exp(\theta L_z)$$ bằng chuỗi lũy thừa:**
+   Nhân trực tiếp ta thấy $$L_z^2 = \mathrm{diag}(-1, -1, 0)$$, $$L_z^3 = -L_z$$, $$L_z^4 = -L_z^2$$, cứ thế lặp tuần hoàn! Tách các số hạng bậc chẵn và bậc lẻ của chuỗi $$\sum_{k=0}^\infty \frac{\theta^k}{k!}L_z^k$$:
+   $$
+   \exp(\theta L_z) = I + \underbrace{\left(\theta - \frac{\theta^3}{3!} + \cdots\right)}_{\sin\theta} L_z + \underbrace{\left(\frac{\theta^2}{2!} - \frac{\theta^4}{4!} + \cdots\right)}_{1 - \cos\theta} L_z^2 = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}!
+   $$
+   Chỉ từ một ma trận phản đối xứng phẳng $$L_z$$, hàm mũ ma trận tự động "cuộn" nó thành đúng ma trận quay $$R_z(\theta) \in SO(3)$$ (công thức Rodrigues)!
+
+---
+
+### Khung giải thích: Vì sao Đại số Lie phẳng kiểm soát Nhóm Lie cong — và đâu là giới hạn? (nên đọc chậm)
+
+#### Bước 1: Lấy đạo hàm đường cong qua đơn vị để tìm phương trình của $$\mathfrak{g}$$
+Với mọi đường cong ma trận $$R(t) \in SO(n)$$ thỏa $$R(0) = I$$ và $$R(t)^T R(t) = I$$, lấy đạo hàm hai vế tại $$t = 0$$ cho ngay: $$R'(0)^T + R'(0) = 0$$ — tức mọi vector tiếp tuyến $$X = R'(0)$$ bắt buộc phải là **ma trận phản đối xứng** ($$X^T = -X$$)! Một ràng buộc bậc hai cong phức tạp lập tức biến thành hệ phương trình tuyến tính đơn giản!
+
+#### Bước 2: Công thức Baker–Campbell–Hausdorff (BCH) — khôi phục phép nhân nhóm chỉ từ dấu ngoặc Lie!
+Khi nhân hai phép biến đổi gần đơn vị $$\exp(X)\exp(Y)$$, kết quả không bằng $$\exp(X+Y)$$ nếu $$X, Y$$ không giao hoán, mà tuân theo công thức BCH:
+$$
+\exp(X)\exp(Y) = \exp\!\left(X + Y + \frac{1}{2}[X, Y] + \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]] + \cdots\right).
+$$
+Mọi số hạng hiệu chỉnh bậc cao đều chỉ viết bằng **dấu ngoặc Lie lồng nhau**! Nghĩa là gần đơn vị, toàn bộ bảng nhân của nhóm Lie $$G$$ được mã hóa trọn vẹn trong $$[\cdot, \cdot]$$!
+
+#### Bước 3: Điều gì mà Đại số Lie KHÔNG thấy được? Tôpô toàn cục!
+Hai nhóm Lie có thể có **đại số Lie đẳng cấu hệt nhau** nhưng **tôpô toàn cục khác nhau**! Ví dụ kinh điển nhất trong vật lý lượng tử là $$\mathfrak{su}(2) \cong \mathfrak{so}(3)$$ (cả hai đều 3 chiều với cùng bảng móc Lie): nhưng $$SU(2)$$ là mặt cầu 3 chiều $$S^3$$ (đơn liên), còn $$SO(3) \cong S^3 / \{\pm 1\}$$ là không gian xạ ảnh $$\mathbb{RP}^3$$ — khiến một hạt spin-$$1/2$$ (electron) phải quay trọn **$$720^\circ$$** mới trở về đúng trạng thái ban đầu!
+
+#### Bước 4: Định lý Lie thứ ba — phân loại mọi đối xứng liên tục
+Nhờ cầu nối Nhóm $$\leftrightarrow$$ Đại số, việc phân loại mọi nhóm Lie đơn compact (những khối gạch cơ bản của vật lý hạt và hình học) quy về bài toán đại số tuyến tính phân loại đại số Lie đơn của Killing và Cartan (4 họ cổ điển $$A_n, B_n, C_n, D_n$$ cùng 5 ngoại lệ $$G_2, F_4, E_6, E_7, E_8$$)!
+
+Tóm tắt từ điển Nhóm Lie – Đại số Lie:
+
+$$
+\text{Nhóm Lie cong } G
+\;\xrightleftharpoons[\text{Ánh xạ mũ } \exp\ \&\ \text{BCH}]{\text{Đạo hàm tại } e}\;
+\text{Đại số Lie phẳng } (\mathfrak{g}, [\cdot,\cdot])
+\;\xrightarrow{\text{Tôpô phủ}}\;
+SU(2) \xrightarrow{2:1} SO(3).
+$$
 
 ## Hình ảnh minh họa
 

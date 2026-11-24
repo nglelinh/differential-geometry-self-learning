@@ -10,9 +10,26 @@ lesson_type: optional
 
 ## Tổng quan
 
-Các bài học chính của chương này đã trình bày đường cong như quỹ đạo của một hạt và xây dựng hệ quy chiếu chuyển động tại mỗi điểm gồm vector tiếp tuyến, pháp tuyến chính và phụ pháp tuyến. Độ cong $$\kappa$$ đo tốc độ đổi hướng của tiếp tuyến, còn độ xoắn $$\tau$$ đo tốc độ đường cong rời khỏi mặt phẳng mật tiếp (osculating plane). Bài đọc thêm này giữ nguyên phần lý thuyết đó và khảo sát cách các khái niệm Frenet–Serret được ứng dụng trong điều khiển robot và thị giác máy tính trong giai đoạn 2022–2026.
+Nếu bạn lập trình cho một chiếc xe tự lái hay cánh tay robot đi theo "đường ngắn nhất" nối hai điểm, chiếc xe có thể nhận lệnh bẻ ngoặt $$90^\circ$$ ngay tại chỗ — điều hoàn toàn bất khả thi với bánh xe có bán kính quay tối thiểu hay khớp cơ khí có giới hạn mô-men xoắn! Từ những bài học chính về hệ khung Frenet $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$, độ cong $$\kappa$$ và độ xoắn $$\tau$$, bài đọc thêm này dẫn bạn vào thẳng phòng thí nghiệm robotics và thị giác y khoa giai đoạn 2022–2026, nơi **Geometric Fabrics** (Van Wyk, Ratliff và cộng sự, RA-L / ICRA 2022) dùng chính hình học vi phân đường cong để thiết kế luật điều khiển mượt và ổn định.
 
-Trong thực tế, một cánh tay robot không chỉ cần một đường đi ngắn trong không gian cấu hình, mà cần một cơ chế điều khiển động lực học cho phép uốn quỹ đạo sao cho chuyển động vừa mượt theo nghĩa hình học, vừa tránh vật cản và đảm bảo tính ổn định. Khung lý thuyết *Geometric Fabrics* (Van Wyk, Ratliff và cộng sự, RA-L / ICRA 2022) phát triển cơ học cổ điển theo hướng này, trong đó hệ Frenet đóng vai trò ngôn ngữ mô tả gia tốc, giới hạn độ cong cho phép và định hướng khớp dọc theo quỹ đạo.
+**Mạch bài học:** Bản đồ kiến thức nền (quy hoạch có ràng buộc độ cong, không gian cấu hình & hình học Finsler, đường tâm y khoa) → Trực giác điều khiển robot và Geometric Fabrics → Định nghĩa hình thức → Khung giải thích chậm: tự tay kiểm tra giới hạn độ cong $$\kappa \le 1/R_{\min}$$ và gia tốc hướng tâm $$a_n = v^2\kappa$$ trên hai quỹ đạo parabol → Ứng dụng và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hình học Đường cong bước vào Robotics và Thị giác 3D như thế nào?
+
+Để người tốt nghiệp đại học kết nối ngay công thức Frenet–Serret với bài báo kỹ thuật hiện đại, hãy nắm ba trụ cột sau:
+
+### 1. Quy hoạch chuyển động có ràng buộc độ cong (Kinodynamic Planning)
+Một chiếc ô tô có góc đánh lái tối đa tương ứng với bán kính quay nhỏ nhất $$R_{\min}$$ không thể chạy theo bất kỳ đường cong nào có $$\kappa(s) > 1/R_{\min}$$. Vì gia tốc hướng tâm bằng $$a_n = v^2 \kappa$$, kiểm soát độ cong $$\kappa$$ và đạo hàm $$\kappa'(s)$$ (độ giật — *jerk*) là bài toán sống còn để xe không trượt bánh và cánh tay robot không rung lắc.
+
+### 2. Đa tạp cấu hình ($$Q$$) và Hình học Finsler (Geometric Fabrics)
+Một cánh tay robot 7 khớp không sống trong $$\mathbb{R}^3$$ mà sống trên **đa tạp cấu hình 7 chiều $$Q$$** (mỗi điểm là một bộ 7 góc khớp). Trong khi hình học Riemann dùng thước đo chỉ phụ thuộc vị trí $$g(q)$$, **Geometric Fabrics** mở rộng sang **hình học Finsler** nơi thước đo phụ thuộc cả vào *vận tốc* $$\dot{q}$$ — cho phép uốn quỹ đạo tránh vật cản mà vẫn bảo toàn tính ổn định Lyapunov.
+
+### 3. Đường tâm (Centerline) trong Thị giác Y khoa
+Mạch máu, khí quản hay ruột non trên ảnh chụp CT 3D được trích xuất thành **đường cong tâm 3D** gắn hệ Frenet: $$\mathbf{T}$$ chạy dọc lòng mạch, $$\mathbf{N}$$ chỉ về phía thành mạch uốn gấp nhất (nơi ứng suất dòng máu cao nhất — yếu tố dự báo phình mạch!).
+
+---
 
 ## Giải thích trực quan
 
@@ -34,6 +51,30 @@ $$
 Trong điều khiển robot, bài toán thường không đặt trực tiếp trên đường cong trong $$\mathbb{R}^3$$ mà trên đa tạp cấu hình $$Q$$ (không gian các góc khớp). Một *chính sách chuyển động* gán cho mỗi trạng thái $$(q,\dot q)$$ một gia tốc $$\ddot q$$. Geometric Fabrics biểu diễn $$\ddot q$$ như chuyển động trong một hệ cơ học được "uốn" hình học: kết hợp năng lượng động học (metric Riemann hoặc Finsler) với các thành phần lực hình học sao cho hệ vẫn sở hữu một hàm Lyapunov đảm bảo ổn định.
 
 **Trực giác:** Độ cong $$\kappa$$ của quỹ đạo trong không gian tác vụ phản ánh mức độ "cua gấp" mà khâu cuối phải chịu, còn $$\tau$$ phản ánh mức độ xoay vặn. Một bộ điều khiển hiệu quả cần tuân thủ giới hạn độ cong $$\kappa$$ của phần cứng, tương tự cách thiết kế đường ray phải tuân thủ giới hạn gia tốc hướng tâm.
+
+---
+
+## Khung giải thích: tự tay kiểm tra giới hạn độ cong của robot trên hai quỹ đạo cụ thể (nên đọc chậm)
+
+Với đồ thị phẳng $$y = f(x)$$, công thức độ cong quen thuộc suy ra từ hệ Frenet là:
+$$
+\kappa(x) \;=\; \frac{\lvert f''(x)\rvert}{\bigl(1 + (f'(x))^2\bigr)^{3/2}}.
+$$
+
+Giả sử một robot di động có **bán kính quay tối thiểu** $$R_{\min} = 0.5\,\text{m}$$ (tức độ cong cực đại cho phép là $$\kappa_{\max} = \frac{1}{0.5} = \mathbf{2\,\text{m}^{-1}}$$) và chạy với tốc độ không đổi $$v = 2\,\text{m/s}$$. Hãy kiểm tra hai quỹ đạo tránh vật cản đi qua gốc $$(0, 0)$$:
+
+1. **Quỹ đạo 1:** Parabol thoải $$y = x^2$$.
+   - Đạo hàm: $$y' = 2x,\ y'' = 2$$.
+   - Tại đỉnh cua gấp nhất $$x = 0$$: $$y'(0) = 0 \implies \kappa(0) = \frac{2}{(1 + 0)^{3/2}} = \mathbf{2\,\text{m}^{-1}} \le \kappa_{\max}$$.
+   - Gia tốc hướng tâm tại $$x = 0$$: $$a_n = v^2 \kappa(0) = 2^2 \cdot 2 = \mathbf{8\,\text{m/s}^2}$$. Quỹ đạo này **khả thi** (chạm đúng ngưỡng thiết kế)!
+2. **Quỹ đạo 2:** Parabol hẹp $$y = 4x^2$$.
+   - Đạo hàm: $$y' = 8x,\ y'' = 8$$.
+   - Tại $$x = 0$$: $$\kappa(0) = \mathbf{8\,\text{m}^{-1}} > \kappa_{\max}$$ (bán kính cong chỉ còn $$R = 0.125\,\text{m}$$!).
+   - Gia tốc hướng tâm vọt lên $$a_n = 4 \cdot 8 = \mathbf{32\,\text{m/s}^2} > 3g$$ — robot không thể bẻ lái kịp và sẽ văng khỏi quỹ đạo!
+
+Chỉ bằng hai phép tính tay đơn giản, ta thấy rõ vì sao bộ điều khiển hiện đại phải đặt ràng buộc hình học trực tiếp lên $$\kappa(s)$$ thay vì chỉ tối ưu khoảng cách ngắn nhất.
+
+---
 
 ## Minh họa hình học
 

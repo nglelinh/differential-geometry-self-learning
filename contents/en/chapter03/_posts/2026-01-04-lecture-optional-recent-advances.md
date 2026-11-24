@@ -10,34 +10,140 @@ lesson_type: optional
 
 ## Overview
 
-The two fundamental forms are the measuring pair of a surface: the first keeps lengths, angles, and areas; the second keeps how the surface bends in the ambient space. Gaussian and mean curvature are born from that pair. This optional lesson does not recompute $$E,F,G$$ or $$e,f,g$$. It tells how, in 2022–2026, graphics and shape learning recovered those same objects under the names *Jacobian fields*, *intrinsic maps*, and *discrete curvature on meshes*.
+Pick up a flat sheet of paper. You can roll it effortlessly into a cylinder or twist it into a cone without tearing or stretching a single fiber—yet try wrapping that same flat sheet smoothly around a basketball, and it immediately crumples! Why?
 
-Neural Jacobian Fields (Aigerman, Gupta, Kim, Chaudhuri, Saito, Groueix, SIGGRAPH 2022) learn a field of matrices on a surface, project them onto the tangent spaces, and recover a map by a Poisson solve. That is work in the “intrinsic gradient domain” — a computational cousin of the first fundamental form. At the same time the discrete-geometry community continues to estimate Gaussian and mean curvature on triangle meshes, because every smoothing, segmentation, or registration algorithm needs to know in which sense the surface is bending.
+In Chapter 03, you met the two measuring ledgers behind that everyday miracle: the **First Fundamental Form $$\mathrm{I}$$** (which records intrinsic lengths, angles, and areas *inside* the surface) and the **Second Fundamental Form $$\mathrm{II}$$** (which records how the surface bends *out* into ambient 3D space). Together they produce the **principal curvatures** $$\kappa_1, \kappa_2$$, **Gaussian curvature** $$K = \kappa_1 \kappa_2$$, and **mean curvature** $$H = \tfrac{1}{2}(\kappa_1 + \kappa_2)$$.
+
+Between 2022 and 2026, computer graphics and 3D shape analysis rediscovered those exact classical objects in neural and discrete form. **Neural Jacobian Fields** (Aigerman et al., *SIGGRAPH 2022*) showed that instead of predicting raw 3D vertex positions (which easily tear or self-intersect), a neural network should predict a **tangential Jacobian field**—the differential $$dF$$ of a map—and recover the global surface deformation via a **Poisson solve**, respecting the First Fundamental Form intrinsically! Meanwhile, **discrete differential geometry** (angle defect for $$K$$, cotangent Laplacian for $$H$$) remains the engine behind mesh smoothing, UV unwrapping, and thin-shell engineering.
+
+---
+
+## Background Knowledge Map: Fundamental Forms Meet Discrete Meshes
+
+How do smooth derivatives on surfaces translate into triangle meshes and neural shape-matching networks? Three pillars bridge them.
+
+### 1. The First & Second Fundamental Forms: Two Ledgers of Geometry
+**What is it?**
+- **First Fundamental Form $$\mathrm{I} = E\,du^2 + 2F\,du\,dv + G\,dv^2$$:** The induced inner product on each tangent plane $$T_p M$$. It measures curve lengths, angles between intersecting curves, and surface area. A map preserving $$\mathrm{I}$$ is an **isometry** (bending without stretching).
+- **Second Fundamental Form $$\mathrm{II} = e\,du^2 + 2f\,du\,dv + g\,dv^2$$:** Measures how rapidly the unit normal $$\mathbf{n}$$ tilts as you move across the surface (the **shape operator** $$S = -d\mathbf{n}$$).
+
+**What does it study?**
+- **Principal curvatures $$\kappa_1, \kappa_2$$:** The maximum and minimum normal bending directions—the eigenvalues of $$\mathrm{I}^{-1}\mathrm{II}$$.
+- **Gaussian curvature $$K = \kappa_1\kappa_2$$ vs. Mean curvature $$H = \tfrac{1}{2}(\kappa_1+\kappa_2)$$:** $$K$$ distinguishes bowls ($$K>0$$), cylinders/planes ($$K=0$$), and saddles ($$K<0$$); $$H$$ governs soap films ($$H=0$$) and surface tension!
+
+### 2. Intrinsic Maps & Jacobian Fields (Gradient-Domain Geometry)
+**What is it?** Given a map $$F: M \to N$$ between two surfaces, its differential $$dF_p: T_p M \to T_{F(p)} N$$ is a $$2\times 2$$ (or $$3\times 2$$) **Jacobian matrix** telling you how infinitesimal triangles stretch and rotate.
+
+**What does it study?**
+- **Poisson reconstruction:** Because a predicted matrix field $$J(p)$$ on triangles might not fit together seamlessly on its own, solving the **Poisson equation** $$\Delta F = \operatorname{div}(J)$$ finds the closest globally consistent surface map $$F$$ whose differential matches $$J$$—yielding smooth, fold-free deformations even across completely different mesh triangulations!
+
+### 3. Discrete Curvature on Triangle Meshes
+**What is it?** On a polyhedral mesh, every triangle is flat—so all curvature is concentrated on the **vertices** (for $$K$$) and **edges** (for $$H$$)!
+
+**What does it study?**
+- **Angle defect:** Around any flat interior vertex, triangle angles sum to $$2\pi$$. Any shortage ($$2\pi - \sum \theta_i > 0$$) is positive discrete Gaussian curvature; any excess ($$2\pi - \sum \theta_i < 0$$) is negative saddle curvature!
+
+---
 
 ## Intuitive explanation
 
-Imagine two garments cut from the same cloth and worn on two different bodies. The threads (lengths in the surface) are nearly preserved; the folds (bending in space) change. The first form is the ledger of threads; the second is the ledger of folds. A good intrinsic map between two 3D meshes must honour the first ledger: it must not stretch the skin at will.
+Imagine two shirts cut from the exact same pattern and worn by two people in different poses. The threads inside the fabric (intrinsic lengths, $$\mathrm{I}$$) barely stretch, while the folds in 3D space (extrinsic bending, $$\mathrm{II}$$) change dramatically. Any good 3D registration or animation map between two poses must honor the **first ledger** ($$\mathrm{I}$$): bend the body naturally without rubbery stretching!
 
-Neural Jacobian Fields do not learn vertex positions directly. They learn, at each point, a matrix — a candidate for $$dF$$ of a map $$F$$ — and then find the nearest $$F$$ in the Poisson sense. You can hear multivariable calculus: the Jacobian is the best linear map, and on a surface one keeps only the tangential part. That the triangulation may differ across samples is the method’s strength: two shapes need not share a vertex set.
-
-Discrete curvature — angle defect for Gauss, a Laplace–Beltrami operator for the mean — is how a computer holds $$K$$ and $$H$$. Without it there is no mesh smoothing, no discrete mean-curvature flow in graphics, no wrinkle analysis on a digital face.
+**Neural Jacobian Fields** take this geometric lesson to heart. Rather than asking a neural network to output raw vertex coordinates $$(x_i, y_i, z_i)$$—which ignores mesh connectivity and breaks down when you remesh the surface—the network predicts a local linear transformation (Jacobian $$J_t$$) on each triangle, then integrates those local deformations globally via a Poisson solve. Because Jacobians live intrinsically on tangent planes, the trained network transfers seamlessly across meshes with completely different resolutions and triangulations.
 
 ![The sign of Gaussian curvature on model surfaces.](https://upload.wikimedia.org/wikipedia/commons/6/61/Gaussian_curvature.svg)
 *Figure 1. Principal-curvature lines: the geometric picture of diagonalising the second form with respect to the first. Wikimedia Commons, open licence.*
 
+---
+
 ## Formal definitions and notation
 
-On a parametrization the first form is
+On a parametrization $$\mathbf{x}(u,v)$$, the first fundamental form is
 $$
 \mathrm{I} = E\,du^2 + 2F\,du\,dv + G\,dv^2,
 $$
-and a map $$F$$ between surfaces is *nearly isometric* when $$F^*\mathrm{I}_2 \approx \mathrm{I}_1$$. The Jacobian $$dF_p: T_pM\to T_{F(p)}N$$ is the linear version of that story: $$dF_p$$ nearly preserves the inner product induced by $$\mathrm{I}$$.
+and a map $$F: M \to N$$ is *nearly isometric* when the pullback metric satisfies $$F^*\mathrm{I}_2 \approx \mathrm{I}_1$$ (equivalently, its differential $$dF_p: T_p M \to T_{F(p)} N$$ nearly preserves inner products).
 
-Discrete Gaussian curvature at a vertex $$v$$ is often
+On a triangle mesh, the **discrete Gaussian curvature** at a vertex $$v$$ with incident triangle corner angles $$\theta_i$$ and local barycentric area $$A_v$$ is
 $$
-K(v) \approx \frac{2\pi - \sum_i \theta_i}{A_v},
+K(v) \approx \frac{2\pi - \sum_i \theta_i}{A_v}.
 $$
-with $$\theta_i$$ the corner angles at $$v$$ and $$A_v$$ a barycentric area. This is not the smooth definition, but it converges, in several precise senses, to $$K$$ as the mesh is refined.
+
+---
+
+## Concrete Hand-Verifiable Worked Examples
+
+### Worked Example 1: Computing $$\mathrm{I}$$, $$\mathrm{II}$$, $$K$$, and $$H$$ on a Saddle by Hand
+Take the hyperbolic paraboloid (Pringles chip) $$\mathbf{x}(u,v) = (u,\; v,\; u^2 - v^2)$$ right at the origin $$(u,v) = (0,0)$$:
+
+1. **First derivatives & First Fundamental Form $$\mathrm{I}$$:**
+   $$
+   \mathbf{x}_u = (1, 0, 2u) \Big|_{(0,0)} = (1, 0, 0),
+   \qquad
+   \mathbf{x}_v = (0, 1, -2v) \Big|_{(0,0)} = (0, 1, 0).
+   $$
+   Dot products give $$E = \mathbf{x}_u\cdot\mathbf{x}_u = 1$$, $$F = \mathbf{x}_u\cdot\mathbf{x}_v = 0$$, $$G = \mathbf{x}_v\cdot\mathbf{x}_v = 1$$! So at the origin, $$\mathrm{I} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$$ (standard flat Euclidean inner product).
+2. **Unit normal $$\mathbf{n}$$:** $$\mathbf{n} = \frac{\mathbf{x}_u \times \mathbf{x}_v}{\|\mathbf{x}_u \times \mathbf{x}_v\|} = (0, 0, 1)$$.
+3. **Second derivatives & Second Fundamental Form $$\mathrm{II}$$:**
+   $$
+   \mathbf{x}_{uu} = (0, 0, 2), \qquad \mathbf{x}_{uv} = (0, 0, 0), \qquad \mathbf{x}_{vv} = (0, 0, -2).
+   $$
+   Projecting onto $$\mathbf{n} = (0,0,1)$$ gives $$e = 2$$, $$f = 0$$, $$g = -2$$, so $$\mathrm{II} = \begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}$$!
+4. **Principal, Gaussian, and Mean Curvatures:** The eigenvalues of $$\mathrm{I}^{-1}\mathrm{II} = \begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}$$ are **$$\kappa_1 = +2$$** (curves upward along $$u$$) and **$$\kappa_2 = -2$$** (curves downward along $$v$$). Immediately:
+   $$
+   K = \kappa_1 \kappa_2 = (2)(-2) = -4 < 0 \quad (\text{saddle!}),
+   \qquad
+   H = \frac{\kappa_1 + \kappa_2}{2} = \frac{2 - 2}{2} = 0 \quad (\text{locally minimal!}).
+   $$
+
+### Worked Example 2: Discrete Gaussian Curvature & Gauss–Bonnet on a Cube
+Wait: every face of a cube is completely flat, so where did all the curvature of a sphere go when you turned a sphere into a cube? **Straight into its 8 corners!** Check it by hand using the angle defect formula:
+- At each of the $$8$$ vertices of a cube, **three squares** meet, each contributing a corner angle of $$90^\circ = \frac{\pi}{2}$$.
+- Therefore the **angle defect** (integrated Gaussian curvature) at each vertex is
+  $$
+  \Omega(v) = 2\pi - \left(\frac{\pi}{2} + \frac{\pi}{2} + \frac{\pi}{2}\right) = 2\pi - \frac{3\pi}{2} = \frac{\pi}{2} > 0.
+  $$
+- Now sum the angle defect over all $$8$$ vertices of the cube:
+  $$
+  \sum_{v=1}^{8} \Omega(v) = 8 \times \frac{\pi}{2} = 4\pi = 2\pi \cdot \chi(S^2)!
+  $$
+Even on a sharp-cornered cube, total discrete Gaussian curvature equals **$$4\pi$$**—the exact same total curvature as a smooth round sphere ($$\iint_{S^2} 1\,dA = 4\pi$$)!
+
+---
+
+### Deep-Dive Explanation: How Neural Jacobian Fields Learn Intrinsic Surface Maps (Read Slowly)
+
+Why did Aigerman et al. (*SIGGRAPH 2022*) abandon predicting vertex positions in favor of predicting **Jacobian fields**? Follow the four steps slowly:
+
+#### Step 1: Why raw vertex prediction fails under remeshing
+Suppose you train a network to deform a mesh by predicting a 3D displacement $$\Delta \mathbf{p}_i$$ at every vertex. Even tiny independent errors at neighboring vertices cause adjacent triangles to flip inside-out, creating ugly spikes and self-intersections—and if the test mesh has twice as many triangles, the learned displacements break down completely.
+
+#### Step 2: Predict local differentials $$J_t$$ on every triangle instead
+Instead of positions, the network predicts a $$3\times 3$$ matrix $$J_t$$ on each triangle $$t$$—representing the desired **Jacobian** (local stretch and rotation) of the deformation map $$F$$ restricted to that triangle’s tangent plane! Now the network speaks directly in the language of the First Fundamental Form $$\mathrm{I}$$.
+
+#### Step 3: Solve one global linear Poisson equation to stitch the map together
+An arbitrary field of predicted matrices $$\{J_t\}$$ is generally not integrable (the deformed triangles won’t automatically share edges). So Neural Jacobian Fields minimizes the global least-squares energy
+$$
+\min_{F} \sum_{t} A_t \,\bigl\| \nabla_t F - J_t \bigr\|_F^2
+\quad \Longleftrightarrow \quad
+\Delta_{\text{cot}} F = \operatorname{div}(J),
+$$
+where $$\Delta_{\text{cot}}$$ is the classical **cotangent Laplace–Beltrami operator**!
+
+#### Step 4: Backpropagate through the Poisson solve end-to-end
+Because $$\Delta_{\text{cot}} F = \operatorname{div}(J)$$ is a sparse, symmetric positive-definite linear system, you can differentiate right through the linear solver during training! The result: globally smooth, nearly isometric, triangulation-independent surface deformations and UV maps—pure Chapter 03 calculus running inside PyTorch!
+
+In one schematic line:
+
+$$
+\text{Input mesh }M
+\;\xrightarrow{\;\text{neural network}\;}\;
+\text{Tangential Jacobian field }J_t
+\;\xrightarrow{\;\Delta_{\text{cot}} F = \operatorname{div}(J)\;}\;
+\text{Globally smooth, intrinsic map }F.
+$$
+
+---
 
 ## Visual illustrations
 

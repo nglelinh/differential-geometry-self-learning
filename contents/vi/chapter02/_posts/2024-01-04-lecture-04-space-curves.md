@@ -7,11 +7,31 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Các đường cong xoắn trong tự nhiên và kỹ thuật
+## 1. Lời mở đầu: Tại sao từ chiếc lò xo bút bi đến chuỗi DNA đều chọn cùng một hình dáng?
 
-Trong bài trước, ta đã biết độ cong $$\kappa$$ và độ xoắn $$\tau$$ xác định hoàn toàn hình dáng của một đường cong không gian. Bài này khảo sát các đường cong không gian tiêu biểu cùng một số định lý toàn cục quan trọng về chúng.
+Hãy nhìn quanh căn phòng của bạn: chiếc lò xo nhỏ trong cây bút bi, đường ren trên thân ốc vít, cầu thang xoắn ốc, cho đến phân tử DNA lưu giữ toàn bộ mã di truyền bên trong mỗi tế bào sống. Tất cả đều hội tụ về đúng một đường cong kinh điển của không gian ba chiều: **đường xoắn ốc (helix)**. Đó không phải sự trùng hợp thẩm mỹ — trong Bài 3 ta đã biết $$\kappa$$ và $$\tau$$ xác định hình dáng đường cong, và đường xoắn ốc tròn chính là đường cong **duy nhất** mà cả độ cong lẫn độ xoắn đều là hằng số khác không, giúp ứng suất cơ học phân bố đều tuyệt đối tại mọi điểm!
 
-Từ chiếc lò xo trong bút bi, rãnh ren của ốc vít, cầu thang xoắn ốc cho đến cấu trúc chuỗi xoắn DNA trong tế bào, nhiều vật thể trong kỹ thuật và tự nhiên đều mang cùng một hình dạng hình học: **đường xoắn ốc (helix)**. Tính đều đặn về hình học của đường xoắn ốc được giải thích trực tiếp bằng các công thức của hình học vi phân.
+Nhưng bài học này còn mở ra một cánh cửa kỳ diệu hơn nhiều: **Hình học Vi phân Toàn cục (Global Differential Geometry)**. Khi ta cộng dồn (lấy tích phân) một đại lượng cục bộ như độ cong $$\kappa(s)$$ dọc theo cả một vòng dây khép kín, nó bỗng "nhìn thấy" tính chất tô-pô của sợi dây — thậm chí có thể phát hiện sợi dây có đang bị **thắt nút** hay không!
+
+**Mạch bài học:** Bản đồ kiến thức nền (hình học địa phương vs. toàn cục, lý thuyết nút thắt, đường cong giao tuyến) → Đường xoắn ốc tròn → Định lý Fenchel ($$\ge 2\pi$$) và Định lý Fáry–Milnor ($$> 4\pi$$ cho nút thắt) → Đường cong Viviani → Khung giải thích chậm: tự tay tính tích phân tổng độ cong và kiểm chứng đường cong Viviani nằm trên cả mặt cầu lẫn mặt trụ → Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hình học Toàn cục của Đường cong và Lý thuyết Nút thắt là gì?
+
+Trước khi đi vào các định lý nổi tiếng của Fenchel và Fáry–Milnor, hãy nhìn ba trụ cột kết nối Chương 1 (cục bộ) với Chương 2 (toàn cục):
+
+### 1. Địa phương (Local) vs. Toàn cục (Global) trong Hình học Vi phân
+- **Hình học địa phương** hỏi điều gì xảy ra tại *một điểm* (tiếp tuyến $$\mathbf{T}$$, độ cong $$\kappa(s)$$, độ xoắn $$\tau(s)$$).
+- **Hình học toàn cục** hỏi điều gì xảy ra khi ghép tất cả các điểm lại thành một vòng khép kín: tổng độ cong $$\int_0^L \kappa(s)\,ds$$ bị chặn dưới bởi những hằng số tô-pô sắc nét như $$2\pi$$ hay $$4\pi$$!
+
+### 2. Lý thuyết Nút thắt (Knot Theory)
+Một **nút thắt** là một đường tròn $$S^1$$ được nhúng trơn vào $$\mathbb{R}^3$$. Hai nút thắt là tương đương nếu có thể biến dạng liên tục trong không gian mà không cắt dây. Nút đơn giản nhất không tháo ra thành vòng tròn được là **nút ba lá (trefoil knot)**. Định lý Fáry–Milnor chứng minh một cầu nối kinh ngạc: chỉ cần biết tổng độ cong $$\le 4\pi$$, ta chắc chắn sợi dây **không bị thắt nút**!
+
+### 3. Đường cong như giao tuyến của hai bề mặt
+Trong kỹ thuật cơ khí và kiến trúc, nhiều đường cong không gian sinh ra từ giao tuyến của hai mặt (như đường hàn ống giao nhau, hay **đường cong Viviani** là giao tuyến mặt cầu và mặt trụ). Đây cũng là bước đệm tự nhiên đưa ta từ thế giới 1 chiều sang lý thuyết **Bề mặt 2 chiều** ở Bài 5.
+
+---
 
 ## 2. Đường Xoắn ốc (Helix)
 
@@ -83,6 +103,38 @@ Phương trình tham số của đường cong Viviani (nằm trên mặt cầu 
 $$ \gamma(t) = R(1+\cos t, \sin t, 2\sin(t/2)) $$
 
 Đường cong này có ý nghĩa lịch sử vì là một trong những bài toán đầu tiên (do Viviani nêu ra vào thế kỷ 17) cho phép tính diện tích phần mặt cầu còn lại sau khi khoét bằng các phương pháp hình học cổ điển mà không cần kỹ thuật tích phân phức tạp.
+
+---
+
+## Khung giải thích: tự tay kiểm tra tổng độ cong và đường cong Viviani (nên đọc chậm)
+
+Hãy tự tay thực hiện hai phép kiểm tra nhỏ để thấy con số thực tế đằng sau các định lý toàn cục:
+
+### Ví dụ cầm tay 1: Tích phân tổng độ cong không phụ thuộc bán kính $$R$$!
+- **Trên đường tròn bán kính $$R$$:** $$\kappa = 1/R$$, chu vi $$L = 2\pi R$$. Tổng độ cong là:
+  $$
+  \int_0^{2\pi R} \frac{1}{R}\,ds \;=\; \frac{1}{R}\cdot 2\pi R \;=\; \mathbf{2\pi}.
+  $$
+  Dù vòng tròn bé bằng chiếc nhẫn hay to bằng quỹ đạo Trái Đất, tổng độ cong vẫn bằng đúng $$2\pi$$ (đạt dấu bằng Fenchel)!
+- **Trên một vòng xoắn ốc đúng 1 vòng** ($$\kappa = \frac{a}{a^2+b^2}$$, chiều dài 1 vòng $$L_1 = 2\pi\sqrt{a^2+b^2}$$):
+  $$
+  \int_0^{L_1} \kappa\,ds \;=\; \frac{2\pi a}{\sqrt{a^2 + b^2}} \;<\; 2\pi \quad (\text{khi } b \neq 0).
+  $$
+  Chú ý rằng một vòng xoắn ốc hở có tổng độ cong *nhỏ hơn* $$2\pi$$ vì hai đầu của nó không khép kín! Chỉ khi bạn uốn cong thêm để nối kín hai đầu lại, tổng độ cong mới nhảy vượt qua ngưỡng $$2\pi$$ của Fenchel.
+
+### Ví dụ cầm tay 2: Kiểm chứng đại số đường cong Viviani (đặt $$R = 1$$)
+Với $$\gamma(t) = \bigl(1 + \cos t,\ \sin t,\ 2\sin(t/2)\bigr)$$, hãy kiểm tra hai phương trình bề mặt:
+1. **Có nằm trên mặt cầu bán kính $$2$$ ($$x^2 + y^2 + z^2 = 4$$) không?**
+   $$
+   (1 + \cos t)^2 + \sin^2 t + 4\sin^2(t/2) = \bigl(1 + 2\cos t + \cos^2 t + \sin^2 t\bigr) + 2(1 - \cos t) = (2 + 2\cos t) + (2 - 2\cos t) = \mathbf{4}!
+   $$
+2. **Có nằm trên mặt trụ $$(x - 1)^2 + y^2 = 1$$ không?**
+   $$
+   \bigl((1 + \cos t) - 1\bigr)^2 + \sin^2 t = \cos^2 t + \sin^2 t = \mathbf{1}!
+   $$
+Tại $$t = 0$$ và $$t = 2\pi$$, $$\gamma(0) = \gamma(2\pi) = (2, 0, 0)$$ — đường cong tự cắt nhau tại điểm $$(2, 0, 0)$$ tạo thành hình số 8 ôm sát mặt cầu!
+
+---
 
 ## Video tham khảo
 

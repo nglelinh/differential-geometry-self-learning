@@ -7,15 +7,32 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
+Tại sao Albert Einstein phải nhờ người bạn thân Marcel Grossmann dạy lại một nhánh toán học ít người biết thời năm 1912 mang tên "phép tính vi phân tuyệt đối" của Ricci-Curbastro và Levi-Civita mới viết nổi Thuyết tương đối rộng? Lý do rất đẹp và cũng rất thực tế: **tự nhiên không hề vẽ sẵn hệ trục tọa độ $$Oxyz$$ trên bầu trời!** Nếu một định luật vật lý chỉ đúng trong tọa độ Descartes nhưng bị biến dạng khi bạn đổi sang tọa độ cầu hay hệ quy chiếu đang quay, đó không thể là định luật của tự nhiên.
+
+Để diễn tả những thực thể hình học và vật lý **sống sót nguyên vẹn qua mọi phép đổi tọa độ**, toán học tạo ra khái niệm **tensor**. Đừng để vẻ ngoài chi chít chỉ số trên–dưới làm bạn choáng ngợp: ẩn sau mọi bảng số $$T^i_{jk}$$ là một cỗ máy đa tuyến tính cực kỳ trong sáng, nhận vào các vector (mũi tên) cùng covector (thước đo) và trả về một con số hoàn toàn bất biến.
+
+**Mạch bài học:** Bản đồ kiến thức nền (tính bất biến tọa độ, không gian đối ngẫu, sự khác nhau giữa tensor toán học và "tensor" học sâu) → Trực giác cỗ máy khe đầu vào & phản biến/hiệp biến → Định nghĩa hình thức & quy ước tổng Einstein → Ví dụ tính tay cầm tay chỉ việc: biến đổi ma trận metric từ tọa độ Descartes sang tọa độ cực và hạ chỉ số vector → Khung giải thích chậm: 4 bước nhận diện tensor thật sự → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Lý thuyết Tensor trên Đa tạp nghiên cứu gì?
+
+### 1. Bất biến tọa độ — triết lý cốt lõi của hình học hiện đại
+Một mảng số bất kỳ $$A_{ij}$$ **chưa chắc** là tensor! Khi bạn đổi từ hệ tọa độ $$(x^i)$$ sang $$(y^p)$$, các con số biểu diễn sẽ thay đổi — nhưng chúng phải thay đổi ăn khớp tuyệt đối với ma trận Jacobi $$\frac{\partial y^p}{\partial x^i}$$ và nghịch đảo $$\frac{\partial x^j}{\partial y^q}$$ sao cho đối tượng hình học bên dưới đứng yên tuyệt đối.
+
+### 2. Hai nửa đối xứng: Vector (Phản biến) và Covector (Hiệp biến)
+Trên mỗi không gian tiếp tuyến $$T_p M$$ luôn song hành **không gian đối ngẫu** $$T_p^* M$$. Vector (chỉ số trên $$v^i$$) là vận tốc hay độ dịch chuyển; covector (chỉ số dưới $$\alpha_i$$) là gradient hay 1-form đo tốc độ thay đổi. Ghép nhiều bản sao của $$T_p M$$ và $$T_p^* M$$ bằng tích tensor $$\otimes$$ cho ta toàn bộ thế giới tensor kiểu $$(r, s)$$ — trong đó metric $$g_{ij}$$ là cầu nối biến vector thành covector và ngược lại!
+
+### 3. Tensor hình học vi phân vs. "Tensor" trong PyTorch / TensorFlow
+Trong học sâu, "tensor" thường chỉ là một mảng số đa chiều (array) tiện tính toán trên GPU. Trong hình học vi phân và vật lý, một **trường tensor** trên đa tạp $$M$$ là một gán mượt tại *mỗi* điểm $$p \in M$$ một ánh xạ đa tuyến tính trên $$T_p M$$ và $$T_p^* M$$ — có hình học, có quy tắc biến đổi và chỉ có thể đạo hàm bằng liên kết (Bài 12).
+
+---
+
 ## 1. Tổng quan
 
 Trong các bài giảng trước, chúng ta đã làm quen với vector tiếp tuyến (biểu diễn vận tốc, hướng) và vector pháp tuyến. Tuy nhiên, để mô tả đầy đủ các tính chất hình học và vật lý trên đa tạp, chỉ dùng vector là chưa đủ. Ta cần những đối tượng tổng quát hơn có thể kết hợp nhiều vector cùng lúc, đo độ dài, thể tích hoặc biểu diễn các quan hệ đa tuyến tính phức tạp. Các đối tượng đó được gọi là *tensor*.
 
-Tensor là khái niệm nền tảng trong hình học vi phân hiện đại, vật lý lý thuyết (Thuyết tương đối rộng, Cơ học lượng tử) và kỹ thuật (Cơ học môi trường liên tục, ứng suất – biến dạng). Nếu vector được hình dung như một mũi tên, thì tensor có thể xem như một hàm đa tuyến tính: nhận vào các vector (và covector) rồi trả về một số thực hoặc một vector khác.
-
-Trong bài giảng này, chúng ta xây dựng khái niệm tensor từ nền tảng đại số tuyến tính (không gian đối ngẫu, tích tensor) mở rộng lên đa tạp trơn, đồng thời làm quen với ký hiệu chỉ số và quy ước tổng Einstein. Cuối cùng, ta sẽ thấy metric (dạng cơ bản thứ nhất đã học) thực chất là một tensor kiểu $$(0, 2)$$.
-
-Nắm vững ngôn ngữ tensor là bước chuẩn bị cần thiết để tiếp cận độ cong Riemann và phương trình trường Einstein ở các bài giảng sau.
+Trong bài giảng này, chúng ta xây dựng khái niệm tensor từ nền tảng đại số tuyến tính (không gian đối ngẫu, tích tensor) mở rộng lên đa tạp trơn, đồng thời làm quen với ký hiệu chỉ số và quy ước tổng Einstein. Cuối cùng, ta sẽ thấy metric (dạng cơ bản thứ nhất đã học) thực chất là một tensor kiểu $$(0, 2)$$, làm bước đệm trực tiếp cho liên kết, độ cong Riemann và phương trình trường Einstein ở các bài giảng sau.
 
 ## 2. Giải thích Trực quan
 
@@ -121,9 +138,26 @@ trong đó $$g_{ij} = g(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial 
 
 Metric cho phép "hạ chỉ số" (chuyển vector thành covector) và "nâng chỉ số" (chuyển covector thành vector thông qua metric nghịch đảo $$g^{ij}$$).
 
-## 4. Các Ví dụ Quan trọng
+## 4. Các Ví dụ Cầm tay Chỉ việc và Quan trọng
 
-### 4.1. Tensor Metric (Hạng 2)
+### 4.1. Tự tay biến đổi Tensor Metric từ Descartes sang Tọa độ cực & Hạ chỉ số
+
+Trên mặt phẳng $$\mathbb{R}^2$$, trong tọa độ Descartes $$(x^1, x^2) = (x, y)$$, metric Euclid là ma trận đơn vị $$g_{ij} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$$. Bây giờ đổi sang tọa độ cực $$(y^1, y^2) = (r, \theta)$$ với $$x = r\cos\theta,\; y = r\sin\theta$$.
+
+1. **Tính ma trận Jacobi $$J^i_a = \frac{\partial x^i}{\partial y^a}$$:**
+   $$
+   J = \begin{pmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} \end{pmatrix} = \begin{pmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{pmatrix}.
+   $$
+2. **Áp dụng công thức biến đổi tensor kiểu $$(0, 2)$$ ($$g'_{ab} = J^i_a J^j_b g_{ij} = (J^T g J)_{ab}$$):**
+   $$
+   g' = J^T I J = \begin{pmatrix} \cos\theta & \sin\theta \\ -r\sin\theta & r\cos\theta \end{pmatrix} \begin{pmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & r^2 \end{pmatrix}!
+   $$
+   Đúng bằng công thức độ dài cung quen thuộc $$ds^2 = dr^2 + r^2 d\theta^2$$!
+3. **Thử đo độ dài và hạ chỉ số một vector cụ thể:** Tại điểm có bán kính $$r = 3$$, xét vector tiếp tuyến $$v = 2\frac{\partial}{\partial r} + 1\frac{\partial}{\partial \theta}$$ (tức $$(v^r, v^\theta) = (2, 1)$$). Khi đó:
+   - Bình phương độ dài (bất biến!): $$g'(v, v) = g'_{rr}(v^r)^2 + g'_{\theta\theta}(v^\theta)^2 = 1\cdot 2^2 + 3^2 \cdot 1^2 = 4 + 9 = 13$$.
+   - Covector tương ứng sau khi hạ chỉ số ($$v_a = g'_{ab} v^b$$): $$v_r = 1\cdot 2 = 2$$ và $$v_\theta = 9\cdot 1 = 9$$, và bạn kiểm tra ngay $$v_a v^a = 2\cdot 2 + 9\cdot 1 = 13$$!
+
+### 4.2. Tensor Metric trong $$\mathbb{R}^3$$
 
 Trong không gian Euclid 3 chiều với tọa độ Descartes $$(x, y, z)$$, tensor metric là ma trận đơn vị:
 $$
@@ -134,13 +168,36 @@ $$
 g_{ij} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & r^2 & 0 \\ 0 & 0 & r^2\sin^2\theta \end{pmatrix}
 $$
 
-### 4.2. Tensor Ứng suất (Stress Tensor)
+### 4.3. Tensor Ứng suất và Tensor Độ cong Riemann
 
-Trong cơ học môi trường liên tục, tensor ứng suất Cauchy $$\sigma$$ là một tensor kiểu $$(2, 0)$$ (hoặc kiểu $$(0, 2)$$ sau khi hạ chỉ số bằng metric). Thành phần $$\sigma_{ij}$$ biểu diễn lực theo phương $$i$$ tác dụng lên đơn vị diện tích của mặt phẳng có pháp tuyến theo phương $$j$$.
+- **Tensor ứng suất Cauchy $$\sigma$$:** Trong cơ học môi trường liên tục, $$\sigma_{ij}$$ biểu diễn lực theo phương $$i$$ tác dụng lên đơn vị diện tích của mặt phẳng có pháp tuyến theo phương $$j$$.
+- **Tensor độ cong Riemann $$R^i_{jkl}$$ (kiểu $$(1,3)$$):** Đo mức độ không giao hoán của đạo hàm hiệp biến (hoặc góc xoay của vector khi vận chuyển song song quanh một vòng kín).
 
-### 4.3. Tensor Độ cong Riemann (Hạng 4)
+---
 
-Đây là tensor trung tâm của hình học Riemann, đo mức độ không giao hoán của đạo hàm hiệp biến (hoặc góc xoay của vector khi vận chuyển song song quanh một vòng kín). Nó là một tensor kiểu $$(1, 3)$$, ký hiệu là $$R^i_{jkl}$$.
+### Khung giải thích: Làm sao nhận diện một tensor thật sự và vì sao nó bất biến? (nên đọc chậm)
+
+#### Bước 1: Tách bạch "đối tượng hình học" khỏi "bảng tọa độ"
+Một vector $$v = v^i \partial_i$$ không đổi khi ta đổi hệ tọa độ, nhưng bộ số $$(v^1, \ldots, v^n)$$ thì có. Sự thay đổi của $$v^i$$ luôn **bù trừ chính xác** cho sự thay đổi của cơ sở $$\partial_i$$!
+
+#### Bước 2: Kiểm tra quy tắc biến đổi tuyến tính thuần nhất
+Mọi tensor $$T$$ biến đổi bằng cách nhân tuyến tính với các ma trận Jacobi $$\frac{\partial y}{\partial x}$$ và $$\frac{\partial x}{\partial y}$$ — **không có số hạng cộng thêm nào chứa đạo hàm bậc hai** $$\frac{\partial^2 x}{\partial y^2}$$. Chính vì tính thuần nhất này, một hệ quả cực mạnh ra đời: **nếu mọi thành phần của một tensor bằng $$0$$ trong một hệ tọa độ, thì chúng bằng $$0$$ trong MỌI hệ tọa độ!**
+
+#### Bước 3: Hiểu vì sao phương trình vật lý dạng tensor có giá trị phổ quát
+Nếu viết một định luật dưới dạng $$A_{\mu\nu} = B_{\mu\nu}$$ (tức hiệu $$T_{\mu\nu} = A_{\mu\nu} - B_{\mu\nu} = 0$$ là một tensor), thì định luật ấy đúng trong hệ tọa độ của người đứng trên Trái Đất **khi và chỉ khi** nó đúng trong hệ tọa độ của phi hành gia bay quanh lỗ đen!
+
+#### Bước 4: Cảnh giác với các "giả tensor" — điển hình là ký hiệu Christoffel
+Ở Bài 12, ta sẽ thấy khi đổi từ tọa độ Descartes sang tọa độ cực trên chính mặt phẳng $$\mathbb{R}^2$$ phẳng lì, các ký hiệu Christoffel nhảy từ $$0$$ sang khác $$0$$ ($$\Gamma^r_{\theta\theta} = -r \neq 0$$)! Bằng đúng tiêu chuẩn ở Bước 2, chỉ cần quan sát điều đó là biết ngay $$\Gamma^k_{ij}$$ **không phải** tensor!
+
+Tóm tắt mạch tư duy tensor:
+
+$$
+\text{Ánh xạ đa tuyến tính}
+\;\Longleftrightarrow\;
+\text{Biến đổi thuần nhất theo Jacobi}
+\;\Longrightarrow\;
+T = 0 \text{ ở 1 hệ tọa độ} \iff T = 0 \text{ ở mọi hệ tọa độ}.
+$$
 
 ## 5. Hình ảnh minh họa
 

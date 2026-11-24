@@ -7,15 +7,32 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
+Trên một mặt cong hai chiều như vỏ quả bóng hay yên ngựa, độ cong tại mỗi điểm chỉ cần đúng **một con số duy nhất**: độ cong Gauss $$K$$. Nhưng điều gì xảy ra khi bạn bước vào không gian 3 chiều, hay không-thời gian 4 chiều của vũ trụ? Lúc này, tại một điểm $$p$$ có vô số mặt phẳng cắt 2 chiều đi qua $$p$$ — và không gian có thể cong dương theo mặt phẳng Đông–Tây, nhưng lại cong âm theo mặt phẳng Bắc–Trên! Một con số $$K$$ đơn lẻ hoàn toàn bất lực trước sự giàu có đó.
+
+Trong bài giảng nhậm chức chấn động năm 1854 trước Carl Friedrich Gauss (người thầy đã gần 80 tuổi), **Bernhard Riemann** đã đưa ra cỗ máy nắm bắt trọn vẹn độ cong ở mọi số chiều $$n$$: **Tensor độ cong Riemann** $$R^l_{ijk}$$. Đừng sợ 4 chỉ số của nó: ẩn sau công thức ấy là hai hình ảnh vật lý cực kỳ trực quan — góc xoay của cây gậy khi đi hết một vòng kín nhỏ, và **lực thủy triều** kéo hai quả táo rơi tự do xích lại gần nhau!
+
+**Mạch bài học:** Bản đồ kiến thức nền (từ độ cong Gauss sang độ cong mặt cắt, tensor Riemann, và hai lần nén thành Ricci & Vô hướng) → Trực giác vòng kín, không giao hoán đạo hàm và lực thủy triều → Định nghĩa hình thức & đối xứng Bianchi → Ví dụ tính tay cầm tay chỉ việc: tính tường minh $$R^\theta_{\phi\theta\phi}$$, tensor Ricci và độ cong vô hướng $$S = 2/a^2$$ trên mặt cầu bán kính $$a$$ → Khung giải thích chậm: 4 bước đọc hiểu các tầng độ cong (Riemann → Ricci → Vô hướng → Einstein) → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hình học độ cong nhiều chiều nghiên cứu những gì?
+
+### 1. Từ một con số $$K$$ sang cỗ máy 4 chỉ số $$R^l_{ijk}$$
+Trong không gian $$n$$ chiều, độ cong tại điểm $$p$$ được đo bằng cách chọn một mặt phẳng 2 chiều $$\sigma \subset T_p M$$ (sinh bởi hai vector $$X, Y$$) rồi xem một vector $$Z$$ bị xoay đi bao nhiêu khi vận chuyển song song quanh hình bình hành vô cùng nhỏ cạnh $$X, Y$$. Chính phép gán $$(X, Y, Z) \mapsto R(X, Y)Z$$ là **tensor độ cong Riemann** kiểu $$(1, 3)$$.
+
+### 2. Hai phép "nén dữ liệu": Tensor Ricci và Độ cong Vô hướng
+Tensor Riemann ở chiều 4 có tới 20 thành phần độc lập — chứa cả phần uốn cong thể tích lẫn phần kéo giãn biến dạng (tensor Weyl, mang sóng hấp dẫn!). Lấy vết một lần theo một cặp chỉ số cho ta **Tensor Ricci** $$R_{ij}$$ (chỉ còn 10 thành phần ở chiều 4, đo sự thay đổi thể tích của đám mây hạt rơi tự do); lấy vết thêm lần nữa với metric $$g^{ij}$$ cho ta **Độ cong vô hướng** $$S$$ (1 con số trung bình duy nhất).
+
+### 3. Hai bài toán lớn của Hình học Riemann
+Một nửa hình học Riemann nghiên cứu câu hỏi **cục bộ**: metric $$g$$ sinh ra độ cong $$R$$ như thế nào (và khi nào $$R = 0 \iff$$ không gian phẳng cục bộ)? Nửa còn lại nghiên cứu câu hỏi **toàn cục**: nếu độ cong luôn dương (như $$K \ge c > 0$$) hoặc luôn âm ở mọi điểm, hình dáng tôpô toàn cục của cả vũ trụ bị ép thành gì (như Định lý Bonnet–Myers, Định lý Gauss–Bonnet tổng quát, hay dòng Ricci của Hamilton–Perelman)?
+
+---
+
 ## Tổng quan
 
-Trong các bài giảng về mặt cong hai chiều, chúng ta đã làm quen với độ cong Gauss $$K$$ — một số thực duy nhất tại mỗi điểm cho biết bề mặt cong dương, cong âm hay phẳng. Tuy nhiên, khi chuyển sang các không gian có số chiều cao hơn (3 chiều, 4 chiều...), độ cong trở nên phức tạp hơn và không thể biểu diễn bằng một con số duy nhất.
+Trong các bài giảng về mặt cong hai chiều, chúng ta đã làm quen với độ cong Gauss $$K$$ — một số thực duy nhất tại mỗi điểm cho biết bề mặt cong dương, cong âm hay phẳng. Tuy nhiên, khi chuyển sang các không gian có số chiều cao hơn (3 chiều, 4 chiều...), độ cong tại một điểm phụ thuộc vào mặt phẳng cắt hai chiều mà ta chọn. Để mô tả trọn vẹn toàn bộ thông tin độ cong đó, ta cần một đối tượng tổng quát hơn: *Tensor độ cong Riemann* (Riemann Curvature Tensor).
 
-Lý do là trong không gian từ 3 chiều trở lên, độ cong tại một điểm phụ thuộc vào mặt phẳng cắt hai chiều mà ta chọn. Để mô tả trọn vẹn toàn bộ thông tin độ cong đó, ta cần một đối tượng tổng quát hơn: *Tensor độ cong Riemann* (Riemann Curvature Tensor).
-
-Tensor Riemann là một tensor hạng 4 (mang 4 chỉ số), chứa đựng đầy đủ thông tin về độ cong nội tại của đa tạp. Bằng phép rút gọn chỉ số (contraction), từ tensor này ta thu được các đại lượng đơn giản hơn nhưng giữ vai trò trung tâm trong hình học và vật lý: *Tensor độ cong Ricci* (xuất hiện trực tiếp trong phương trình trường Einstein) và *Độ cong vô hướng* (Scalar curvature).
-
-Bài giảng này trình bày ý nghĩa hình học của tensor Riemann: nó đo mức độ không giao hoán của đạo hàm hiệp biến, tương đương với góc lệch của một vector khi được vận chuyển song song quanh một vòng kín vô cùng nhỏ.
+Bằng phép rút gọn chỉ số (contraction), từ tensor hạng 4 này ta thu được *Tensor độ cong Ricci* (xuất hiện trực tiếp trong phương trình trường Einstein) và *Độ cong vô hướng* (Scalar curvature). Bài giảng này trình bày ý nghĩa hình học của tensor Riemann: nó đo mức độ không giao hoán của đạo hàm hiệp biến, tương đương với góc lệch của một vector khi được vận chuyển song song quanh một vòng kín vô cùng nhỏ.
 
 ## 2. Giải thích Trực quan
 
@@ -121,6 +138,63 @@ Từ tensor Riemann, ta thu được các đại lượng độ cong gọn hơn 
 ### Độ cong Mặt cắt (Sectional Curvature)
 
 Nếu $$K(p, \sigma)$$ là độ cong Gauss của mặt hai chiều sinh bởi các đường trắc địa tiếp xúc với mặt phẳng $$\sigma \subset T_pM$$ tại điểm $$p$$, thì tập hợp các giá trị $$K(p, \sigma)$$ trên mọi mặt phẳng $$\sigma$$ xác định hoàn toàn tensor Riemann. Đây là cầu nối trực tiếp giữa độ cong Gauss cổ điển trên mặt cong và tensor độ cong Riemann trong không gian nhiều chiều.
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: Tính toàn bộ Riemann, Ricci và Vô hướng trên mặt cầu $$S^2(a)$$
+
+Xét mặt cầu bán kính $$a$$ với metric $$ds^2 = a^2(d\theta^2 + \sin^2\theta\,d\phi^2)$$, tức $$g_{\theta\theta} = a^2$$, $$g_{\phi\phi} = a^2\sin^2\theta$$. Các ký hiệu Christoffel khác $$0$$ duy nhất là:
+
+$$
+\Gamma^\theta_{\phi\phi} = -\sin\theta\cos\theta, \qquad \Gamma^\phi_{\theta\phi} = \Gamma^\phi_{\phi\theta} = \cot\theta.
+$$
+
+1. **Tính thành phần Riemann $$R^\theta_{\phi\theta\phi}$$** (chú ý đổi vai trò chỉ số theo quy ước $$R^l_{kij} = \partial_i\Gamma^l_{jk} - \partial_j\Gamma^l_{ik} + \Gamma^l_{im}\Gamma^m_{jk} - \Gamma^l_{jm}\Gamma^m_{ik}$$):
+   $$
+   \begin{aligned}
+   R^\theta_{\phi\theta\phi}
+   &= \partial_\theta \Gamma^\theta_{\phi\phi} - \partial_\phi \Gamma^\theta_{\theta\phi} + \Gamma^\theta_{\theta m}\Gamma^m_{\phi\phi} - \Gamma^\theta_{\phi m}\Gamma^m_{\theta\phi} \\
+   &= \partial_\theta(-\sin\theta\cos\theta) - 0 + 0 - \Gamma^\theta_{\phi\phi}\Gamma^\phi_{\theta\phi} \\
+   &= -(\cos^2\theta - \sin^2\theta) - (-\sin\theta\cos\theta)\left(\frac{\cos\theta}{\sin\theta}\right) \\
+   &= -\cos^2\theta + \sin^2\theta + \cos^2\theta = \sin^2\theta!
+   \end{aligned}
+   $$
+2. **Kiểm tra độ cong Gauss $$K$$:** Hạ chỉ số bằng $$g_{\theta\theta} = a^2$$ được $$R_{\theta\phi\theta\phi} = a^2\sin^2\theta$$, suy ra:
+   $$
+   K = \frac{R_{\theta\phi\theta\phi}}{g_{\theta\theta}g_{\phi\phi} - g_{\theta\phi}^2} = \frac{a^2\sin^2\theta}{a^4\sin^2\theta} = \frac{1}{a^2}!
+   $$
+3. **Tính Tensor Ricci và Độ cong Vô hướng:** Lấy vết ra ngay $$R_{\theta\theta} = R^\phi_{\theta\phi\theta} = 1$$, $$R_{\phi\phi} = R^\theta_{\phi\theta\phi} = \sin^2\theta$$ (tức $$R_{ij} = \frac{1}{a^2} g_{ij}$$!), và độ cong vô hướng:
+   $$
+   S = g^{\theta\theta}R_{\theta\theta} + g^{\phi\phi}R_{\phi\phi} = \frac{1}{a^2}\cdot 1 + \frac{1}{a^2\sin^2\theta}\cdot\sin^2\theta = \frac{2}{a^2} = 2K!
+   $$
+
+Mọi công thức trừu tượng đều hội tụ về đúng con số $$K = 1/a^2$$ và $$S = 2/a^2$$ mà ta có thể tự kiểm tra trọn vẹn trong 4 dòng tính toán!
+
+---
+
+### Khung giải thích: Đọc hiểu 4 tầng của Độ cong (Riemann → Ricci → Vô hướng → Einstein) (nên đọc chậm)
+
+#### Bước 1: Tại sao $$R^l_{ijk}$$ là một tensor thực sự dù được ghép từ $$\Gamma^l_{jk}$$ không phải tensor?
+Khi đổi tọa độ, cả đạo hàm $$\partial_i \Gamma^l_{jk}$$ lẫn tích $$\Gamma\cdot\Gamma$$ đều xuất hiện các số hạng "rác" chứa đạo hàm bậc hai của tọa độ. Phép trừ phản đối xứng $$\partial_i\Gamma^l_{jk} - \partial_j\Gamma^l_{ik}$$ triệt tiêu chính xác toàn bộ phần rác đó, biến $$R^l_{ijk}$$ thành một **tensor thực sự**: nếu $$R = 0$$ trong một hệ tọa độ thì không gian phẳng trong mọi hệ tọa độ!
+
+#### Bước 2: Ý nghĩa hình học của Tensor Ricci — "độ phồng/xẹp của thể tích"
+Trong chiều $$n \ge 3$$, một chùm tia trắc địa xuất phát từ điểm $$p$$ có thể bị kéo dãn theo trục này và ép dẹt theo trục kia. **Tensor Ricci** $$R_{ij}$$ lấy trung bình độ cong mặt cắt qua mọi mặt phẳng chứa hướng $$i$$, nên nó đo chính xác **tỷ lệ co giãn thể tích** của một quả cầu nhỏ dọc theo dòng trắc địa (Ricci dương $$\implies$$ thể tích co lại nhanh hơn không gian Euclid).
+
+#### Bước 3: Phần bị bỏ lại sau khi rút gọn — Tensor Weyl và sóng hấp dẫn
+Ở chiều $$n = 4$$, tensor Riemann có 20 thành phần độc lập nhưng tensor Ricci chỉ giữ lại 10 thành phần. **10 thành phần còn lại** tạo thành **Tensor Weyl** $$C_{ijkl}$$ — đo sự biến dạng *hình dáng* mà vẫn giữ nguyên *thể tích*. Ngay cả trong chân không ngoài Trái Đất nơi $$T_{\mu\nu} = 0 \implies R_{\mu\nu} = 0$$ (Ricci-flat!), tensor Weyl vẫn khác $$0$$: đó chính là nguồn gốc của lực thủy triều chân không và sóng hấp dẫn!
+
+#### Bước 4: Vì sao Einstein chọn tổ hợp $$G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$$ chứ không phải $$R_{\mu\nu}$$?
+Trong vật lý, năng lượng–xung lượng bảo toàn đòi hỏi đạo hàm hiệp biến $$\nabla^\mu T_{\mu\nu} = 0$$. Nhờ **đồng nhất thức Bianchi thứ hai**, tổ hợp duy nhất từ Ricci có phân kỳ hiệp biến tự động bằng $$0$$ ($$\nabla^\mu G_{\mu\nu} \equiv 0$$) chính là **tensor Einstein** $$G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$$!
+
+Tóm tắt chuỗi phân tầng độ cong:
+
+$$
+\text{Riemann } R^l_{ijk}\ (20\text{ TP})
+\;\xrightarrow{\text{Rút gọn vết}}\;
+\text{Ricci } R_{ij}\ (10\text{ TP}) + \text{Weyl } C_{ijkl}\ (10\text{ TP})
+\;\xrightarrow{\text{Bianchi II}}\;
+G_{\mu\nu} = 8\pi T_{\mu\nu}.
+$$
 
 ## Hình ảnh minh họa
 

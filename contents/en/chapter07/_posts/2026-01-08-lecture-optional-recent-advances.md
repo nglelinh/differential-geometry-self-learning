@@ -8,6 +8,16 @@ owner: "Differential Geometry"
 lesson_type: optional
 ---
 
+Every deep learning engineer writes `optimizer = Adam(params)` without a second thought—assuming that subtracting a gradient vector $$\theta - \alpha g$$ still produces a valid set of weights. Yet what if your parameters must be orthogonal matrices on the Stiefel manifold $$St(p, n)$$, symmetric positive-definite (SPD) covariance matrices, or points inside the hyperbolic Poincaré disc? Subtracting a raw Euclidean gradient immediately kicks your parameters **off the manifold**! Solving that problem brought Chapter 07's full Riemannian toolkit—metrics, retractions, parallel transport, and Ricci curvature—straight into PyTorch (`Geoopt`) and modern GNN theory.
+
+## Background Knowledge Map: Riemannian Optimization and Discrete Ricci Curvature
+
+Three pillars of Chapter 07 power both optimization on curved parameter spaces and modern graph neural networks:
+
+1. **Riemannian Metric $$g$$ & Riemannian Gradient:** On $$(M, g)$$, the differential $$df$$ is a covector, not a tangent vector. Raising its index via the inverse metric gives the **Riemannian gradient** $$\operatorname{grad} f = g^{-1} df$$ (on embedded submanifolds like $$S^n$$, simply the orthogonal projection of the ambient Euclidean gradient onto $$T_x M$$).
+2. **Retractions & Vector Transport (`RiemannianAdam`):** Moving along a tangent vector $$v \in T_x M$$ via the exact exponential map $$\exp_x(v)$$ follows a geodesic, which can be expensive. A **retraction** $$R_x(v)$$ agrees with $$\exp_x(v)$$ to first order while running far faster (such as normalizing $$(x+v)/\|x+v\|$$ on $$S^n$$). Momentum optimizers like `RiemannianAdam` also transport past momentum vectors from $$T_{x_{t-1}}M$$ into $$T_{x_t}M$$.
+3. **Ricci Curvature on Manifolds and Graphs (Ollivier–Ricci):** Tracing the Riemann curvature tensor produces Ricci curvature, measuring whether nearby geodesics converge (positive) or diverge (negative). Its discrete cousin on graphs—**Ollivier–Ricci curvature**—diagnoses the two classic GNN pathologies: positive curvature drives *over-smoothing*, while negative curvature bottlenecks cause *over-squashing* (Nguyen et al., 2023).
+
 ## Overview
 
 A Riemannian manifold $$(M,g)$$ is where everything in the course meets: length, geodesics, Levi-Civita, the Riemann curvature tensor, Ricci, and scalar curvature. Hopf–Rinow, at a conceptual level, ties metric completeness to geodesic completeness. This optional lesson does not reprove those theorems. It tells the story of optimisation on $$(M,g)$$ — the question “what must Adam do if the parameters do not live in $$\mathbb{R}^n$$?” — and the story of discrete Ricci curvature on graphs, already met in Chapter 04, now placed in the Ricci language of this chapter.
@@ -24,6 +34,36 @@ Riemannian curvature measures the failure of covariant derivatives to commute. O
 
 ![Geodesics on the sphere — the path of Riemannian gradient descent if the loss is distance.](https://upload.wikimedia.org/wikipedia/commons/0/0a/Sphere_geodesic.svg)
 *Figure 1. Great circles: both geodesics and the orbits of many gradient steps when $$M=S^n$$. Mathwriter2718 / Wikimedia Commons, 2024.*
+
+### Worked Example (Step by Step): Comparing Euclidean Step, Retraction, and Exponential Map on $$S^1$$
+
+Maximize the height function $$f(x, y) = y$$ on the unit circle $$S^1 = \{x^2 + y^2 = 1\}$$, starting at $$p = (1, 0)$$ with step size $$\alpha = 1$$ (ambient Euclidean gradient $$\nabla f = (0, 1)$$):
+
+1. **Naive Euclidean ascent step:** $$p_{\text{Eucl}} = (1, 0) + 1\cdot (0, 1) = (1, 1)$$. Its norm is $$\sqrt{1^2 + 1^2} = \sqrt{2} \approx 1.414 \neq 1$$ — it **leaves the circle $$S^1$$ completely!**
+2. **Riemannian gradient at $$p = (1, 0)$$:** project $$\nabla f = (0, 1)$$ onto the tangent space $$T_p S^1 = \{v : v \cdot p = 0\}$$:
+   $$
+   \operatorname{grad} f(p) = (0, 1) - \bigl((0, 1)\cdot(1, 0)\bigr)(1, 0) = (0, 1).
+   $$
+3. **Compare Retraction vs. Exact Exponential Map with $$v = \alpha \operatorname{grad} f(p) = (0, 1)$$:**
+   - **Normalization retraction** $$R_p(v) = \dfrac{p + v}{\|p + v\|}$$:
+     $$
+     R_p(0, 1) = \frac{(1, 1)}{\sqrt{2}} \approx \mathbf{(0.707,\ 0.707)} \quad (\text{angle } 45^\circ,\ \text{strictly on } S^1).
+     $$
+   - **Exact geodesic exponential map** $$\exp_p(v) = (\cos\|v\|,\ \sin\|v\|)$$:
+     $$
+     \exp_p(0, 1) = (\cos 1,\ \sin 1) \approx \mathbf{(0.540,\ 0.841)} \quad (\text{angle } 57.3^\circ,\ \text{arc length } 1\text{ on } S^1).
+     $$
+
+Both land cleanly on $$S^1$$ and move uphill toward $$(0, 1)$$; for small learning rates $$\alpha = 0.01$$, they agree to $$O(\alpha^2) \sim 10^{-4}$$, while $$R_p$$ skips transcendental calls!
+
+### Deep-Dive Explanation: How `RiemannianAdam` and Ollivier–Ricci Operationalize $$(M, g)$$ (Read Slowly)
+
+1. **Convert partial derivatives into a metric-aware direction:** multiplying by $$g^{-1}$$ (or projecting onto $$T_x M$$) ensures the update obeys the local geometry—in information geometry, where $$g$$ is the Fisher–Rao metric, this is literally the **natural gradient**!
+2. **Retract back onto $$M$$ every iteration:** instead of solving geodesic ODEs at every batch, retractions (normalization, QR decomposition on Stiefel manifolds, Cayley transforms) preserve constraints exactly at low cost.
+3. **Transport optimizer state across tangent spaces:** in `RiemannianAdam`, the moving-average momentum $$m_{t-1}$$ lives in $$T_{x_{t-1}} M$$ and *cannot* be added to $$g_t \in T_{x_t} M$$ until parallel transport (or vector transport) moves it into $$T_{x_t} M$$.
+4. **Read curvature signs as network diagnostics:** on graphs, strongly negative Ollivier–Ricci edges identify tight bridges where GNN messages get squashed—guiding discrete Ricci-flow rewiring to heal the graph.
+
+**Quick check.** In our $$S^1$$ example, what is $$\operatorname{grad} f$$ at the top of the circle $$q = (0, 1)$$? Projecting $$\nabla f = (0, 1)$$ onto $$T_q S^1$$ gives $$(0, 1) - ((0,1)\cdot(0,1))(0,1) = \mathbf{(0, 0)}$$! Even though the Euclidean gradient is nonzero, the **Riemannian gradient vanishes** right at the constrained maximum!
 
 ## Formal definitions and notation
 

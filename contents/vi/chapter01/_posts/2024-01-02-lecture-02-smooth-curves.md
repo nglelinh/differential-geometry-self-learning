@@ -9,15 +9,32 @@ owner: "Hình học Vi phân"
 
 ## 1. Lời mở đầu: Chiếc đồng hồ và Con đường
 
-Hãy hình dung một chiếc xe chạy trên đường đua F1:
-- Bản thân đường đua (hình dáng, các khúc cua, tổng chiều dài) là một đối tượng hình học cố định, không phụ thuộc vào việc có ai lái xe trên đó hay không.
-- Ngược lại, vị trí của xe tại mỗi thời điểm phụ thuộc vào cách lái: người lái có thể đi chậm, tăng tốc tối đa hoặc thậm chí đi ngược chiều.
+Hãy hình dung hai tay đua cùng chạy trên một đường đua F1 giống hệt nhau. Tay đua thứ nhất giữ ga đều tăm tắp, còn tay đua thứ hai liên tục phanh gấp rồi nhấn ga hết cỡ trên đoạn đường thẳng. Nếu gắn một chiếc gia tốc kế lên xe thứ hai, kim gia tốc kế sẽ nhảy dựng ngay cả trên đoạn đường thẳng tắp! Rõ ràng, gia tốc kế đang bị nhiễu bởi **cách lái** chứ không đo thuần túy **độ cong của đường đua**.
 
-Trong toán học, hai yếu tố này tương ứng với:
+Trong toán học, đó chính là ranh giới giữa hai khái niệm:
 - **Đường cong hình học** (Geometric Curve): hình dáng cố định của đường đua.
-- **Tham số hóa** (Parametrization): hàm mô tả vị trí trên đường cong tại mỗi thời điểm $$t$$.
+- **Tham số hóa** (Parametrization): chiếc đồng hồ gắn cho mỗi thời điểm $$t$$ một vị trí $$\gamma(t)$$ trên đường đua.
 
-Bài giảng này trả lời câu hỏi: *Làm thế nào để tách riêng "hình dáng" của đường cong khỏi "tốc độ" di chuyển trên nó?* Ta muốn nghiên cứu bản chất hình học của đường cong chứ không phải cách chọn tham số. Công cụ để thực hiện điều đó là **tham số hóa theo độ dài cung (arc length parametrization)**.
+Bài giảng này giải quyết dứt điểm bài toán: *làm thế nào để tách sạch "hình dáng" của đường cong khỏi "tốc độ" di chuyển trên nó?* Câu trả lời là một quy chuẩn thanh lịch bậc nhất của hình học vi phân: **tham số hóa theo độ dài cung (arc length parametrization)**.
+
+**Mạch bài học:** Bản đồ kiến thức nền (bất biến tái tham số hóa, độ dài cung, tính chính quy) → Vấn đề trộn lẫn tốc độ với hình học → Độ dài cung và chế độ "ga tự động" → Khung giải thích chậm: tự tay bóc tách gia tốc ảo trên $$\gamma_2(t) = (t^2, t^2)$$ và kiểm chứng $$\mathbf{T} \perp \mathbf{T}'$$ trên đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Điểm kỳ dị lùi (cusp) và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Tham số hóa, Bất biến Hình học và Tính chính quy là gì?
+
+Trước khi viết tích phân độ dài cung, hãy nhìn ba khái niệm trụ cột định hình toàn bộ lý thuyết đường cong:
+
+### 1. Bất biến tái tham số hóa (Reparametrization Invariance)
+Một tính chất chỉ thực sự là **hình học** nếu nó không đổi khi ta đổi đồng hồ $$t \mapsto \tilde{t}(t)$$. Độ dài cung $$L$$ và độ cong $$\kappa$$ là bất biến hình học; còn tốc độ $$\|\gamma'(t)\|$$ hay gia tốc toàn phần $$\gamma''(t)$$ thì phụ thuộc vào cách chọn đồng hồ $$t$$.
+
+### 2. Tham số hóa tự nhiên theo Độ dài cung ($$s$$)
+Thay vì dùng đồng hồ thời gian $$t$$ tùy ý, ta dùng chính **cây thước dây trải dọc theo đường cong** làm tham số $$s$$ (tốc độ luôn bằng $$1$$). Khi tốc độ không đổi bằng $$1$$, gia tốc tiếp tuyến triệt tiêu hoàn toàn, nên toàn bộ đạo hàm cấp hai $$\alpha''(s)$$ chỉ còn phản ánh thuần túy sự bẻ hướng của đường cong!
+
+### 3. Đường cong chính quy (Regular Curve) vs. Điểm kỳ dị (Cusp)
+Điều kiện $$\gamma'(t) \neq \mathbf{0}$$ bảo đảm đồng hồ không bao giờ dừng đột ngột. Nhờ đó $$ds/dt = \|\gamma'(t)\| > 0$$ luôn dương, hàm độ dài cung $$s(t)$$ đơn điệu tăng ngặt và luôn tồn tại hàm ngược $$t(s)$$ trơn theo Định lý Hàm Ngược ở Bài 0.2.
+
+---
 
 ## 2. Tham số hóa: Tính tự do và vấn đề phát sinh
 
@@ -65,6 +82,43 @@ $$ \|\alpha'(s)\| = \left\| \frac{d\alpha}{ds} \right\| = 1 $$
 > Vì $$\|\mathbf{T}\|^2 = \mathbf{T} \cdot \mathbf{T} = 1$$ là hằng số, đạo hàm của nó bằng 0:
 > $$\Rightarrow 2\mathbf{T} \cdot \mathbf{T}' = 0 \Rightarrow \mathbf{T} \perp \mathbf{T}'$$.
 > Điều này có nghĩa là **vector gia tốc luôn vuông góc với vector vận tốc**. Toàn bộ gia tốc chỉ dùng để đổi hướng chuyển động chứ không làm thay đổi tốc độ — điều kiện lý tưởng để định nghĩa độ cong.
+
+---
+
+## Khung giải thích: tự tay bóc tách "gia tốc ảo" và kiểm chứng $$\mathbf{T} \perp \mathbf{T}'$$ (nên đọc chậm)
+
+Hãy tự tay kiểm tra hai ví dụ số cụ thể để thấy phép tái tham số hóa theo $$s$$ "lọc sạch" nhiễu tốc độ như thế nào:
+
+### Ví dụ cầm tay 1: Vì sao $$\gamma_2(t) = (t^2, t^2)$$ có gia tốc khác không trên đường thẳng?
+- Tính trực tiếp: $$\gamma_2'(t) = (2t, 2t)$$, tốc độ $$\|\gamma_2'(t)\| = 2\sqrt{2}\,t$$, gia tốc $$\gamma_2''(t) = (2, 2) \neq (0, 0)$$! Gia tốc này hoàn toàn là **gia tốc tăng ga** dọc theo đường thẳng.
+- Bây giờ tái tham số hóa theo độ dài cung $$s$$ (với $$t \ge 0$$):
+  $$
+  s(t) = \int_0^t 2\sqrt{2}\,u\,du = \sqrt{2}\,t^2 \implies t^2 = \frac{s}{\sqrt{2}}.
+  $$
+- Thay $$t^2 = s/\sqrt{2}$$ vào $$\gamma_2$$:
+  $$
+  \alpha(s) = \left(\frac{s}{\sqrt{2}},\ \frac{s}{\sqrt{2}}\right) \implies \alpha'(s) = \left(\frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}}\right) \implies \alpha''(s) = \mathbf{(0, 0)}!
+  $$
+Ngay khi chuyển sang tham số $$s$$, mọi gia tốc ảo biến mất sạch, trả lại đúng bản chất phẳng $$\alpha''(s) = \mathbf{0}$$ của đoạn thẳng!
+
+### Ví dụ cầm tay 2: Kiểm chứng $$\|\mathbf{T}\| = 1$$ và $$\mathbf{T} \perp \mathbf{T}'$$ trên đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$
+1. Từ Bài 1, tốc độ là hằng số $$c = \sqrt{3^2 + 4^2} = 5 \implies s(t) = 5t \implies t = s/5$.
+2. Viết lại theo $$s$$: $$\alpha(s) = \left(3\cos\frac{s}{5},\ 3\sin\frac{s}{5},\ \frac{4s}{5}\right)$$.
+3. Đạo hàm lần 1 (tiếp tuyến đơn vị $$\mathbf{T}$$):
+   $$
+   \mathbf{T}(s) = \alpha'(s) = \left(-\frac{3}{5}\sin\frac{s}{5},\ \frac{3}{5}\cos\frac{s}{5},\ \frac{4}{5}\right), \qquad \|\mathbf{T}(s)\|^2 = \frac{9}{25} + \frac{16}{25} = \mathbf{1}.
+   $$
+4. Đạo hàm lần 2:
+   $$
+   \mathbf{T}'(s) = \alpha''(s) = \left(-\frac{3}{25}\cos\frac{s}{5},\ -\frac{3}{25}\sin\frac{s}{5},\ 0\right).
+   $$
+5. Kiểm tra trực giao bằng tích vô hướng:
+   $$
+   \mathbf{T}(s) \cdot \mathbf{T}'(s) = \frac{9}{125}\sin\frac{s}{5}\cos\frac{s}{5} - \frac{9}{125}\cos\frac{s}{5}\sin\frac{s}{5} + 0 = \mathbf{0}!
+   $$
+Đúng như lý thuyết dự đoán: $$\mathbf{T}'(s)$$ hướng thẳng vuông góc vào trục $$z$$ với độ lớn không đổi $$\|\mathbf{T}'(s)\| = \frac{3}{25} = 0.12$$ — đó chính là **độ cong** mà ta sẽ khảo sát ở Bài 3!
+
+---
 
 ## 4. Tái tham số hóa (Reparametrization)
 

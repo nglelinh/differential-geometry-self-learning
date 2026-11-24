@@ -10,11 +10,30 @@ lesson_type: optional
 
 ## Tổng quan
 
-Chương 2 trình bày bề mặt chính quy thông qua mảnh tham số hóa $$\mathbf{x}(u,v)$$, mặt phẳng tiếp tuyến và vector pháp tuyến. Định nghĩa đó vẫn là chuẩn mực toán học. Trong đồ họa máy tính và thị giác 3D giai đoạn 2021–2024, thay đổi lớn nhất nằm ở *cách biểu diễn bề mặt*: thay vì lưu trực tiếp lưới tam giác, nhiều phương pháp hiện đại học một hàm ẩn — phổ biến nhất là hàm khoảng cách có dấu $$\mathrm{SDF}:\mathbb{R}^3\to\mathbb{R}$$ — trong đó bề mặt là tập mức không, hoặc biểu diễn cảnh bằng một tập hợp các hàm Gaussian 3D rời rạc rồi chiếu ("splat") chúng lên mặt phẳng ảnh.
+Trong gần nửa thế kỷ, đồ họa 3D gần như đồng nghĩa với **lưới tam giác (triangle meshes)** — hàng triệu mảnh tam giác phẳng ghép lại để xấp xỉ bề mặt cong. Thế nhưng chỉ trong giai đoạn 2021–2024, thị giác 3D và đồ họa máy tính đã trải qua hai cú xoay chuyển ngoạn mục quay trở lại tận gốc của Chương 2:
+- **Bề mặt ẩn thần kinh (NeuS, 2021–2024):** thay vì lưu đỉnh và tam giác, mạng nơ-ron học một **hàm khoảng cách có dấu (SDF)** để bề mặt hiện ra đúng là *tập mức không* $$f^{-1}(0)$$.
+- **3D và 2D Gaussian Splatting (2023–2024):** biểu diễn cả cảnh 3D bằng hàng trăm nghìn đĩa elip mờ có thể tối ưu trực tiếp — đủ nhanh để kết xuất thời gian thực — rồi ép dẹt chúng sát mặt phẳng tiếp tuyến để lấy lại hình học chính xác.
 
-NeuS (Wang và cộng sự, NeurIPS 2021, cùng các phát triển kế tiếp giai đoạn 2022–2024) kết hợp SDF với kết xuất thể tích sao cho mặt mức không khớp với hình học thực thay vì chỉ tái tạo màu sắc. 3D Gaussian Splatting (Kerbl, Kopanas, Leimkühler, Drettakis, TOG / SIGGRAPH 2023) cho thấy một biểu diễn tường minh, có thể tối ưu trực tiếp, đủ khả năng kết xuất cảnh theo thời gian thực. Sau đó, 2D Gaussian Splatting (2024) ép dẹt các phần tử Gaussian sát hơn vào bề mặt nhằm đảm bảo độ chính xác về hình học chứ không chỉ về ánh sáng.
+Bài đọc thêm này không đi vào chi tiết lập trình GPU, mà nối trực tiếp câu hỏi kinh điển của Bài 5 (*thế nào là một bề mặt chính quy?*) với hai cuộc cách mạng biểu diễn bề mặt hiện đại ấy.
 
-Bài đọc thêm này không đi vào chi tiết cài đặt thuật toán, mà kết nối câu hỏi cổ điển *thế nào là một bề mặt?* với các biểu diễn hiện đại: *mặt mức chính quy của một hàm học được, hoặc tập hợp các mảnh tiếp xúc nhỏ*.
+**Mạch bài học:** Bản đồ kiến thức nền (hàm khoảng cách có dấu SDF & phương trình Eikonal, kết xuất thể tích NeuS, Gaussian Splatting 3D/2D) → Trực giác biểu diễn ẩn và đĩa tiếp tuyến → Định nghĩa hình thức → Khung giải thích chậm: tự tay kiểm tra phương trình Eikonal $$\|\nabla f\| = 1$$ cho SDF mặt cầu và kiểm tra elipxôit Gaussian ép dẹt → Ứng dụng và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Bề mặt Ẩn (SDF), NeuS và Gaussian Splatting là gì?
+
+Để nhìn xuyên qua các thuật ngữ đồ họa AI và thấy đúng toán học của Chương 2 đằng sau chúng, hãy nắm ba trụ cột:
+
+### 1. Hàm Khoảng cách Có dấu (SDF) và Phương trình Eikonal
+Một **SDF** gán cho mỗi điểm $$\mathbf{x} \in \mathbb{R}^3$$ khoảng cách ngắn nhất từ $$\mathbf{x}$$ tới bề mặt (mang dấu âm nếu ở trong vật thể, dương nếu ở ngoài, và bằng $$0$$ ngay trên bề mặt). Nhờ Định lý Hàm Ẩn (Bài 0.2), chỉ cần $$\nabla \mathrm{SDF} \neq \mathbf{0}$$ trên tập mức không, ta tự động có một bề mặt chính quy với pháp tuyến đơn vị $$\mathbf{n} = \nabla \mathrm{SDF}$$ (vì SDF chuẩn luôn thỏa **phương trình Eikonal** $$\|\nabla \mathrm{SDF}\| = 1$$!).
+
+### 2. NeuS — Khử lệch hình học trong Kết xuất Thể tích
+Trong kết xuất thể tích (như NeRF), tia sáng đi qua đám mây mật độ mờ. Nếu gắn mật độ trực tiếp vào SDF một cách ngây thơ, trọng số tích lũy sẽ bị lệch khỏi mặt mức không $$f = 0$$. **NeuS** thiết kế hàm mật độ dựa trên đạo hàm của hàm logistic sao cho đỉnh trọng số rơi *đúng tuyệt đối* lên mặt mức không, biến ảnh đa góc nhìn thành bề mặt hình học sắc nét.
+
+### 3. 3D và 2D Gaussian Splatting — Trở về với Mặt phẳng Tiếp tuyến
+**3D Gaussian Splatting (2023)** thay mạng nơ-ron chậm bằng hàng trăm nghìn khối elipxôit 3D mang màu sắc và độ mờ, chiếu thẳng lên màn hình ở tốc độ trên 100 khung hình/giây. Tuy nhiên các khối 3D "bồng bềnh" khó xác định pháp tuyến bề mặt chính xác — nên **2D Gaussian Splatting (2024)** ép dẹt một trục của ma trận hiệp phương sai $$\Sigma$$ về $$0$$, biến mỗi phần tử thành một **mảnh đĩa tiếp tuyến 2D** áp sát bề mặt!
+
+---
 
 ## Giải thích trực quan
 
@@ -42,6 +61,38 @@ Khi một trục chính của $$\Sigma$$ bị ép rất nhỏ so với hai trụ
 </div>
 
 NeuS chỉ ra rằng nếu gắn mật độ thể tích vào hàm SDF một cách trực tiếp trong kết xuất thể tích cổ điển, vị trí bề mặt tái tạo sẽ bị lệch khỏi tập mức không. Công thức trọng số hiệu chỉnh của NeuS khử sai số bậc nhất này, cho thấy việc tạo ra "ảnh hiển thị tốt" không tự động đảm bảo "hình học bề mặt chính xác".
+
+---
+
+## Khung giải thích: tự tay kiểm tra SDF mặt cầu và elipxôit Gaussian ép dẹt (nên đọc chậm)
+
+Để hai định nghĩa trên chạm xuống mặt đất, hãy tự tay tính hai ví dụ cụ thể:
+
+### Ví dụ cầm tay 1: Kiểm tra phương trình Eikonal trên SDF của mặt cầu đơn vị
+Xét hàm khoảng cách có dấu của mặt cầu đơn vị tâm $$O$$:
+$$
+f(x, y, z) = \sqrt{x^2 + y^2 + z^2} - 1.
+$$
+Kiểm tra tại điểm $$p = (3/5,\ 4/5,\ 0)$$:
+1. **Có nằm trên bề mặt không?** $$f(p) = \sqrt{\frac{9}{25} + \frac{16}{25} + 0} - 1 = 1 - 1 = \mathbf{0}$$ (có!).
+2. **Tính gradient $$\nabla f$$:** với $$r = \sqrt{x^2+y^2+z^2}$$, ta có $$\frac{\partial f}{\partial x} = \frac{x}{r}$$, suy ra:
+   $$
+   \nabla f(x, y, z) = \left(\frac{x}{r},\ \frac{y}{r},\ \frac{z}{r}\right) \implies \nabla f(p) = \left(\frac{3}{5},\ \frac{4}{5},\ 0\right).
+   $$
+3. **Kiểm tra phương trình Eikonal:** $$\|\nabla f(p)\| = \sqrt{\frac{9}{25} + \frac{16}{25} + 0} = \mathbf{1}$$! Tại mọi điểm $$r > 0$$, $$\|\nabla f\| \equiv 1$$ — đó là lý do các mạng nơ-ron học SDF luôn thêm số hạng phạt *Eikonal loss* $$\bigl(\|\nabla f_\theta\| - 1\bigr)^2$$ vào hàm mất mát để ép hàm học được hành xử đúng như khoảng cách thực!
+
+### Ví dụ cầm tay 2: Ép dẹt elipxôit Gaussian thành mảnh tiếp tuyến 2D
+Xét phần tử Gaussian đặt tại tâm $$\boldsymbol{\mu} = (0, 0, 0)$$ với ma trận hiệp phương sai chéo:
+$$
+\Sigma = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0.01 \end{pmatrix} \implies \Sigma^{-1} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 100 \end{pmatrix}.
+$$
+Xét mặt mức mật độ $$(\mathbf{x} - \boldsymbol{\mu})^\top \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}) = 1$$:
+$$
+x^2 + y^2 + 100 z^2 = 1 \iff \frac{x^2}{1^2} + \frac{y^2}{1^2} + \frac{z^2}{(0.1)^2} = 1.
+$$
+Đó là một chiếc đĩa dẹt có bán kính ngang $$1$$ nhưng bề dày theo trục $$z$$ chỉ còn $$0.1$$ — bám sát mặt phẳng tiếp tuyến $$z = 0$$ với vector pháp tuyến chính là trục riêng ứng với trị riêng nhỏ nhất $$\mathbf{e}_3 = (0, 0, 1)$$!
+
+---
 
 ## Minh họa hình học
 

@@ -7,6 +7,26 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
+Vào năm 1827, sau nhiều năm vất vả đi đo đạc trắc địa khắp Vương quốc Hanover bằng kính kinh vĩ và tam giác lượng, Carl Friedrich Gauss công bố một chuyên khảo ngắn bằng tiếng Latin và gọi kết quả trung tâm trong đó bằng cái tên đầy tự hào hiếm thấy: *Theorema Egregium* — **Định lý Đáng kinh ngạc**. Điều gì đã khiến một nhà toán học cẩn trọng bậc nhất lịch sử phải thốt lên như vậy?
+
+Ở Bài 7, ta vừa định nghĩa độ cong Gauss $$K = \kappa_1 \kappa_2$$ hoàn toàn bằng vector pháp tuyến $$\mathbf{n}$$ — một đại lượng chỉ tồn tại nhờ không gian 3 chiều bao quanh. Nếu bạn uốn một tờ giấy thành ống trụ, $$\kappa_1$$ đổi từ $$0$$ thành $$1/R$$, ma trận $$II$$ thay đổi hẳn. Thế nhưng Gauss chứng minh được một sự thật đảo lộn mọi trực giác: **tích $$K = \kappa_1 \kappa_2$$ lại hoàn toàn không phụ thuộc vào cách bề mặt nhúng trong $$\mathbb{R}^3$$!** Một sinh vật 2 chiều sống bẹp trên bề mặt, chưa từng biết tới chiều thứ ba, chỉ cần một sợi dây đo và một chiếc thước đo góc cũng có thể tính ra chính xác $$K$$ — và chứng minh được ngay rằng Trái Đất không thể trải phẳng thành bản đồ mà không méo.
+
+**Mạch bài học:** Câu hỏi nội tại vs. ngoại tại → Bản đồ kiến thức nền (Ánh xạ Gauss, Phép đẳng cự, Tính nội tại của $$K$$) → Trực giác lát pizza, uốn cong vs. kéo giãn, đèn pin pháp tuyến → Định nghĩa hình thức & Công thức Brioschi → Khung giải thích tính tay $$K = 1/R^2$$ của mặt cầu chỉ từ $$E, F, G$$ (không đụng tới $$L, M, N$$!) → Hình ảnh minh họa & Ứng dụng bản đồ học, tương đối rộng.
+
+## Bản đồ kiến thức nền: Từ hình học ngoại tại sang hình học nội tại của Gauss
+
+### 1. Ánh xạ Gauss (Gauss Map)
+- **Là gì:** Ánh xạ $$\mathcal{N}: S \to S^2$$ đưa mỗi điểm $$p$$ trên bề mặt định hướng tới đầu mút của vector pháp tuyến đơn vị $$\mathbf{n}(p)$$ đặt tại gốc tọa độ trên mặt cầu đơn vị $$S^2$$.
+- **Nghiên cứu gì:** Biến bài toán "vector pháp tuyến quay nhanh đến mức nào?" thành bài toán đo **tỉ lệ co giãn diện tích** của một ánh xạ giữa hai mặt 2 chiều. Định thức Jacobian $$\det(d\mathcal{N}_p)$$ chính là độ cong Gauss $$K(p)$$.
+
+### 2. Phép đẳng cự (Isometry) và Biến dạng uốn cong (Bending)
+- **Là gì:** Một vi đồng phôi $$\varphi: S_1 \to S_2$$ bảo toàn độ dài mọi đường cong trên bề mặt — tương đương với việc hai bề mặt có cùng dạng cơ bản thứ nhất $$I$$ tại các điểm tương ứng.
+- **Nghiên cứu gì:** Phân loại các bề mặt theo quan điểm *nội tại*: hai bề mặt đẳng cự cục bộ (như mặt phẳng và mặt trụ, hay mặt Helicoid và mặt Catenoid) là "giống hệt nhau" đối với cư dân sống trên bề mặt, dù nhìn từ $$\mathbb{R}^3$$ chúng có hình dáng khác hẳn nhau.
+
+### 3. Theorema Egregium — Cánh cửa sang hình học Riemann
+- **Là gì:** Định lý khẳng định $$K$$ biểu diễn được hoàn toàn theo $$E, F, G$$ và các đạo hàm riêng đến cấp hai của chúng, không cần $$L, M, N$$.
+- **Nghiên cứu gì:** Khai sinh **hình học nội tại (intrinsic geometry)**. Nhờ Gauss, học trò của ông là Bernhard Riemann nhận ra ta không cần nhúng vũ trụ 4 chiều vào một không gian 5 chiều nào cả — chỉ cần trang bị cho đa tạp một tensor metric $$g_{ij}$$ là đủ để định nghĩa độ cong ngay từ bên trong!
+
 ## 1. Tổng quan
 
 Bài giảng này trình bày một trong những kết quả trung tâm của hình học vi phân: *Theorema Egregium* (Định lý Đáng chú ý / Định lý Xuất sắc) do Carl Friedrich Gauss công bố năm 1827. Định lý này thay đổi căn bản cách nhìn về hình học bề mặt.
@@ -117,6 +137,29 @@ Dù biểu thức trên khá dài, ý nghĩa toán học của nó rất rõ rà
 > Trước Gauss, độ cong bề mặt thường được xem là đặc trưng gắn với cách bề mặt uốn cong trong không gian 3 chiều. Gauss chứng minh rằng chỉ cần biết thước đo khoảng cách nội tại ($$E, F, G$$) là đủ để xác định độ cong $$K$$. Kết quả này mở đường cho Riemann xây dựng lý thuyết độ cong trên các đa tạp nhiều chiều mà không cần nhúng chúng vào không gian Euclid lớn hơn.
 
 Như vậy, một sinh vật hai chiều sống trên bề mặt, chỉ thực hiện các phép đo độ dài và góc nội tại, hoàn toàn có thể tính được $$K$$ mà không cần thông tin về không gian ba chiều bên ngoài.
+
+## Khung giải thích: Tự tính độ cong mặt cầu bằng hai cách — ngoại tại và thuần nội tại (nên đọc chậm)
+
+Để cảm nhận trọn vẹn phép màu của Theorema Egregium, hãy tính $$K$$ cho mặt cầu bán kính $$R$$ theo hai con đường hoàn toàn độc lập: một đường nhìn từ $$\mathbb{R}^3$$ qua ánh xạ Gauss, và một đường bịt mắt con kiến lại, **chỉ đưa cho nó $$E, F, G$$**.
+
+### Cách 1 (Ngoại tại — qua tỉ số diện tích của ánh xạ Gauss)
+Mặt cầu bán kính $$R$$ có diện tích toàn phần $$A(S_R^2) = 4\pi R^2$$. Vector pháp tuyến ngoài tại mỗi điểm chỉ thẳng ra từ tâm nên ánh xạ Gauss $$\mathcal{N}: S_R^2 \to S^2$$ là một song ánh bảo toàn định hướng phủ kín mặt cầu đơn vị (diện tích $$4\pi$$). Vì đối xứng cầu, độ cong $$K$$ là hằng số, nên tỉ số diện tích toàn phần cho ngay:
+$$ K = \frac{\text{Diện tích}(S^2)}{\text{Diện tích}(S_R^2)} = \frac{4\pi}{4\pi R^2} = \frac{1}{R^2}. $$
+
+### Cách 2 (Thuần nội tại — không hề dùng vector pháp tuyến $$\mathbf{n}$$ hay $$L, M, N$$!)
+Khi hệ tọa độ $$(u, v)$$ trực giao ($$F = 0$$), công thức Brioschi rút gọn thành biểu thức cực kỳ đẹp mắt:
+$$ K = -\frac{1}{\sqrt{EG}} \left[ \frac{\partial}{\partial u}\left(\frac{(\sqrt{G})_u}{\sqrt{E}}\right) + \frac{\partial}{\partial v}\left(\frac{(\sqrt{E})_v}{\sqrt{G}}\right) \right]. $$
+Bây giờ đưa cho con kiến trên mặt cầu chỉ riêng metric từ Bài 6 ($$u = \varphi$$ là góc cực, $$v = \theta$$ là kinh độ):
+$$ E = R^2, \qquad F = 0, \qquad G = R^2 \sin^2\varphi. $$
+Tính từng bước bằng tay:
+1. $$\sqrt{E} = R$$ (hằng số nên $$(\sqrt{E})_\theta = 0$$ — số hạng thứ hai biến mất ngay!).
+2. $$\sqrt{G} = R\sin\varphi \implies (\sqrt{G})_\varphi = R\cos\varphi$$.
+3. Chia cho $$\sqrt{E} = R$$: $$\frac{(\sqrt{G})_\varphi}{\sqrt{E}} = \frac{R\cos\varphi}{R} = \cos\varphi$$.
+4. Lấy đạo hàm theo $$\varphi$$: $$\frac{\partial}{\partial \varphi}(\cos\varphi) = -\sin\varphi$$.
+5. Nhân với $$-\frac{1}{\sqrt{EG}} = -\frac{1}{R^2\sin\varphi}$$:
+   $$ K = -\frac{1}{R^2\sin\varphi}(-\sin\varphi) = \frac{1}{R^2}. $$
+
+**Điều đáng suy ngẫm:** Trong cả 5 bước ở Cách 2, ta không hề viết ra tọa độ $$(x, y, z)$$ trong $$\mathbb{R}^3$$, không tính tích có hướng, không dựng pháp tuyến $$\mathbf{n}$$. Con kiến chỉ cần đo chu vi các vòng vĩ tuyến (biết $$\sqrt{G} = R\sin\varphi$$) và khoảng cách dọc kinh tuyến (biết $$\sqrt{E} = R$$) là đủ chứng minh mặt cầu cong với $$K = 1/R^2$$!
 
 ### 3.4. Phép Đẳng cự (Isometry)
 

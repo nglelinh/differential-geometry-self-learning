@@ -7,15 +7,30 @@ order: 2
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Con kiến và Tấm bản đồ
+## 1. Lời mở đầu: Con kiến bước từ sợi dây lên vỏ quả cam
 
-Hãy quay lại hình ảnh con kiến ở Bài 1, nhưng lần này con kiến không còn đi dọc theo một sợi dây 1 chiều nữa mà đứng trên bề mặt của một quả cam lớn:
-- Con kiến có thể di chuyển theo hai phương độc lập (trái–phải và trước–sau), tức có **2 bậc tự do**.
-- Trong một vùng đủ nhỏ quanh vị trí đứng, bề mặt trông gần như phẳng.
+Ở bốn bài đầu, thế giới của ta chỉ có một chiều — một con kiến đi tới hoặc đi lùi trên sợi dây. Bây giờ hãy đặt con kiến lên vỏ một quả cam lớn. Ngay lập tức mọi thứ giàu có hơn hẳn: con kiến có thể đi trái–phải lẫn trước–sau (**2 bậc tự do**), và trong một khoảng sân nhỏ quanh chân nó, vỏ quả cam duỗi phẳng gần như một mảnh giấy.
 
-Đây là trực giác cơ bản của một **bề mặt (surface)** hay **đa tạp 2 chiều (2-manifold)**: một không gian mà *cục bộ* giống như mặt phẳng Euclid $$\mathbb{R}^2$$.
+Đó là cửa ngõ bước vào **Lý thuyết Bề mặt (Surface Theory)** — mảnh đất màu mỡ nhất của hình học vi phân cổ điển, nơi Gauss khám phá ra hình học nội tại. Để mang được phép tính vi phân từ tờ giấy phẳng $$\mathbb{R}^2$$ lên vỏ quả cam hay chiếc bánh donut cong, ta dùng các **mảnh tham số hóa (bản đồ tọa độ)** $$\mathbf{r}(u, v)$$ — hệt như cách những người vẽ bản đồ thế kỷ XVI chiếu từng vùng của Trái Đất lên trang giấy phẳng.
 
-Để mô tả toán học toàn bộ một bề mặt cong bằng tọa độ phẳng, ta sử dụng các **bản đồ tọa độ (maps/charts)**. Tương tự cách bản đồ địa lý biểu diễn từng vùng của bề mặt Trái Đất lên mặt phẳng giấy, ta dùng các ánh xạ để gán tọa độ phẳng $$(u, v)$$ cho từng mảnh của bề mặt.
+**Mạch bài học:** Bản đồ kiến thức nền (bề mặt chính quy, mặt phẳng tiếp tuyến $$T_PS$$, biểu diễn tham số vs. ẩn) → Tham số hóa mặt cầu và mặt xuyến → Điều kiện chính quy $$\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$$ → Mặt phẳng tiếp tuyến và pháp tuyến đơn vị $$\mathbf{n}$$ → Khung giải thích chậm: tự tay tính $$\mathbf{r}_u, \mathbf{r}_v, \mathbf{n}$$ trên paraboloid $$(u, v, u^2+v^2)$$ và phát hiện đỉnh nhọn kỳ dị của mặt nón → Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Bề mặt Chính quy, Mặt phẳng Tiếp tuyến và Pháp tuyến là gì?
+
+Trước khi viết công thức tham số hóa, hãy đặt lý thuyết bề mặt lên ba trụ cột mà sinh viên đại học sẽ dùng xuyên suốt Chương 2, 3 và 4:
+
+### 1. Bề mặt Chính quy (Regular Surface) — Đa tạp 2 chiều trong $$\mathbb{R}^3$$
+Một bề mặt trong $$\mathbb{R}^3$$ được gọi là **chính quy** nếu quanh mỗi điểm đều có thể phủ bằng một mảnh tham số hóa trơn $$\mathbf{r}(u, v)$$ không bị gấp nếp, tự cắt hay bóp dẹt (tức hai vector tiếp tuyến $$\mathbf{r}_u, \mathbf{r}_v$$ luôn độc lập tuyến tính: $$\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$$).
+
+### 2. Mặt phẳng Tiếp tuyến ($$T_P S$$) — Phòng thí nghiệm Đại số Tuyến tính
+Làm việc trực tiếp trên vỏ quả cam cong là bài toán phi tuyến. **Mặt phẳng tiếp tuyến $$T_P S$$** tại điểm $$P$$ là không gian vector 2 chiều sinh bởi $$\{\mathbf{r}_u, \mathbf{r}_v\}$$ — nơi toàn bộ Đại số Tuyến tính ở Bài 0.1 hoạt động trở lại. Mọi khái niệm sau này (metric, toán tử hình dáng, độ cong Gauss) đều được định nghĩa trên $$T_P S$$!
+
+### 3. Vector Pháp tuyến Đơn vị ($$\mathbf{n}$$) và Tính định hướng
+Vector $$\mathbf{n} = \frac{\mathbf{r}_u \times \mathbf{r}_v}{\|\mathbf{r}_u \times \mathbf{r}_v\|}$$ vuông góc với mặt phẳng tiếp tuyến. Cách $$\mathbf{n}$$ nghiêng đi khi ta di chuyển trên bề mặt chính là thước đo độ cong ngoại tại (Bài 7) và là chìa khóa tính ánh sáng phản xạ trong mọi engine đồ họa 3D.
+
+---
 
 ## 2. Tham số hóa bề mặt
 
@@ -78,6 +93,38 @@ Tại mỗi điểm $$P$$ trên bề mặt chính quy, hai vector độc lập t
 Vector $$\mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v$$ vuông góc với mặt phẳng tiếp tuyến $$T_P S$$. Sau khi chuẩn hóa, ta thu được **vector pháp tuyến đơn vị**:
 $$ \mathbf{n} = \frac{\mathbf{N}}{\|\mathbf{N}\|} $$
 Vector $$\mathbf{n}$$ giữ vai trò then chốt trong việc định hướng bề mặt, định nghĩa độ cong và tính toán ánh sáng trong đồ họa máy tính.
+
+---
+
+## Khung giải thích: tự tay tính mặt phẳng tiếp tuyến trên Paraboloid và bắt lỗi kỳ dị trên Mặt nón (nên đọc chậm)
+
+Hãy tự tay thực hiện hai phép tính ngắn để làm chủ trọn vẹn khái niệm chính quy và pháp tuyến:
+
+### Ví dụ cầm tay 1: Mặt paraboloid tròn xoay $$\mathbf{r}(u, v) = (u,\ v,\ u^2 + v^2)$$ tại điểm $$(u, v) = (1, 0)$$
+1. **Vị trí điểm $$P$$:** $$P = \mathbf{r}(1, 0) = (1, 0, 1)$$.
+2. **Hai vector tiếp tuyến cơ sở:**
+   $$
+   \mathbf{r}_u = (1,\ 0,\ 2u) \Big\vert_{(1,0)} = (1,\ 0,\ 2), \qquad \mathbf{r}_v = (0,\ 1,\ 2v) \Big\vert_{(1,0)} = (0,\ 1,\ 0).
+   $$
+3. **Tích có hướng và kiểm tra tính chính quy:**
+   $$
+   \mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 0 & 2 \\ 0 & 1 & 0 \end{vmatrix} = (-2,\ 0,\ 1) \neq \mathbf{0}.
+   $$
+   Vì $$\|\mathbf{N}\| = \sqrt{(-2)^2 + 0^2 + 1^2} = \sqrt{5}$$, vector pháp tuyến đơn vị là:
+   $$
+   \mathbf{n} = \left(-\frac{2}{\sqrt{5}},\ 0,\ \frac{1}{\sqrt{5}}\right).
+   $$
+4. **Phương trình mặt phẳng tiếp tuyến $$T_P S$$ tại $$P(1, 0, 1)$$:**
+   $$
+   -2(x - 1) + 0(y - 0) + 1(z - 1) = 0 \iff z = 2x - 1.
+   $$
+
+### Ví dụ cầm tay 2: Vì sao đỉnh mặt nón $$\mathbf{r}(u, v) = (u\cos v,\ u\sin v,\ u)$$ bị hỏng tính chính quy?
+- Tính hai đạo hàm riêng: $$\mathbf{r}_u = (\cos v, \sin v, 1)$$ và $$\mathbf{r}_v = (-u\sin v, u\cos v, 0)$$.
+- Tính tích có hướng: $$\mathbf{r}_u \times \mathbf{r}_v = (-u\cos v,\ -u\sin v,\ u) \implies \|\mathbf{r}_u \times \mathbf{r}_v\| = \sqrt{2}\,\lvert u\rvert$$.
+- Tại mọi điểm $$u \neq 0$$, mặt nón hoàn toàn trơn và chính quy. Nhưng ngay tại đỉnh nhọn $$u = 0$$, ta có $$\mathbf{r}_v = \mathbf{0}$$ và $$\mathbf{r}_u \times \mathbf{r}_v = \mathbf{0}$$ — không tồn tại mặt phẳng tiếp tuyến duy nhất! Vì thế trong hình học vi phân, ta luôn bỏ đỉnh nhọn (chỉ xét $$u > 0$$) khi coi mặt nón là bề mặt chính quy.
+
+---
 
 ## 5. Hai cách biểu diễn bề mặt: Tham số và Ẩn
 

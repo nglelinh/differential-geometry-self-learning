@@ -8,6 +8,16 @@ owner: "Differential Geometry"
 lesson_type: optional
 ---
 
+Why does curling a slice of pizza sideways stop the tip from drooping? Why does an airplane from Tokyo to New York arch up near Alaska? Why can a 2D Escher print pack an exponentially branching family tree comfortably near its circular rim where flat Euclidean paper runs out of space? Every one of Chapter 09's visual stories—Gaussian curvature, geodesics, minimal surfaces, the hairy-ball theorem, hyperbolic space, and black holes—has stepped straight out of popular math books and into 2022–2026 computer vision, robotics, hyperbolic deep learning, and astrophysics!
+
+## Background Knowledge Map: How Intrinsic, Geodesic, and Hyperbolic Geometry Unite Modern Applications
+
+This capstone map gathers the entire course into three practical geometric lenses used across 2022–2026 research:
+
+1. **Intrinsic Curvature ($$K$$) & Theorema Egregium:** Bending a flat sheet ($$K = 0$$) without stretching cannot change Gaussian curvature—forcing 3D Gaussian Splatting and Neural Jacobian Fields to respect intrinsic surface geometry rather than chasing raw pixel colors.
+2. **Negative Curvature ($$K < 0$$) & Hyperbolic Representation Learning:** In Euclidean space, circumference grows linearly ($$2\pi r$$), while in the hyperbolic Poincaré disc it grows **exponentially** ($$2\pi \sinh R$$)—matching the exponential leaf growth ($$2^d$$) of hierarchies, word taxonomies, and biological trees!
+3. **Global Topology & Lorentzian Geodesics:** Global obstructions like the Hairy Ball Theorem explain why 3D graphics and spherical robotics cannot comb a smooth singularity-free direction field on $$S^2$$, while Lorentzian null geodesics turn Einstein's metric into supercomputer images of supermassive black holes.
+
 ## Overview
 
 Chapter 09 of the course is already a cluster of windows: the pizza theorem and Gaussian curvature, flight paths as great circles, soap films, black holes, the hairy-ball theorem, Escher’s hyperbolic geometry. This optional lesson opens no new theorem. It only updates, with real citations from about 2022–2026, how each of those windows is being used in computer vision, robotics, shape analysis, hyperbolic deep learning, and — when it touches the relativity lesson — the numerics of general relativity.
@@ -24,6 +34,33 @@ Black holes, in 2022, gained a second portrait: Sagittarius A*. The EHT Collabor
 
 ![The Poincaré disc — hyperbolic parallels.](https://upload.wikimedia.org/wikipedia/commons/4/4c/Poincare_disc_hyperbolic_parallel_lines.svg)
 *Figure 1. In the Poincaré disc model, “straight lines” are arcs orthogonal to the boundary; through a point there are infinitely many parallels to a given line. Wikimedia Commons, open licence.*
+
+### Worked Example (Step by Step): Measuring Exponential Room Near the Rim of the Poincaré Disc
+
+In the Poincaré disc $$\mathbb{D} = \{x^2 + y^2 < 1\}$$ with hyperbolic metric $$g = \dfrac{4(dx^2 + dy^2)}{(1 - r^2)^2}$$, the hyperbolic distance from the origin $$0$$ to a point at Euclidean radius $$r \in [0, 1)$$ is:
+
+$$
+d_{\mathbb{H}}(0, r) = \int_0^r \frac{2\,dt}{1 - t^2} = \ln\!\left(\frac{1 + r}{1 - r}\right).
+$$
+
+Plug in three radii approaching the rim and compare the **hyperbolic circumference** $$C_{\mathbb{H}}(R) = 2\pi\sinh(R)$$ against the **Euclidean circumference** $$C_{\mathbb{E}}(R) = 2\pi R$$ at the same geodesic radius $$R = d_{\mathbb{H}}(0, r)$$:
+
+| Euclidean radius $$r$$ | Hyperbolic radius $$R = \ln\bigl(\frac{1+r}{1-r}\bigr)$$ | Euclidean circumference $$2\pi R$$ | Hyperbolic circumference $$2\pi \sinh(R)$$ |
+|---|---|---|---|
+| $$r = 0.50$$ | $$\ln(3) \approx \mathbf{1.10}$$ | $$6.90$$ | $$8.38$$ |
+| $$r = 0.90$$ | $$\ln(19) \approx \mathbf{2.94}$$ | $$18.50$$ | $$\mathbf{59.5}$$ |
+| $$r = 0.99$$ | $$\ln(199) \approx \mathbf{5.29}$$ | $$33.26$$ | **$$624.5$$** (nearly **19×** more room!) |
+
+Look at that bottom row: moving from $$r = 0.90$$ to $$r = 0.99$$ barely nudges the Euclidean radius, yet increases hyperbolic circumference more than **10-fold**! That exponential explosion of room near the boundary is why a 2D hyperbolic neural network embeds deep WordNet taxonomies with tiny distortion where 2D Euclidean embeddings crush siblings on top of one another.
+
+### Deep-Dive Explanation: Three Words That Unlock 2022–2026 Applied Geometry (Read Slowly)
+
+1. **Intrinsic:** ask what survives bending without stretching (Gaussian curvature $$K$$, geodesic distance); vision and shape-matching models that learn intrinsic quantities generalize seamlessly across body poses.
+2. **Geodesic:** on curved spaces—spheres, $$SE(3)$$, hyperbolic discs, or Kerr spacetime—straight lines generalize to shortest/stationary curves; Riemannian optimizers and black-hole ray tracers both follow geodesics (or retractions).
+3. **Equivariant:** whenever a domain carries a symmetry group ($$O(3), SE(3)$$), encoding that symmetry directly into Clifford layers or spherical-harmonic transformers lets models obey conservation laws out of the box.
+4. **Match curvature sign to your data's geometry:** use $$K = 0$$ (Euclidean) for flat grids, $$K > 0$$ (spheres/$$SO(3)$$) for directions and rotations, and $$K < 0$$ (hyperbolic space) for trees and hierarchies.
+
+**Quick check.** In the Poincaré disc, what happens to $$d_{\mathbb{H}}(0, r) = \ln\!\left(\frac{1+r}{1-r}\right)$$ as $$r \to 1^-$$? It diverges to **$$+\infty$$**—proving that the boundary circle $$r = 1$$ sits infinitely far away in hyperbolic distance, so the Poincaré disc is geodesically complete!
 
 ## Formal definitions and notation
 

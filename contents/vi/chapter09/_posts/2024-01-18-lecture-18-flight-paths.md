@@ -18,6 +18,23 @@ Trong bài giảng này, chúng ta tìm hiểu khái niệm **Đường trắc �
 
 *Để tìm hiểu cách thiết lập và giải phương trình đường trắc địa, hãy xem [Bài giảng 9: Đường trắc địa]({{ '/contents/vi/chapter04/lecture-09-geodesics/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
 
+**Mạch bài học:** Bản đồ kiến thức nền (đường trắc địa trên mặt cong, đường tròn lớn vs. đường loxodrome, ánh sáng trên không-thời gian cong) → Trực giác con kiến trên quả táo & hàng hải → Ví dụ tính số cầm tay chỉ việc: so sánh bay dọc vĩ tuyến $$60^\circ\text{ N}$$ với bay vòng qua Bắc Cực (tiết kiệm đúng $$3{,}336\text{ km}$$!) → Khung giải thích chậm: 3 bước hiểu vì sao đường tròn lớn vừa "thẳng nhất" vừa "ngắn nhất" → Ảo giác bản đồ, Ánh sáng vũ trụ & Video.
+
+---
+
+## Bản đồ kiến thức nền: Đường Trắc địa trong Hình học cầu và Vũ trụ học là gì?
+
+### 1. Hai gương mặt của "đường thẳng" trên mặt cong
+Trong mặt phẳng Euclid, đoạn thẳng cùng lúc sở hữu hai tính chất: (a) **không bẻ lái** (gia tốc tiếp tuyến bằng 0, $$\nabla_{\dot\gamma}\dot\gamma = 0$$), và (b) **ngắn nhất** giữa hai điểm. Trên mặt cong (như Trái Đất), đường cong giữ nguyên hai đặc tính cục bộ đó gọi là **đường trắc địa (geodesic)** — và trên mặt cầu, chúng chính là các **đường tròn lớn** (giao tuyến của mặt cầu với mặt phẳng đi qua tâm Trái Đất)!
+
+### 2. Đường Loxodrome (Rhumb Line) vs. Đường Trắc địa
+Một đường thẳng kẻ bằng thước trên bản đồ Mercator giữ góc la bàn cố định (đường **Loxodrome**), rất tiện cho thủy thủ thế kỷ 16 nhưng thực chất lại uốn xoắn ốc về phía cực và **không phải** đường ngắn nhất (trừ kinh tuyến và Xích đạo). Ngược lại, **cung đường tròn lớn** cắt các kinh tuyến dưới góc thay đổi liên tục nhưng tiết kiệm hàng nghìn kilômét nhiên liệu!
+
+### 3. Từ hàng không đến thiên văn học tương đối tính
+Cùng một phương trình $$\nabla_{\dot\gamma}\dot\gamma = 0$$ không chỉ dẫn đường cho máy bay Boeing trên bề mặt Trái Đất 2 chiều, mà còn dẫn đường cho **tia sáng** và các hành tinh trong không-thời gian cong 4 chiều của Thuyết tương đối rộng (hiện tượng thấu kính hấp dẫn).
+
+---
+
 ## 2. Định nghĩa lại khái niệm "thẳng"
 
 ### Thí nghiệm tư duy: Con kiến trên quả táo
@@ -50,6 +67,38 @@ Vào thế kỷ 16, Gerardus Mercator xây dựng phép chiếu bản đồ mang
 *Hình 3: Đường màu đỏ là cung đường tròn lớn ngắn nhất (Great Circle); đường màu xanh là đường giữ góc la bàn cố định (Rhumb Line).*
 
 Ngày nay, máy bay và tàu biển hiện đại có hệ thống định vị và máy tính hỗ trợ nên luôn ưu tiên đường trắc địa (kết hợp điều chỉnh theo gió và vùng trời). Trên chuyến bay Hà Nội – San Francisco, vì các đường vĩ tuyến có chu vi lớn nhất ở xích đạo và thu hẹp dần về phía hai cực, việc vòng lên vĩ độ cao thực chất rút ngắn đáng kể quãng đường so với việc bay ngang theo cùng một vĩ tuyến.
+
+---
+
+## Ví dụ tính số cầm tay chỉ việc: Bay ngang vĩ tuyến $$60^\circ\text{ N}$$ vs. Bay thẳng qua Bắc Cực
+
+Xét hai thành phố cùng nằm trên vĩ tuyến $$60^\circ\text{ N}$$ nhưng cách nhau đúng $$180^\circ$$ kinh độ (ví dụ Saint Petersburg ở $$30^\circ\text{ E}$$ và Anchorage, Alaska ở $$150^\circ\text{ W}$$), với bán kính Trái Đất $$R \approx 6{,}371\text{ km}$$:
+
+1. **Lộ trình A — Bay thẳng ngang trên bản đồ Mercator (dọc vĩ tuyến $$60^\circ\text{ N}$$):**
+   Vòng vĩ tuyến $$60^\circ\text{ N}$$ là một hình tròn nhỏ có bán kính $$r = R\cos 60^\circ = \frac{R}{2}$$. Đi nửa vòng tròn này tốn quãng đường:
+   $$
+   L_{\text{vĩ tuyến}} = \pi \cdot r = \pi \cdot \frac{R}{2} \approx 3.1416 \times 3{,}185.5 \approx 10{,}008\text{ km}.
+   $$
+2. **Lộ trình B — Bay theo đường tròn lớn (vòng thẳng qua Bắc Cực):**
+   Từ vĩ độ $$60^\circ\text{ N}$$ lên Bắc Cực ($$90^\circ\text{ N}$$) là góc $$30^\circ$$, rồi đi xuống phía bên kia về $$60^\circ\text{ N}$$ thêm $$30^\circ$$ nữa — tổng góc ở tâm Trái Đất chỉ là $$60^\circ = \frac{\pi}{3}\text{ rad}$$! Quãng đường là:
+   $$
+   L_{\text{trắc địa}} = R \cdot \frac{\pi}{3} \approx 6{,}371 \times 1.0472 \approx 6{,}672\text{ km}!
+   $$
+
+Chỉ bằng cách bẻ lộ trình "vòng lên cực Bắc" trông thật vòng vèo trên bản đồ phẳng, máy bay rút ngắn được tới **$$3{,}336\text{ km}$$ — tức tròn $$1/3$$ tổng quãng đường bay!**
+
+---
+
+### Khung giải thích: Ba bước hiểu vì sao đường tròn lớn vừa "thẳng nhất" vừa "ngắn nhất" (nên đọc chậm)
+
+#### Bước 1: Tại sao một vòng vĩ tuyến (khác Xích đạo) KHÔNG phải đường trắc địa?
+Khi bạn lái xe chạy vòng quanh vĩ tuyến $$60^\circ\text{ N}$$, vector gia tốc hướng tâm trỏ thẳng vào tâm của vòng vĩ tuyến đó (nằm trên trục Trái Đất) — **không** trùng với phương vuông góc mặt cầu (trỏ về tâm Trái Đất)! Thành phần nằm ngang dọc mặt đất của gia tốc đó bắt buộc bạn phải **bẻ lái nhẹ về phía Bắc liên tục** để không bị trượt xuống Xích đạo!
+
+#### Bước 2: Đường tròn lớn có gia tốc hướng tâm trỏ thẳng vào tâm Trái Đất
+Ngược lại, trên một đường tròn lớn (đi qua tâm cầu), vector gia tốc hướng tâm trỏ **thẳng đứng về tâm Trái Đất**, tức vuông góc hoàn toàn với mặt đất! Thành phần gia tốc tiếp tuyến trên mặt đất bằng $$0$$ ($$\nabla_{\dot\gamma}\dot\gamma = 0$$): bạn chỉ việc giữ thẳng vô lăng!
+
+#### Bước 3: Thận trọng giữa "ngắn nhất cục bộ" và "ngắn nhất toàn cục"
+Giữa Hà Nội và San Francisco có tới **hai** cung đường tròn lớn nối chúng: cung ngắn (bay qua Bắc Thái Bình Dương) và cung dài đi vòng nửa sau Trái Đất. Cả hai đều thỏa $$\nabla_{\dot\gamma}\dot\gamma = 0$$ (đều là đường trắc địa), nhưng chỉ cung ngắn hơn (góc ở tâm $$\le 180^\circ$$) mới là đường ngắn nhất toàn cục!
 
 ## 4. Ảo giác của bản đồ phẳng
 

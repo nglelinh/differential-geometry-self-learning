@@ -8,6 +8,27 @@ owner: "Hình học Vi phân"
 lesson_type: optional
 ---
 
+Khi một chiếc xe tự hành xây bản đồ 3D trong thời gian thực (SLAM), một cánh tay robot lên kế hoạch gắp vật thể không va chạm, hay kính thiên văn **Event Horizon Telescope (EHT)** dựng bức ảnh đầu tiên của lỗ đen **Sagittarius A\*** ngay tại tâm dải Ngân Hà năm 2022, cả ba bài toán tưởng chừng thuộc ba thế giới khác biệt ấy đều chạy trên cùng một động cơ toán học từ Chương 8: **Nhóm Lie $$SO(3), SE(3)$$** và **đường trắc địa trên không-thời gian Lorentz**!
+
+Trong giai đoạn 2022–2024, các thư viện như **Theseus** (Pineda et al., NeurIPS 2022) đưa phép tối ưu hóa phi tuyến trên nhóm Lie thẳng vào PyTorch để lan truyền ngược (backprop), **Equiformer / EquiformerV2** (2023) mã hóa đối xứng $$SE(3)$$ vào transformer cho hóa học lượng tử, còn nhóm **EHT** (2022) tích phân hàng triệu đường trắc địa ánh sáng trên metric lỗ đen quay để đối chiếu với dữ liệu radio thiên văn.
+
+**Mạch bài học:** Bản đồ kiến thức nền (tư thế vật rắn trên $$SE(3)$$, tối ưu khả vi trên nhóm Lie, thuyết tương đối rộng tính toán) → Trực giác Theseus, Equiformer & EHT → Định nghĩa hình thức phép nhân $$SE(3)$$ → Ví dụ tính tay cầm tay chỉ việc: kiểm chứng tính không giao hoán của hai chuyển động robot trong $$SE(3)$$ và bán kính quỹ đạo photon $$r_{\text{ph}} = \frac{3}{2}r_s$$ → Khung giải thích chậm: 3 bước kết nối Nhóm Lie & Không-Thời gian với công nghệ 2022–2024 → Ứng dụng, Video & Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Nhóm Lie trong Robot và Thuyết tương đối rộng số nghiên cứu gì?
+
+### 1. Nhóm $$SE(3)$$ — không gian tự nhiên của mọi vật rắn 3D
+Một vật rắn (máy bay không người lái, đầu gắp robot, hay camera) có trạng thái hoàn chỉnh gồm một ma trận quay $$R \in SO(3)$$ và một vector vị trí $$p \in \mathbb{R}^3$$. Nếu ta dùng 3 góc Euler (roll, pitch, yaw), hệ tọa độ sẽ sụp đổ tại góc nghiêng $$90^\circ$$ (**gimbal lock**). Làm việc trực tiếp trên nhóm Lie $$SE(3)$$ bằng ánh xạ mũ $$\exp$$ và logarit $$\log$$ loại bỏ hoàn toàn kỳ dị tọa độ!
+
+### 2. Tối ưu hóa khả vi trên Nhóm Lie (Theseus, NeurIPS 2022)
+Thay vì tối ưu rời rạc ngoài mạng nơ-ron, **Theseus** cài đặt các thuật toán bình phương tối thiểu phi tuyến (Gauss–Newton, Levenberg–Marquardt) *trực tiếp trên đa tạp nhóm Lie* $$SO(2), SO(3), SE(2), SE(3)$$ như một lớp khả vi của PyTorch — cho phép huấn luyện end-to-end các hệ thống SLAM và điều khiển robot.
+
+### 3. Thuyết tương đối rộng tính toán (Numerical GR & GRMHD)
+Trong không-thời gian cong mạnh quanh lỗ đen quay (metric Kerr), không có công thức đóng đơn giản cho ảnh bóng lỗ đen. Nhóm **Event Horizon Telescope (2022)** giải số phương trình đường trắc địa kiểu ánh sáng ($$ds^2 = 0$$) ngược từ camera trên Trái Đất về đĩa bồi tụ khí plasma để tái dựng và xác thực bức ảnh lỗ đen Sagittarius A\*.
+
+---
+
 ## Tổng quan
 
 Nhóm Lie là đa tạp mang phép nhân trơn; đại số Lie là không gian tiếp tuyến tại phần tử đơn vị; ánh xạ mũ chuyển "vận tốc vô cùng nhỏ" thành phép biến đổi hữu hạn. Bên cạnh đó, Bài 16 đã giới thiệu không-thời gian Lorentz. Bài tùy chọn này giữ nguyên các định nghĩa nền tảng đó và điểm qua hai hướng ứng dụng nổi bật giai đoạn 2022–2024: (1) học máy và tối ưu hóa khả vi trên $$SE(3)$$, $$SO(3)$$ cho robot và phân tử; (2) tính toán số trong thuyết tương đối rộng khi dự án Event Horizon Telescope (EHT) đối chiếu ảnh quan sát lỗ đen với thư viện mô phỏng GRMHD.
@@ -34,6 +55,51 @@ $$
 (R,p)\cdot(R',p') = (RR',\, p+Rp'),
 $$
 và một phần tử vận tốc xoắn $$(\omega,v)\in\mathfrak{se}(3)$$ biểu diễn đồng thời chuyển động quay và tịnh tiến. Bài toán ước lượng trạng thái robot là tìm $$g\in SE(3)$$ cực tiểu hóa tổng bình phương sai số, thường thực hiện bằng retraction trên $$G$$ — cùng nguyên lý với Chương 7 nhưng khai thác thêm cấu trúc nhóm.
+
+---
+
+## Ví dụ tính tay cầm tay chỉ việc: Hợp hai tư thế robot trong $$SE(3)$$ và Quỹ đạo Photon quanh Lỗ đen
+
+### Ví dụ 1: Kiểm chứng phép nhân không giao hoán trong $$SE(3)$$
+Xét hai phép biến đổi cứng trong không gian 3D:
+- $$g_1 = \bigl(R_z(90^\circ),\; (1, 0, 0)^T\bigr)$$ với $$R_z(90^\circ) = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}$$ (quay $$90^\circ$$ quanh trục $$z$$ rồi tịnh tiến $$+1$$ theo trục $$x$$).
+- $$g_2 = \bigl(I,\; (0, 2, 0)^T\bigr)$$ (tịnh tiến thuần túy $$+2$$ theo trục $$y$$).
+
+Áp dụng đúng công thức $$(R, p)\cdot(R', p') = (RR',\; p + Rp')$$:
+- **Thực hiện $$g_2$$ trước, $$g_1$$ sau ($$g_1 \cdot g_2$$):**
+  $$
+  p_{12} = (1, 0, 0)^T + R_z(90^\circ)(0, 2, 0)^T = (1, 0, 0)^T + (-2, 0, 0)^T = (-1, 0, 0)^T!
+  $$
+- **Thực hiện $$g_1$$ trước, $$g_2$$ sau ($$g_2 \cdot g_1$$):**
+  $$
+  p_{21} = (0, 2, 0)^T + I(1, 0, 0)^T = (1, 2, 0)^T!
+  $$
+
+Dù cùng hướng cuối là $$R_z(90^\circ)$$, vị trí đầu gắp robot lệch nhau tới $$\sqrt{(1-(-1))^2 + (2-0)^2} = \sqrt{8} \approx 2.83$$ đơn vị! Đây là lý do mọi hệ thống SLAM / Theseus phải nhân đúng trên nhóm Lie $$SE(3)$$ chứ không bao giờ cộng trừ tọa độ 6 chiều rời rạc!
+
+### Ví dụ 2: Quỹ đạo photon quanh lỗ đen (EHT 2022)
+Trên metric Schwarzschild (Bài 16), giải phương trình đường trắc địa kiểu ánh sáng ($$ds^2 = 0$$) cho thấy ánh sáng có thể quay tròn quanh lỗ đen tại **mặt cầu photon** bán kính $$r_{\text{ph}} = \frac{3}{2}r_s$$, còn bóng lỗ đen mà kính thiên văn EHT chụp được có bán kính biểu kiến phóng đại do bẻ cong tia sáng là $$b_c = \frac{3\sqrt{3}}{2}r_s \approx 2.6\,r_s$$ — đúng bằng đường kính vòng sáng rực quanh Sagittarius A\*!
+
+---
+
+### Khung giải thích: Ba nhánh công nghệ 2022–2024 kế thừa Chương 8 như thế nào? (nên đọc chậm)
+
+#### Bước 1: Tối ưu hóa trên Nhóm Lie trong Theseus (NeurIPS 2022)
+Khi tối ưu tư thế $$g \in SE(3)$$ trong SLAM, ta không cộng $$g + \Delta g$$ (sẽ làm ma trận quay mất tính trực giao!). Thay vào đó, ở mỗi bước Gauss–Newton, ta tính một bước cập nhật nhỏ $$\xi \in \mathfrak{se}(3)$$ trong **đại số Lie phẳng**, rồi đẩy lên nhóm bằng ánh xạ mũ: $$g_{k+1} = g_k \cdot \exp(\xi)$$. Theseus tính đạo hàm ngược xuyên qua chính phép cập nhật $$\exp(\xi)$$ này!
+
+#### Bước 2: Đối xứng $$SE(3)$$ trong Equiformer / EquiformerV2 (2023)
+Thay vì tối ưu một điểm trên nhóm Lie, các mô hình phân tử buộc mọi lớp mạng phải giao hoán với tác động của $$SE(3)$$. Mọi phép quay phân tử trong không gian 3D tự động kéo theo phép quay tương ứng của vector lực — giảm mạnh lượng dữ liệu huấn luyện cần thiết cho hóa học lượng tử.
+
+#### Bước 3: Tích phân đường trắc địa ánh sáng trong EHT (2022)
+Từ hình ảnh vòng sáng radio của lỗ đen Sagittarius A\*, nhóm EHT tạo ra thư viện hàng chục nghìn mô phỏng GRMHD với nhiều giá trị spin lỗ đen khác nhau, rồi dùng ray-tracing tương đối tính (tích phân số phương trình $$\ddot{x}^\mu + \Gamma^\mu_{\nu\lambda}\dot{x}^\nu\dot{x}^\lambda = 0$$ cho hàng triệu tia sáng) để tìm mô hình khớp nhất với dữ liệu thực nghiệm!
+
+Tóm tắt cầu nối Chương 8 sang thực tiễn 2022–2024:
+
+$$
+\text{Nhóm Lie } SE(3) \text{ \& Metric Lorentz}
+\;\xrightarrow{\exp / \log \text{ \& Trắc địa số}}\;
+\text{Theseus (SLAM)} \;\vert\; \text{Equiformer (Phân tử)} \;\vert\; \text{EHT (Lỗ đen)}.
+$$
 
 ## Minh họa hình học
 

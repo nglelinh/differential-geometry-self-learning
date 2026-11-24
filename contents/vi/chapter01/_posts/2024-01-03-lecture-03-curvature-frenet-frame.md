@@ -7,17 +7,36 @@ order: 3
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Cảm giác trên tàu lượn siêu tốc
+## 1. Lời mở đầu: Cảm giác trên tàu lượn siêu tốc trong bóng tối
 
-Hãy tưởng tượng bạn đang ngồi trên một chiếc tàu lượn siêu tốc trong bóng tối hoàn toàn. Dù không nhìn thấy đường ray, cơ thể bạn vẫn cảm nhận được hai kiểu chuyển động cơ bản:
-1.  Khi tàu đi vào khúc cua gấp sang trái, bạn bị ép sang phải. Lực ép này phản ánh việc đường ray đang **cong**; khúc cua càng gấp thì lực ép càng lớn.
-2.  Khi tàu thực hiện đoạn xoắn ốc (corkscrew) xoay nghiêng trong không gian, bạn cảm thấy hướng mặt phẳng cua bị vặn xoay. Cảm giác này phản ánh việc đường ray đang **xoắn** ra khỏi mặt phẳng ban đầu.
+Hãy tưởng tượng bạn đang ngồi trên một chiếc tàu lượn siêu tốc lao đi trong một đường hầm tối đen như mực. Dù mắt không nhìn thấy một tấc đường ray nào, hệ tiền đình của bạn vẫn đọc ra gần như trọn vẹn hình dạng ba chiều của đường ray qua đúng hai cảm giác:
+1.  Khi tàu lao vào khúc cua gấp sang trái, cơ thể bạn bị ép mạnh sang phải. Lực ép đó đo mức độ đường ray đang **cong** ($$\kappa$$).
+2.  Khi tàu bước vào vòng xoắn vặn ốc (corkscrew) nghiêng sang một mặt phẳng khác, bạn cảm thấy chính "mặt phẳng của khúc cua" đang xoay vặn trong không gian. Cảm giác đó đo mức độ đường ray đang **xoắn** ($$\tau$$).
 
-Trong Hình học Vi phân, hai đại lượng tương ứng là:
-- **Độ cong (Curvature — $$\kappa$$):** Đo mức độ uốn cong của đường ray (liên hệ với lực ly tâm).
-- **Độ xoắn (Torsion — $$\tau$$):** Đo mức độ đường cong vặn rời khỏi mặt phẳng mật tiếp.
+Điều kỳ diệu bậc nhất của hình học vi phân đường cong là: **bạn không cần bất kỳ thông số thứ ba nào!** Chỉ cần ghi lại hai con số $$\kappa(s)$$ và $$\tau(s)$$ dọc theo hành trình, bạn đã nắm trọn "mã DNA" xác định duy nhất hình dáng của đường cong trong không gian $$\mathbb{R}^3$$.
 
-Hai hàm số $$\kappa(s)$$ và $$\tau(s)$$ chứa toàn bộ thông tin hình học nội tại về hình dáng của đường cong trong không gian: khi biết chúng tại mọi điểm, ta có thể dựng lại đường cong đó sai khác một phép dời hình.
+**Mạch bài học:** Bản đồ kiến thức nền (khung chuyển động trực chuẩn, ma trận phản đối xứng Frenet–Serret, Định lý cơ bản của đường cong) → Độ cong $$\kappa$$ → Hệ Frenet $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$ → Độ xoắn $$\tau$$ và hệ phương trình Frenet–Serret → Khung giải thích chậm: tự tay tính đủ bộ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}, \kappa, \tau\}$$ cho đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Định lý cơ bản và Bài tập.
+
+---
+
+## Bản đồ kiến thức nền: Hệ khung chuyển động, Ma trận phản đối xứng và Mã DNA của đường cong
+
+Trước khi đi vào các công thức đạo hàm của $$\mathbf{T}, \mathbf{N}, \mathbf{B}$$, hãy nhìn cấu trúc đại số và hình học sâu bên dưới:
+
+### 1. Phương pháp Hệ khung chuyển động (Moving Frames)
+Thay vì đứng cố định ở gốc tọa độ $$Oxyz$$ để quan sát đường cong từ xa, hình học vi phân gắn một **hệ trục tọa độ trực chuẩn nhỏ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$** trực tiếp lên chính hạt đang chuyển động. Cách nhìn "từ buồng lái phi công" này sau này được Élie Cartan tổng quát hóa thành lý thuyết khung chuyển động trên đa tạp Riemann nhiều chiều.
+
+### 2. Tại sao ma trận Frenet–Serret lại phản đối xứng?
+Khi viết ba phương trình Frenet–Serret dưới dạng ma trận:
+$$
+\frac{d}{ds}\begin{pmatrix} \mathbf{T} \\ \mathbf{N} \\ \mathbf{B} \end{pmatrix} = \begin{pmatrix} 0 & \kappa & 0 \\ -\kappa & 0 & \tau \\ 0 & -\tau & 0 \end{pmatrix} \begin{pmatrix} \mathbf{T} \\ \mathbf{N} \\ \mathbf{B} \end{pmatrix},
+$$
+hãy để ý ma trận $$3 \times 3$$ ở giữa **phản đối xứng** ($$A^T = -A$$)! Đó không phải ngẫu nhiên: vì khung $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$ luôn là ma trận trực giao $$Q(s) \in \mathrm{SO}(3)$$ ($$Q Q^T = I$$), lấy đạo hàm hai vế lập tức cho $$Q' Q^T + Q (Q')^T = 0 \implies A = Q' Q^T$$ bắt buộc phản đối xứng — tức là thuộc về **đại số Lie $$\mathfrak{so}(3)$$** của các vận tốc góc quay!
+
+### 3. Định lý Cơ bản — Cầu nối với Phương trình Vi phân (Bài 0.4)
+Vì hệ Frenet–Serret là một hệ ODE tuyến tính cấp 1 đối với $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$, Định lý Tồn tại và Duy nhất Picard–Lindelöf (Bài 0.4) bảo đảm rằng cho trước $$\kappa(s) > 0, \tau(s)$$ cùng vị trí và hướng xuất phát ban đầu, tồn tại **duy nhất** một đường cong không gian khớp với cặp $$(\kappa, \tau)$$ đó!
+
+---
 
 ## 2. Độ cong: Tốc độ quay của Tiếp tuyến
 
@@ -86,6 +105,43 @@ $$
 1.  $$\mathbf{T}' = \kappa \mathbf{N}$$: Vector tiếp tuyến quay về phía vector pháp tuyến chính với tốc độ $$\kappa$$ (định nghĩa độ cong).
 2.  $$\mathbf{B}' = -\tau \mathbf{N}$$: Vector phụ pháp tuyến biến thiên dọc theo phương pháp tuyến chính với hệ số $$-\tau$$ (định nghĩa độ xoắn).
 3.  $$\mathbf{N}' = -\kappa \mathbf{T} + \tau \mathbf{B}$$: Sự biến thiên của vector pháp tuyến chính là tổng hợp của hai thành phần — quay ngược về phương $$-\mathbf{T}$$ do độ cong $$\kappa$$ và xoay sang phương $$\mathbf{B}$$ do độ xoắn $$\tau$$.
+
+---
+
+## Khung giải thích: tự tay tính trọn bộ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}, \kappa, \tau\}$$ cho đường xoắn ốc (nên đọc chậm)
+
+Hãy tính tay toàn bộ hệ Frenet cho đường xoắn ốc cụ thể $$\alpha(s) = \left(3\cos\frac{s}{5},\ 3\sin\frac{s}{5},\ \frac{4s}{5}\right)$$ (đã chuẩn hóa theo độ dài cung $$s$$ ở Bài 2, với $$a = 3, b = 4, c = 5$$):
+
+1. **Bước 1 — Tiếp tuyến đơn vị $$\mathbf{T}(s)$$:**
+   $$
+   \mathbf{T}(s) = \alpha'(s) = \frac{1}{5}\left(-3\sin\frac{s}{5},\ 3\cos\frac{s}{5},\ 4\right).
+   $$
+2. **Bước 2 — Độ cong $$\kappa$$ và Pháp tuyến chính $$\mathbf{N}(s)$$:**
+   Lấy đạo hàm $$\mathbf{T}(s)$$ theo $$s$$:
+   $$
+   \mathbf{T}'(s) = \frac{3}{25}\left(-\cos\frac{s}{5},\ -\sin\frac{s}{5},\ 0\right).
+   $$
+   Độ lớn của vector trong ngoặc bằng $$\sqrt{\cos^2 + \sin^2} = 1$$, nên ta đọc ra ngay:
+   $$
+   \kappa = \|\mathbf{T}'(s)\| = \mathbf{\frac{3}{25} = 0.12}, \qquad \mathbf{N}(s) = \left(-\cos\frac{s}{5},\ -\sin\frac{s}{5},\ 0\right).
+   $$
+   (Để ý $$\mathbf{N}$$ luôn nằm ngang và chỉ thẳng vào trục $$z$$!)
+3. **Bước 3 — Phụ pháp tuyến $$\mathbf{B}(s) = \mathbf{T}(s) \times \mathbf{N}(s)$$:**
+   Tính tích có hướng từng tọa độ:
+   $$
+   \mathbf{B}(s) = \frac{1}{5}\left(4\sin\frac{s}{5},\ -4\cos\frac{s}{5},\ 3\right).
+   $$
+   Kiểm tra nhanh: $$\|\mathbf{B}\|^2 = \frac{16 + 9}{25} = 1$$ và $$\mathbf{B} \cdot \mathbf{N} = 0$$.
+4. **Bước 4 — Độ xoắn $$\tau$$ từ $$\mathbf{B}'(s) = -\tau \mathbf{N}(s)$$:**
+   Lấy đạo hàm $$\mathbf{B}(s)$$ theo $$s$$:
+   $$
+   \mathbf{B}'(s) = \frac{4}{25}\left(\cos\frac{s}{5},\ \sin\frac{s}{5},\ 0\right) = -\frac{4}{25}\mathbf{N}(s) \implies \tau = \mathbf{\frac{4}{25} = 0.16}!
+   $$
+5. **Kiểm tra chéo phương trình thứ hai $$\mathbf{N}' = -\kappa\mathbf{T} + \tau\mathbf{B}$$ tại $$s = 0$$:**
+   - Vế trái: $$\mathbf{N}'(0) = (0, -1/5, 0) = (0, -0.20, 0)$$.
+   - Vế phải: $$-\frac{3}{25}(0, \frac{3}{5}, \frac{4}{5}) + \frac{4}{25}(0, -\frac{4}{5}, \frac{3}{5}) = \left(0,\ \frac{-9-16}{125},\ \frac{-12+12}{125}\right) = (0, -\frac{25}{125}, 0) = (0, -0.20, 0)$$ — khớp tuyệt đối từng con số!
+
+---
 
 ## 6. Định lý Cơ bản của Đường cong Không gian
 

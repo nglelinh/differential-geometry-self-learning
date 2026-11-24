@@ -7,11 +7,30 @@ order: 1
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Tại sao cần Đại số Tuyến tính?
+## 1. Lời mở đầu: Tại sao muốn hiểu không gian cong lại phải bắt đầu từ không gian phẳng?
 
-Hình học Vi phân nghiên cứu các không gian cong bằng chiến lược **"chia để trị"**: ta chia không gian cong thành những mảnh vô cùng nhỏ, sao cho mỗi mảnh cục bộ đều xấp xỉ một không gian phẳng. Ngôn ngữ để mô tả và tính toán trên không gian phẳng chính là **Đại số Tuyến tính**.
+Nếu bạn đứng trên một quả bóng khổng lồ và dùng kính lúp phóng to đúng một milimet vuông ngay dưới chân mình, bề mặt cong bỗng duỗi thẳng thành một mảnh mặt phẳng. Toàn bộ chiến lược của **Hình học Vi phân** nằm ở đúng cú phóng to đó — chiến lược **"chia để trị"**: ta cắt một không gian cong phức tạp thành vô số mảnh phẳng vô cùng nhỏ (các *không gian tiếp tuyến*), dùng **Đại số Tuyến tính** để tính toán trên từng mảnh phẳng ấy, rồi dùng Giải tích ghép các mảnh lại để đo độ cong toàn cục.
 
-Nếu Giải tích là công cụ để vi phân (xét ở quy mô vô cùng nhỏ) và tích phân (ghép các phần cục bộ lại với nhau), thì Đại số Tuyến tính là công cụ để khảo sát cấu trúc của từng mảnh phẳng đó. Việc nắm vững Đại số Tuyến tính là điều kiện cần để hiểu không gian tiếp tuyến, tensor và độ cong.
+Nếu Giải tích là con dao mổ giúp ta nhìn vào quy mô vi phân, thì Đại số Tuyến tính là bộ ngữ pháp để nói chuyện về không gian tiếp tuyến, tensor và độ cong. Nắm vững bốn khái niệm cốt lõi ở đây — **vector**, **covector**, **tích vô hướng (metric)** và **trị riêng** — bạn sẽ thấy hầu hết các công thức đáng sợ của hình học Riemann thực chất chỉ là đại số tuyến tính năm nhất được đặt lên từng điểm của một bề mặt cong.
+
+**Mạch bài học:** Bản đồ kiến thức nền (không gian vector, không gian đối ngẫu, tensor & metric) → Không gian vector và quy ước Einstein → Không gian đối ngẫu và covector → Khung giải thích chậm: tự tay đổi cơ sở, kiểm tra bất biến $$\alpha(\mathbf{v})$$ và tìm trị riêng của ma trận đối xứng $$2\times 2$$ → Tích tensor, metric và trị riêng trong hình học.
+
+---
+
+## Bản đồ kiến thức nền: Đại số Tuyến tính trong Hình học Vi phân nghiên cứu những gì?
+
+Với người tốt nghiệp đại học đã từng học đại số tuyến tính qua ma trận và hệ phương trình, hình học vi phân nhìn lại đại số tuyến tính theo **ba trụ cột không phụ thuộc hệ tọa độ**:
+
+### 1. Không gian Vector ($$V$$) và Không gian Đối ngẫu ($$V^*$$)
+Trong hình học, một **vector** là một đối tượng hình học thuần túy (như vận tốc của một hạt tại điểm $$p$$) tồn tại *trước* khi bạn chọn hệ trục tọa độ. Khi đặt lên một hệ cơ sở, nó mới hiện ra dưới dạng cột số phản biến $$v^i$$. Song hành với $$V$$ là **không gian đối ngẫu $$V^*$$** chứa các **covector** (dụng cụ đo tuyến tính $$\alpha: V \to \mathbb{R}$$), vốn là ngôn ngữ tự nhiên của vi phân $$df$$ và gradient.
+
+### 2. Tensor — Đại lượng đa tuyến tính bất biến khi đổi tọa độ
+Một định luật vật lý hay một tính chất hình học (như độ cong của mặt cầu) không thể thay đổi chỉ vì bạn xoay tờ giấy hay đổi đơn vị từ mét sang centimet. **Tensor** chính là những cỗ máy đa tuyến tính nhận vào vector/covector và trả về một con số **bất biến** khi đổi cơ sở — trong đó **tensor metric $$g$$** (hạng $$(0,2)$$) dùng để đo độ dài và góc, còn **tensor độ cong Riemann $$R$$** (hạng $$(1,3)$$) dùng để đo độ cong của không gian.
+
+### 3. Toán tử đối xứng, Trị riêng và Hình dạng bề mặt
+Trong đại số tuyến tính, Định lý Phổ khẳng định mọi ma trận đối xứng thực đều có các **trị riêng thực** và **vector riêng đôi một vuông góc**. Trong hình học vi phân, định lý đó lập tức biến thành định lý hình học: tại mọi điểm trên một bề mặt cong, luôn tồn tại hai **phương cong chính vuông góc với nhau** (vector riêng của toán tử hình dáng), và hai **độ cong chính $$\kappa_1, \kappa_2$$** chính là hai trị riêng tương ứng!
+
+---
 
 ## 2. Không gian Vector
 
@@ -70,6 +89,45 @@ $$ \mathbf{v} = v^i \mathbf{e}_i = (\frac{1}{2}v^i) (2\mathbf{e}_i) = \tilde{v}^
 Từ đây ta phân biệt hai kiểu biến đổi tọa độ:
 - **Phản biến (Contravariant):** Các thành phần của vector biến đổi *ngược chiều* với cơ sở (cơ sở tăng thì tọa độ giảm), được ký hiệu bằng chỉ số trên ($$v^i$$).
 - **Hiệp biến (Covariant):** Các thành phần của covector biến đổi *cùng chiều* với cơ sở (cơ sở tăng thì tọa độ tăng), được ký hiệu bằng chỉ số dưới ($$\alpha_i$$).
+
+---
+
+## Khung giải thích: tự tay kiểm tra đổi cơ sở, bất biến $$\alpha(\mathbf{v})$$ và trị riêng (nên đọc chậm)
+
+Để cụm từ *"phản biến"*, *"hiệp biến"* và *"bất biến hình học"* trở nên rõ như ban ngày, hãy cầm bút tự kiểm tra hai phép tính nhỏ trong $$\mathbb{R}^2$$:
+
+### Ví dụ cầm tay 1: Đổi sang cơ sở xiên và kiểm chứng $$\alpha(\mathbf{v}) = \tilde{\alpha}_i \tilde{v}^i$$
+Trong cơ sở chuẩn $$\mathbf{e}_1 = (1,0),\ \mathbf{e}_2 = (0,1)$$, cho vector $$\mathbf{v} = (3, 4)$$ và covector $$\alpha = 2\theta^1 + 5\theta^2$$ (tức $$\alpha(x, y) = 2x + 5y$$).
+- **Giá trị trong hệ chuẩn:** $$\alpha(\mathbf{v}) = 2(3) + 5(4) = 6 + 20 = \mathbf{26}$$.
+- **Bây giờ đổi sang cơ sở mới (vừa xoay vừa giãn):**
+  $$
+  \tilde{\mathbf{e}}_1 = \mathbf{e}_1 + \mathbf{e}_2 = (1, 1), \qquad \tilde{\mathbf{e}}_2 = \mathbf{e}_1 - \mathbf{e}_2 = (1, -1).
+  $$
+- **Tìm tọa độ phản biến mới $$(\tilde{v}^1, \tilde{v}^2)$$ của $$\mathbf{v} = (3, 4)$$:** giải $$\tilde{v}^1(1, 1) + \tilde{v}^2(1, -1) = (3, 4)$$:
+  $$
+  \begin{cases} \tilde{v}^1 + \tilde{v}^2 = 3 \\ \tilde{v}^1 - \tilde{v}^2 = 4 \end{cases} \implies \tilde{v}^1 = 3.5,\quad \tilde{v}^2 = -0.5.
+  $$
+  (Kiểm tra: $$3.5(1,1) - 0.5(1,-1) = (3.5 - 0.5,\ 3.5 + 0.5) = (3, 4)$$, chính xác!)
+- **Tìm tọa độ hiệp biến mới $$(\tilde{\alpha}_1, \tilde{\alpha}_2)$$ của $$\alpha$$:** đơn giản đo $$\alpha$$ trên từng vector cơ sở mới:
+  $$
+  \tilde{\alpha}_1 = \alpha(\tilde{\mathbf{e}}_1) = 2(1) + 5(1) = 7, \qquad \tilde{\alpha}_2 = \alpha(\tilde{\mathbf{e}}_2) = 2(1) + 5(-1) = -3.
+  $$
+- **Kiểm chứng tính bất biến:**
+  $$
+  \tilde{\alpha}_1 \tilde{v}^1 + \tilde{\alpha}_2 \tilde{v}^2 \;=\; 7(3.5) + (-3)(-0.5) \;=\; 24.5 + 1.5 \;=\; \mathbf{26}!
+  $$
+
+Các con số tọa độ đổi sạch (từ $$(3, 4)$$ và $$(2, 5)$$ sang $$(3.5, -0.5)$$ và $$(7, -3)$$), nhưng **giá trị đo $$\alpha(\mathbf{v}) = 26$$ bất biến tuyệt đối**!
+
+### Ví dụ cầm tay 2: Trị riêng và hai phương vuông góc của ma trận đối xứng
+Xét ma trận đối xứng $$S = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$$ (mô phỏng toán tử hình dáng tại một điểm trên bề mặt):
+- **Đa thức đặc trưng:** $$\det(S - \lambda I) = (2 - \lambda)^2 - 1 = \lambda^2 - 4\lambda + 3 = (\lambda - 3)(\lambda - 1) = 0 \implies \lambda_1 = 3,\ \lambda_2 = 1$$.
+- **Vector riêng:**
+  - Với $$\lambda_1 = 3$$: $$S \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 3 \\ 3 \end{pmatrix} = 3\begin{pmatrix} 1 \\ 1 \end{pmatrix} \implies \mathbf{u}_1 = (1, 1)$$.
+  - Với $$\lambda_2 = 1$$: $$S \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \end{pmatrix} = 1\begin{pmatrix} 1 \\ -1 \end{pmatrix} \implies \mathbf{u}_2 = (1, -1)$$.
+- **Kiểm tra trực giao:** $$\mathbf{u}_1 \cdot \mathbf{u}_2 = 1(1) + 1(-1) = 0$$! Sau này ở Bài 7, $$\lambda_1, \lambda_2$$ chính là hai độ cong chính $$\kappa_1, \kappa_2$$, tích $$\det(S) = 3 \cdot 1 = 3$$ là độ cong Gauss $$K$$, và nửa vết $$\frac{1}{2}\operatorname{tr}(S) = \frac{3+1}{2} = 2$$ là độ cong trung bình $$H$$!
+
+---
 
 ## 4. Tích Tensor (Tensor Product)
 

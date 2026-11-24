@@ -7,14 +7,33 @@ order: 4
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Từ quy luật biến thiên đến quỹ đạo
+## 1. Lời mở đầu: Từ một mũi tên vận tốc đến cả một quỹ đạo vũ trụ
 
-Cơ học cổ điển dựa trên nguyên lý: nếu biết trạng thái hiện tại của một hệ và quy luật biến thiên của nó, ta có thể xác định trạng thái của hệ ở các thời điểm tiếp theo. Công cụ toán học diễn đạt nguyên lý này chính là **Phương trình Vi phân Thường (ODE)**.
+Hãy tưởng tượng bạn thả một chiếc lá nhỏ xuống mặt sông đang chảy xiết. Bạn không cần biết trước toàn bộ con đường dài hàng ki-lô-mét của chiếc lá; chỉ cần biết tại **mọi điểm** trên mặt nước dòng chảy hướng về đâu và nhanh cỡ nào (*trường vector*), thiên nhiên tự động dệt nên quỹ đạo duy nhất cho chiếc lá theo thời gian. Công cụ toán học diễn đạt quy luật "từ vận tốc cục bộ suy ra quỹ đạo toàn cục" ấy chính là **Phương trình Vi phân Thường (ODE)**.
 
-Trong Hình học Vi phân, đối tượng nghiên cứu là hình dạng của không gian chứ không chỉ là chuyển động cơ học, nhưng công cụ toán học hoàn toàn tương đồng:
-- Đường trắc địa (geodesic) là nghiệm của một hệ phương trình vi phân.
-- Dòng chảy (flow) của một trường vector là nghiệm của một hệ phương trình vi phân.
-- Vận chuyển song song (parallel transport) cũng được xác định bởi một hệ phương trình vi phân.
+Trong Hình học Vi phân, đối tượng nghiên cứu là hình dạng của không gian chứ không chỉ là chuyển động cơ học, nhưng cỗ máy toán học thì y hệt nhau:
+- **Đường trắc địa (geodesic)** là nghiệm của một hệ ODE cấp hai.
+- **Dòng chảy (flow)** của một trường vector là nghiệm của một hệ ODE cấp một.
+- **Vận chuyển song song (parallel transport)** cũng được định nghĩa bởi một hệ ODE tuyến tính dọc theo đường cong.
+
+**Mạch bài học:** Bản đồ kiến thức nền (trường vector & phân thớ tiếp tuyến, định lý Picard–Lindelöf, dòng chảy một tham số) → Bài toán Cauchy và đường cong tích phân → Định lý Tồn tại & Duy nhất → Quy ODE cấp 2 về hệ cấp 1 trên $$TM$$ → Khung giải thích chậm: tự tay giải dòng chảy trường quay $$X(x,y)=(-y,x)$$ và xem tính duy nhất gãy thế nào khi mất điều kiện Lipschitz → Tổng kết Chương 0.
+
+---
+
+## Bản đồ kiến thức nền: Phương trình Vi phân đóng vai trò gì trong Hình học Vi phân?
+
+Với sinh viên đại học đã từng giải ODE bằng tách biến hay phương trình đặc trưng, hình học vi phân nhìn ODE theo **ba trụ cột hình học**:
+
+### 1. Trường Vector ($$X$$) và Đường cong Tích phân
+Một **trường vector** gắn cho mỗi điểm $$p \in M$$ một mũi tên vận tốc $$X_p \in T_pM$$. Giải phương trình $$\dot{x}(t) = X(x(t))$$ có nghĩa hình học cực kỳ trong sáng: tìm đường cong mà tại mọi điểm, vector tiếp tuyến của nó **khớp khít** với mũi tên của trường gió $$X$$.
+
+### 2. Định lý Picard–Lindelöf — Tấm vé bảo đảm cho Hình học
+Tại sao từ một điểm $$p$$ trên mặt cầu, nếu bạn bắn một viên bi theo một hướng cố định thì chỉ có **duy nhất một** đường trắc địa đi ra mà không bao giờ bị "tách đôi"? Chính **Định lý Tồn tại và Duy nhất** (khi vế phải trơn / Lipschitz) bảo đảm các đường cong tích phân không bao giờ rẽ nhánh hay cắt nhau, biến bài toán vi phân thành những đối tượng hình học xác định duy nhất.
+
+### 3. Dòng chảy ($$\Phi_t$$) và Không gian pha $$TM$$
+Khi cho *tất cả* các điểm trên đa tạp cùng trôi theo trường gió trong khoảng thời gian $$t$$, ta thu được một phép biến dạng trơn cả không gian gọi là **dòng chảy $$\Phi_t$$** (thỏa mãn luật nhóm $$\Phi_{t+s} = \Phi_t \circ \Phi_s$$). Dòng chảy là nền tảng để định nghĩa **đạo hàm Lie** và nghiên cứu đối xứng liên tục (**nhóm Lie**).
+
+---
 
 ### 1.1. Trường Vector (Vector Fields)
 Một trường vector $$X$$ trên đa tạp $$M$$ là một quy tắc gán cho mỗi điểm $$p \in M$$ một vector tiếp tuyến $$X_p \in T_pM$$. Một cách hình thức, nó là một nhát cắt (section) của phân thớ tiếp tuyến (tangent bundle):
@@ -71,6 +90,36 @@ $$ \Phi_{t+s}(p) = \Phi_t(\Phi_s(p)) $$
 Nghĩa là dịch chuyển trong thời gian $$s$$ rồi tiếp tục dịch chuyển thêm thời gian $$t$$ cho cùng kết quả với việc dịch chuyển liên tục trong thời gian $$t+s$$. Ngoài ra:
 - $$\Phi_0(p) = p$$ (không dịch chuyển).
 - $$\Phi_{-t} = (\Phi_t)^{-1}$$ (dịch chuyển ngược thời gian là ánh xạ ngược của dịch chuyển xuôi).
+
+---
+
+## Khung giải thích: tự tay tính dòng chảy trường quay và xem điều kiện Lipschitz bảo vệ ta khỏi điều gì (nên đọc chậm)
+
+Để hai khái niệm *dòng chảy $$\Phi_t$$* và *tính duy nhất Picard–Lindelöf* trở nên sống động, hãy tự tay kiểm tra hai ví dụ nhỏ sau:
+
+### Ví dụ cầm tay 1: Dòng chảy của trường gió xoay tròn $$X(x, y) = (-y, x)$$
+Xét hệ ODE tự trị trên mặt phẳng $$\mathbb{R}^2$$:
+$$
+\begin{cases} \dot{x} = -y \\ \dot{y} = x \end{cases}, \qquad (x(0), y(0)) = (x_0, y_0).
+$$
+1. **Lấy đạo hàm lần 2:** $$\ddot{x} = -\dot{y} = -x \implies x(t) = x_0\cos t - y_0\sin t$$, và từ $$y = -\dot{x}$$ suy ra $$y(t) = x_0\sin t + y_0\cos t$$.
+2. **Viết dưới dạng dòng chảy ma trận quay:**
+   $$
+   \Phi_t(x_0, y_0) = \begin{pmatrix} \cos t & -\sin t \\ \sin t & \cos t \end{pmatrix} \begin{pmatrix} x_0 \\ y_0 \end{pmatrix}.
+   $$
+   Mỗi đường cong tích phân là một đường tròn đồng tâm quanh gốc tọa độ!
+3. **Kiểm tra luật nhóm $$\Phi_{t+s} = \Phi_t \circ \Phi_s$$ tại điểm $$p = (1, 0)$$ với $$s = \pi/2,\ t = \pi/2$$:**
+   - Quay lần 1: $$\Phi_{\pi/2}(1, 0) = (0, 1)$$.
+   - Quay lần 2: $$\Phi_{\pi/2}(0, 1) = (-1, 0)$$.
+   - Quay thẳng một lần: $$\Phi_{\pi}(1, 0) = (-1, 0)$$ — khớp tuyệt đối!
+
+### Ví dụ cầm tay 2: Điều gì xảy ra khi vi phạm điều kiện Lipschitz?
+Xét phương trình rất đơn giản $$\frac{dx}{dt} = 2\sqrt{\vert x\vert}$$ với điều kiện đầu $$x(0) = 0$$. Hàm $$F(x) = 2\sqrt{\vert x\vert}$$ liên tục nhưng có đạo hàm $$F'(x) = 1/\sqrt{\vert x\vert} \to \infty$$ tại $$x = 0$$ (không thỏa điều kiện Lipschitz!). Kết quả là **tính duy nhất sụp đổ**:
+- Nghiệm 1: $$x_1(t) = 0$$ với mọi $$t$$ (kiểm tra: $$\dot{x}_1 = 0 = 2\sqrt{0}$$).
+- Nghiệm 2: $$x_2(t) = t^2$$ với $$t \ge 0$$ (kiểm tra: $$\dot{x}_2 = 2t = 2\sqrt{t^2}$$!).
+Cùng xuất phát tại $$x(0) = 0$$ nhưng quỹ đạo bị **rẽ thành vô số nhánh** (chờ một thời gian $$c$$ bất kỳ rồi mới nhảy lên $$(t-c)^2$$)! Đó là lý do hình học vi phân luôn yêu cầu trường vector và metric phải **trơn**.
+
+---
 
 ## 6. Tổng kết
 

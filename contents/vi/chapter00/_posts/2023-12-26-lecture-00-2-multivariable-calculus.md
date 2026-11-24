@@ -7,18 +7,34 @@ order: 2
 owner: "Hình học Vi phân"
 ---
 
-## 1. Lời mở đầu: Bản chất của Đạo hàm
+## 1. Lời mở đầu: Bản chất hình học của Đạo hàm
 
-Đạo hàm thường được tiếp cận như một tập hợp quy tắc tính toán, chẳng hạn $$(x^2)' = 2x$$ hay $$(\sin x)' = \cos x$$. Tuy nhiên, trong Hình học Vi phân, điều quan trọng nhất là ý nghĩa hình học của nó.
+Ở đại học năm nhất, đạo hàm thường hiện lên như một danh sách công thức cần nhớ: $$(x^2)' = 2x$$, $$(\sin x)' = \cos x$$, hay quy tắc tích phân từng phần. Nhưng trong Hình học Vi phân, câu hỏi quan trọng nhất không phải là "đạo hàm tính ra bao nhiêu", mà là **"đạo hàm làm gì với không gian?"**
 
-**Đạo hàm là gì?** Đạo hàm là **xấp xỉ tuyến tính tốt nhất** của một hàm số tại một điểm:
-- Đồ thị của hàm $$f(x)$$ nói chung có thể cong phức tạp.
-- Khi phóng to đủ gần quanh điểm $$x_0$$, đồ thị đó trông gần như một đường thẳng.
-- Đường thẳng ấy chính là tiếp tuyến tại $$x_0$$, và hệ số góc của nó là đạo hàm $$f'(x_0)$$:
+Câu trả lời gói gọn trong một ý tưởng duy nhất: **đạo hàm là xấp xỉ tuyến tính tốt nhất của một ánh xạ phi tuyến tại một điểm.** Đồ thị của một hàm cong có thể uốn lượn dữ dội ở quy mô lớn, nhưng khi phóng to quanh $$x_0$$, nó phẳng dần thành đường tiếp tuyến:
 
-$$ f(x) \approx f(x_0) + f'(x_0)(x - x_0) $$
+$$ f(x) \approx f(x_0) + f'(x_0)(x - x_0). $$
 
-Tư tưởng xấp xỉ tuyến tính này mở rộng tự nhiên sang không gian nhiều chiều.
+Chính tư tưởng "biến cái cong cục bộ thành ma trận tuyến tính" này — được gói trong **ma trận Jacobian**, **Định lý Hàm Ngược** và **Định lý Hàm Ẩn** — là cánh cửa cho phép ta đặt hệ tọa độ lên mặt cầu, mặt xuyến và những đa tạp nhiều chiều.
+
+**Mạch bài học:** Bản đồ kiến thức nền (tuyến tính hóa, ma trận Jacobian & Hessian, hai định lý nền tảng) → Khai triển Taylor đa biến → Đạo hàm riêng, đạo hàm theo hướng và ma trận Jacobian → Khung giải thích chậm: tự tay tính Jacobian tọa độ cực tại $$(2, \pi/3)$$ và kiểm tra Định lý Hàm Ẩn trên đường tròn → Quy tắc chuỗi.
+
+---
+
+## Bản đồ kiến thức nền: Giải tích Đa biến cung cấp gì cho Hình học Vi phân?
+
+Trước khi bước vào các công thức đạo hàm nhiều biến, hãy nhìn ba trụ cột mà giải tích đa biến đóng góp trực tiếp cho hình học vi phân:
+
+### 1. Ma trận Jacobian ($$DF_p$$) — Đạo hàm như một ánh xạ tuyến tính
+Với ánh xạ nhiều biến $$F: \mathbb{R}^n \to \mathbb{R}^m$$, đạo hàm tại điểm $$p$$ không còn là một con số mà là một **ánh xạ tuyến tính** giữa hai không gian tiếp tuyến (biểu diễn bởi ma trận Jacobian cỡ $$m \times n$$). Định thức $$\det(J)$$ (khi $$m = n$$) đo **hệ số co giãn thể tích** cục bộ — nền tảng của phép đổi biến tích phân và ánh xạ giữa các đa tạp.
+
+### 2. Ma trận Hessian ($$H$$) — Độ cong bậc hai
+Nếu gradient $$\nabla f$$ (đạo hàm cấp 1) cho ta *độ dốc* của mặt phẳng tiếp tuyến, thì ma trận đối xứng **Hessian** $$H_{ij} = \frac{\partial^2 f}{\partial x^i \partial x^j}$$ (đạo hàm cấp 2) mô tả *độ cong* của đồ thị quanh điểm dừng: tất cả trị riêng dương là đáy chảo (cực tiểu), tất cả âm là đỉnh đồi (cực đại), còn trái dấu là **điểm yên ngựa** — tiền thân trực tiếp của Dạng cơ bản thứ hai ở Chương 3!
+
+### 3. Định lý Hàm Ngược và Định lý Hàm Ẩn — Chứng chỉ "hợp lệ" của bề mặt trơn
+Làm sao biết một phương trình $$x^2 + y^2 + z^2 = 1$$ thực sự định nghĩa một bề mặt trơn không có góc nhọn, hay một hệ tọa độ cong không bị gấp nếp? Hai định lý này cho phép ta kết luận tính chất của ánh xạ *phi tuyến* cục bộ chỉ bằng cách kiểm tra xem **ma trận Jacobian tuyến tính** có khả nghịch hay không!
+
+---
 
 ### 1.1. Chuỗi Taylor Đa biến (Multivariable Taylor Series)
 Để xấp xỉ chính xác hơn ở bậc 2, ta cần dùng đạo hàm cấp 2 (biểu diễn qua ma trận Hessian). Khai triển Taylor bậc 2 của hàm $$f(x, y)$$ quanh điểm $$(a, b)$$ có dạng:
@@ -72,6 +88,31 @@ $$
 Định thức Jacobian (Jacobian Determinant) bằng:
 $$ \det(J) = r(\cos^2 \theta + \sin^2 \theta) = r $$
 Chính vì vậy, trong tích phân bội, khi đổi sang tọa độ cực ta phải nhân thêm thừa số $$r$$ ($$dx dy = r dr d\theta$$) để phản ánh sự thay đổi diện tích của phần tử ô lưới.
+
+---
+
+## Khung giải thích: tự tay kiểm tra Jacobian và Định lý Hàm Ẩn (nên đọc chậm)
+
+Để cảm nhận trực tiếp ma trận Jacobian và Định lý Hàm Ẩn hoạt động ra sao trên con số thật, hãy kiểm tra hai ví dụ ngắn bằng tay:
+
+### Ví dụ cầm tay 1: Xấp xỉ tuyến tính bằng Jacobian tại $$(r, \theta) = (2, \pi/3)$$
+Tại $$p = (2, \pi/3)$$, ta có $$\cos(\pi/3) = \frac{1}{2}$$ và $$\sin(\pi/3) = \frac{\sqrt{3}}{2}$$, nên:
+$$
+F(p) = \bigl(1,\ \sqrt{3}\bigr), \qquad J_p = \begin{pmatrix} 1/2 & -\sqrt{3} \\ \sqrt{3}/2 & 1 \end{pmatrix}, \qquad \det(J_p) = \frac{1}{2} + \frac{3}{2} = \mathbf{2} \neq 0.
+$$
+- Vì $$\det(J_p) = 2 \neq 0$$, **Định lý Hàm Ngược** bảo đảm tọa độ cực khả nghịch cục bộ quanh $$p$$ (ngược lại, tại gốc $$r = 0$$ thì $$\det(J) = 0$$ — tọa độ cực bị suy biến!).
+- Bây giờ dịch nhẹ $$p$$ thêm $$\mathbf{v} = (0, 0.1)$$ (giữ nguyên bán kính $$r = 2$$, quay góc thêm $$0.1$$ radian):
+  $$
+  J_p \begin{pmatrix} 0 \\ 0.1 \end{pmatrix} = \begin{pmatrix} -0.1\sqrt{3} \\ 0.1 \end{pmatrix} \approx \begin{pmatrix} -0.1732 \\ 0.1000 \end{pmatrix}.
+  $$
+  Cộng vào $$F(p) = (1, 1.7321)$$ ta dự đoán $$F(2, \pi/3 + 0.1) \approx (0.8268,\ 1.8321)$$, rất sát giá trị thực $$(2\cos 1.1472,\ 2\sin 1.1472) \approx (0.8220,\ 1.8233)$$!
+
+### Ví dụ cầm tay 2: Định lý Hàm Ẩn trên đường tròn $$F(x, y) = x^2 + y^2 - 1 = 0$$
+Tính đạo hàm riêng $$\frac{\partial F}{\partial y} = 2y$$:
+- Tại điểm $$A = (3/5, 4/5)$$: $$\frac{\partial F}{\partial y} = \frac{8}{5} \neq 0$$ → Định lý Hàm Ẩn bảo đảm ta viết được $$y = +\sqrt{1 - x^2}$$ trơn quanh $$A$$, với hệ số góc tiếp tuyến $$y'(x) = -\frac{F_x}{F_y} = -\frac{2x}{2y} = -\frac{3}{4}$$.
+- Tại điểm $$B = (1, 0)$$: $$\frac{\partial F}{\partial y} = 0$$ → tiếp tuyến thẳng đứng, không thể viết $$y$$ như một hàm đơn trị của $$x$$ quanh $$B$$! Nhưng vì $$\frac{\partial F}{\partial x} = 2 \neq 0$$, ta vẫn viết được $$x = +\sqrt{1 - y^2}$$ trơn quanh $$B$$ — chứng tỏ đường tròn vẫn là một đa tạp 1 chiều trơn hoàn hảo tại mọi điểm!
+
+---
 
 ## 3. Hai Định lý Nền tảng của Giải tích
 
