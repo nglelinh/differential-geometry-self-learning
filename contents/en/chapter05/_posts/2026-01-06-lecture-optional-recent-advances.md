@@ -10,7 +10,7 @@ lesson_type: optional
 
 When you first meet differential forms—$$dx \wedge dy = -dy \wedge dx$$ and Stokes' single sweeping equation $$\int_\Omega d\omega = \int_{\partial\Omega} \omega$$—it can feel like a purely classical elegance reserved for mathematical physics. Yet around 2023, a surprising twist happened in deep learning: engineers trying to predict 3D particle trajectories, blood-flow stress on arterial meshes, and robotic grasps realized that feeding scalars, vectors, and oriented areas into a flat Euclidean list broke physical symmetry at every layer. To fix it, they rediscovered the exact exterior/Clifford algebra of Chapter 05—turning multivectors into the native language of **equivariant transformers**.
 
-## Background Knowledge Map: Differential Forms, Clifford Algebra, and $$O(n)$$-Equivariance
+## Key ideas: Differential Forms, Clifford Algebra, and $$O(n)$$-Equivariance
 
 Three mathematical pillars connect Chapter 05's calculus on manifolds to 2023–2026 geometric deep learning:
 
@@ -52,7 +52,7 @@ Work in $$\mathrm{Cl}(\mathbb{R}^2)$$, where orthonormal basis vectors satisfy $
    $$
    Look at what happened automatically: the **scalar** stayed $$+5$$ (invariant), while the **oriented area** flipped sign to $$-5\,e_1 e_2$$—respecting orientation without a single hand-tuned hack!
 
-### Deep-Dive Explanation: Why Multivectors Give Neural Networks Exact Geometric Symmetry (Read Slowly)
+### Explanation: Why Multivectors Give Neural Networks Exact Geometric Symmetry
 
 1. **Stop flattening distinct geometric types into one array:** temperature (grade 0), velocity (grade 1), and torque or magnetic flux (grade 2) obey different transformation laws; mixing them inside an ordinary linear layer $$Wx$$ destroys physical meaning under rotation or reflection.
 2. **Replace arbitrary matrix multiplication with the geometric product:** inside $$\mathrm{Cl}(\mathbb{R}^n)$$, multiplying two multivectors mixes grades legally—combining symmetric metric information ($$\langle u, v\rangle$$) and skew-symmetric form information ($$u \wedge v$$) in one differentiable operation.

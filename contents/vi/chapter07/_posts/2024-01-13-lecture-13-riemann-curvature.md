@@ -11,11 +11,11 @@ Trên một mặt cong hai chiều như vỏ quả bóng hay yên ngựa, độ 
 
 Trong bài giảng nhậm chức chấn động năm 1854 trước Carl Friedrich Gauss (người thầy đã gần 80 tuổi), **Bernhard Riemann** đã đưa ra cỗ máy nắm bắt trọn vẹn độ cong ở mọi số chiều $$n$$: **Tensor độ cong Riemann** $$R^l_{ijk}$$. Đừng sợ 4 chỉ số của nó: ẩn sau công thức ấy là hai hình ảnh vật lý cực kỳ trực quan — góc xoay của cây gậy khi đi hết một vòng kín nhỏ, và **lực thủy triều** kéo hai quả táo rơi tự do xích lại gần nhau!
 
-**Mạch bài học:** Bản đồ kiến thức nền (từ độ cong Gauss sang độ cong mặt cắt, tensor Riemann, và hai lần nén thành Ricci & Vô hướng) → Trực giác vòng kín, không giao hoán đạo hàm và lực thủy triều → Định nghĩa hình thức & đối xứng Bianchi → Ví dụ tính tay cầm tay chỉ việc: tính tường minh $$R^\theta_{\phi\theta\phi}$$, tensor Ricci và độ cong vô hướng $$S = 2/a^2$$ trên mặt cầu bán kính $$a$$ → Khung giải thích chậm: 4 bước đọc hiểu các tầng độ cong (Riemann → Ricci → Vô hướng → Einstein) → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (từ độ cong Gauss sang độ cong mặt cắt, tensor Riemann, và hai lần nén thành Ricci & Vô hướng) → Trực giác vòng kín, không giao hoán đạo hàm và lực thủy triều → Định nghĩa hình thức & đối xứng Bianchi → Ví dụ tính tay làm từng bước: tính tường minh $$R^\theta_{\phi\theta\phi}$$, tensor Ricci và độ cong vô hướng $$S = 2/a^2$$ trên mặt cầu bán kính $$a$$ → Giải thích: 4 bước đọc hiểu các tầng độ cong (Riemann → Ricci → Vô hướng → Einstein) → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học độ cong nhiều chiều nghiên cứu những gì?
+## Kiến thức cần nhớ: Hình học độ cong nhiều chiều nghiên cứu những gì?
 
 ### 1. Từ một con số $$K$$ sang cỗ máy 4 chỉ số $$R^l_{ijk}$$
 Trong không gian $$n$$ chiều, độ cong tại điểm $$p$$ được đo bằng cách chọn một mặt phẳng 2 chiều $$\sigma \subset T_p M$$ (sinh bởi hai vector $$X, Y$$) rồi xem một vector $$Z$$ bị xoay đi bao nhiêu khi vận chuyển song song quanh hình bình hành vô cùng nhỏ cạnh $$X, Y$$. Chính phép gán $$(X, Y, Z) \mapsto R(X, Y)Z$$ là **tensor độ cong Riemann** kiểu $$(1, 3)$$.
@@ -141,7 +141,7 @@ Nếu $$K(p, \sigma)$$ là độ cong Gauss của mặt hai chiều sinh bởi c
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Tính toàn bộ Riemann, Ricci và Vô hướng trên mặt cầu $$S^2(a)$$
+## Ví dụ tính tay làm từng bước: Tính toàn bộ Riemann, Ricci và Vô hướng trên mặt cầu $$S^2(a)$$
 
 Xét mặt cầu bán kính $$a$$ với metric $$ds^2 = a^2(d\theta^2 + \sin^2\theta\,d\phi^2)$$, tức $$g_{\theta\theta} = a^2$$, $$g_{\phi\phi} = a^2\sin^2\theta$$. Các ký hiệu Christoffel khác $$0$$ duy nhất là:
 
@@ -172,7 +172,7 @@ Mọi công thức trừu tượng đều hội tụ về đúng con số $$K = 
 
 ---
 
-### Khung giải thích: Đọc hiểu 4 tầng của Độ cong (Riemann → Ricci → Vô hướng → Einstein) (nên đọc chậm)
+### Giải thích: Đọc hiểu 4 tầng của Độ cong (Riemann → Ricci → Vô hướng → Einstein)
 
 #### Bước 1: Tại sao $$R^l_{ijk}$$ là một tensor thực sự dù được ghép từ $$\Gamma^l_{jk}$$ không phải tensor?
 Khi đổi tọa độ, cả đạo hàm $$\partial_i \Gamma^l_{jk}$$ lẫn tích $$\Gamma\cdot\Gamma$$ đều xuất hiện các số hạng "rác" chứa đạo hàm bậc hai của tọa độ. Phép trừ phản đối xứng $$\partial_i\Gamma^l_{jk} - \partial_j\Gamma^l_{ik}$$ triệt tiêu chính xác toàn bộ phần rác đó, biến $$R^l_{ijk}$$ thành một **tensor thực sự**: nếu $$R = 0$$ trong một hệ tọa độ thì không gian phẳng trong mọi hệ tọa độ!

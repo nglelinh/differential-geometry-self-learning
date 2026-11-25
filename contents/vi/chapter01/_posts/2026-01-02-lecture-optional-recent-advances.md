@@ -12,16 +12,16 @@ lesson_type: optional
 
 Nếu bạn lập trình cho một chiếc xe tự lái hay cánh tay robot đi theo "đường ngắn nhất" nối hai điểm, chiếc xe có thể nhận lệnh bẻ ngoặt $$90^\circ$$ ngay tại chỗ — điều hoàn toàn bất khả thi với bánh xe có bán kính quay tối thiểu hay khớp cơ khí có giới hạn mô-men xoắn! Từ những bài học chính về hệ khung Frenet $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$, độ cong $$\kappa$$ và độ xoắn $$\tau$$, bài đọc thêm này dẫn bạn vào thẳng phòng thí nghiệm robotics và thị giác y khoa giai đoạn 2022–2026, nơi **Geometric Fabrics** (Van Wyk, Ratliff và cộng sự, RA-L / ICRA 2022) dùng chính hình học vi phân đường cong để thiết kế luật điều khiển mượt và ổn định.
 
-**Mạch bài học:** Bản đồ kiến thức nền (quy hoạch có ràng buộc độ cong, không gian cấu hình & hình học Finsler, đường tâm y khoa) → Trực giác điều khiển robot và Geometric Fabrics → Định nghĩa hình thức → Khung giải thích chậm: tự tay kiểm tra giới hạn độ cong $$\kappa \le 1/R_{\min}$$ và gia tốc hướng tâm $$a_n = v^2\kappa$$ trên hai quỹ đạo parabol → Ứng dụng và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (quy hoạch có ràng buộc độ cong, không gian cấu hình & hình học Finsler, đường tâm y khoa) → Trực giác điều khiển robot và Geometric Fabrics → Định nghĩa hình thức → Giải thích: tự tay kiểm tra giới hạn độ cong $$\kappa \le 1/R_{\min}$$ và gia tốc hướng tâm $$a_n = v^2\kappa$$ trên hai quỹ đạo parabol → Ứng dụng và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học Đường cong bước vào Robotics và Thị giác 3D như thế nào?
+## Kiến thức cần nhớ: Hình học Đường cong bước vào Robotics và Thị giác 3D như thế nào?
 
 Để người tốt nghiệp đại học kết nối ngay công thức Frenet–Serret với bài báo kỹ thuật hiện đại, hãy nắm ba trụ cột sau:
 
 ### 1. Quy hoạch chuyển động có ràng buộc độ cong (Kinodynamic Planning)
-Một chiếc ô tô có góc đánh lái tối đa tương ứng với bán kính quay nhỏ nhất $$R_{\min}$$ không thể chạy theo bất kỳ đường cong nào có $$\kappa(s) > 1/R_{\min}$$. Vì gia tốc hướng tâm bằng $$a_n = v^2 \kappa$$, kiểm soát độ cong $$\kappa$$ và đạo hàm $$\kappa'(s)$$ (độ giật — *jerk*) là bài toán sống còn để xe không trượt bánh và cánh tay robot không rung lắc.
+Một chiếc ô tô có góc đánh lái tối đa tương ứng với bán kính quay nhỏ nhất $$R_{\min}$$ không thể chạy theo bất kỳ đường cong nào có $$\kappa(s) > 1/R_{\min}$$. Vì gia tốc hướng tâm bằng $$a_n = v^2 \kappa$$, kiểm soát độ cong $$\kappa$$ và đạo hàm $$\kappa'(s)$$ (độ giật — *jerk*) là bài toán quan trọng để xe không trượt bánh và cánh tay robot không rung lắc.
 
 ### 2. Đa tạp cấu hình ($$Q$$) và Hình học Finsler (Geometric Fabrics)
 Một cánh tay robot 7 khớp không sống trong $$\mathbb{R}^3$$ mà sống trên **đa tạp cấu hình 7 chiều $$Q$$** (mỗi điểm là một bộ 7 góc khớp). Trong khi hình học Riemann dùng thước đo chỉ phụ thuộc vị trí $$g(q)$$, **Geometric Fabrics** mở rộng sang **hình học Finsler** nơi thước đo phụ thuộc cả vào *vận tốc* $$\dot{q}$$ — cho phép uốn quỹ đạo tránh vật cản mà vẫn bảo toàn tính ổn định Lyapunov.
@@ -54,7 +54,7 @@ Trong điều khiển robot, bài toán thường không đặt trực tiếp tr
 
 ---
 
-## Khung giải thích: tự tay kiểm tra giới hạn độ cong của robot trên hai quỹ đạo cụ thể (nên đọc chậm)
+## Giải thích: tự tay kiểm tra giới hạn độ cong của robot trên hai quỹ đạo cụ thể
 
 Với đồ thị phẳng $$y = f(x)$$, công thức độ cong quen thuộc suy ra từ hệ Frenet là:
 $$

@@ -10,7 +10,7 @@ lesson_type: optional
 
 Every deep learning engineer writes `optimizer = Adam(params)` without a second thought—assuming that subtracting a gradient vector $$\theta - \alpha g$$ still produces a valid set of weights. Yet what if your parameters must be orthogonal matrices on the Stiefel manifold $$St(p, n)$$, symmetric positive-definite (SPD) covariance matrices, or points inside the hyperbolic Poincaré disc? Subtracting a raw Euclidean gradient immediately kicks your parameters **off the manifold**! Solving that problem brought Chapter 07's full Riemannian toolkit—metrics, retractions, parallel transport, and Ricci curvature—straight into PyTorch (`Geoopt`) and modern GNN theory.
 
-## Background Knowledge Map: Riemannian Optimization and Discrete Ricci Curvature
+## Key ideas: Riemannian Optimization and Discrete Ricci Curvature
 
 Three pillars of Chapter 07 power both optimization on curved parameter spaces and modern graph neural networks:
 
@@ -56,7 +56,7 @@ Maximize the height function $$f(x, y) = y$$ on the unit circle $$S^1 = \{x^2 + 
 
 Both land cleanly on $$S^1$$ and move uphill toward $$(0, 1)$$; for small learning rates $$\alpha = 0.01$$, they agree to $$O(\alpha^2) \sim 10^{-4}$$, while $$R_p$$ skips transcendental calls!
 
-### Deep-Dive Explanation: How `RiemannianAdam` and Ollivier–Ricci Operationalize $$(M, g)$$ (Read Slowly)
+### Explanation: How `RiemannianAdam` and Ollivier–Ricci Operationalize $$(M, g)$$
 
 1. **Convert partial derivatives into a metric-aware direction:** multiplying by $$g^{-1}$$ (or projecting onto $$T_x M$$) ensures the update obeys the local geometry—in information geometry, where $$g$$ is the Fisher–Rao metric, this is literally the **natural gradient**!
 2. **Retract back onto $$M$$ every iteration:** instead of solving geodesic ODEs at every batch, retractions (normalization, QR decomposition on Stiefel manifolds, Cayley transforms) preserve constraints exactly at low cost.

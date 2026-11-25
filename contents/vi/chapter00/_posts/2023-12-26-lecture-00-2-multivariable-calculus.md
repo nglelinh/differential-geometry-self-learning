@@ -17,11 +17,11 @@ $$ f(x) \approx f(x_0) + f'(x_0)(x - x_0). $$
 
 Chính tư tưởng "biến cái cong cục bộ thành ma trận tuyến tính" này — được gói trong **ma trận Jacobian**, **Định lý Hàm Ngược** và **Định lý Hàm Ẩn** — là cánh cửa cho phép ta đặt hệ tọa độ lên mặt cầu, mặt xuyến và những đa tạp nhiều chiều.
 
-**Mạch bài học:** Bản đồ kiến thức nền (tuyến tính hóa, ma trận Jacobian & Hessian, hai định lý nền tảng) → Khai triển Taylor đa biến → Đạo hàm riêng, đạo hàm theo hướng và ma trận Jacobian → Khung giải thích chậm: tự tay tính Jacobian tọa độ cực tại $$(2, \pi/3)$$ và kiểm tra Định lý Hàm Ẩn trên đường tròn → Quy tắc chuỗi.
+**Mạch bài học:** Kiến thức cần nhớ (tuyến tính hóa, ma trận Jacobian & Hessian, hai định lý nền tảng) → Khai triển Taylor đa biến → Đạo hàm riêng, đạo hàm theo hướng và ma trận Jacobian → Giải thích: tự tay tính Jacobian tọa độ cực tại $$(2, \pi/3)$$ và kiểm tra Định lý Hàm Ẩn trên đường tròn → Quy tắc chuỗi.
 
 ---
 
-## Bản đồ kiến thức nền: Giải tích Đa biến cung cấp gì cho Hình học Vi phân?
+## Kiến thức cần nhớ: Giải tích Đa biến cung cấp gì cho Hình học Vi phân?
 
 Trước khi bước vào các công thức đạo hàm nhiều biến, hãy nhìn ba trụ cột mà giải tích đa biến đóng góp trực tiếp cho hình học vi phân:
 
@@ -91,7 +91,7 @@ Chính vì vậy, trong tích phân bội, khi đổi sang tọa độ cực ta 
 
 ---
 
-## Khung giải thích: tự tay kiểm tra Jacobian và Định lý Hàm Ẩn (nên đọc chậm)
+## Giải thích: tự tay kiểm tra Jacobian và Định lý Hàm Ẩn
 
 Để cảm nhận trực tiếp ma trận Jacobian và Định lý Hàm Ẩn hoạt động ra sao trên con số thật, hãy kiểm tra hai ví dụ ngắn bằng tay:
 

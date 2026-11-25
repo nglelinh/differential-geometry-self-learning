@@ -10,7 +10,7 @@ lesson_type: optional
 
 Stand on the equator in Quito holding a spear pointed due south, walk a quarter of the way around the globe to Gabon without ever twisting the spear, then walk straight up to the North Pole and back down to Quito: when you arrive home, your spear is pointing **90 degrees away** from where it started! On a curved surface, tangent spaces at different points are completely separate rooms—you cannot compare or add two vectors without a **connection** to transport one into the other's room. In 2019–2024 geometric deep learning, that exact problem reappeared under the name **gauge equivariance** and drove breakthroughs like **Equiformer** and **EquiformerV2**.
 
-## Background Knowledge Map: Connections, Gauges, and Spherical Tensors in Modern AI
+## Key ideas: Connections, Gauges, and Spherical Tensors in Modern AI
 
 Three pillars of Chapter 06 explain why modern 3D molecular and surface neural networks look so much like differential geometry:
 
@@ -43,7 +43,7 @@ Take the unit sphere $$S^2 \subset \mathbb{R}^3$$ and trace a tangent vector $$V
 
 Compare $$V_0 = (1, 0, 0)$$ and $$V_{\text{final}} = (0, 1, 0)$$: the vector rotated by **$$90^\circ = \pi/2$$ radians**—matching the exact area of the octant triangle $$\text{Area}(\triangle NAB) = \frac{1}{8}(4\pi) = \pi/2$$! Meanwhile, if a naive network simply subtracted ambient coordinates $$V_A - V_0 = (-1, 0, -1)$$, the result isn't even tangent to $$S^2$$ at $$N$$ or $$A$$!
 
-### Deep-Dive Explanation: Why Equivariant Transformers Need Gauge Transport and Tensor Products (Read Slowly)
+### Explanation: Why Equivariant Transformers Need Gauge Transport and Tensor Products
 
 1. **Every point carries its own local frame (gauge):** on a curved mesh or 3D molecule, there is no god-given "east" direction at every vertex; any valid neural layer must give the same geometric prediction if you spin a vertex's local axes.
 2. **Transport before you aggregate:** to average a neighbor's tangent vector at $$q$$ into vertex $$p$$, gauge CNNs first rotate $$q$$'s feature by the parallel-transport angle along edge $$q \to p$$—preventing coordinate artifacts.

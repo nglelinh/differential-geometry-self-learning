@@ -13,11 +13,11 @@ Có một câu nói đùa kinh điển trong toán học: *"Nhà tô-pô học k
 
 **Tô-pô (Topology)** là nghệ thuật nghiên cứu những tính chất còn sống sót sau mọi phép biến dạng liên tục (co giãn, uốn nắn mà không cắt hay dán). Nếu Hình học quan tâm đến độ dài, góc đo và độ cong, thì Tô-pô bỏ sạch thước đo để chỉ giữ lại **tính liên kết** và **cấu trúc lân cận**. Trong Hình học Vi phân, Tô-pô chính là bộ khung xương: trước khi đo độ cong trên một không gian (tính chất hình học), ta phải biết hình dạng tổng thể và cách vá các mảnh bản đồ phẳng lại với nhau thành một **đa tạp (manifold)**.
 
-**Mạch bài học:** Bản đồ kiến thức nền (tập mở & liên tục, bất biến tô-pô, đa tạp & tập đồ) → Tập mở và không gian tô-pô → Ánh xạ liên tục và phép đồng phôi → Tính compắc, liên thông và Hausdorff → Đa tạp, bản đồ và tập đồ → Khung giải thích chậm: tự tay dựng tập đồ 2 bản đồ chiếu nổi cho mặt cầu $$S^2$$ và kiểm tra ánh xạ chuyển trơn.
+**Mạch bài học:** Kiến thức cần nhớ (tập mở & liên tục, bất biến tô-pô, đa tạp & tập đồ) → Tập mở và không gian tô-pô → Ánh xạ liên tục và phép đồng phôi → Tính compắc, liên thông và Hausdorff → Đa tạp, bản đồ và tập đồ → Giải thích: tự tay dựng tập đồ 2 bản đồ chiếu nổi cho mặt cầu $$S^2$$ và kiểm tra ánh xạ chuyển trơn.
 
 ---
 
-## Bản đồ kiến thức nền: Tô-pô Đại cương là gì và đóng vai trò gì trong Hình học Vi phân?
+## Kiến thức cần nhớ: Tô-pô Đại cương là gì và đóng vai trò gì trong Hình học Vi phân?
 
 Với sinh viên đại học đã quen định nghĩa giới hạn $$\epsilon - \delta$$ trong giải tích, tô-pô mở rộng tư duy qua **ba trụ cột lớn**:
 
@@ -99,7 +99,7 @@ Một **đa tạp tô-pô $$n$$-chiều** $$M$$ là một không gian tô-pô th
 
 ---
 
-## Khung giải thích: tự tay dựng tập đồ 2 bản đồ cho mặt cầu $$S^2$$ (nên đọc chậm)
+## Giải thích: tự tay dựng tập đồ 2 bản đồ cho mặt cầu $$S^2$$
 
 Để khái niệm *bản đồ (chart)* và *ánh xạ chuyển trơn* không còn trừu tượng, hãy tự tay kiểm tra **phép chiếu nổi (stereographic projection)** trên mặt cầu đơn vị $$S^2 = \{(x,y,z) : x^2 + y^2 + z^2 = 1\}$$:
 

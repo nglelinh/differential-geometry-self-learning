@@ -11,11 +11,11 @@ Hãy thử một thí nghiệm tưởng tượng trên quả địa cầu: bạn
 
 Nghịch lý thú vị đó tiết lộ một sự thật nền tảng của hình học vi phân: trên đa tạp cong, không hề tồn tại khái niệm "song song toàn cục", và bạn thậm chí **không thể trừ trực tiếp** hai vector nằm ở hai điểm khác nhau vì chúng sống trong hai mặt phẳng tiếp tuyến khác nhau! Để làm phép tính vi phân trên không gian cong, Tullio Levi-Civita (1917) và Jean-Louis Koszul (1950) đã xây dựng khái niệm **Liên kết (Connection)** và **Đạo hàm hiệp biến (Covariant Derivative)** — chiếc cầu nối giữa các không gian tiếp tuyến lân cận nhau.
 
-**Mạch bài học:** Bản đồ kiến thức nền (vì sao đạo hàm thường hỏng, vận chuyển song song, liên kết Levi-Civita) → Trực giác đi bộ cầm cờ & ký hiệu Christoffel → Định nghĩa hình thức & đường trắc địa $$\nabla_{\dot\gamma}\dot\gamma = 0$$ → Ví dụ tính tay cầm tay chỉ việc: tính tường minh $$\Gamma^r_{\theta\theta} = -r$$, $$\Gamma^\theta_{r\theta} = 1/r$$ trong tọa độ cực và kiểm tra tam giác cầu $$90^\circ$$ → Khung giải thích chậm: 4 bước chứng minh định lý cơ bản của hình học Riemann (tính duy nhất của liên kết Levi-Civita) → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (vì sao đạo hàm thường hỏng, vận chuyển song song, liên kết Levi-Civita) → Trực giác đi bộ cầm cờ & ký hiệu Christoffel → Định nghĩa hình thức & đường trắc địa $$\nabla_{\dot\gamma}\dot\gamma = 0$$ → Ví dụ tính tay làm từng bước: tính tường minh $$\Gamma^r_{\theta\theta} = -r$$, $$\Gamma^\theta_{r\theta} = 1/r$$ trong tọa độ cực và kiểm tra tam giác cầu $$90^\circ$$ → Giải thích: 4 bước chứng minh định lý cơ bản của hình học Riemann (tính duy nhất của liên kết Levi-Civita) → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Liên kết, Vận chuyển song song và Liên kết Levi-Civita nghiên cứu gì?
+## Kiến thức cần nhớ: Liên kết, Vận chuyển song song và Liên kết Levi-Civita nghiên cứu gì?
 
 ### 1. Khủng hoảng của phép trừ vector trên đa tạp cong
 Trong $$\mathbb{R}^n$$, mọi không gian tiếp tuyến đều trùng với chính $$\mathbb{R}^n$$, nên phép lấy giới hạn $$\lim_{h\to 0}\frac{V(p+h)-V(p)}{h}$$ hợp lệ. Trên đa tạp cong $$M$$, $$V(p) \in T_p M$$ còn $$V(p+h) \in T_{p+h}M$$ — hai không gian vector khác hẳn nhau! Muốn lấy đạo hàm, ta bắt buộc phải trang bị một **liên kết** $$\nabla$$ làm quy tắc dịch chuyển vector từ $$T_{p+h}M$$ về $$T_p M$$.
@@ -137,7 +137,7 @@ Cách nhìn này thống nhất hai đặc trưng của đường trắc địa:
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Ký hiệu Christoffel trong tọa độ cực & lực quán tính
+## Ví dụ tính tay làm từng bước: Ký hiệu Christoffel trong tọa độ cực & lực quán tính
 
 Xét chính mặt phẳng $$\mathbb{R}^2$$ với tọa độ cực $$(r, \theta)$$ và metric $$g_{rr} = 1,\; g_{\theta\theta} = r^2,\; g_{r\theta} = 0$$ (nên nghịch đảo $$g^{rr} = 1,\; g^{\theta\theta} = 1/r^2$$). Chỉ có đúng một đạo hàm riêng khác $$0$$ là $$\partial_r g_{\theta\theta} = 2r$$!
 
@@ -156,7 +156,7 @@ Bạn nhận ra hai số hạng quen thuộc trong cơ học cổ điển chứ?
 
 ---
 
-### Khung giải thích: Tại sao Liên kết Levi-Civita tồn tại duy nhất từ metric $$g$$? (nên đọc chậm)
+### Giải thích: Tại sao Liên kết Levi-Civita tồn tại duy nhất từ metric $$g$$?
 
 #### Bước 1: Ghi lại hai đòi hỏi hình học tự nhiên nhất
 Ta muốn phép đạo hàm hiệp biến $$\nabla$$ tôn trọng thước đo độ dài–góc (tương thích metric: $$X\bigl(g(Y,Z)\bigr) = g(\nabla_X Y, Z) + g(Y, \nabla_X Z)$$) và không vặn xoắn hình bình hành vô cùng nhỏ (không xoắn: $$\nabla_X Y - \nabla_Y X = [X, Y]$$).

@@ -11,11 +11,11 @@ Mỗi ngày, chiếc điện thoại trên tay bạn nhận tín hiệu từ cá
 
 Điều kỳ diệu là toàn bộ công cụ chúng ta đã kiên trì xây dựng từ Chương 1 đến Chương 8 — tensor metric $$g_{\mu\nu}$$, ký hiệu Christoffel $$\Gamma^\mu_{\nu\lambda}$$, đường trắc địa, tensor Ricci $$R_{\mu\nu}$$ và độ cong vô hướng $$R$$ — chỉ cần **một dấu trừ duy nhất** ở thành phần thời gian là lập tức biến thành ngôn ngữ mô tả vũ trụ: **Hình học Lorentz** và **Thuyết tương đối rộng**!
 
-**Mạch bài học:** Bản đồ kiến thức nền (dấu $$(-,+,+,+)$$ thay đổi toàn bộ hình học ra sao, cấu trúc nhân quả nón ánh sáng, hấp dẫn = độ cong) → Trực giác tấm vải không-thời gian & nón ánh sáng → Định nghĩa hình thức đa tạp Lorentz & Phương trình Einstein → Ví dụ tính tay cầm tay chỉ việc: tính thời gian riêng trong nghịch lý song sinh với $$v = 0.6c$$ và bán kính Schwarzschild của Trái Đất & Mặt Trời → Khung giải thích chậm: 3 bước nối dấu trừ Lorentz với Phương trình Einstein và Lỗ đen → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (dấu $$(-,+,+,+)$$ thay đổi toàn bộ hình học ra sao, cấu trúc nhân quả nón ánh sáng, hấp dẫn = độ cong) → Trực giác tấm vải không-thời gian & nón ánh sáng → Định nghĩa hình thức đa tạp Lorentz & Phương trình Einstein → Ví dụ tính tay làm từng bước: tính thời gian riêng trong nghịch lý song sinh với $$v = 0.6c$$ và bán kính Schwarzschild của Trái Đất & Mặt Trời → Giải thích: 3 bước nối dấu trừ Lorentz với Phương trình Einstein và Lỗ đen → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học Lorentz và Không-Thời gian 4 chiều nghiên cứu gì?
+## Kiến thức cần nhớ: Hình học Lorentz và Không-Thời gian 4 chiều nghiên cứu gì?
 
 ### 1. Một dấu trừ duy nhất đảo ngược quy tắc "đường ngắn nhất"
 Trong đa tạp Riemann ($$g$$ xác định dương, dấu $$(+,+,+,+)$$), đường thẳng nối hai điểm là đường có độ dài **ngắn nhất**. Trong **đa tạp Lorentz** với dấu $$(-, +, +, +)$$, bình phương khoảng không-thời gian $$ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2$$ có thể âm, bằng 0 hoặc dương — và nghịch lý thú vị là: **đường trắc địa kiểu thời gian (chuyển động rơi tự do) lại là đường có thời gian riêng CỰC ĐẠI** giữa hai sự kiện!
@@ -113,7 +113,7 @@ trong đó $$\tau$$ là thời gian riêng (thời gian đo bởi đồng hồ g
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Nghịch lý song sinh ($$v = 0.6c$$) và Bán kính Schwarzschild
+## Ví dụ tính tay làm từng bước: Nghịch lý song sinh ($$v = 0.6c$$) và Bán kính Schwarzschild
 
 ### Ví dụ 1: Tính trực tiếp sự chênh lệch tuổi trong Nghịch lý song sinh
 Đặt $$c = 1$$. Cặp song sinh An và Bình xuất phát cùng nhau tại sự kiện $$P = (0, 0)$$ và gặp lại nhau tại $$Q = (10, 0)$$ (10 năm sau theo đồng hồ Trái Đất):
@@ -143,7 +143,7 @@ Hệ số $$\sqrt{1 - r_s/r}$$ cho biết đồng hồ ở gần vật thể n�
 
 ---
 
-### Khung giải thích: Ba bước nối Hình học Lorentz với Phương trình Einstein và Lỗ đen (nên đọc chậm)
+### Giải thích: Ba bước nối Hình học Lorentz với Phương trình Einstein và Lỗ đen
 
 #### Bước 1: Nguyên lý tương đương biến "hấp dẫn" thành "đường trắc địa"
 Einstein nhận ra người rơi tự do trong thang máy đứt cáp không cảm thấy trọng lực — giống hệt trạng thái không trọng lượng ngoài vũ trụ. Về mặt hình học, điều đó có nghĩa là tại mọi điểm của không-thời gian cong, luôn tồn tại **hệ tọa độ rơi tự do** làm tất cả ký hiệu Christoffel $$\Gamma^\mu_{\nu\lambda} = 0$$ tại đúng điểm đó (nhưng không triệt tiêu được tensor Riemann $$R^\mu_{\nu\rho\sigma}$$!).

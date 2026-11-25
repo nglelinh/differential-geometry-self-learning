@@ -16,11 +16,11 @@ Trong Hình học Vi phân, đối tượng nghiên cứu là hình dạng của
 - **Dòng chảy (flow)** của một trường vector là nghiệm của một hệ ODE cấp một.
 - **Vận chuyển song song (parallel transport)** cũng được định nghĩa bởi một hệ ODE tuyến tính dọc theo đường cong.
 
-**Mạch bài học:** Bản đồ kiến thức nền (trường vector & phân thớ tiếp tuyến, định lý Picard–Lindelöf, dòng chảy một tham số) → Bài toán Cauchy và đường cong tích phân → Định lý Tồn tại & Duy nhất → Quy ODE cấp 2 về hệ cấp 1 trên $$TM$$ → Khung giải thích chậm: tự tay giải dòng chảy trường quay $$X(x,y)=(-y,x)$$ và xem tính duy nhất gãy thế nào khi mất điều kiện Lipschitz → Tổng kết Chương 0.
+**Mạch bài học:** Kiến thức cần nhớ (trường vector & phân thớ tiếp tuyến, định lý Picard–Lindelöf, dòng chảy một tham số) → Bài toán Cauchy và đường cong tích phân → Định lý Tồn tại & Duy nhất → Quy ODE cấp 2 về hệ cấp 1 trên $$TM$$ → Giải thích: tự tay giải dòng chảy trường quay $$X(x,y)=(-y,x)$$ và xem tính duy nhất gãy thế nào khi mất điều kiện Lipschitz → Tổng kết Chương 0.
 
 ---
 
-## Bản đồ kiến thức nền: Phương trình Vi phân đóng vai trò gì trong Hình học Vi phân?
+## Kiến thức cần nhớ: Phương trình Vi phân đóng vai trò gì trong Hình học Vi phân?
 
 Với sinh viên đại học đã từng giải ODE bằng tách biến hay phương trình đặc trưng, hình học vi phân nhìn ODE theo **ba trụ cột hình học**:
 
@@ -93,7 +93,7 @@ Nghĩa là dịch chuyển trong thời gian $$s$$ rồi tiếp tục dịch chu
 
 ---
 
-## Khung giải thích: tự tay tính dòng chảy trường quay và xem điều kiện Lipschitz bảo vệ ta khỏi điều gì (nên đọc chậm)
+## Giải thích: tự tay tính dòng chảy trường quay và xem điều kiện Lipschitz bảo vệ ta khỏi điều gì
 
 Để hai khái niệm *dòng chảy $$\Phi_t$$* và *tính duy nhất Picard–Lindelöf* trở nên sống động, hãy tự tay kiểm tra hai ví dụ nhỏ sau:
 

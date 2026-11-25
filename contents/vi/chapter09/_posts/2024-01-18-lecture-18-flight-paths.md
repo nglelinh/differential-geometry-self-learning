@@ -18,11 +18,11 @@ Trong bài giảng này, chúng ta tìm hiểu khái niệm **Đường trắc �
 
 *Để tìm hiểu cách thiết lập và giải phương trình đường trắc địa, hãy xem [Bài giảng 9: Đường trắc địa]({{ '/contents/vi/chapter04/lecture-09-geodesics/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
 
-**Mạch bài học:** Bản đồ kiến thức nền (đường trắc địa trên mặt cong, đường tròn lớn vs. đường loxodrome, ánh sáng trên không-thời gian cong) → Trực giác con kiến trên quả táo & hàng hải → Ví dụ tính số cầm tay chỉ việc: so sánh bay dọc vĩ tuyến $$60^\circ\text{ N}$$ với bay vòng qua Bắc Cực (tiết kiệm đúng $$3{,}336\text{ km}$$!) → Khung giải thích chậm: 3 bước hiểu vì sao đường tròn lớn vừa "thẳng nhất" vừa "ngắn nhất" → Ảo giác bản đồ, Ánh sáng vũ trụ & Video.
+**Mạch bài học:** Kiến thức cần nhớ (đường trắc địa trên mặt cong, đường tròn lớn vs. đường loxodrome, ánh sáng trên không-thời gian cong) → Trực giác con kiến trên quả táo & hàng hải → Ví dụ tính số làm từng bước: so sánh bay dọc vĩ tuyến $$60^\circ\text{ N}$$ với bay vòng qua Bắc Cực (tiết kiệm đúng $$3{,}336\text{ km}$$!) → Giải thích: 3 bước hiểu vì sao đường tròn lớn vừa "thẳng nhất" vừa "ngắn nhất" → Ảo giác bản đồ, Ánh sáng vũ trụ & Video.
 
 ---
 
-## Bản đồ kiến thức nền: Đường Trắc địa trong Hình học cầu và Vũ trụ học là gì?
+## Kiến thức cần nhớ: Đường Trắc địa trong Hình học cầu và Vũ trụ học là gì?
 
 ### 1. Hai gương mặt của "đường thẳng" trên mặt cong
 Trong mặt phẳng Euclid, đoạn thẳng cùng lúc sở hữu hai tính chất: (a) **không bẻ lái** (gia tốc tiếp tuyến bằng 0, $$\nabla_{\dot\gamma}\dot\gamma = 0$$), và (b) **ngắn nhất** giữa hai điểm. Trên mặt cong (như Trái Đất), đường cong giữ nguyên hai đặc tính cục bộ đó gọi là **đường trắc địa (geodesic)** — và trên mặt cầu, chúng chính là các **đường tròn lớn** (giao tuyến của mặt cầu với mặt phẳng đi qua tâm Trái Đất)!
@@ -70,7 +70,7 @@ Ngày nay, máy bay và tàu biển hiện đại có hệ thống định vị 
 
 ---
 
-## Ví dụ tính số cầm tay chỉ việc: Bay ngang vĩ tuyến $$60^\circ\text{ N}$$ vs. Bay thẳng qua Bắc Cực
+## Ví dụ tính số làm từng bước: Bay ngang vĩ tuyến $$60^\circ\text{ N}$$ vs. Bay thẳng qua Bắc Cực
 
 Xét hai thành phố cùng nằm trên vĩ tuyến $$60^\circ\text{ N}$$ nhưng cách nhau đúng $$180^\circ$$ kinh độ (ví dụ Saint Petersburg ở $$30^\circ\text{ E}$$ và Anchorage, Alaska ở $$150^\circ\text{ W}$$), với bán kính Trái Đất $$R \approx 6{,}371\text{ km}$$:
 
@@ -89,7 +89,7 @@ Chỉ bằng cách bẻ lộ trình "vòng lên cực Bắc" trông thật vòng
 
 ---
 
-### Khung giải thích: Ba bước hiểu vì sao đường tròn lớn vừa "thẳng nhất" vừa "ngắn nhất" (nên đọc chậm)
+### Giải thích: Ba bước hiểu vì sao đường tròn lớn vừa "thẳng nhất" vừa "ngắn nhất"
 
 #### Bước 1: Tại sao một vòng vĩ tuyến (khác Xích đạo) KHÔNG phải đường trắc địa?
 Khi bạn lái xe chạy vòng quanh vĩ tuyến $$60^\circ\text{ N}$$, vector gia tốc hướng tâm trỏ thẳng vào tâm của vòng vĩ tuyến đó (nằm trên trục Trái Đất) — **không** trùng với phương vuông góc mặt cầu (trỏ về tâm Trái Đất)! Thành phần nằm ngang dọc mặt đất của gia tốc đó bắt buộc bạn phải **bẻ lái nhẹ về phía Bắc liên tục** để không bị trượt xuống Xích đạo!

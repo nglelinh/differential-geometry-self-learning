@@ -10,7 +10,7 @@ lesson_type: optional
 
 Try commanding a robotic arm to rotate its wrist by interpolating three Euler angles—roll, pitch, and yaw—and at a $$90^\circ$$ pitch two axes suddenly lock together (**gimbal lock**), sending the arm into a wild spin! Meanwhile, thousands of light-years away at the center of our galaxy, photons skim the event horizon of Sagittarius A* along curved null geodesics of a Lorentzian spacetime. Both worlds—differentiable robotics libraries like **Theseus** and the **Event Horizon Telescope's** black-hole simulations—run on the exact differential geometry of Chapter 08: **Lie groups**, **Lie algebras**, and **Lorentzian geodesics**.
 
-## Background Knowledge Map: Lie Groups, Exponential Maps, and Lorentzian Spacetime
+## Key ideas: Lie Groups, Exponential Maps, and Lorentzian Spacetime
 
 Three pillars link Chapter 08's abstract group-manifold theory directly to 2022–2026 robotics, chemistry, and astrophysics:
 
@@ -53,7 +53,7 @@ Check: $$R^\top R = I$$, $$\det R = 1$$, and $$R(1,0,0)^\top = (0,1,0)^\top$$ �
 
 Because $$g_1 g_2 \neq g_2 g_1$$, differentiable SLAM and pose-graph libraries (like Theseus) optimize updates in the tangent algebra $$\mathfrak{se}(3)$$ and apply $$g \leftarrow g \cdot \exp(\delta \xi)$$.
 
-### Deep-Dive Explanation: From Lie Algebras to Differentiable Robotics and Black-Hole Imaging (Read Slowly)
+### Explanation: From Lie Algebras to Differentiable Robotics and Black-Hole Imaging
 
 1. **Compute updates in the flat Lie algebra, store states in the curved Lie group:** $$\mathfrak{so}(3)$$ and $$\mathfrak{se}(3)$$ are ordinary vector spaces where derivatives and Gauss–Newton linear systems work cleanly; $$\exp$$ maps each step back onto exact rigid motions.
 2. **Respect non-commutativity via left/right multiplication:** as Part B proved, translation and rotation couple via $$Rp'$$; group composition tracks that coupling automatically across chains of robot joints.

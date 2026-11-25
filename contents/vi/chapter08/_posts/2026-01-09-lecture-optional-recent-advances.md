@@ -12,11 +12,11 @@ Khi một chiếc xe tự hành xây bản đồ 3D trong thời gian thực (SL
 
 Trong giai đoạn 2022–2024, các thư viện như **Theseus** (Pineda et al., NeurIPS 2022) đưa phép tối ưu hóa phi tuyến trên nhóm Lie thẳng vào PyTorch để lan truyền ngược (backprop), **Equiformer / EquiformerV2** (2023) mã hóa đối xứng $$SE(3)$$ vào transformer cho hóa học lượng tử, còn nhóm **EHT** (2022) tích phân hàng triệu đường trắc địa ánh sáng trên metric lỗ đen quay để đối chiếu với dữ liệu radio thiên văn.
 
-**Mạch bài học:** Bản đồ kiến thức nền (tư thế vật rắn trên $$SE(3)$$, tối ưu khả vi trên nhóm Lie, thuyết tương đối rộng tính toán) → Trực giác Theseus, Equiformer & EHT → Định nghĩa hình thức phép nhân $$SE(3)$$ → Ví dụ tính tay cầm tay chỉ việc: kiểm chứng tính không giao hoán của hai chuyển động robot trong $$SE(3)$$ và bán kính quỹ đạo photon $$r_{\text{ph}} = \frac{3}{2}r_s$$ → Khung giải thích chậm: 3 bước kết nối Nhóm Lie & Không-Thời gian với công nghệ 2022–2024 → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (tư thế vật rắn trên $$SE(3)$$, tối ưu khả vi trên nhóm Lie, thuyết tương đối rộng tính toán) → Trực giác Theseus, Equiformer & EHT → Định nghĩa hình thức phép nhân $$SE(3)$$ → Ví dụ tính tay làm từng bước: kiểm chứng tính không giao hoán của hai chuyển động robot trong $$SE(3)$$ và bán kính quỹ đạo photon $$r_{\text{ph}} = \frac{3}{2}r_s$$ → Giải thích: 3 bước kết nối Nhóm Lie & Không-Thời gian với công nghệ 2022–2024 → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Nhóm Lie trong Robot và Thuyết tương đối rộng số nghiên cứu gì?
+## Kiến thức cần nhớ: Nhóm Lie trong Robot và Thuyết tương đối rộng số nghiên cứu gì?
 
 ### 1. Nhóm $$SE(3)$$ — không gian tự nhiên của mọi vật rắn 3D
 Một vật rắn (máy bay không người lái, đầu gắp robot, hay camera) có trạng thái hoàn chỉnh gồm một ma trận quay $$R \in SO(3)$$ và một vector vị trí $$p \in \mathbb{R}^3$$. Nếu ta dùng 3 góc Euler (roll, pitch, yaw), hệ tọa độ sẽ sụp đổ tại góc nghiêng $$90^\circ$$ (**gimbal lock**). Làm việc trực tiếp trên nhóm Lie $$SE(3)$$ bằng ánh xạ mũ $$\exp$$ và logarit $$\log$$ loại bỏ hoàn toàn kỳ dị tọa độ!
@@ -58,7 +58,7 @@ và một phần tử vận tốc xoắn $$(\omega,v)\in\mathfrak{se}(3)$$ biể
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Hợp hai tư thế robot trong $$SE(3)$$ và Quỹ đạo Photon quanh Lỗ đen
+## Ví dụ tính tay làm từng bước: Hợp hai tư thế robot trong $$SE(3)$$ và Quỹ đạo Photon quanh Lỗ đen
 
 ### Ví dụ 1: Kiểm chứng phép nhân không giao hoán trong $$SE(3)$$
 Xét hai phép biến đổi cứng trong không gian 3D:
@@ -82,7 +82,7 @@ Trên metric Schwarzschild (Bài 16), giải phương trình đường trắc đ
 
 ---
 
-### Khung giải thích: Ba nhánh công nghệ 2022–2024 kế thừa Chương 8 như thế nào? (nên đọc chậm)
+### Giải thích: Ba nhánh công nghệ 2022–2024 kế thừa Chương 8 như thế nào?
 
 #### Bước 1: Tối ưu hóa trên Nhóm Lie trong Theseus (NeurIPS 2022)
 Khi tối ưu tư thế $$g \in SE(3)$$ trong SLAM, ta không cộng $$g + \Delta g$$ (sẽ làm ma trận quay mất tính trực giao!). Thay vào đó, ở mỗi bước Gauss–Newton, ta tính một bước cập nhật nhỏ $$\xi \in \mathfrak{se}(3)$$ trong **đại số Lie phẳng**, rồi đẩy lên nhóm bằng ánh xạ mũ: $$g_{k+1} = g_k \cdot \exp(\xi)$$. Theseus tính đạo hàm ngược xuyên qua chính phép cập nhật $$\exp(\xi)$$ này!

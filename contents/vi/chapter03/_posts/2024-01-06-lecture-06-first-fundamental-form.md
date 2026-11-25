@@ -13,11 +13,11 @@ Mở bất kỳ bản đồ thế giới Mercator nào, bạn sẽ thấy đảo
 
 Câu hỏi cốt lõi của người vẽ bản đồ — và của con kiến sống trên bề mặt cong — là: **khi ta nhích một bước nhỏ $$(du, dv)$$ trên bản đồ phẳng, quãng đường thực tế $$ds$$ ngoài bề mặt dài bao nhiêu?** Công cụ toán học trả lời trọn vẹn câu hỏi đó, đồng thời đo luôn cả **góc** và **diện tích**, chính là **Dạng Cơ bản Thứ nhất (First Fundamental Form)** — hay trong ngôn ngữ hiện đại là **tensor metric $$g_{ij}$$**.
 
-**Mạch bài học:** Bản đồ kiến thức nền (tensor metric $$g_{ij}$$, định lý Pythagoras trên mặt cong, hình học nội tại & đẳng cự) → Dạng cơ bản thứ nhất $$I = E\,du^2 + 2F\,du\,dv + G\,dv^2$$ → Ví dụ tọa độ cực → Khung giải thích chậm: tự tay tính $$E, F, G$$ và tích phân diện tích $$4\pi R^2$$ cho mặt cầu bán kính $$R$$ → Diện tích, góc, hình học nội tại và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (tensor metric $$g_{ij}$$, định lý Pythagoras trên mặt cong, hình học nội tại & đẳng cự) → Dạng cơ bản thứ nhất $$I = E\,du^2 + 2F\,du\,dv + G\,dv^2$$ → Ví dụ tọa độ cực → Giải thích: tự tay tính $$E, F, G$$ và tích phân diện tích $$4\pi R^2$$ cho mặt cầu bán kính $$R$$ → Diện tích, góc, hình học nội tại và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Dạng Cơ bản Thứ nhất và Tensor Metric là gì?
+## Kiến thức cần nhớ: Dạng Cơ bản Thứ nhất và Tensor Metric là gì?
 
 Để người tốt nghiệp đại học thấy ngay cầu nối giữa Đại số Tuyến tính (Bài 0.1) với Hình học Riemann hiện đại, hãy nắm ba trụ cột của bài học:
 
@@ -76,7 +76,7 @@ Do đó, metric có dạng $$ds^2 = dr^2 + r^2 d\theta^2$$.
 
 ---
 
-## Khung giải thích: tự tay tính $$E, F, G$$ và diện tích $$4\pi R^2$$ cho Mặt cầu (nên đọc chậm)
+## Giải thích: tự tay tính $$E, F, G$$ và diện tích $$4\pi R^2$$ cho Mặt cầu
 
 Hãy tính tay trọn vẹn Dạng Cơ bản Thứ nhất của **mặt cầu bán kính $$R$$** với tham số hóa $$\mathbf{r}(\varphi, \theta) = (R\sin\varphi\cos\theta,\ R\sin\varphi\sin\theta,\ R\cos\varphi)$$ ($$\varphi \in (0, \pi)$$ là góc cực, $$\theta \in [0, 2\pi)$$ là kinh độ):
 

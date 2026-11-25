@@ -18,7 +18,7 @@ Between 2022 and 2026, computer graphics and 3D shape analysis rediscovered thos
 
 ---
 
-## Background Knowledge Map: Fundamental Forms Meet Discrete Meshes
+## Key ideas: Fundamental Forms Meet Discrete Meshes
 
 How do smooth derivatives on surfaces translate into triangle meshes and neural shape-matching networks? Three pillars bridge them.
 
@@ -111,7 +111,7 @@ Even on a sharp-cornered cube, total discrete Gaussian curvature equals **$$4\pi
 
 ---
 
-### Deep-Dive Explanation: How Neural Jacobian Fields Learn Intrinsic Surface Maps (Read Slowly)
+### Explanation: How Neural Jacobian Fields Learn Intrinsic Surface Maps
 
 Why did Aigerman et al. (*SIGGRAPH 2022*) abandon predicting vertex positions in favor of predicting **Jacobian fields**? Follow the four steps slowly:
 

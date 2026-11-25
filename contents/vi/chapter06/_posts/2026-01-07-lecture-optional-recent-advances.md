@@ -12,11 +12,11 @@ Khi một mạng nơ-ron đồ thị (GNN) muốn dự đoán lực tác dụng 
 
 Đó là lý do từ ý tưởng mạng tích chập đẳng biến **gauge** của Cohen và cộng sự (ICML 2019), giai đoạn 2022–2024 đã chứng kiến sự bùng nổ của **Equiformer** (ICLR 2023) và **EquiformerV2** (Liao, Smidt và cộng sự, 2023): thay vì chỉ xử lý mảng số phẳng, các kiến trúc transformer này cấy thẳng **biểu diễn bất khả quy (irreps)** của nhóm quay $$SO(3)$$ và phép nhân **Clebsch–Gordan** vào cơ chế chú ý (attention) — biến bài toán liên kết và vận chuyển song song thành hạ tầng lõi của AI cho khoa học vật liệu!
 
-**Mạch bài học:** Bản đồ kiến thức nền (gauge = chọn khung cục bộ, biểu diễn bất khả quy bậc $$l$$ của $$SO(3)$$, tích tensor Clebsch–Gordan) → Trực giác vận chuyển đặc trưng trên lưới & Equiformer → Định nghĩa hình thức → Ví dụ tính tay cầm tay chỉ việc: kiểm tra phép quay $$90^\circ$$ trên lưỡng cực nguyên tử (vô hướng $$l=0$$ vs. lực $$l=1$$ vs. ReLU thường) → Khung giải thích chậm: 3 bước từ liên kết gauge đến Equiformer / EquiformerV2 → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (gauge = chọn khung cục bộ, biểu diễn bất khả quy bậc $$l$$ của $$SO(3)$$, tích tensor Clebsch–Gordan) → Trực giác vận chuyển đặc trưng trên lưới & Equiformer → Định nghĩa hình thức → Ví dụ tính tay làm từng bước: kiểm tra phép quay $$90^\circ$$ trên lưỡng cực nguyên tử (vô hướng $$l=0$$ vs. lực $$l=1$$ vs. ReLU thường) → Giải thích: 3 bước từ liên kết gauge đến Equiformer / EquiformerV2 → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Gauge, Biểu diễn bất khả quy và Equiformer là gì?
+## Kiến thức cần nhớ: Gauge, Biểu diễn bất khả quy và Equiformer là gì?
 
 ### 1. "Gauge" trong hình học và vật lý chính là quyền tự do chọn khung cục bộ
 Trên một bề mặt cong (như mặt cầu — nơi không thể chải phẳng bộ lông mà không có xoáy), ta không có hướng "Đông–Bắc" chung cho mọi điểm. Tại mỗi điểm $$p$$ ta chọn một hệ khung trực chuẩn địa phương — lựa chọn đó gọi là một **gauge**. Để truyền thông điệp từ điểm $$q$$ sang $$p$$, ta cần một **liên kết** (phép vận chuyển song song) xoay đặc trưng từ gauge tại $$q$$ khớp vào gauge tại $$p$$.
@@ -63,7 +63,7 @@ giao hoán với $$\rho$$: khi quay toàn bộ đầu vào, đầu ra cũng quay
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Thử phép quay $$90^\circ$$ trên lưỡng cực 2 nguyên tử
+## Ví dụ tính tay làm từng bước: Thử phép quay $$90^\circ$$ trên lưỡng cực 2 nguyên tử
 
 Xét hệ 2 nguyên tử có vector nối $$r = (1, 0, 0)^T$$ và phép quay $$90^\circ$$ quanh trục $$z$$:
 
@@ -81,7 +81,7 @@ Chỉ một phép thử 3 dòng đủ thấy tại sao các mạng đẳng biế
 
 ---
 
-### Khung giải thích: Từ liên kết gauge đến kiến trúc Equiformer & EquiformerV2 (nên đọc chậm)
+### Giải thích: Từ liên kết gauge đến kiến trúc Equiformer & EquiformerV2
 
 #### Bước 1: Gauge CNN (Cohen et al., 2019) — vận chuyển song song trên lưới cong
 Trên một mặt cong rời rạc hóa (như mặt cầu 20 mặt đều), mỗi mặt có một hệ khung cục bộ. Trước khi nhân tích chập với bộ lọc tại đỉnh $$p$$, đặc trưng của láng giềng $$q$$ được nhân với ma trận vận chuyển song song $$\rho(g_{q\to p})$$ — đúng là phiên bản rời rạc của liên kết trên phân thớ vector!

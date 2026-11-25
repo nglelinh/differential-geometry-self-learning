@@ -18,11 +18,11 @@ Hãy hình dung một quả cầu được phủ kín bởi các sợi lông (nh
 
 *Để tìm hiểu thêm về trường vector và đa tạp, hãy xem [Bài giảng 10: Dạng vi phân]({{ '/contents/vi/chapter05/lecture-10-differential-forms/' | absolute_url }}) và [Bài giảng 11: Trường Tensor]({{ '/contents/vi/chapter06/lecture-11-tensors-and-fields/' | absolute_url }}).*
 
-**Mạch bài học:** Bản đồ kiến thức nền (tôpô vs. hình học, đặc trưng Euler $$\chi(M)$$, định lý Poincaré–Hopf) → Trường gió trên Trái Đất & Định lý Poincaré–Hopf → Ví dụ tính tay cầm tay chỉ việc: tính tổng chỉ số của trường gió Đông trên mặt cầu $$S^2$$ ($$1 + 1 = 2$$) so với trường vector không triệt tiêu trên hình xuyến $$T^2$$ ($$0$$) → Khung giải thích chậm: 3 bước giải mã chỉ số điểm kỳ dị và lý do lò phản ứng Tokamak có hình bánh vòng → Ứng dụng & Video.
+**Mạch bài học:** Kiến thức cần nhớ (tôpô vs. hình học, đặc trưng Euler $$\chi(M)$$, định lý Poincaré–Hopf) → Trường gió trên Trái Đất & Định lý Poincaré–Hopf → Ví dụ tính tay làm từng bước: tính tổng chỉ số của trường gió Đông trên mặt cầu $$S^2$$ ($$1 + 1 = 2$$) so với trường vector không triệt tiêu trên hình xuyến $$T^2$$ ($$0$$) → Giải thích: 3 bước giải mã chỉ số điểm kỳ dị và lý do lò phản ứng Tokamak có hình bánh vòng → Ứng dụng & Video.
 
 ---
 
-## Bản đồ kiến thức nền: Tôpô vi phân và Định lý Poincaré–Hopf nghiên cứu gì?
+## Kiến thức cần nhớ: Tôpô vi phân và Định lý Poincaré–Hopf nghiên cứu gì?
 
 ### 1. Đặc trưng Euler $$\chi(M)$$ — mã số tôpô bất biến của bề mặt
 Nếu chia một bề mặt đóng thành lưới đa giác có $$V$$ đỉnh, $$E$$ cạnh và $$F$$ mặt, thì con số $$\chi(M) = V - E + F$$ **không hề phụ thuộc vào cách chia lưới hay độ méo của bề mặt**! Với một mặt kín có $$g$$ lỗ thủng (giống $$g$$), ta luôn có công thức tuyệt đẹp:
@@ -76,7 +76,7 @@ Xét hai ví dụ tiêu biểu:
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: So sánh trường gió trên Mặt cầu $$S^2$$ và Hình xuyến $$T^2$$
+## Ví dụ tính tay làm từng bước: So sánh trường gió trên Mặt cầu $$S^2$$ và Hình xuyến $$T^2$$
 
 1. **Trường gió thổi theo vĩ tuyến trên mặt cầu $$S^2$$:**
    Xét trường vector tiếp tuyến $$X(\theta, \phi) = \sin\theta\,\hat{e}_\phi$$ (tại Xích đạo $$\theta = \pi/2$$ gió thổi mạnh nhất về hướng Đông với tốc độ $$1$$; càng lên gần hai cực tốc độ giảm theo $$\sin\theta$$).
@@ -89,7 +89,7 @@ Xét hai ví dụ tiêu biểu:
 
 ---
 
-### Khung giải thích: Ba bước giải mã Định lý Quả bóng Lông và Lò Tokamak (nên đọc chậm)
+### Giải thích: Ba bước giải mã Định lý Quả bóng Lông và Lò Tokamak
 
 #### Bước 1: Tại sao bạn không thể "giấu" hai xoáy trên mặt cầu bằng cách đẩy chúng nhập lại?
 Giả sử bạn cố gắng vuốt dồn hai điểm xoáy (mỗi điểm chỉ số $$+1$$) trên quả cầu lại sát nhau để xóa chúng đi. Vì tổng chỉ số là bất biến tôpô ($$= 2$$), khi hai điểm $$+1$$ chạm vào nhau chúng không hề biến mất mà hợp thành **một điểm lưỡng cực kỳ dị có chỉ số $$+2$$** (giống hình các đường sức từ trường lưỡng cực)!
@@ -97,7 +97,7 @@ Giả sử bạn cố gắng vuốt dồn hai điểm xoáy (mỗi điểm chỉ
 #### Bước 2: Định lý Gauss–Bonnet — người anh em song sinh của Poincaré–Hopf
 Đáng kinh ngạc hơn nữa, đặc trưng Euler $$\chi(M)$$ còn bằng tích phân toàn bộ độ cong Gauss: $$\frac{1}{2\pi}\iint_M K\,dA = \chi(M)$$! Như vậy ba thế giới tưởng chừng tách biệt — **trường gió (giải tích)**, **độ cong bề mặt (hình học)** và **số lỗ thủng (tôpô)** — bị trói chặt vào cùng một con số nguyên $$\chi(M)$$!
 
-#### Bước 3: Hệ quả kỹ thuật sống còn trong vật lý nhiệt hạch
+#### Bước 3: Hệ quả kỹ thuật quan trọng trong vật lý nhiệt hạch
 Muốn giam plasma nóng $$150$$ triệu độ bằng từ trường mà không để bất kỳ "lỗ rò" nào nơi từ trường tiếp tuyến triệt tiêu, kỹ sư không có lựa chọn nào khác ngoài việc chế tạo buồng phản ứng có $$\chi(M) = 0$$ — chính là hình bánh vòng của lò phản ứng nhiệt hạch **Tokamak**!
 
 ## 5. Ứng dụng trong thiết kế lò phản ứng nhiệt hạch

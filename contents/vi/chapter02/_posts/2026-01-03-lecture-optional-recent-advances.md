@@ -16,11 +16,11 @@ Trong gần nửa thế kỷ, đồ họa 3D gần như đồng nghĩa với **l
 
 Bài đọc thêm này không đi vào chi tiết lập trình GPU, mà nối trực tiếp câu hỏi kinh điển của Bài 5 (*thế nào là một bề mặt chính quy?*) với hai cuộc cách mạng biểu diễn bề mặt hiện đại ấy.
 
-**Mạch bài học:** Bản đồ kiến thức nền (hàm khoảng cách có dấu SDF & phương trình Eikonal, kết xuất thể tích NeuS, Gaussian Splatting 3D/2D) → Trực giác biểu diễn ẩn và đĩa tiếp tuyến → Định nghĩa hình thức → Khung giải thích chậm: tự tay kiểm tra phương trình Eikonal $$\|\nabla f\| = 1$$ cho SDF mặt cầu và kiểm tra elipxôit Gaussian ép dẹt → Ứng dụng và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (hàm khoảng cách có dấu SDF & phương trình Eikonal, kết xuất thể tích NeuS, Gaussian Splatting 3D/2D) → Trực giác biểu diễn ẩn và đĩa tiếp tuyến → Định nghĩa hình thức → Giải thích: tự tay kiểm tra phương trình Eikonal $$\|\nabla f\| = 1$$ cho SDF mặt cầu và kiểm tra elipxôit Gaussian ép dẹt → Ứng dụng và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Bề mặt Ẩn (SDF), NeuS và Gaussian Splatting là gì?
+## Kiến thức cần nhớ: Bề mặt Ẩn (SDF), NeuS và Gaussian Splatting là gì?
 
 Để nhìn xuyên qua các thuật ngữ đồ họa AI và thấy đúng toán học của Chương 2 đằng sau chúng, hãy nắm ba trụ cột:
 
@@ -64,7 +64,7 @@ NeuS chỉ ra rằng nếu gắn mật độ thể tích vào hàm SDF một cá
 
 ---
 
-## Khung giải thích: tự tay kiểm tra SDF mặt cầu và elipxôit Gaussian ép dẹt (nên đọc chậm)
+## Giải thích: tự tay kiểm tra SDF mặt cầu và elipxôit Gaussian ép dẹt
 
 Để hai định nghĩa trên chạm xuống mặt đất, hãy tự tay tính hai ví dụ cụ thể:
 

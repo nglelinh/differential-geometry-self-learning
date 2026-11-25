@@ -11,9 +11,9 @@ Nếu bạn từng ngồi trên chuyến bay thẳng từ TP. Hồ Chí Minh hay
 
 Cả hai hiện tượng ấy đều dẫn về một khái niệm xương sống của hình học nội tại: **đường trắc địa (geodesics)** — những quỹ đạo "thẳng nhất" có thể trong một thế giới cong, nơi người lái không hề xoay vô-lăng sang trái hay phải. Và điều tuyệt đẹp là toàn bộ phương trình xác định đường trắc địa chỉ cần đến metric nội tại $$g_{ij}$$ thông qua các **ký hiệu Christoffel** $$\Gamma^k_{ij}$$.
 
-**Mạch bài học:** Câu đố đường bay & vĩ tuyến $$45^\circ$$ → Bản đồ kiến thức nền (Gia tốc trắc địa, Ký hiệu Christoffel, Biến phân năng lượng) → Trực giác vận chuyển song song & viên bi không ma sát → Định nghĩa hình thức & Phương trình trắc địa → Khung giải thích tính tay ký hiệu Christoffel của mặt cầu và kiểm tra Xích đạo vs. Vĩ tuyến $$45^\circ$$ → Ví dụ mặt phẳng, mặt trụ, mặt cầu & Ứng dụng.
+**Mạch bài học:** Câu đố đường bay & vĩ tuyến $$45^\circ$$ → Kiến thức cần nhớ (Gia tốc trắc địa, Ký hiệu Christoffel, Biến phân năng lượng) → Trực giác vận chuyển song song & viên bi không ma sát → Định nghĩa hình thức & Phương trình trắc địa → Giải thích tính tay ký hiệu Christoffel của mặt cầu và kiểm tra Xích đạo vs. Vĩ tuyến $$45^\circ$$ → Ví dụ mặt phẳng, mặt trụ, mặt cầu & Ứng dụng.
 
-## Bản đồ kiến thức nền: Đường trắc địa kết nối giải tích, cơ học và hình học ra sao?
+## Kiến thức cần nhớ: Đường trắc địa kết nối giải tích, cơ học và hình học ra sao?
 
 ### 1. Độ cong trắc địa $$\kappa_g$$ và Vận chuyển song song (Parallel Transport)
 - **Là gì:** Khi một hạt chạy đều trên bề mặt, vector gia tốc $$\gamma''(s)$$ tách thành hai phần vuông góc: phần hướng vào không gian ngoài $$\kappa_n \mathbf{n}$$ (do bề mặt cong ép hạt phải uốn theo) và phần nằm ngay trong mặt phẳng tiếp tuyến $$\kappa_g \mathbf{n}_g$$ (do hạt tự bẻ lái).
@@ -148,7 +148,7 @@ $$
 
 trong đó $$\mathbf{n}_g$$ là vector pháp tuyến trắc địa (nằm trong mặt phẳng tiếp tuyến và vuông góc với $$\gamma'(s)$$), còn $$\kappa_n$$ là độ cong pháp tuyến.
 
-## Khung giải thích: Tính tay ký hiệu Christoffel trên mặt cầu — Vì sao Xích đạo là trắc địa còn Vĩ tuyến $$45^\circ$$ thì không? (nên đọc chậm)
+## Giải thích: Tính tay ký hiệu Christoffel trên mặt cầu — Vì sao Xích đạo là trắc địa còn Vĩ tuyến $$45^\circ$$ thì không?
 
 Hãy tính trọn vẹn các ký hiệu Christoffel của mặt cầu đơn vị ($$R = 1$$) với metric:
 $$ ds^2 = d\theta^2 + \sin^2\theta\,d\varphi^2, $$

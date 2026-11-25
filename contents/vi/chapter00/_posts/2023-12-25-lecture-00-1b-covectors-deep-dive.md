@@ -18,11 +18,11 @@ Hiểu rõ **covector** (hay 1-dạng — 1-form) mở khóa đồng loạt năm
 - Hình học symplectic
 - Cơ học Hamilton
 
-**Mạch bài học:** Bản đồ kiến thức nền (không gian đối ngẫu $$V^*$$, phân thớ đối tiếp tuyến $$T^*M$$, hình học symplectic) → Ba cách nhìn về covector → Cơ sở đối ngẫu và quy tắc biến đổi hiệp biến/phản biến → Vi phân vs. Gradient → Khung giải thích chậm: tự tay tính $$df$$ và $$\nabla f$$ trong tọa độ cực tại $$(r, \theta) = (2, 0)$$ → Ứng dụng và Bài tập thực hành.
+**Mạch bài học:** Kiến thức cần nhớ (không gian đối ngẫu $$V^*$$, phân thớ đối tiếp tuyến $$T^*M$$, hình học symplectic) → Ba cách nhìn về covector → Cơ sở đối ngẫu và quy tắc biến đổi hiệp biến/phản biến → Vi phân vs. Gradient → Giải thích: tự tay tính $$df$$ và $$\nabla f$$ trong tọa độ cực tại $$(r, \theta) = (2, 0)$$ → Ứng dụng và Bài tập thực hành.
 
 ---
 
-## Bản đồ kiến thức nền: Không gian Đối ngẫu, Phân thớ $$T^*M$$ và Hình học Symplectic là gì?
+## Kiến thức cần nhớ: Không gian Đối ngẫu, Phân thớ $$T^*M$$ và Hình học Symplectic là gì?
 
 Để nhìn rõ vị trí của covector trên bản đồ toán học và vật lý hiện đại, hãy nắm ba trụ cột sau:
 
@@ -110,7 +110,7 @@ $$ \theta^i(\mathbf{e}_j) = \delta^i_j = \begin{cases} 1 & \text{nếu } i = j \
 
 ## 4. Quy tắc Biến đổi: Hiệp biến và Phản biến
 
-Quy tắc biến đổi tọa độ khi đổi cơ sở là điểm mấu chốt để hiểu khái niệm tensor.
+Quy tắc biến đổi tọa độ khi đổi cơ sở là điểm chính để hiểu khái niệm tensor.
 
 ### 4.1. Đổi cơ sở
 
@@ -157,7 +157,7 @@ $$ \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}
 
 Trong không gian cong hoặc trong hệ tọa độ cong, hai đối tượng này không có cùng biểu thức tọa độ; chính metric $$g$$ quyết định phép chuyển đổi giữa chúng.
 
-### 5.2. Khung giải thích: tự tay so sánh $$df$$ và $$\nabla f$$ trong tọa độ cực (nên đọc chậm)
+### 5.2. Giải thích: tự tay so sánh $$df$$ và $$\nabla f$$ trong tọa độ cực
 
 Hãy tính trực tiếp bằng tay để thấy vì sao tọa độ của $$df$$ và $$\nabla f$$ **khác nhau rõ rệt** trong tọa độ cực $$(r, \theta)$$!
 
@@ -187,7 +187,7 @@ Xét hàm số cụ thể $$f(r, \theta) = r^2 + 4\theta$$ tại điểm $$p$$ c
      g(\nabla f_p, \mathbf{v}) = g_{rr} (\nabla f)^r v^r + g_{\theta\theta} (\nabla f)^\theta v^\theta = 1(4)(1) + 4(1)(1) = 4 + 4 = \mathbf{8}!
      $$
 
-Nếu bạn nhầm lẫn bỏ quên hệ số $$g^{\theta\theta} = 1/r^2$$ mà lấy $$\nabla f = (4, 4)$$, tích vô hướng sẽ vọt lên thành $$1(4)(1) + 4(4)(1) = 20 \neq 8$$ — sai ngay lập tức! Chính phép kiểm tra tay này cho thấy vai trò sống còn của sự phân biệt vector và covector.
+Nếu bạn nhầm lẫn bỏ quên hệ số $$g^{\theta\theta} = 1/r^2$$ mà lấy $$\nabla f = (4, 4)$$, tích vô hướng sẽ vọt lên thành $$1(4)(1) + 4(4)(1) = 20 \neq 8$$ — sai ngay lập tức! Chính phép kiểm tra tay này cho thấy vai trò của sự phân biệt vector và covector.
 
 ## 6. Ứng dụng trong Hình học Vi phân
 

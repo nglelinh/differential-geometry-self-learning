@@ -12,11 +12,11 @@ Nếu đưa tọa độ của một phân tử hay một cánh tay robot vào m�
 
 Vào năm 2023, một làn sóng nghiên cứu nổi bật tại NeurIPS đã quay về tận gốc **dạng vi phân** và **đại số Clifford** (tích hình học thế kỷ 19) để giải bài toán đó: *Clifford Group Equivariant Neural Networks* (CGENN — Ruhe, Brandstetter, Forré, 2023) và *Geometric Algebra Transformer* (GATr — Brehmer, de Haan, Behrends, Cohen, 2023). Thay vì bắt mạng tự đoán lại định luật quay của không gian 3D, họ cấy thẳng cấu trúc phân bậc của đa vector vào từng lớp mạng!
 
-**Mạch bài học:** Bản đồ kiến thức nền (từ tích nêm đến tích hình học Clifford và tính đẳng biến) → Trực giác đa vector & mạng đẳng biến → Định nghĩa hình thức đại số Clifford → Ví dụ tính tay cầm tay chỉ việc: nhân hai vector trong đại số Clifford $$\mathrm{Cl}(\mathbb{R}^2)$$ và kiểm tra phép quay/phản xạ → Khung giải thích chậm: 3 bước từ đại số Clifford đến CGENN và GATr → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (từ tích nêm đến tích hình học Clifford và tính đẳng biến) → Trực giác đa vector & mạng đẳng biến → Định nghĩa hình thức đại số Clifford → Ví dụ tính tay làm từng bước: nhân hai vector trong đại số Clifford $$\mathrm{Cl}(\mathbb{R}^2)$$ và kiểm tra phép quay/phản xạ → Giải thích: 3 bước từ đại số Clifford đến CGENN và GATr → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Đại số Clifford và Tính đẳng biến trong Học sâu hình học là gì?
+## Kiến thức cần nhớ: Đại số Clifford và Tính đẳng biến trong Học sâu hình học là gì?
 
 ### 1. Từ Tích nêm $$\wedge$$ sang Tích hình học Clifford
 Ở Bài 10, tích ngoài $$u \wedge v$$ chỉ giữ lại phần **phản đối xứng** (mảnh diện tích có hướng, bậc 2) và vứt bỏ độ dài/góc giữa hai vector. **Đại số Clifford** (William Kingdon Clifford, 1878) hợp nhất tích vô hướng đối xứng $$\langle u, v \rangle$$ (bậc 0) và tích nêm phản đối xứng $$u \wedge v$$ (bậc 2) vào một phép nhân duy nhất:
@@ -65,7 +65,7 @@ Phần bậc $$0$$ là đại lượng vô hướng, bậc $$1$$ là vector, cò
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Tích hình học trong $$\mathrm{Cl}(\mathbb{R}^2)$$
+## Ví dụ tính tay làm từng bước: Tích hình học trong $$\mathrm{Cl}(\mathbb{R}^2)$$
 
 Xét mặt phẳng Euclid $$\mathbb{R}^2$$ với cơ sở trực chuẩn $$\{e_1, e_2\}$$. Quy tắc Clifford $$vw + wv = 2\langle v, w \rangle$$ cho ta ngay bảng nhân cơ bản:
 
@@ -92,7 +92,7 @@ Chính sự phân biệt tự nhiên giữa bậc 0, bậc 1 và bậc 2 này gi
 
 ---
 
-### Khung giải thích: Đại số Clifford tạo ra mạng nơ-ron đẳng biến (CGENN & GATr) như thế nào? (nên đọc chậm)
+### Giải thích: Đại số Clifford tạo ra mạng nơ-ron đẳng biến (CGENN & GATr) như thế nào?
 
 #### Bước 1: Định lý bảo toàn bậc của tác động nhóm trực giao
 Nếu $$g \in O(n)$$ là một phép quay hay phản xạ, tác động của $$g$$ lên đại số Clifford $$\mathrm{Cl}(\mathbb{R}^n)$$ là một **tự đẳng cấu đại số** bảo toàn từng bậc: $$g(xy) = g(x)g(y)$$ và $$g(\langle x \rangle_k) = \langle g(x) \rangle_k$$ (trong đó $$\langle x \rangle_k$$ là phép chiếu lấy thành phần bậc $$k$$).

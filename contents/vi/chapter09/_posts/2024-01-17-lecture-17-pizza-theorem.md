@@ -18,11 +18,11 @@ Thao tác quen thuộc đó là một minh họa trực tiếp cho một kết q
 
 *Nếu bạn muốn tìm hiểu phần toán học chi tiết, hãy tham khảo [Bài giảng 7: Dạng cơ bản thứ hai và Độ cong Gauss]({{ '/contents/vi/chapter03/lecture-07-second-fundamental-form/' | absolute_url }}) và [Bài giảng 8: Theorema Egregium]({{ '/contents/vi/chapter04/lecture-08-gauss-map-theorema-egregium/' | absolute_url }}).*
 
-**Mạch bài học:** Bản đồ kiến thức nền (độ cong nội tại vs. ngoại tại, Theorema Egregium, phép chiếu bản đồ) → Ba loại độ cong bề mặt & Định lý Pizza → Ví dụ tính số cầm tay chỉ việc: tính độ cong Gauss của lát pizza, mặt cầu và hệ số phóng đại diện tích $$\sec^2\phi$$ của Greenland trên bản đồ Mercator → Khung giải thích chậm: 3 bước giải mã Theorema Egregium → Giai thoại đo đạc Hanover & Video.
+**Mạch bài học:** Kiến thức cần nhớ (độ cong nội tại vs. ngoại tại, Theorema Egregium, phép chiếu bản đồ) → Ba loại độ cong bề mặt & Định lý Pizza → Ví dụ tính số làm từng bước: tính độ cong Gauss của lát pizza, mặt cầu và hệ số phóng đại diện tích $$\sec^2\phi$$ của Greenland trên bản đồ Mercator → Giải thích: 3 bước giải mã Theorema Egregium → Giai thoại đo đạc Hanover & Video.
 
 ---
 
-## Bản đồ kiến thức nền: Độ cong Nội tại và Theorema Egregium nói lên điều gì?
+## Kiến thức cần nhớ: Độ cong Nội tại và Theorema Egregium nói lên điều gì?
 
 ### 1. Độ cong ngoại tại vs. Độ cong nội tại
 Một tờ giấy phẳng cuộn thành ống trụ trông "cong" dưới mắt chúng ta trong không gian 3D — đó là **độ cong ngoại tại** (phụ thuộc vào cách nhúng vào $$\mathbb{R}^3$$). Nhưng với một chú kiến bò trên mặt trụ, tổng ba góc của mọi tam giác vẫn bằng đúng $$180^\circ$$ và chu vi vòng tròn bán kính $$r$$ vẫn bằng đúng $$2\pi r$$ — tức mặt trụ **phẳng hoàn toàn về mặt nội tại** ($$K = 0$$)!
@@ -88,7 +88,7 @@ Không có phép chiếu phẳng nào tránh được hoàn toàn biến dạng;
 
 ---
 
-## Ví dụ tính số cầm tay chỉ việc: Con số phía sau lát Pizza và bản đồ Mercator
+## Ví dụ tính số làm từng bước: Con số phía sau lát Pizza và bản đồ Mercator
 
 1. **Độ cong của lát Pizza khi bóp cong thành cung tròn bán kính $$r = 5\text{ cm}$$:**
    - Theo phương ngang (mép vỏ bánh): $$k_1 = \frac{1}{r} = \frac{1}{5} = 0.2\text{ cm}^{-1}$$.
@@ -104,7 +104,7 @@ Không có phép chiếu phẳng nào tránh được hoàn toàn biến dạng;
 
 ---
 
-### Khung giải thích: Ba bước giải mã Theorema Egregium (nên đọc chậm)
+### Giải thích: Ba bước giải mã Theorema Egregium
 
 #### Bước 1: Tại sao một phép uốn không kéo giãn lại khóa chặt $$K$$?
 Giả sử bạn kẻ một hình tròn bán kính nhỏ $$\varepsilon$$ trên bề mặt. Chu vi của nó trên một mặt có độ cong Gauss $$K$$ tuân theo công thức khai triển Bertrand–Diquet–Puiseux:

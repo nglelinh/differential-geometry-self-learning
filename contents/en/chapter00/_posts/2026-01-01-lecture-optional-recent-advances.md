@@ -18,7 +18,7 @@ This optional lesson does not replace the foundations you just studied in Chapte
 
 ---
 
-## Background Knowledge Map: Where Does Chapter 00 Meet Modern Data Science?
+## Key ideas: Where Does Chapter 00 Meet Modern Data Science?
 
 If you graduated in math, computer science, or engineering, you may have learned Jacobians, inner products, and probability distributions in completely separate courses. Here is how they lock together in modern geometry of data.
 
@@ -137,7 +137,7 @@ Up to a rescaling of $$\sigma$$ by $$\sqrt{2}$$, **the space of all 1D Gaussian 
 
 ---
 
-### Deep-Dive Explanation: Why Geometry Governs High-Dimensional Learning (Read Slowly)
+### Explanation: Why Geometry Governs High-Dimensional Learning
 
 How do the basic ingredients of Chapter 00—Jacobians, open neighborhoods, and inner products—turn into the modern geometry of data? Trace the four steps slowly:
 

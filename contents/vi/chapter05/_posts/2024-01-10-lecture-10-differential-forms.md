@@ -11,11 +11,11 @@ Trong giải tích năm nhất và năm hai đại học, hẳn bạn từng ph�
 
 Vào đầu thế kỷ 20, **Élie Cartan** đã phát minh ra ngôn ngữ biến linh cảm ấy thành một phương trình chỉ vỏn vẹn sáu ký tự — **$$\int_M d\omega = \int_{\partial M} \omega$$** — mang tên **giải tích ngoài** (*exterior calculus*) và **dạng vi phân** (*differential forms*). Đây không chỉ là cách viết gọn hơn cho giải tích vector, mà là ngôn ngữ tiêu chuẩn của hình học Riemann, tôpô vi phân, thuyết tương đối rộng và lý thuyết trường lượng tử, vì nó vận hành hoàn toàn **độc lập với hệ tọa độ** ở mọi số chiều $$n$$.
 
-**Mạch bài học:** Bản đồ kiến thức nền (tại sao cần dạng vi phân, đại số ngoài và đối đồng điều de Rham) → Trực giác 1-form, 2-form, tích ngoài và đạo hàm ngoài → Định nghĩa hình thức & Định lý Stokes tổng quát → Ví dụ tính toán cầm tay chỉ việc (tích ngoài, đạo hàm ngoài và kiểm chứng trực tiếp Định lý Stokes trên đĩa đơn vị) → Khung giải thích chậm: 4 bước giải mã vì sao $$\int_M d\omega = \int_{\partial M} \omega$$ hợp nhất toàn bộ giải tích vector → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (tại sao cần dạng vi phân, đại số ngoài và đối đồng điều de Rham) → Trực giác 1-form, 2-form, tích ngoài và đạo hàm ngoài → Định nghĩa hình thức & Định lý Stokes tổng quát → Ví dụ tính toán làm từng bước (tích ngoài, đạo hàm ngoài và kiểm chứng trực tiếp Định lý Stokes trên đĩa đơn vị) → Giải thích: 4 bước giải mã vì sao $$\int_M d\omega = \int_{\partial M} \omega$$ hợp nhất toàn bộ giải tích vector → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Dạng vi phân, Đại số ngoài và Đối đồng điều de Rham nghiên cứu gì?
+## Kiến thức cần nhớ: Dạng vi phân, Đại số ngoài và Đối đồng điều de Rham nghiên cứu gì?
 
 ### 1. Từ giải tích vector 3D sang hình học đa tạp $$n$$ chiều
 Giải tích vector cổ điển (với tích có hướng $$\mathbf{u} \times \mathbf{v}$$ và toán tử $$\nabla \times \mathbf{F}$$) là đặc sản chỉ hoạt động trọn vẹn trong đúng không gian phẳng $$\mathbb{R}^3$$. Bước sang không-thời gian 4 chiều hay không gian cấu hình 10 chiều của robot, tích có hướng không còn tồn tại nữa! **Dạng vi phân** thay thế mọi công cụ 3D rời rạc đó bằng một hệ thống thống nhất làm việc trơn tru ở mọi số chiều $$n$$ và trên mọi đa tạp cong.
@@ -241,7 +241,7 @@ Hai vế khớp nhau tuyệt đối đến từng con số — không cần nh�
 
 ---
 
-### Khung giải thích: Vì sao Định lý Stokes hợp nhất giải tích vector và sinh ra đối đồng điều de Rham? (nên đọc chậm)
+### Giải thích: Vì sao Định lý Stokes hợp nhất giải tích vector và sinh ra đối đồng điều de Rham?
 
 Để cảm nhận trọn vẹn sức mạnh của phương trình $$\int_M d\omega = \int_{\partial M} \omega$$, hãy đi qua 4 bước mạch lạc sau:
 

@@ -13,11 +13,11 @@ Hãy nhìn quanh căn phòng của bạn: chiếc lò xo nhỏ trong cây bút b
 
 Nhưng bài học này còn mở ra một cánh cửa kỳ diệu hơn nhiều: **Hình học Vi phân Toàn cục (Global Differential Geometry)**. Khi ta cộng dồn (lấy tích phân) một đại lượng cục bộ như độ cong $$\kappa(s)$$ dọc theo cả một vòng dây khép kín, nó bỗng "nhìn thấy" tính chất tô-pô của sợi dây — thậm chí có thể phát hiện sợi dây có đang bị **thắt nút** hay không!
 
-**Mạch bài học:** Bản đồ kiến thức nền (hình học địa phương vs. toàn cục, lý thuyết nút thắt, đường cong giao tuyến) → Đường xoắn ốc tròn → Định lý Fenchel ($$\ge 2\pi$$) và Định lý Fáry–Milnor ($$> 4\pi$$ cho nút thắt) → Đường cong Viviani → Khung giải thích chậm: tự tay tính tích phân tổng độ cong và kiểm chứng đường cong Viviani nằm trên cả mặt cầu lẫn mặt trụ → Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (hình học địa phương vs. toàn cục, lý thuyết nút thắt, đường cong giao tuyến) → Đường xoắn ốc tròn → Định lý Fenchel ($$\ge 2\pi$$) và Định lý Fáry–Milnor ($$> 4\pi$$ cho nút thắt) → Đường cong Viviani → Giải thích: tự tay tính tích phân tổng độ cong và kiểm chứng đường cong Viviani nằm trên cả mặt cầu lẫn mặt trụ → Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học Toàn cục của Đường cong và Lý thuyết Nút thắt là gì?
+## Kiến thức cần nhớ: Hình học Toàn cục của Đường cong và Lý thuyết Nút thắt là gì?
 
 Trước khi đi vào các định lý nổi tiếng của Fenchel và Fáry–Milnor, hãy nhìn ba trụ cột kết nối Chương 1 (cục bộ) với Chương 2 (toàn cục):
 
@@ -106,7 +106,7 @@ $$ \gamma(t) = R(1+\cos t, \sin t, 2\sin(t/2)) $$
 
 ---
 
-## Khung giải thích: tự tay kiểm tra tổng độ cong và đường cong Viviani (nên đọc chậm)
+## Giải thích: tự tay kiểm tra tổng độ cong và đường cong Viviani
 
 Hãy tự tay thực hiện hai phép kiểm tra nhỏ để thấy con số thực tế đằng sau các định lý toàn cục:
 

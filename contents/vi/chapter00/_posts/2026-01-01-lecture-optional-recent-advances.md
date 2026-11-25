@@ -14,11 +14,11 @@ Một bức ảnh khuôn mặt độ phân giải $$256 \times 256$$ ảnh xám 
 
 Bài đọc thêm này không thay thế các bài nền tảng trước đó. Đại số tuyến tính, giải tích đa biến, tô-pô và phương trình vi phân vẫn là ngôn ngữ bắt buộc; nội dung dưới đây minh họa cách các công cụ ấy trở thành xương sống của **học máy hình học** và **hình học thông tin** trong giai đoạn 2022–2026.
 
-**Mạch bài học:** Bản đồ kiến thức nền (giả thuyết đa tạp, học sâu hình học 5G, hình học thông tin Fisher–Rao) → Trực giác Swiss roll và các công trình 2022–2026 → Định nghĩa hình thức → Khung giải thích chậm: tự tay tính khoảng cách nội tại vs. ngoại tại trên Swiss roll và tính metric Fisher–Rao cho phân bố chuẩn 1D → Ứng dụng và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (giả thuyết đa tạp, học sâu hình học 5G, hình học thông tin Fisher–Rao) → Trực giác Swiss roll và các công trình 2022–2026 → Định nghĩa hình thức → Giải thích: tự tay tính khoảng cách nội tại vs. ngoại tại trên Swiss roll và tính metric Fisher–Rao cho phân bố chuẩn 1D → Ứng dụng và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học của Dữ liệu, Học sâu Hình học và Hình học Thông tin là gì?
+## Kiến thức cần nhớ: Hình học của Dữ liệu, Học sâu Hình học và Hình học Thông tin là gì?
 
 Trước khi đi vào các công thức, hãy nối Chương 0 với ba hướng nghiên cứu mũi nhọn của khoa học dữ liệu hiện đại:
 
@@ -74,7 +74,7 @@ tức là chuyển từ covector vi phân sang vector bằng cách nhân với n
 
 ---
 
-## Khung giải thích: tự tay tính khoảng cách trên Swiss roll và metric Fisher–Rao (nên đọc chậm)
+## Giải thích: tự tay tính khoảng cách trên Swiss roll và metric Fisher–Rao
 
 Để thấy sức mạnh thực sự của hình học dữ liệu và hình học thông tin, hãy tự tay kiểm tra hai ví dụ cụ thể:
 

@@ -12,11 +12,11 @@ Mỗi khi bạn huấn luyện một mạng nơ-ron bằng thuật toán SGD hay
 
 Đó là sân chơi sôi động của **tối ưu hóa trên đa tạp Riemann** giai đoạn 2022–2026 — tiêu biểu là cuốn giáo trình chuẩn mực năm 2023 của **Nicolas Boumal** (*An Introduction to Optimization on Smooth Manifolds*), thư viện **Geoopt** trong PyTorch với thuật toán **`RiemannianAdam`** (Bécigneul & Ganea, ICLR 2019; Kochurov et al., 2020), cùng hướng nghiên cứu song song dùng **độ cong Ollivier–Ricci** trên đồ thị (Nguyen et al., ICML 2023) để chẩn đoán tận gốc hai căn bệnh kinh điển của GNN: *over-smoothing* và *over-squashing*!
 
-**Mạch bài học:** Bản đồ kiến thức nền (gradient Riemann, phép co rút retraction, vận chuyển mô-men & độ cong Ricci trên đồ thị) → Trực giác tối ưu trên mặt cong → Định nghĩa hình thức → Ví dụ tính tay cầm tay chỉ việc: thực hiện 1 bước hạ gradient Riemann trên mặt cầu $$S^2$$ bằng retraction chuẩn hóa so với ánh xạ mũ chính xác → Khung giải thích chậm: 3 bước vận hành `RiemannianAdam` và cơ chế độ cong Ollivier–Ricci trong GNN → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (gradient Riemann, phép co rút retraction, vận chuyển mô-men & độ cong Ricci trên đồ thị) → Trực giác tối ưu trên mặt cong → Định nghĩa hình thức → Ví dụ tính tay làm từng bước: thực hiện 1 bước hạ gradient Riemann trên mặt cầu $$S^2$$ bằng retraction chuẩn hóa so với ánh xạ mũ chính xác → Giải thích: 3 bước vận hành `RiemannianAdam` và cơ chế độ cong Ollivier–Ricci trong GNN → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Tối ưu hóa Riemann và Độ cong Đồ thị nghiên cứu gì?
+## Kiến thức cần nhớ: Tối ưu hóa Riemann và Độ cong Đồ thị nghiên cứu gì?
 
 ### 1. Gradient Riemann $$\operatorname{grad} f$$ — không phải mọi đạo hàm riêng đều là hướng dốc nhất!
 Trên đa tạp Riemann $$(M, g)$$, vi phân $$df$$ là một **covector** (1-form). Muốn biến nó thành một **vector tiếp tuyến** chỉ hướng tăng nhanh nhất theo thước đo $$g$$, ta phải nâng chỉ số bằng metric nghịch đảo: $$(\operatorname{grad} f)^i = g^{ij}\partial_j f$$. Trên một mặt cong nhúng trong $$\mathbb{R}^N$$, $$\operatorname{grad} f$$ chính là hình chiếu trực giao của gradient Euclid lên không gian tiếp tuyến $$T_x M$$!
@@ -64,7 +64,7 @@ Các chi tiết cài đặt số nằm trong Geoopt, còn khung khái niệm hì
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Một bước hạ gradient Riemann trên mặt cầu $$S^2$$
+## Ví dụ tính tay làm từng bước: Một bước hạ gradient Riemann trên mặt cầu $$S^2$$
 
 Giả sử ta muốn cực tiểu hóa hàm độ cao $$f(x) = x_3$$ trên mặt cầu đơn vị $$S^2 \subset \mathbb{R}^3$$, xuất phát từ một điểm trên Xích đạo $$x_0 = (1, 0, 0)^T$$ với tốc độ học $$\alpha = 0.5$$:
 
@@ -86,7 +86,7 @@ Cả hai đều hạ độ cao $$x_3$$ xuống phía Nam Cực và nằm gọn t
 
 ---
 
-### Khung giải thích: Ba trụ cột của Tối ưu hóa Riemann và Độ cong Đồ thị (nên đọc chậm)
+### Giải thích: Ba trụ cột của Tối ưu hóa Riemann và Độ cong Đồ thị
 
 #### Bước 1: Tại sao `RiemannianAdam` cần đến "Vận chuyển song song" từ Bài 12?
 Adam thông thường cộng trung bình động mô-men $$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$$. Trên đa tạp cong, $$m_{t-1}$$ sống trong $$T_{x_{t-1}} M$$ còn $$g_t$$ sống trong $$T_{x_t} M$$ — hai không gian tiếp tuyến khác nhau nên không thể cộng trực tiếp! `RiemannianAdam` phải áp dụng phép **vận chuyển vector** $$\mathcal{T}_{x_{t-1} \to x_t}(m_{t-1})$$ (vận chuyển song song hoặc phép chiếu) đưa $$m_{t-1}$$ về $$T_{x_t} M$$ trước khi cộng!

@@ -10,7 +10,7 @@ lesson_type: optional
 
 Why does curling a slice of pizza sideways stop the tip from drooping? Why does an airplane from Tokyo to New York arch up near Alaska? Why can a 2D Escher print pack an exponentially branching family tree comfortably near its circular rim where flat Euclidean paper runs out of space? Every one of Chapter 09's visual stories—Gaussian curvature, geodesics, minimal surfaces, the hairy-ball theorem, hyperbolic space, and black holes—has stepped straight out of popular math books and into 2022–2026 computer vision, robotics, hyperbolic deep learning, and astrophysics!
 
-## Background Knowledge Map: How Intrinsic, Geodesic, and Hyperbolic Geometry Unite Modern Applications
+## Key ideas: How Intrinsic, Geodesic, and Hyperbolic Geometry Unite Modern Applications
 
 This capstone map gathers the entire course into three practical geometric lenses used across 2022–2026 research:
 
@@ -53,7 +53,7 @@ Plug in three radii approaching the rim and compare the **hyperbolic circumferen
 
 Look at that bottom row: moving from $$r = 0.90$$ to $$r = 0.99$$ barely nudges the Euclidean radius, yet increases hyperbolic circumference more than **10-fold**! That exponential explosion of room near the boundary is why a 2D hyperbolic neural network embeds deep WordNet taxonomies with tiny distortion where 2D Euclidean embeddings crush siblings on top of one another.
 
-### Deep-Dive Explanation: Three Words That Unlock 2022–2026 Applied Geometry (Read Slowly)
+### Explanation: Three Words That Unlock 2022–2026 Applied Geometry
 
 1. **Intrinsic:** ask what survives bending without stretching (Gaussian curvature $$K$$, geodesic distance); vision and shape-matching models that learn intrinsic quantities generalize seamlessly across body poses.
 2. **Geodesic:** on curved spaces—spheres, $$SE(3)$$, hyperbolic discs, or Kerr spacetime—straight lines generalize to shortest/stationary curves; Riemannian optimizers and black-hole ray tracers both follow geodesics (or retractions).

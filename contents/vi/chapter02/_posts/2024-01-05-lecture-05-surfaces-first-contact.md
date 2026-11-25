@@ -13,11 +13,11 @@ owner: "Hình học Vi phân"
 
 Đó là cửa ngõ bước vào **Lý thuyết Bề mặt (Surface Theory)** — mảnh đất màu mỡ nhất của hình học vi phân cổ điển, nơi Gauss khám phá ra hình học nội tại. Để mang được phép tính vi phân từ tờ giấy phẳng $$\mathbb{R}^2$$ lên vỏ quả cam hay chiếc bánh donut cong, ta dùng các **mảnh tham số hóa (bản đồ tọa độ)** $$\mathbf{r}(u, v)$$ — hệt như cách những người vẽ bản đồ thế kỷ XVI chiếu từng vùng của Trái Đất lên trang giấy phẳng.
 
-**Mạch bài học:** Bản đồ kiến thức nền (bề mặt chính quy, mặt phẳng tiếp tuyến $$T_PS$$, biểu diễn tham số vs. ẩn) → Tham số hóa mặt cầu và mặt xuyến → Điều kiện chính quy $$\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$$ → Mặt phẳng tiếp tuyến và pháp tuyến đơn vị $$\mathbf{n}$$ → Khung giải thích chậm: tự tay tính $$\mathbf{r}_u, \mathbf{r}_v, \mathbf{n}$$ trên paraboloid $$(u, v, u^2+v^2)$$ và phát hiện đỉnh nhọn kỳ dị của mặt nón → Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (bề mặt chính quy, mặt phẳng tiếp tuyến $$T_PS$$, biểu diễn tham số vs. ẩn) → Tham số hóa mặt cầu và mặt xuyến → Điều kiện chính quy $$\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$$ → Mặt phẳng tiếp tuyến và pháp tuyến đơn vị $$\mathbf{n}$$ → Giải thích: tự tay tính $$\mathbf{r}_u, \mathbf{r}_v, \mathbf{n}$$ trên paraboloid $$(u, v, u^2+v^2)$$ và phát hiện đỉnh nhọn kỳ dị của mặt nón → Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Bề mặt Chính quy, Mặt phẳng Tiếp tuyến và Pháp tuyến là gì?
+## Kiến thức cần nhớ: Bề mặt Chính quy, Mặt phẳng Tiếp tuyến và Pháp tuyến là gì?
 
 Trước khi viết công thức tham số hóa, hãy đặt lý thuyết bề mặt lên ba trụ cột mà sinh viên đại học sẽ dùng xuyên suốt Chương 2, 3 và 4:
 
@@ -96,7 +96,7 @@ Vector $$\mathbf{n}$$ giữ vai trò then chốt trong việc định hướng b
 
 ---
 
-## Khung giải thích: tự tay tính mặt phẳng tiếp tuyến trên Paraboloid và bắt lỗi kỳ dị trên Mặt nón (nên đọc chậm)
+## Giải thích: tự tay tính mặt phẳng tiếp tuyến trên Paraboloid và bắt lỗi kỳ dị trên Mặt nón
 
 Hãy tự tay thực hiện hai phép tính ngắn để làm chủ trọn vẹn khái niệm chính quy và pháp tuyến:
 

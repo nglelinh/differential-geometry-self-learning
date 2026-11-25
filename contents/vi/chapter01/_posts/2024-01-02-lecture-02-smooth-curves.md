@@ -17,11 +17,11 @@ Trong toán học, đó chính là ranh giới giữa hai khái niệm:
 
 Bài giảng này giải quyết dứt điểm bài toán: *làm thế nào để tách sạch "hình dáng" của đường cong khỏi "tốc độ" di chuyển trên nó?* Câu trả lời là một quy chuẩn thanh lịch bậc nhất của hình học vi phân: **tham số hóa theo độ dài cung (arc length parametrization)**.
 
-**Mạch bài học:** Bản đồ kiến thức nền (bất biến tái tham số hóa, độ dài cung, tính chính quy) → Vấn đề trộn lẫn tốc độ với hình học → Độ dài cung và chế độ "ga tự động" → Khung giải thích chậm: tự tay bóc tách gia tốc ảo trên $$\gamma_2(t) = (t^2, t^2)$$ và kiểm chứng $$\mathbf{T} \perp \mathbf{T}'$$ trên đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Điểm kỳ dị lùi (cusp) và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (bất biến tái tham số hóa, độ dài cung, tính chính quy) → Vấn đề trộn lẫn tốc độ với hình học → Độ dài cung và chế độ "ga tự động" → Giải thích: tự tay bóc tách gia tốc ảo trên $$\gamma_2(t) = (t^2, t^2)$$ và kiểm chứng $$\mathbf{T} \perp \mathbf{T}'$$ trên đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Điểm kỳ dị lùi (cusp) và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Tham số hóa, Bất biến Hình học và Tính chính quy là gì?
+## Kiến thức cần nhớ: Tham số hóa, Bất biến Hình học và Tính chính quy là gì?
 
 Trước khi viết tích phân độ dài cung, hãy nhìn ba khái niệm trụ cột định hình toàn bộ lý thuyết đường cong:
 
@@ -85,7 +85,7 @@ $$ \|\alpha'(s)\| = \left\| \frac{d\alpha}{ds} \right\| = 1 $$
 
 ---
 
-## Khung giải thích: tự tay bóc tách "gia tốc ảo" và kiểm chứng $$\mathbf{T} \perp \mathbf{T}'$$ (nên đọc chậm)
+## Giải thích: tự tay bóc tách "gia tốc ảo" và kiểm chứng $$\mathbf{T} \perp \mathbf{T}'$$
 
 Hãy tự tay kiểm tra hai ví dụ số cụ thể để thấy phép tái tham số hóa theo $$s$$ "lọc sạch" nhiễu tốc độ như thế nào:
 

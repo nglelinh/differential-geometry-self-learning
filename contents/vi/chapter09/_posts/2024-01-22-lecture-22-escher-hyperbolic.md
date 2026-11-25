@@ -15,11 +15,11 @@ Trong hơn hai nghìn năm, bộ *Cơ sở* (*Elements*) của Euclid là nền 
 
 *Để tìm hiểu nền tảng toán học về metric và đa tạp cong, hãy xem [Bài giảng 6: Dạng cơ bản thứ nhất]({{ '/contents/vi/chapter03/lecture-06-first-fundamental-form/' | absolute_url }}) và [Bài giảng 14: Đa tạp Riemann]({{ '/contents/vi/chapter07/lecture-14-riemannian-manifolds/' | absolute_url }}).*
 
-**Mạch bài học:** Bản đồ kiến thức nền (bộ ba hình học độ cong hằng $$K > 0, K = 0, K < 0$$, mô hình Đĩa Poincaré, sự bùng nổ hàm mũ) → Đĩa Poincaré & tranh *Circle Limit III* của Escher → Ví dụ tính tay cầm tay chỉ việc: tính khoảng cách hyperbolic $$d_{\text{hyp}}(0, r) = \ln\frac{1+r}{1-r}$$ tại $$r = 0.5, 0.9, 0.99$$ và so sánh chu vi hình tròn bán kính $$R = 5$$ ($$31.4$$ vs. $$466.2$$!) → Khung giải thích chậm: 3 bước hiểu Đĩa Poincaré và tại sao tự nhiên chọn độ cong âm → Lá xà lách, San hô & Video.
+**Mạch bài học:** Kiến thức cần nhớ (bộ ba hình học độ cong hằng $$K > 0, K = 0, K < 0$$, mô hình Đĩa Poincaré, sự bùng nổ hàm mũ) → Đĩa Poincaré & tranh *Circle Limit III* của Escher → Ví dụ tính tay làm từng bước: tính khoảng cách hyperbolic $$d_{\text{hyp}}(0, r) = \ln\frac{1+r}{1-r}$$ tại $$r = 0.5, 0.9, 0.99$$ và so sánh chu vi hình tròn bán kính $$R = 5$$ ($$31.4$$ vs. $$466.2$$!) → Giải thích: 3 bước hiểu Đĩa Poincaré và tại sao tự nhiên chọn độ cong âm → Lá xà lách, San hô & Video.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học Hyperbolic và Đĩa Poincaré nghiên cứu gì?
+## Kiến thức cần nhớ: Hình học Hyperbolic và Đĩa Poincaré nghiên cứu gì?
 
 ### 1. Bộ ba Hình học Độ cong Hằng — Euclid chỉ là "ranh giới mỏng manh" ở giữa!
 Thế giới các mặt hai chiều đồng nhất có độ cong Gauss hằng số $$K$$ chia thành đúng ba hình học:
@@ -61,7 +61,7 @@ Từ đó ra đời tác phẩm **Circle Limit III** (1959), vẽ các dãy cá 
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Khoảng cách ra biên Đĩa Poincaré & Chu vi hình tròn bán kính $$R = 5$$
+## Ví dụ tính tay làm từng bước: Khoảng cách ra biên Đĩa Poincaré & Chu vi hình tròn bán kính $$R = 5$$
 
 ### Ví dụ 1: Tích phân khoảng cách từ tâm ra bán kính Euclid $$r \in [0, 1)$$
 Đi thẳng dọc trục hoành từ tâm $$(0, 0)$$ tới điểm $$(r, 0)$$ (với $$dy = 0$$), phần tử độ dài là $$ds = \frac{2\,dt}{1 - t^2}$$. Tích phân trực tiếp bằng phân tích phân thức:
@@ -84,7 +84,7 @@ Chỉ mới đi ra bán kính $$R = 5$$, chu vi vòng tròn hyperbolic đã **d�
 
 ---
 
-### Khung giải thích: Ba bước hiểu Đĩa Poincaré và Hình học Độ cong Âm (nên đọc chậm)
+### Giải thích: Ba bước hiểu Đĩa Poincaré và Hình học Độ cong Âm
 
 #### Bước 1: Tại sao các "đường thẳng" trong Đĩa Poincaré lại cong vào tâm?
 Hãy tưởng tượng bạn cần đi từ hai điểm $$A, B$$ gần mép đĩa sang nhau. Nếu đi theo đoạn thẳng Euclid sát mép, mẫu số $$(1 - r^2)$$ rất nhỏ nên **chi phí độ dài cực kỳ đắt đỏ**! Để tiết kiệm tổng chi phí, đường ngắn nhất (trắc địa) khôn ngoan **vòng sâu vào gần tâm đĩa** (nơi bước chân rẻ hơn nhiều!) rồi mới vòng ra $$B$$ — tạo thành đúng cung tròn vuông góc với biên!

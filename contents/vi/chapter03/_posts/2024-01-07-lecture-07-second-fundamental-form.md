@@ -13,7 +13,7 @@ Bạn có bao giờ để ý cách hầu như ai cũng ăn một lát bánh pizz
 
 **Mạch bài học:** Từ phép đo nội tại $$I$$ sang độ lệch khỏi mặt phẳng tiếp tuyến → Toán tử hình dáng $$S = -d\mathcal{N}$$ → Dạng cơ bản thứ hai $$II = L\,du^2 + 2M\,du\,dv + N\,dv^2$$ → Hai độ cong chính $$\kappa_1, \kappa_2$$ → Độ cong Gauss $$K = \kappa_1\kappa_2$$ và độ cong trung bình $$H = \frac{\kappa_1+\kappa_2}{2}$$ → Kiểm tra bằng tay trên paraboloid, mặt yên ngựa và mặt trụ → Phân loại bốn loại điểm trên bề mặt.
 
-## Bản đồ kiến thức nền: Hình học ngoại tại của bề mặt nghiên cứu điều gì?
+## Kiến thức cần nhớ: Hình học ngoại tại của bề mặt nghiên cứu điều gì?
 
 Với đường cong 1 chiều, tại mỗi điểm chỉ có đúng một hướng để đi nên chỉ cần một con số độ cong $$\kappa$$. Nhưng trên một bề mặt 2 chiều, tại mỗi điểm có vô số hướng xuất phát trên mặt phẳng tiếp tuyến $$T_pS$$ — và bề mặt có thể uốn cong rất khác nhau theo từng hướng. Ba trụ cột sau đây định hình toàn bộ bức tranh của bài học:
 
@@ -94,7 +94,7 @@ Trung bình cộng của hai độ cong chính liên hệ trực tiếp với b�
 - Một màng xà phòng căng trên khung dây (khi áp suất không khí hai phía bằng nhau) co về trạng thái có diện tích cực tiểu cục bộ, thỏa mãn điều kiện cân bằng $$H=0$$.
 - Các bề mặt có $$H=0$$ tại mọi điểm được gọi là **bề mặt cực tiểu (minimal surfaces)**; tại mỗi điểm của chúng, $$\kappa_1 = -\kappa_2$$ (độ cong theo hai phương chính có độ lớn bằng nhau nhưng ngược dấu).
 
-## Khung giải thích: Tính tay $$L, M, N$$, $$K$$ và $$H$$ trên ba bề mặt chuẩn (nên đọc chậm)
+## Giải thích: Tính tay $$L, M, N$$, $$K$$ và $$H$$ trên ba bề mặt chuẩn
 
 Đừng chỉ nhìn công thức trừu tượng — hãy lấy giấy bút kiểm tra trực tiếp ba bề mặt kinh điển để thấy ma trận $$[S] = I^{-1} II$$ hoạt động gọn gàng ra sao.
 

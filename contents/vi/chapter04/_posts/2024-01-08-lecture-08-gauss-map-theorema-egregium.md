@@ -11,9 +11,9 @@ Vào năm 1827, sau nhiều năm vất vả đi đo đạc trắc địa khắp 
 
 Ở Bài 7, ta vừa định nghĩa độ cong Gauss $$K = \kappa_1 \kappa_2$$ hoàn toàn bằng vector pháp tuyến $$\mathbf{n}$$ — một đại lượng chỉ tồn tại nhờ không gian 3 chiều bao quanh. Nếu bạn uốn một tờ giấy thành ống trụ, $$\kappa_1$$ đổi từ $$0$$ thành $$1/R$$, ma trận $$II$$ thay đổi hẳn. Thế nhưng Gauss chứng minh được một sự thật đảo lộn mọi trực giác: **tích $$K = \kappa_1 \kappa_2$$ lại hoàn toàn không phụ thuộc vào cách bề mặt nhúng trong $$\mathbb{R}^3$$!** Một sinh vật 2 chiều sống bẹp trên bề mặt, chưa từng biết tới chiều thứ ba, chỉ cần một sợi dây đo và một chiếc thước đo góc cũng có thể tính ra chính xác $$K$$ — và chứng minh được ngay rằng Trái Đất không thể trải phẳng thành bản đồ mà không méo.
 
-**Mạch bài học:** Câu hỏi nội tại vs. ngoại tại → Bản đồ kiến thức nền (Ánh xạ Gauss, Phép đẳng cự, Tính nội tại của $$K$$) → Trực giác lát pizza, uốn cong vs. kéo giãn, đèn pin pháp tuyến → Định nghĩa hình thức & Công thức Brioschi → Khung giải thích tính tay $$K = 1/R^2$$ của mặt cầu chỉ từ $$E, F, G$$ (không đụng tới $$L, M, N$$!) → Hình ảnh minh họa & Ứng dụng bản đồ học, tương đối rộng.
+**Mạch bài học:** Câu hỏi nội tại vs. ngoại tại → Kiến thức cần nhớ (Ánh xạ Gauss, Phép đẳng cự, Tính nội tại của $$K$$) → Trực giác lát pizza, uốn cong vs. kéo giãn, đèn pin pháp tuyến → Định nghĩa hình thức & Công thức Brioschi → Giải thích tính tay $$K = 1/R^2$$ của mặt cầu chỉ từ $$E, F, G$$ (không đụng tới $$L, M, N$$!) → Hình ảnh minh họa & Ứng dụng bản đồ học, tương đối rộng.
 
-## Bản đồ kiến thức nền: Từ hình học ngoại tại sang hình học nội tại của Gauss
+## Kiến thức cần nhớ: Từ hình học ngoại tại sang hình học nội tại của Gauss
 
 ### 1. Ánh xạ Gauss (Gauss Map)
 - **Là gì:** Ánh xạ $$\mathcal{N}: S \to S^2$$ đưa mỗi điểm $$p$$ trên bề mặt định hướng tới đầu mút của vector pháp tuyến đơn vị $$\mathbf{n}(p)$$ đặt tại gốc tọa độ trên mặt cầu đơn vị $$S^2$$.
@@ -138,7 +138,7 @@ Dù biểu thức trên khá dài, ý nghĩa toán học của nó rất rõ rà
 
 Như vậy, một sinh vật hai chiều sống trên bề mặt, chỉ thực hiện các phép đo độ dài và góc nội tại, hoàn toàn có thể tính được $$K$$ mà không cần thông tin về không gian ba chiều bên ngoài.
 
-## Khung giải thích: Tự tính độ cong mặt cầu bằng hai cách — ngoại tại và thuần nội tại (nên đọc chậm)
+## Giải thích: Tự tính độ cong mặt cầu bằng hai cách — ngoại tại và thuần nội tại
 
 Để cảm nhận trọn vẹn phép màu của Theorema Egregium, hãy tính $$K$$ cho mặt cầu bán kính $$R$$ theo hai con đường hoàn toàn độc lập: một đường nhìn từ $$\mathbb{R}^3$$ qua ánh xạ Gauss, và một đường bịt mắt con kiến lại, **chỉ đưa cho nó $$E, F, G$$**.
 

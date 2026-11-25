@@ -18,11 +18,11 @@ Mỗi khi hình thành trên một khung dây hay bao bọc một thể tích kh
 
 *Để tìm hiểu phần toán học nền tảng về các loại độ cong của mặt, hãy xem [Bài giảng 5: Bề mặt]({{ '/contents/vi/chapter02/lecture-05-surfaces-first-contact/' | absolute_url }}) và [Bài giảng 7: Dạng cơ bản thứ hai]({{ '/contents/vi/chapter03/lecture-07-second-fundamental-form/' | absolute_url }}).*
 
-**Mạch bài học:** Bản đồ kiến thức nền (độ cong trung bình $$H$$ vs. độ cong Gauss $$K$$, bài toán đẳng chu, bài toán Plateau) → Nguyên lý cực tiểu năng lượng & Phương trình Young–Laplace → Ví dụ tính tay cầm tay chỉ việc: so sánh diện tích hình cầu vs. hình lập phương cùng thể tích $$V = 1$$ và kiểm chứng mặt Catenoid $$r(z) = \cosh z$$ có $$H \equiv 0$$ → Khung giải thích chậm: 3 bước từ sức căng bề mặt đến phương trình $$H = 0$$ và mái vòm Frei Otto → Kiến trúc mái căng & Video.
+**Mạch bài học:** Kiến thức cần nhớ (độ cong trung bình $$H$$ vs. độ cong Gauss $$K$$, bài toán đẳng chu, bài toán Plateau) → Nguyên lý cực tiểu năng lượng & Phương trình Young–Laplace → Ví dụ tính tay làm từng bước: so sánh diện tích hình cầu vs. hình lập phương cùng thể tích $$V = 1$$ và kiểm chứng mặt Catenoid $$r(z) = \cosh z$$ có $$H \equiv 0$$ → Giải thích: 3 bước từ sức căng bề mặt đến phương trình $$H = 0$$ và mái vòm Frei Otto → Kiến trúc mái căng & Video.
 
 ---
 
-## Bản đồ kiến thức nền: Bề mặt Cực tiểu và Độ cong Trung bình nghiên cứu gì?
+## Kiến thức cần nhớ: Bề mặt Cực tiểu và Độ cong Trung bình nghiên cứu gì?
 
 ### 1. Độ cong Trung bình $$H$$ vs. Độ cong Gauss $$K$$
 Nếu **độ cong Gauss** là *tích* hai độ cong chính $$K = k_1 k_2$$ (nội tại, điều khiển lát pizza và bản đồ ở Bài 17), thì **độ cong trung bình** là *trung bình cộng* của chúng: $$H = \frac{k_1 + k_2}{2}$$ (ngoại tại, điều khiển tốc độ thay đổi diện tích khi đẩy bề mặt theo phương pháp tuyến!).
@@ -65,7 +65,7 @@ $$ k_1 = -k_2 $$
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Hình cầu vs. Hình lập phương và Kiểm chứng Catenoid có $$H = 0$$
+## Ví dụ tính tay làm từng bước: Hình cầu vs. Hình lập phương và Kiểm chứng Catenoid có $$H = 0$$
 
 ### Ví dụ 1: So sánh diện tích bao bọc cùng thể tích $$V = 1$$
 - **Hình lập phương** cạnh $$a = 1$$ (thể tích $$V = 1$$): diện tích toàn phần $$A_{\text{lập phương}} = 6a^2 = 6.000$$.
@@ -96,7 +96,7 @@ Tại mọi điểm từ eo thắt ($$z = 0$$) ra hai mép vòng tròn, độ co
 
 ---
 
-### Khung giải thích: Ba bước từ sức căng bề mặt đến phương trình $$H = 0$$ và mái vòm Frei Otto (nên đọc chậm)
+### Giải thích: Ba bước từ sức căng bề mặt đến phương trình $$H = 0$$ và mái vòm Frei Otto
 
 #### Bước 1: Công thức biến phân bậc nhất của diện tích
 Nếu đẩy nhẹ một mảnh bề mặt dọc theo vector pháp tuyến một đoạn vô cùng nhỏ $$\varepsilon \cdot \psi$$ (giữ cố định biên khung dây), tốc độ thay đổi diện tích tuân theo công thức kinh điển của hình học vi phân:

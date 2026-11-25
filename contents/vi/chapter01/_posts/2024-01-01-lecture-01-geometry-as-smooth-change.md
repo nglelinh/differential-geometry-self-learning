@@ -20,11 +20,11 @@ Thế nhưng chỉ cần ngẩng mắt nhìn quanh, bạn sẽ thấy thiên nhi
 > - **Toàn cục (nhìn xa):** Có thể cong, xoắn và mang hình dạng phức tạp.
 > Bề mặt Trái Đất là một ví dụ điển hình: trên một sân bóng nhỏ, mặt đất trông gần như phẳng, nhưng nếu đi thẳng mãi theo một hướng, ta sẽ quay trở lại điểm xuất phát.
 
-**Mạch bài học:** Bản đồ kiến thức nền (từ Euclid đến Gauss và Riemann) → Trực giác con kiến trên quả táo (ngoại tại vs. nội tại) → Phép tính vi phân và tiếp tuyến → Đường cong tham số hóa → Khung giải thích chậm: tự tay đo tổng góc tam giác $$270^\circ$$ trên Trái Đất và tính vận tốc đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Lược sử, ứng dụng và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (từ Euclid đến Gauss và Riemann) → Trực giác con kiến trên quả táo (ngoại tại vs. nội tại) → Phép tính vi phân và tiếp tuyến → Đường cong tham số hóa → Giải thích: tự tay đo tổng góc tam giác $$270^\circ$$ trên Trái Đất và tính vận tốc đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Lược sử, ứng dụng và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học Vi phân là gì và nghiên cứu những gì?
+## Kiến thức cần nhớ: Hình học Vi phân là gì và nghiên cứu những gì?
 
 Với sinh viên tốt nghiệp đại học lần đầu bước vào Hình học Vi phân, bức tranh toàn ngành có thể gói gọn trong **ba bước nhảy vọt lịch sử**:
 
@@ -115,7 +115,7 @@ Một đường cong được gọi là **chính quy (regular)** nếu vận t�
 
 ---
 
-## Khung giải thích: tự tay kiểm tra độ cong nội tại trên Trái Đất và vận tốc đường xoắn ốc (nên đọc chậm)
+## Giải thích: tự tay kiểm tra độ cong nội tại trên Trái Đất và vận tốc đường xoắn ốc
 
 Để hai ý tưởng nền tảng của bài học — *đo độ cong nội tại* và *tính tiếp tuyến đường cong tham số* — trở nên hoàn toàn cụ thể, hãy kiểm tra hai phép tính tay ngắn gọn:
 

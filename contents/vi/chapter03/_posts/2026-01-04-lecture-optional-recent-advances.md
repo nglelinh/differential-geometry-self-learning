@@ -12,9 +12,9 @@ Khi chuyển từ giấy bút sang màn hình máy tính, những bề mặt tr�
 
 Bài đọc thêm này nối trực tiếp hai dạng cơ bản cổ điển của Chương 3 với hai mũi nhọn của đồ họa máy tính và phân tích hình dạng giai đoạn 2022–2026: **hình học vi phân rời rạc (Discrete Differential Geometry)** và **Neural Jacobian Fields (SIGGRAPH 2022)**.
 
-**Mạch bài học:** Từ bề mặt trơn sang lưới tam giác rời rạc → Bản đồ kiến thức nền (Góc thiếu, Ánh xạ gần đẳng cự, Trường Jacobian nội tại) → Trực giác chiếc áo & bài toán Poisson → Định nghĩa hình thức $$F^*\mathrm{I}_2 \approx \mathrm{I}_1$$ và $$K(v)$$ → Kiểm tra bằng tay góc thiếu trên hình lập phương, lưới phẳng, điểm yên ngựa và ma trận Jacobian khi cuộn trụ → Tài liệu nền tảng & ứng dụng.
+**Mạch bài học:** Từ bề mặt trơn sang lưới tam giác rời rạc → Kiến thức cần nhớ (Góc thiếu, Ánh xạ gần đẳng cự, Trường Jacobian nội tại) → Trực giác chiếc áo & bài toán Poisson → Định nghĩa hình thức $$F^*\mathrm{I}_2 \approx \mathrm{I}_1$$ và $$K(v)$$ → Kiểm tra bằng tay góc thiếu trên hình lập phương, lưới phẳng, điểm yên ngựa và ma trận Jacobian khi cuộn trụ → Tài liệu nền tảng & ứng dụng.
 
-## Bản đồ kiến thức nền: Hình học bề mặt rời rạc và học sâu hình dạng nghiên cứu điều gì?
+## Kiến thức cần nhớ: Hình học bề mặt rời rạc và học sâu hình dạng nghiên cứu điều gì?
 
 ### 1. Hình học vi phân rời rạc (Discrete Differential Geometry — DDG)
 - **Là gì:** Nhánh toán học xây dựng các phiên bản rời rạc của độ cong Gauss $$K$$, độ cong trung bình $$H$$, và toán tử Laplace–Beltrami trên lưới đa giác sao cho các định lý cấu trúc lớn (như Gauss–Bonnet) vẫn đúng **chính xác** ngay cả trên lưới thô.
@@ -59,7 +59,7 @@ K(v) \approx \frac{2\pi - \sum_i \theta_i}{A_v},
 $$
 trong đó $$\theta_i$$ là các góc của các tam giác hội tụ tại đỉnh $$v$$ và $$A_v$$ là diện tích vùng trọng tâm (barycentric area) quanh $$v$$. Tuy là công thức rời rạc, đại lượng này hội tụ về độ cong Gauss trơn $$K$$ khi lưới được chia đủ mịn theo các điều kiện thích hợp.
 
-## Khung giải thích: Tự tính góc thiếu và kiểm tra đẳng cự bằng ma trận Jacobian (nên đọc chậm)
+## Giải thích: Tự tính góc thiếu và kiểm tra đẳng cự bằng ma trận Jacobian
 
 Để thấy công thức rời rạc và điều kiện kéo lùi $$F^*\mathrm{I}_2 = \mathrm{I}_1$$ cụ thể đến mức nào, ta kiểm tra hai ví dụ chỉ cần giấy bút.
 

@@ -12,11 +12,11 @@ Khi khép lại hành trình từ đường cong phẳng đến đa tạp Rieman
 
 Độ cong Gauss $$K$$ của lát pizza nay sống trong **3D Gaussian Splatting** và **Neural Jacobian Fields**; đường trắc địa mặt cầu sống trong **tối ưu hóa Riemann (Geoopt)**; mặt phẳng hyperbolic của Escher nay trở thành không gian nhúng cây phân cấp trong **mạng nơ-ron hyperbolic** (*IEEE TPAMI*, 2022); còn đường trắc địa ánh sáng quanh lỗ đen trở thành bộ mô phỏng **GRMHD** dựng ảnh **Sagittarius A\*** của Event Horizon Telescope! Bài tùy chọn kết khóa này là bản đồ tổng hợp toàn bộ các nhịp cầu đó.
 
-**Mạch bài học:** Bản đồ kiến thức nền (bảng nối 6 câu chuyện Chương 9 với 6 mũi nhọn công nghệ 2022–2026) → Bức tranh tổng hợp & nhắc lại các biểu thức cốt lõi → Ví dụ tính số cầm tay chỉ việc: so sánh nhúng cây nhị phân độ sâu $$D = 10$$ ($$1024$$ nút lá) trong mặt phẳng Euclid 2D vs. Đĩa Poincaré 2D → Khung giải thích chậm: 3 trục lớn từ Hình học Vi phân cổ điển sang Công nghệ hiện đại → Tài liệu, Video & Bài tập tổng kết.
+**Mạch bài học:** Kiến thức cần nhớ (bảng nối 6 câu chuyện Chương 9 với 6 mũi nhọn công nghệ 2022–2026) → Bức tranh tổng hợp & nhắc lại các biểu thức cốt lõi → Ví dụ tính số làm từng bước: so sánh nhúng cây nhị phân độ sâu $$D = 10$$ ($$1024$$ nút lá) trong mặt phẳng Euclid 2D vs. Đĩa Poincaré 2D → Giải thích: 3 trục lớn từ Hình học Vi phân cổ điển sang Công nghệ hiện đại → Tài liệu, Video & Bài tập tổng kết.
 
 ---
 
-## Bản đồ kiến thức nền: Sáu viên ngọc Chương 9 đi về đâu trong công nghệ 2022–2026?
+## Kiến thức cần nhớ: Sáu viên ngọc Chương 9 đi về đâu trong công nghệ 2022–2026?
 
 ### 1. Độ cong Nội tại & Bề mặt (Pizza & Màng xà phòng) $$\to$$ Thị giác 3D & Đồ họa
 - **3D Gaussian Splatting (Kerbl et al., 2023)** và **Neural Jacobian Fields (Aigerman et al., 2022):** tái dựng và biến dạng bề mặt 3D tôn trọng hình học nội tại và độ cong Gauss $$K$$ thay vì chỉ xử lý điểm ảnh phẳng.
@@ -61,7 +61,7 @@ chính là metric làm nền cho các thuật toán tối ưu Riemann (Geoopt, B
 
 ---
 
-## Ví dụ tính số cầm tay chỉ việc: Nhúng cây nhị phân độ sâu $$D = 10$$ trong Euclid 2D vs. Hyperbolic 2D
+## Ví dụ tính số làm từng bước: Nhúng cây nhị phân độ sâu $$D = 10$$ trong Euclid 2D vs. Hyperbolic 2D
 
 Giả sử bạn cần nhúng một **cây phân cấp nhị phân** (như cây từ vựng WordNet hay cây phân loại sinh học) có độ sâu $$D = 10$$ — đặt nút gốc tại tâm và mỗi tầng cách nhau khoảng cách $$1$$, nên tầng lá ở bán kính $$R = 10$$ có đúng $$2^{10} = 1{,}024$$ nút lá cần đặt cách đều nhau (mỗi nút chiếm ít nhất khoảng cách $$1$$ để không dính vào nhau):
 - **Trong mặt phẳng Euclid 2D ($$K = 0$$):** Chu vi vòng tròn bán kính $$R = 10$$ chỉ là:
@@ -77,7 +77,7 @@ Giả sử bạn cần nhúng một **cây phân cấp nhị phân** (như cây 
 
 ---
 
-### Khung giải thích: Ba trục xuyên suốt từ Lý thuyết Hình học Vi phân đến Công nghệ 2022–2026 (nên đọc chậm)
+### Giải thích: Ba trục xuyên suốt từ Lý thuyết Hình học Vi phân đến Công nghệ 2022–2026
 
 #### Bước 1: Trục 1 — Tôn trọng tính "Nội tại" (Intrinsic Geometry)
 Từ *Theorema Egregium* của Gauss (1827) đến Neural Jacobian Fields và 3D Gaussian Splatting (2022–2023): bài học lớn nhất là **đừng làm việc bằng tọa độ nhúng thô trong $$\mathbb{R}^3$$** khi bản chất bài toán nằm trên bề mặt (metric $$g$$ và độ cong $$K$$).

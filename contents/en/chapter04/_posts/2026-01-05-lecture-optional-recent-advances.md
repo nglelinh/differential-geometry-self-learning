@@ -20,7 +20,7 @@ This optional lesson bridges Gauss’s smooth intrinsic geometry (geodesics, par
 
 ---
 
-## Background Knowledge Map: From Intrinsic Surface Curvature to Graph Bottlenecks
+## Key ideas: From Intrinsic Surface Curvature to Graph Bottlenecks
 
 How can a discrete network of dots and edges—with no coordinates in $$\mathbb{R}^3$$ at all—possess "curvature" and "Ricci flow"? Three concepts make the bridge exact.
 
@@ -114,7 +114,7 @@ Now compute exact discrete curvature $$\kappa(i,j) = 1 - W_1(\mu_i, \mu_j)$$ on 
 
 ---
 
-### Deep-Dive Explanation: How Graph Curvature Diagnoses and Cures GNN Bottlenecks (Read Slowly)
+### Explanation: How Graph Curvature Diagnoses and Cures GNN Bottlenecks
 
 Why did Gauss’s 1827 intrinsic curvature become one of the hottest diagnostic tools in 2022–2026 graph machine learning? Follow the four steps slowly:
 

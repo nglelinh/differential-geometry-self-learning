@@ -15,11 +15,11 @@ Trong bài giảng này, chúng ta đi từ thí nghiệm tư duy đó đến c�
 
 *Nếu bạn muốn tìm hiểu phần toán học chi tiết, hãy đọc [Bài giảng 13: Độ cong Riemann]({{ '/contents/vi/chapter07/lecture-13-riemann-curvature/' | absolute_url }}) và [Bài giảng 16: Hình học Không-Thời gian]({{ '/contents/vi/chapter08/lecture-16-spacetime-geometry/' | absolute_url }}).*
 
-**Mạch bài học:** Bản đồ kiến thức nền (nguyên lý tương đương, không-thời gian cong vs. lực Newton, chân trời sự kiện) → Giới hạn mô hình Newton & Phương trình Einstein → Ví dụ tính số cầm tay chỉ việc: độ chậm đồng hồ gần lỗ đen Schwarzschild và góc bẻ cong ánh sáng $$1.75''$$ qua Mặt Trời → Khung giải thích chậm: 3 bước từ "người rơi tự do" đến lỗ đen và GPS → Thấu kính hấp dẫn & Video.
+**Mạch bài học:** Kiến thức cần nhớ (nguyên lý tương đương, không-thời gian cong vs. lực Newton, chân trời sự kiện) → Giới hạn mô hình Newton & Phương trình Einstein → Ví dụ tính số làm từng bước: độ chậm đồng hồ gần lỗ đen Schwarzschild và góc bẻ cong ánh sáng $$1.75''$$ qua Mặt Trời → Giải thích: 3 bước từ "người rơi tự do" đến lỗ đen và GPS → Thấu kính hấp dẫn & Video.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học của Hấp dẫn và Lỗ đen dựa trên những trụ cột nào?
+## Kiến thức cần nhớ: Hình học của Hấp dẫn và Lỗ đen dựa trên những trụ cột nào?
 
 ### 1. Nguyên lý tương đương — xóa bỏ "lực hút" bằng đường trắc địa
 Nếu đứng trong một chiếc thang máy kín đang rơi tự do, bạn lơ lửng y hệt như đang ở ngoài vũ trụ không trọng lực. Einstein đẩy nhận xét đó thành tiên đề hình học: **hấp dẫn không phải lực kéo từ xa, mà là hình học cong của không-thời gian 4 chiều**, còn chuyển động rơi tự do chỉ đơn giản là đi dọc **đường trắc địa**!
@@ -75,7 +75,7 @@ Bên cạnh việc làm lệch đường đi của ánh sáng (hiện tượng *
 
 ---
 
-## Ví dụ tính số cầm tay chỉ việc: Đồng hồ gần lỗ đen & Góc bẻ cong ánh sáng qua Mặt Trời
+## Ví dụ tính số làm từng bước: Đồng hồ gần lỗ đen & Góc bẻ cong ánh sáng qua Mặt Trời
 
 ### Ví dụ 1: Thời gian trôi chậm cỡ nào gần chân trời sự kiện $$r_s$$?
 Với một phi hành gia lơ lửng ở khoảng cách $$r > r_s$$ quanh lỗ đen Schwarzschild, tỷ lệ nhịp đồng hồ riêng $$d\tau$$ so với đồng hồ ở rất xa $$dt$$ tuân theo công thức đơn giản từ thành phần $$g_{00}$$ của metric:
@@ -99,7 +99,7 @@ Con số $$1.75''$$ này **lớn gấp đúng hai lần** dự đoán của cơ 
 
 ---
 
-### Khung giải thích: Ba bước từ "Người rơi tự do" đến Lỗ đen và GPS (nên đọc chậm)
+### Giải thích: Ba bước từ "Người rơi tự do" đến Lỗ đen và GPS
 
 #### Bước 1: Tại sao mô hình tấm bạt 2D chỉ kể một nửa sự thật?
 Trong đời sống hàng ngày (như quả táo rơi xuống đất), nguyên nhân chính khiến vật rơi xuống **không phải** độ cong không gian 3D mà là **độ cong của chiều thời gian** (đồng hồ trên đỉnh tòa nhà chạy nhanh hơn đồng hồ ở tầng trệt một chút xíu!). Đường thế giới muốn cực đại hóa thời gian riêng tự nhiên uốn cong về phía mặt đất!

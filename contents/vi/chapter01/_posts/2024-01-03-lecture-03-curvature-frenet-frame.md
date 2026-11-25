@@ -15,11 +15,11 @@ Hãy tưởng tượng bạn đang ngồi trên một chiếc tàu lượn siêu
 
 Điều kỳ diệu bậc nhất của hình học vi phân đường cong là: **bạn không cần bất kỳ thông số thứ ba nào!** Chỉ cần ghi lại hai con số $$\kappa(s)$$ và $$\tau(s)$$ dọc theo hành trình, bạn đã nắm trọn "mã DNA" xác định duy nhất hình dáng của đường cong trong không gian $$\mathbb{R}^3$$.
 
-**Mạch bài học:** Bản đồ kiến thức nền (khung chuyển động trực chuẩn, ma trận phản đối xứng Frenet–Serret, Định lý cơ bản của đường cong) → Độ cong $$\kappa$$ → Hệ Frenet $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$ → Độ xoắn $$\tau$$ và hệ phương trình Frenet–Serret → Khung giải thích chậm: tự tay tính đủ bộ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}, \kappa, \tau\}$$ cho đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Định lý cơ bản và Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (khung chuyển động trực chuẩn, ma trận phản đối xứng Frenet–Serret, Định lý cơ bản của đường cong) → Độ cong $$\kappa$$ → Hệ Frenet $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}\}$$ → Độ xoắn $$\tau$$ và hệ phương trình Frenet–Serret → Giải thích: tự tay tính đủ bộ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}, \kappa, \tau\}$$ cho đường xoắn ốc $$(3\cos t, 3\sin t, 4t)$$ → Định lý cơ bản và Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hệ khung chuyển động, Ma trận phản đối xứng và Mã DNA của đường cong
+## Kiến thức cần nhớ: Hệ khung chuyển động, Ma trận phản đối xứng và Mã DNA của đường cong
 
 Trước khi đi vào các công thức đạo hàm của $$\mathbf{T}, \mathbf{N}, \mathbf{B}$$, hãy nhìn cấu trúc đại số và hình học sâu bên dưới:
 
@@ -108,7 +108,7 @@ $$
 
 ---
 
-## Khung giải thích: tự tay tính trọn bộ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}, \kappa, \tau\}$$ cho đường xoắn ốc (nên đọc chậm)
+## Giải thích: tự tay tính trọn bộ $$\{\mathbf{T}, \mathbf{N}, \mathbf{B}, \kappa, \tau\}$$ cho đường xoắn ốc
 
 Hãy tính tay toàn bộ hệ Frenet cho đường xoắn ốc cụ thể $$\alpha(s) = \left(3\cos\frac{s}{5},\ 3\sin\frac{s}{5},\ \frac{4s}{5}\right)$$ (đã chuẩn hóa theo độ dài cung $$s$$ ở Bài 2, với $$a = 3, b = 4, c = 5$$):
 

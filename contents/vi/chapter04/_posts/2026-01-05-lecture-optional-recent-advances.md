@@ -12,9 +12,9 @@ Một đồ thị mạng xã hội hay một phân tử hóa học không có t�
 
 Làm sao một ý tưởng ra đời từ đo đạc bề mặt Trái Đất năm 1827 của Gauss và dòng chảy Ricci của Hamilton–Perelman lại có thể chẩn đoán đúng điểm nghẽn thông tin trong trí tuệ nhân tạo hiện đại? Bài đọc thêm này sẽ giải mã điều đó qua **độ cong Ollivier–Ricci** và các thuật toán **dòng chảy Ricci rời rạc** (SDRF, BORF).
 
-**Mạch bài học:** Tinh thần nội tại của Gauss trên không gian rời rạc → Bản đồ kiến thức nền (Độ cong Ollivier–Ricci, Over-smoothing vs. Over-squashing, Dòng chảy Ricci rời rạc) → Trực giác hội tụ/phân kỳ đường trắc địa trên đồ thị → Định nghĩa hình thức $$\kappa(i, j)$$ & phương trình Ricci flow → Khung giải thích tự tính tay độ cong Ollivier–Ricci trên tam giác $$K_3$$ ($$\kappa = +1/2$$) và cạnh cầu nối hai sao bậc 3 ($$\kappa = -2/3$$) → Tài liệu nền tảng & ứng dụng.
+**Mạch bài học:** Tinh thần nội tại của Gauss trên không gian rời rạc → Kiến thức cần nhớ (Độ cong Ollivier–Ricci, Over-smoothing vs. Over-squashing, Dòng chảy Ricci rời rạc) → Trực giác hội tụ/phân kỳ đường trắc địa trên đồ thị → Định nghĩa hình thức $$\kappa(i, j)$$ & phương trình Ricci flow → Giải thích tự tính tay độ cong Ollivier–Ricci trên tam giác $$K_3$$ ($$\kappa = +1/2$$) và cạnh cầu nối hai sao bậc 3 ($$\kappa = -2/3$$) → Tài liệu nền tảng & ứng dụng.
 
-## Bản đồ kiến thức nền: Hình học nội tại bước vào học sâu đồ thị như thế nào?
+## Kiến thức cần nhớ: Hình học nội tại bước vào học sâu đồ thị như thế nào?
 
 ### 1. Độ cong Ollivier–Ricci (Ollivier–Ricci Curvature)
 - **Là gì:** Khái niệm độ cong thuần nội tại trên không gian metric rời rạc (Yann Ollivier, 2009), so sánh khoảng cách vận chuyển tối ưu Wasserstein $$W_1(\mu_i, \mu_j)$$ giữa hai phân bố lân cận tại hai đỉnh kề nhau $$i \sim j$$ với chính khoảng cách $$d(i, j)$$.
@@ -64,7 +64,7 @@ $$
 $$
 Phiên bản rời rạc trên đồ thị hoạt động theo chu trình lặp: ước lượng độ cong $$\kappa$$ trên các cạnh, bổ sung cạnh tại những vùng có $$\kappa$$ rất âm và giảm bớt cạnh tại những vùng có $$\kappa$$ rất dương. Hai thuật toán SDRF và BORF là những cách cụ thể hóa nguyên lý này cho dữ liệu đồ thị.
 
-## Khung giải thích: Tự tính tay độ cong Ollivier–Ricci trên hai đồ thị mẫu (nên đọc chậm)
+## Giải thích: Tự tính tay độ cong Ollivier–Ricci trên hai đồ thị mẫu
 
 Để không thấy công thức Wasserstein $$W_1$$ trừu tượng, hãy chọn phân bố đều trên các láng giềng $$\mu_u(x) = \frac{1}{\deg(u)}$$ với mọi $$x \sim u$$ (không giữ khối lượng tại chính $$u$$) và tính tay $$\kappa(A, B) = 1 - W_1(\mu_A, \mu_B)$$ trên hai đồ thị tí hon (đều có $$d(A, B) = 1$$).
 

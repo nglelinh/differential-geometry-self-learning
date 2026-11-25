@@ -11,11 +11,11 @@ Tại sao Albert Einstein phải nhờ người bạn thân Marcel Grossmann d�
 
 Để diễn tả những thực thể hình học và vật lý **sống sót nguyên vẹn qua mọi phép đổi tọa độ**, toán học tạo ra khái niệm **tensor**. Đừng để vẻ ngoài chi chít chỉ số trên–dưới làm bạn choáng ngợp: ẩn sau mọi bảng số $$T^i_{jk}$$ là một cỗ máy đa tuyến tính cực kỳ trong sáng, nhận vào các vector (mũi tên) cùng covector (thước đo) và trả về một con số hoàn toàn bất biến.
 
-**Mạch bài học:** Bản đồ kiến thức nền (tính bất biến tọa độ, không gian đối ngẫu, sự khác nhau giữa tensor toán học và "tensor" học sâu) → Trực giác cỗ máy khe đầu vào & phản biến/hiệp biến → Định nghĩa hình thức & quy ước tổng Einstein → Ví dụ tính tay cầm tay chỉ việc: biến đổi ma trận metric từ tọa độ Descartes sang tọa độ cực và hạ chỉ số vector → Khung giải thích chậm: 4 bước nhận diện tensor thật sự → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (tính bất biến tọa độ, không gian đối ngẫu, sự khác nhau giữa tensor toán học và "tensor" học sâu) → Trực giác cỗ máy khe đầu vào & phản biến/hiệp biến → Định nghĩa hình thức & quy ước tổng Einstein → Ví dụ tính tay làm từng bước: biến đổi ma trận metric từ tọa độ Descartes sang tọa độ cực và hạ chỉ số vector → Giải thích: 4 bước nhận diện tensor thật sự → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Lý thuyết Tensor trên Đa tạp nghiên cứu gì?
+## Kiến thức cần nhớ: Lý thuyết Tensor trên Đa tạp nghiên cứu gì?
 
 ### 1. Bất biến tọa độ — triết lý cốt lõi của hình học hiện đại
 Một mảng số bất kỳ $$A_{ij}$$ **chưa chắc** là tensor! Khi bạn đổi từ hệ tọa độ $$(x^i)$$ sang $$(y^p)$$, các con số biểu diễn sẽ thay đổi — nhưng chúng phải thay đổi ăn khớp tuyệt đối với ma trận Jacobi $$\frac{\partial y^p}{\partial x^i}$$ và nghịch đảo $$\frac{\partial x^j}{\partial y^q}$$ sao cho đối tượng hình học bên dưới đứng yên tuyệt đối.
@@ -175,7 +175,7 @@ $$
 
 ---
 
-### Khung giải thích: Làm sao nhận diện một tensor thật sự và vì sao nó bất biến? (nên đọc chậm)
+### Giải thích: Làm sao nhận diện một tensor thật sự và vì sao nó bất biến?
 
 #### Bước 1: Tách bạch "đối tượng hình học" khỏi "bảng tọa độ"
 Một vector $$v = v^i \partial_i$$ không đổi khi ta đổi hệ tọa độ, nhưng bộ số $$(v^1, \ldots, v^n)$$ thì có. Sự thay đổi của $$v^i$$ luôn **bù trừ chính xác** cho sự thay đổi của cơ sở $$\partial_i$$!

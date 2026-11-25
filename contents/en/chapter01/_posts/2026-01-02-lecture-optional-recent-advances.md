@@ -18,7 +18,7 @@ Between 2022 and 2026, frameworks like **Geometric Fabrics** (Van Wyk, Ratliff, 
 
 ---
 
-## Background Knowledge Map: From Space Curves to Robot Motion Policies
+## Key ideas: From Space Curves to Robot Motion Policies
 
 How does pure curve geometry translate into motors, torques, and obstacle avoidance? Three pillars connect them.
 
@@ -112,7 +112,7 @@ That quadratic $$v^2$$ coupling is why **Finsler (velocity-dependent) geometry**
 
 ---
 
-### Deep-Dive Explanation: How Classical Frenet Geometry Powers Geometric Fabrics (Read Slowly)
+### Explanation: How Classical Frenet Geometry Powers Geometric Fabrics
 
 Why did modern roboticists reach back to Frenet frames and Finsler geometry instead of just writing ad-hoc `if/else` obstacle-avoidance rules? Follow the four steps slowly:
 

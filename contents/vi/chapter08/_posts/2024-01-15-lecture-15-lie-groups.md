@@ -11,11 +11,11 @@ Cầm một cuốn sách trên bàn rồi thử hai thao tác: đầu tiên xoay
 
 Vào cuối thế kỷ 19, nhà toán học Na Uy **Sophus Lie** đã phát hiện một bí mật làm chấn động cả đại số lẫn hình học: thay vì đánh vật trực tiếp với đa tạp cong phi tuyến $$G$$ (**Nhóm Lie**), ta chỉ cần nhìn sát vào **mặt phẳng tiếp tuyến tại đúng một điểm duy nhất** — phần tử đơn vị $$e$$ (**Đại số Lie** $$\mathfrak{g}$$)! Bằng một phép toán song tuyến tính đơn giản mang tên **dấu ngoặc Lie** $$[X, Y] = XY - YX$$ và cầu nối **ánh xạ mũ** $$\exp$$, không gian phẳng nhỏ bé ấy mã hóa gần như trọn vẹn cấu trúc của cả nhóm đối xứng khổng lồ!
 
-**Mạch bài học:** Bản đồ kiến thức nền (cuộc hôn nhân Đại số + Đa tạp, Đại số Lie, Ánh xạ mũ & Định lý Noether) → Trực giác đối xứng liên tục, tuyến tính hóa và thí nghiệm cuốn sách → Định nghĩa hình thức → Ví dụ tính tay cầm tay chỉ việc: tính móc Lie $$[L_x, L_y] = L_z$$ của $$\mathfrak{so}(3)$$ và khai triển $$\exp(\theta L_z)$$ ra đúng ma trận quay $$R_z(\theta)$$ → Khung giải thích chậm: 4 bước nối Đại số Lie phẳng với Nhóm Lie cong (và phân biệt $$SU(2)$$ vs. $$SO(3)$$) → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (cuộc hôn nhân Đại số + Đa tạp, Đại số Lie, Ánh xạ mũ & Định lý Noether) → Trực giác đối xứng liên tục, tuyến tính hóa và thí nghiệm cuốn sách → Định nghĩa hình thức → Ví dụ tính tay làm từng bước: tính móc Lie $$[L_x, L_y] = L_z$$ của $$\mathfrak{so}(3)$$ và khai triển $$\exp(\theta L_z)$$ ra đúng ma trận quay $$R_z(\theta)$$ → Giải thích: 4 bước nối Đại số Lie phẳng với Nhóm Lie cong (và phân biệt $$SU(2)$$ vs. $$SO(3)$$) → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Lý thuyết Nhóm Lie và Đại số Lie nghiên cứu gì?
+## Kiến thức cần nhớ: Lý thuyết Nhóm Lie và Đại số Lie nghiên cứu gì?
 
 ### 1. Cuộc hôn nhân giữa Nhóm đại số và Đa tạp trơn
 Trong toán học, **nhóm** mô tả đối xứng (có phép hợp và nghịch đảo), còn **đa tạp trơn** mô tả không gian cong khả vi. **Nhóm Lie** ghép cả hai lại làm một: phép nhân $$(g, h) \mapsto gh$$ và phép nghịch đảo $$g \mapsto g^{-1}$$ đều là ánh xạ trơn! Nhờ đó ta vừa có thể nhân các phép biến đổi, vừa có thể lấy đạo hàm vận tốc của chúng.
@@ -132,7 +132,7 @@ trong đó $$\gamma_X(t)$$ là đường tích phân (integral curve) xuất ph�
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: Móc Lie của $$\mathfrak{so}(3)$$ và Ánh xạ mũ ra ma trận quay $$R_z(\theta)$$
+## Ví dụ tính tay làm từng bước: Móc Lie của $$\mathfrak{so}(3)$$ và Ánh xạ mũ ra ma trận quay $$R_z(\theta)$$
 
 Ba ma trận cơ sở của đại số Lie $$\mathfrak{so}(3)$$ (ứng với vận tốc quay quanh trục $$x, y, z$$) là:
 
@@ -160,7 +160,7 @@ $$
 
 ---
 
-### Khung giải thích: Vì sao Đại số Lie phẳng kiểm soát Nhóm Lie cong — và đâu là giới hạn? (nên đọc chậm)
+### Giải thích: Vì sao Đại số Lie phẳng kiểm soát Nhóm Lie cong — và đâu là giới hạn?
 
 #### Bước 1: Lấy đạo hàm đường cong qua đơn vị để tìm phương trình của $$\mathfrak{g}$$
 Với mọi đường cong ma trận $$R(t) \in SO(n)$$ thỏa $$R(0) = I$$ và $$R(t)^T R(t) = I$$, lấy đạo hàm hai vế tại $$t = 0$$ cho ngay: $$R'(0)^T + R'(0) = 0$$ — tức mọi vector tiếp tuyến $$X = R'(0)$$ bắt buộc phải là **ma trận phản đối xứng** ($$X^T = -X$$)! Một ràng buộc bậc hai cong phức tạp lập tức biến thành hệ phương trình tuyến tính đơn giản!

@@ -13,11 +13,11 @@ Nếu bạn đứng trên một quả bóng khổng lồ và dùng kính lúp ph
 
 Nếu Giải tích là con dao mổ giúp ta nhìn vào quy mô vi phân, thì Đại số Tuyến tính là bộ ngữ pháp để nói chuyện về không gian tiếp tuyến, tensor và độ cong. Nắm vững bốn khái niệm cốt lõi ở đây — **vector**, **covector**, **tích vô hướng (metric)** và **trị riêng** — bạn sẽ thấy hầu hết các công thức đáng sợ của hình học Riemann thực chất chỉ là đại số tuyến tính năm nhất được đặt lên từng điểm của một bề mặt cong.
 
-**Mạch bài học:** Bản đồ kiến thức nền (không gian vector, không gian đối ngẫu, tensor & metric) → Không gian vector và quy ước Einstein → Không gian đối ngẫu và covector → Khung giải thích chậm: tự tay đổi cơ sở, kiểm tra bất biến $$\alpha(\mathbf{v})$$ và tìm trị riêng của ma trận đối xứng $$2\times 2$$ → Tích tensor, metric và trị riêng trong hình học.
+**Mạch bài học:** Kiến thức cần nhớ (không gian vector, không gian đối ngẫu, tensor & metric) → Không gian vector và quy ước Einstein → Không gian đối ngẫu và covector → Giải thích: tự tay đổi cơ sở, kiểm tra bất biến $$\alpha(\mathbf{v})$$ và tìm trị riêng của ma trận đối xứng $$2\times 2$$ → Tích tensor, metric và trị riêng trong hình học.
 
 ---
 
-## Bản đồ kiến thức nền: Đại số Tuyến tính trong Hình học Vi phân nghiên cứu những gì?
+## Kiến thức cần nhớ: Đại số Tuyến tính trong Hình học Vi phân nghiên cứu những gì?
 
 Với người tốt nghiệp đại học đã từng học đại số tuyến tính qua ma trận và hệ phương trình, hình học vi phân nhìn lại đại số tuyến tính theo **ba trụ cột không phụ thuộc hệ tọa độ**:
 
@@ -92,7 +92,7 @@ Từ đây ta phân biệt hai kiểu biến đổi tọa độ:
 
 ---
 
-## Khung giải thích: tự tay kiểm tra đổi cơ sở, bất biến $$\alpha(\mathbf{v})$$ và trị riêng (nên đọc chậm)
+## Giải thích: tự tay kiểm tra đổi cơ sở, bất biến $$\alpha(\mathbf{v})$$ và trị riêng
 
 Để cụm từ *"phản biến"*, *"hiệp biến"* và *"bất biến hình học"* trở nên rõ như ban ngày, hãy cầm bút tự kiểm tra hai phép tính nhỏ trong $$\mathbb{R}^2$$:
 

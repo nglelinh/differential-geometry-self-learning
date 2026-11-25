@@ -11,11 +11,11 @@ Hãy thử một thí nghiệm nhỏ trên mặt phẳng $$\mathbb{R}^2$$ bị k
 
 Câu chuyện giản dị ấy mở ra cánh cửa vào **hình học Riemann toàn cục**: chỉ riêng một **metric** $$g$$ trơn trên đa tạp $$M$$ đã tự động sinh ra độ dài, góc, liên kết Levi-Civita và độ cong Riemann — nhưng để đảm bảo giữa hai điểm bất kỳ *luôn tồn tại* một đường trắc địa ngắn nhất toàn cục, không gian cần thêm một điều kiện toàn cục cực kỳ đẹp gọi là **tính đầy đủ (completeness)**, được khẳng định qua **Định lý Hopf–Rinow** lừng danh!
 
-**Mạch bài học:** Bản đồ kiến thức nền (cỗ máy tự sinh từ $$(M,g)$$, đẳng cự cục bộ vs. toàn cục, tính đầy đủ) → Trực giác tấm màng cao su, thế giới Pac-Man & mặt bàn có biên → Định nghĩa hình thức & Định lý Hopf–Rinow → Ví dụ tính tay cầm tay chỉ việc: so sánh mặt phẳng thủng lỗ $$\mathbb{R}^2\setminus\{0\}$$ (không đầy đủ) với nửa mặt phẳng Poincaré $$\mathbb{H}^2$$ (đầy đủ vì trục hoành bị đẩy ra vô cực!) → Khung giải thích chậm: 4 bước nối Giải tích Cauchy với Hình học Trắc địa trong Định lý Hopf–Rinow → Ứng dụng, Video & Bài tập.
+**Mạch bài học:** Kiến thức cần nhớ (cỗ máy tự sinh từ $$(M,g)$$, đẳng cự cục bộ vs. toàn cục, tính đầy đủ) → Trực giác tấm màng cao su, thế giới Pac-Man & mặt bàn có biên → Định nghĩa hình thức & Định lý Hopf–Rinow → Ví dụ tính tay làm từng bước: so sánh mặt phẳng thủng lỗ $$\mathbb{R}^2\setminus\{0\}$$ (không đầy đủ) với nửa mặt phẳng Poincaré $$\mathbb{H}^2$$ (đầy đủ vì trục hoành bị đẩy ra vô cực!) → Giải thích: 4 bước nối Giải tích Cauchy với Hình học Trắc địa trong Định lý Hopf–Rinow → Ứng dụng, Video & Bài tập.
 
 ---
 
-## Bản đồ kiến thức nền: Hình học Đa tạp Riemann nghiên cứu những gì?
+## Kiến thức cần nhớ: Hình học Đa tạp Riemann nghiên cứu những gì?
 
 ### 1. Một cặp $$(M, g)$$ duy nhất sinh ra toàn bộ hình học
 Khi đặt một tensor metric $$g$$ xác định dương lên đa tạp trơn $$M$$, ta lập tức có miễn phí năm công cụ ăn khớp với nhau: (i) thước đo độ dài cung và góc; (ii) khoảng cách toàn cục $$d(p, q)$$ biến $$M$$ thành không gian metric; (iii) phần tử thể tích $$\sqrt{\det g}\,dx^1\cdots dx^n$$; (iv) liên kết Levi-Civita duy nhất $$\nabla$$; và (v) tensor độ cong Riemann $$R$$.
@@ -139,7 +139,7 @@ Nếu $$M$$ đầy đủ và liên thông, thì với hai điểm bất kỳ $$p
 
 ---
 
-## Ví dụ tính tay cầm tay chỉ việc: So sánh không gian không đầy đủ vs. Nửa mặt phẳng Poincaré $$\mathbb{H}^2$$
+## Ví dụ tính tay làm từng bước: So sánh không gian không đầy đủ vs. Nửa mặt phẳng Poincaré $$\mathbb{H}^2$$
 
 Cùng một tập hợp điểm mở $$H = \{(x, y) \in \mathbb{R}^2 : y > 0\}$$, nhưng chỉ cần thay đổi metric $$g$$ là tính đầy đủ đảo ngược hoàn toàn!
 
@@ -155,7 +155,7 @@ Cùng một tập hợp điểm mở $$H = \{(x, y) \in \mathbb{R}^2 : y > 0\}$$
 
 ---
 
-### Khung giải thích: Định lý Hopf–Rinow nối dãy Cauchy với đường trắc địa như thế nào? (nên đọc chậm)
+### Giải thích: Định lý Hopf–Rinow nối dãy Cauchy với đường trắc địa như thế nào?
 
 #### Bước 1: Hình cầu trắc địa nhỏ luôn tồn tại cục bộ
 Tại mọi điểm $$p \in M$$, ánh xạ mũ $$\exp_p : T_p M \to M$$ (bắn tia trắc địa từ $$p$$ theo vận tốc ban đầu $$v$$) là một vi phôi trên một quả cầu nhỏ bán kính $$\delta > 0$$. Trong quả cầu nhỏ ấy, mọi điểm $$q$$ đều nối với $$p$$ bằng **duy nhất** một đường trắc địa ngắn nhất.

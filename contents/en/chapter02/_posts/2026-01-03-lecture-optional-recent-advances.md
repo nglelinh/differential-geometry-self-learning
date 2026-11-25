@@ -20,7 +20,7 @@ This optional lesson reconnects those cutting-edge rendering breakthroughs direc
 
 ---
 
-## Background Knowledge Map: Three Ways to Represent a Surface
+## Key ideas: Three Ways to Represent a Surface
 
 Every modern 3D vision pipeline is ultimately choosing between three classical geometric ways of describing a 2D surface inside $$\mathbb{R}^3$$.
 
@@ -111,7 +111,7 @@ The 3D ellipsoid has collapsed into a razor-thin **tangent disk** in the $$xy$$-
 
 ---
 
-### Deep-Dive Explanation: Why "Pretty Pictures" ≠ "True Surfaces" (Read Slowly)
+### Explanation: Why "Pretty Pictures" ≠ "True Surfaces"
 
 Why did 3D vision spend 2021–2025 fighting to turn NeRFs and 3D Gaussians into genuine differential-geometric surfaces? Follow the four steps slowly:
 
