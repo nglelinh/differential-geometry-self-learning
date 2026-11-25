@@ -1,6 +1,6 @@
 # Setup
-title:               "differential-geometry Self-Learning"
-description:         'Comprehensive differential-geometry Course'
+title:               "Differential Geometry Self-Learning"
+description:         'Comprehensive Differential Geometry Course'
 url:                 https://nglelinh.github.io
 baseurl:             '/differential-geometry-self-learning'
 imgurl:              https://nglelinh.github.io/differential-geometry-self-learning/img
@@ -16,8 +16,8 @@ parallel_localization: true
 # Language-specific configurations
 t:
   en:
-    title: "differential-geometry Self-Learning"
-    description: "Comprehensive differential-geometry Course for Math Students"
+    title: "Differential Geometry Self-Learning"
+    description: "Comprehensive Differential Geometry Course for Math Students"
     home: "Home"
     chapters: "Chapters"
     language: "Language"
